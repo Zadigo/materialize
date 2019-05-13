@@ -1,0 +1,128 @@
+@import "../../extended_materialize.css";
+
+.card.special {
+  cursor: pointer;
+  overflow: hidden;
+}
+.card.special * {
+  transition: all 0.25s ease-in-out;
+}
+.card.special .card-image {
+  max-height: 60%;
+  overflow: hidden;
+}
+.card.special:hover.dim .card-image img {
+  opacity: 0.7;
+}
+.card.special:hover.push-up .hover-cover-4 {
+  transform: translateY(-115px);
+}
+.card.special:hover.push-up .hover-cover-icons {
+  transform: translateY(-295%);
+  color: inherit;
+}
+.card.special:hover.push-up .hover-cover-icons i:hover {
+  background-color: black;
+  color: white;
+}
+.card.special:hover.push-up-with-image .card-image img {
+  transform: translateY(-55px);
+}
+.card.special:hover.push-up-with-image .hover-cover-4 {
+  transform: translateY(-115px);
+}
+.card.special:hover.zoom .card-image img {
+  transform: scale(1.1, 1.1);
+}
+.card.special:hover .card-cover {
+  opacity: 0.3;
+}
+.card.special:hover .card-cover p {
+  opacity: 0.9;
+}
+.card.special .hover-cover-4 {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  padding: 0.75rem;
+  bottom: -115px;
+  text-align: center;
+}
+.card.special .hover-cover-4 p {
+  margin-top: 0;
+}
+.card.special .hover-cover-icons {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 1;
+}
+.card.special .hover-cover-icons a {
+  display: block;
+  color: inherit;
+  height: 25px;
+  width: 25px;
+}
+.card.special .hover-cover-icons a:not(:last-child) {
+  margin-right: 32px;
+}
+.card.special .hover-cover-icons a > i {
+  background-color: white;
+  line-height: 15px;
+  padding: 15px;
+}
+.card.special div.discount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px;
+  background-color: #ec407a;
+  z-index: 1;
+  opacity: 0.85;
+  color: white;
+}
+.card.special .card-cover {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  padding: 25px;
+}
+.card.special .card-cover p {
+  position: relative;
+  color: white;
+}
+.card.special .text-overlay {
+  position:absolute;
+  top:166px;
+  left:25px;
+  color:white;
+}
+.card.special .text-overlay h1,
+.card.special .text-overlay h2,
+.card.special .text-overlay h3,
+.card.special .text-overlay h4,
+.card.special .text-overlay h5 {
+  margin-bottom: 0;
+}
+.card.special .text-overlay p {
+  margin-top: .25rem;
+}
+.card.special:hover .text-overlay.emphasize h1,
+.card.special:hover .text-overlay.emphasize h2,
+.card.special:hover .text-overlay.emphasize h3,
+.card.special:hover .text-overlay.emphasize h4,
+.card.special:hover .text-overlay.emphasize h5 {
+  transform: translateY(-5px);
+}

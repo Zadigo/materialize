@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="../extended_materialize.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l12 m6">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="https://materializecss.com/images/sample-1.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l12 m6">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="https://materializecss.com/images/sample-1.jpg">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <h5>Accountant</h5>
+                                <ul class="list-inline">
+                                    <li class="item"><i class="material-icons">shopping_cart</i> Cart</li>
+                                    <li class="item"><i class="material-icons">person</i>Carry</li>
+                                    <li class="item"><i class="material-icons">arrow_right</i>Carrot</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // SHIFT TO NON HORIZONTAL - INVERSELY
+                $(window).on('resize', function(){
+                    var win = $(this);
+                    if (win.height() >= 820) { /* ... */ }
+                    if (win.width() <= 601) {
+                        $('.card').removeClass('horizontal');
+                    } else {
+                        $('.card').addClass('horizontal');
+                    }
+                });
+            })
+        </script>
+    </body>
+</html>
