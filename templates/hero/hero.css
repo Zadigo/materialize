@@ -174,9 +174,13 @@ div.benefits .separator, section.benefits .separator {
   background-color: #eeeeee;
 }
 
+div.benefits .separator .row, section.benefits .separator .row {
+  margin-top: 0;
+}
+
 @media only screen and (min-width: 300px) {
   div.benefits .separator, section.benefits .separator {
-    padding-top: 0;
+    padding-top: 0px;
   }
 }
 
@@ -218,7 +222,6 @@ div.benefits .separator-with-image .seperator-img, section.benefits .separator-w
 
 div.benefits .call-to-action, section.benefits .call-to-action {
   text-align: center;
-  padding-bottom: 0;
 }
 
 div.benefits.image-tiles, section.benefits.image-tiles {
@@ -264,5 +267,33 @@ div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .
   div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
     font-size: 2.92rem;
   }
+}
+
+div.benefits .benefits .team, section.benefits .benefits .team {
+  text-align: center;
+}
+
+div.benefits .team, section.benefits .team {
+  text-align: center;
+}
+
+div.benefits .team .teammate-avatar, section.benefits .team .teammate-avatar {
+  vertical-align: middle;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+}
+
+div.benefits .team .teammate-name, section.benefits .team .teammate-name {
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+
+div.benefits .team .social, section.benefits .team .social {
+  margin-top: 2rem;
+}
+
+div.benefits .team .fab, section.benefits .team .fab {
+  font-size: 1.33333em;
 }
 /*# sourceMappingURL=hero.css.map */

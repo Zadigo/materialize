@@ -1,6 +1,7 @@
 $blue: #1565c0;
 $padding_top: 12.5%;
 $font_weight: 600;
+$lead_font_weight: 600;
 
 @mixin hero_grid_calculator($multiple) {
     // Calculates the top padding
@@ -67,7 +68,7 @@ div, section {
                         @extend %lead;
 
                         @if $tag == "lead-stronger" {
-                            font-weight: $font_weight;
+                            font-weight: 600;
                         }
 
                         @media only screen and (min-width: 300px) {
@@ -156,9 +157,13 @@ div, section {
         .separator {
             padding: 65px 0 65px 0;
             background-color: #eeeeee;
+
+            .row {
+                margin-top: 0;
+            }
             
             @media only screen and (min-width: 300px) {
-                padding-top: 0;
+                padding-top: 0px;
             }
 
             @media only screen and (min-width: 601px) {
@@ -198,9 +203,8 @@ div, section {
             }
         }
 
-        .call-to-action{
+        .call-to-action {
             text-align: center;
-            padding-bottom: 0;
         }
 
         &.image-tiles {
@@ -245,6 +249,35 @@ div, section {
                     } 
                 }
             }
-        }     
+        }
+
+        .benefits .team {
+            text-align: center;
+          }
+          
+        .team {
+            text-align: center;
+
+            .teammate-avatar {
+                vertical-align: middle;
+                width: 175px;
+                height: 175px;
+                border-radius: 50%;
+            }
+          
+            .teammate-name {
+                font-weight: 600;
+                margin-top: 2.5rem;
+            }
+          
+            .social {
+                margin-top: 2rem;
+            }
+          
+            .fab {
+                font-size: 1.33333em;
+            }
+        }
+          
     }
 }
