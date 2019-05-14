@@ -1,0 +1,464 @@
+/*******************
+  Hero
+*******************/
+
+header.hero, 
+div.hero, 
+section.hero {
+    height: 100vh !important;
+    background-color: #1565c0;
+    text-align: center;
+    color: white;
+}
+
+header.hero-image, 
+div.hero-image, 
+section.hero-image {
+    height: 100vh !important;
+    background-image: url('https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+
+/*******************
+  Container
+*******************/
+
+.hero .hero-wrapper,
+.hero-image .hero-wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+
+/*******************
+  Call to action
+*******************/
+
+.hero .call-to-action,
+.hero-image .call-to-action {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding-top: 12.5%;
+}
+
+.call-to-action div.lead {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.250rem;
+}
+
+.call-to-action div.lead-stronger {
+    display: block;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-top: 1.250rem;
+}
+
+div.lead.upper,
+div.lead-stronger.upper {
+    text-transform: uppercase;
+}
+
+.call-to-action div.lead-subtitle {
+    font-weight: 300;
+    margin-top: 0.5rem;
+    margin-bottom: 2.75rem;
+}
+
+.call-to-action div.lead-button {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.call-to-action form.search {
+    display: inline-block;
+}
+
+.call-to-action form.form-cta-email {
+    display: inline-block;
+}
+
+form.search.inline .input-field #search,
+form.search.inline .input-field input[type=email]:not(.browser-default),
+form.form-cta-email.inline .input-field #email,
+form.form-cta-email.inline .input-field input[type=email]:not(.browser-default) {
+    background-color: #fff;
+    border: 1px solid #9e9e9e;
+    border-radius: 0px;
+    height: 54px;
+    margin: 0;
+    padding: 0 15px 0 15px;
+}
+
+
+
+form.form-cta-email.inline input:not([type]):focus:not([readonly]),
+form.form-cta-email.inline input[type=text]:not(.browser-default):focus:not([readonly]),
+form.form-cta-email.inline input[type=email]:not(.browser-default):focus:not([readonly]),
+form.form-cta-email.inline input[type=search]:not(.browser-default):focus:not([readonly]) {
+    border: 1px solid #26a69a;
+    -webkit-box-shadow: 0 1px 0 0 #26a69a;
+    box-shadow: 0 1px 0 0 #26a69a
+}
+
+/* 
+ * HERO BENFITS
+ */
+
+.section.benefits {
+    width: 100%;
+}
+
+.section.benefits h4,
+.section.benefits h5 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.section .section.benefit{
+    padding: 65px 0 65px 0;
+}
+
+.section .section.benefit.separator{
+    padding: 65px 0 65px 0;
+    background-color: #eeeeee;
+}
+
+.section .section.benefit .row{
+    margin-top: 20px;
+}
+
+
+.section .section.benefit h4,
+.section .section.benefit h5 {
+    margin-top: 0px;
+}
+
+.section .section.benefit h4:not(i),
+.section .section.benefit h5:not(i) {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.section .call-to-action-below{
+    text-align: center;
+    padding-bottom: 0;
+}
+
+
+/*******************
+   Media Queries
+*******************/
+
+@media only screen and (min-width: 300px) {
+    .hero-wrapper {
+        width: 85%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        text-align: left;
+        padding-top: 37.5%;
+    }
+
+    .call-to-action div.lead {
+        font-size: 2rem;
+    }
+
+    .call-to-action div.lead-stronger {
+        font-size: 2rem;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 1.652rem;
+        margin-bottom: 2rem;
+    }
+
+    .call-to-action form.form-cta-email {
+        display: block;
+    }
+
+    .call-to-action form.search.inline .input-field,
+    .call-to-action form.form-cta-email.inline .input-field {
+        width: 100%;
+    }
+
+    form.search.inline .input-field #search,
+    form.form-cta-email.inline .input-field #email,
+    form.search.inline .input-field input[type=email]:not(.browser-default),
+    form.form-cta-email.inline .input-field input[type=email]:not(.browser-default) {
+        max-width: 90%;
+    }
+
+    form.search.inline button[type="submit"],
+    form.form-cta-email.inline button[type="submit"] {
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+
+    .section.benefit {
+        text-align: left;
+    }
+
+    .section .section.benefit .col:last-child{
+        padding: 0 .75rem 0 .75rem;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .hero-wrapper {
+        width: 85%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        text-align: center;
+        padding-top: 12.5%;
+    }
+
+    .call-to-action div.lead {
+        font-size: 3rem;
+    }
+
+    .call-to-action div.lead-stronger {
+        font-size: 3rem;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 2rem;
+    }
+
+    .call-to-action form.search.inline .input-field,
+    .call-to-action form.form-cta-email.inline .input-field {
+        display: inline-flex;
+        justify-content: center; 
+    }
+
+    form.search.inline .input-field #search,
+    form.form-cta-email.inline .input-field #email,
+    form.search.inline .input-field input[type=email]:not(.browser-default),
+    form.form-cta-email.inline .input-field input[type=email]:not(.browser-default) {
+        max-width: 25%;
+    }
+
+    form.search.inline button[type="submit"],
+    form.form-cta-email.inline button[type="submit"] {
+        margin-top: 0px;
+        margin-left: 35px;
+    }
+
+    .section .section.benefit .col:last-child{
+        padding-left: 65px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hero-wrapper {
+        width: 85%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        padding-top: 25%;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 2rem;
+    }    
+}
+
+@media only screen and (min-width: 993px) {
+    .hero-wrapper {
+        width: 70%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        padding-top: 12.5%;
+    }
+
+    .call-to-action div.lead-stronger {
+        font-size: 4rem;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 2.5rem;
+    }    
+}
+
+@media only screen and (min-width: 1024px) {
+    .hero-wrapper {
+        width: 85%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        padding-top: 12.5%;
+    }
+
+    .call-to-action div.lead-stronger {
+        font-size: 4rem;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 2.5rem;
+    }    
+}
+
+@media only screen and (min-width: 1440px) {
+    .hero-wrapper {
+        width: 70%;
+    }
+
+    .hero .call-to-action,
+    .hero-image .call-to-action {
+        padding-top: 25%;
+    }
+
+    .call-to-action div.lead-stronger {
+        font-size: 4rem;
+    }
+
+    .call-to-action div.lead-subtitle {
+        font-size: 2.5rem;
+    }    
+}
+
+
+
+
+
+
+/*******************
+   Headers
+*******************/
+
+section.header {
+    background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
+    height: 350px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+section.header-large {
+    background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
+    height: 500px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+
+section.header div.header-title,
+section.header-large div.header-title {
+    font-size: 4rem;
+    font-weight: 600;
+    padding-top: 5.33333333%;
+}
+
+div.header-title.upper {
+    text-transform: uppercase;
+}
+
+.header-title.stronger {
+    font-weight: 600;
+}
+
+div.header-title.push-top-1 {
+    padding-top: 8.6666666667%;
+}
+
+section.header div.header-subtitle,
+section.header-large div.header-subtitle {
+    font-size: 1.70rem;
+    font-weight: 300;
+    margin: 0 auto 0 auto;
+}
+
+div.header-subtitle.smaller {
+    font-size: 1rem;
+}
+
+section.header .btn,
+section.header .btn-small,
+section.header .btn-large,
+section.header-large .btn,
+section.header-large .btn-small,
+section.header-large .btn-large  {
+    margin-top: 25px;
+}
+
+/*******************
+   Media Queries
+*******************/
+
+@media only screen and (min-width: 300px) {
+    section.header div.header-title,
+    section.header-large div.header-title {
+        padding-top: 20%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    section.header div.header-title,
+    section.header-large div.header-title {
+        padding-top: 10%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    section.header div.header-title,
+    section.header-large div.header-title {
+        padding-top: 5.33333333%;
+    }
+}
+
+
+
+
+div.benefits, section.benefits, header.benefits {
+  width: 100%;
+}
+div.benefits h1, div.benefits h2, div.benefits h3, section.benefits h1, section.benefits h2, section.benefits h3, header.benefits h1, header.benefits h2, header.benefits h3 {
+  font-size: 1.254rem;
+}
+div.benefits h4, div.benefits h5, section.benefits h4, section.benefits h5, header.benefits h4, header.benefits h5 {
+  font-weight: 700;
+  /* margin-bottom: 2rem; */
+}
+div .section.benefit, section .section.benefit, header .section.benefit {
+  padding: 65px 0 65px 0;
+  /* margin-bottom: 0; */
+}
+div .section.benefit .row, section .section.benefit .row, header .section.benefit .row {
+  margin-top: 20px;
+}
+div .section.benefit:not(i), section .section.benefit:not(i), header .section.benefit:not(i) {
+  font-weight: 700;
+  /* margin-bottom: 2rem; */
+}
+div .section.benefit.separator, section .section.benefit.separator, header .section.benefit.separator {
+  padding: 65px 0 65px 0;
+  background-color: #eeeeee;
+}
+div .call-to-action-below, section .call-to-action-below, header .call-to-action-below {
+  text-align: center;
+  padding-bottom: 0;
+}

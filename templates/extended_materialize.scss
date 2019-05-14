@@ -1,8 +1,10 @@
-html {
-    font-family: Montserrat, Poppins, Raleway, Ubuntu, sans-serif;
+$slim_card_height: 180px;
 
-    p, a, li {
-        font-family: Roboto, sans-serif;
+html {
+    font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
+
+    p, a, li, span {
+        font-family: "Roboto", sans-serif;
     }
 }
 
@@ -32,30 +34,19 @@ nav {
         margin-bottom: 0;
     }
 
-    ul {
-        li {
-            &:first-child{
-                padding: 0 0 .35rem 0;
-            }
-    
-            &:not(:first-child){
-                padding: .35rem 0;
-            }
-    
-            a {
-                color: white;
-            }
-        }
+    p > a {
+        color: white;
+    }
 
-        &#contact {
-            li {
-                * {
-                    vertical-align: middle;
-                    line-height: 1;
-                }
-                i {
-                    margin-right: 15px;
-                }
+    #contact {
+        p {
+            * {
+                vertical-align: middle;
+                line-height: 1;
+            }
+            i {
+                font-size: 20px;
+                margin-right: 15px;
             }
         }
     }
@@ -83,18 +74,6 @@ nav {
                     }
                 }
             }
-        }
-    }
-
-    .header {
-        min-height: 50px;
-        margin-bottom: 35px;
-        padding: 10px 0px;
-        overflow: hidden;
-
-        .container {
-            display: flex;
-            justify-content: space-around;
         }
     }
 }

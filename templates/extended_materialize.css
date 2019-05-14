@@ -1,9 +1,9 @@
 html {
-  font-family: Montserrat, Poppins, Raleway, Ubuntu, sans-serif;
+  font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
 }
 
-html p, html a, html li {
-  font-family: Roboto, sans-serif;
+html p, html a, html li, html span {
+  font-family: "Roboto", sans-serif;
 }
 
 nav .avatar {
@@ -21,24 +21,17 @@ nav .avatar {
   margin-bottom: 0;
 }
 
-.page-footer ul li:first-child {
-  padding: 0 0 .35rem 0;
-}
-
-.page-footer ul li:not(:first-child) {
-  padding: .35rem 0;
-}
-
-.page-footer ul li a {
+.page-footer p > a {
   color: white;
 }
 
-.page-footer ul#contact li * {
+.page-footer #contact p * {
   vertical-align: middle;
   line-height: 1;
 }
 
-.page-footer ul#contact li i {
+.page-footer #contact p i {
+  font-size: 20px;
   margin-right: 15px;
 }
 
@@ -69,23 +62,8 @@ nav .avatar {
   vertical-align: middle;
 }
 
-.page-footer .header {
-  min-height: 50px;
-  margin-bottom: 35px;
-  padding: 10px 0px;
-  overflow: hidden;
-}
-
-.page-footer .header .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .card.horizontal.slim {
-  height: 13px;
+  height: 180px;
 }
 
 .card.horizontal.slim .card-image {
