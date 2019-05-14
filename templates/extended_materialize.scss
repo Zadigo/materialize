@@ -3,7 +3,7 @@ $slim_card_height: 180px;
 html {
     font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
 
-    p, a, li, span {
+    p, a, li, span, .content-text, .content-tags .chip {
         font-family: "Roboto", sans-serif;
     }
 }

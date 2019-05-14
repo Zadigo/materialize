@@ -2,7 +2,7 @@ html {
   font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
 }
 
-html p, html a, html li, html span {
+html p, html a, html li, html span, html .content-text, html .content-tags .chip {
   font-family: "Roboto", sans-serif;
 }
 
