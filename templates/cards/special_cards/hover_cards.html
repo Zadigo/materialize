@@ -7,13 +7,14 @@
 
         <title>Cards</title>
 
-        <link rel="stylesheet" type="text/css" media="screen" href="cards.css" />
+        <link rel="stylesheet" href="../../mat.css">
+        <link rel="stylesheet" href="../../extended_materialize.css">
+        <link rel="stylesheet" href="test.css" />
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col s12 l4">
-
                     <!-- BOTTOM-UP -->
                     <div class="card special push-up">
                         <div class="card-image">
@@ -25,11 +26,9 @@
                         </div>
                     </div>
                     <!-- BOTTOM-UP -->
-                    
                 </div>
 
                 <div class="col s12 l4">
-                
                     <!-- BOTTOM-UP SOCIAL -->
                     <div class="card special push-up">
                         <div class="discount">15%</div>
@@ -43,11 +42,9 @@
                         </div>
                     </div>
                     <!-- BOTTOM-UP SOCIAL -->
-                
                 </div>
 
                 <div class="col s12 l4">
-
                     <!-- ZOOM -->
                     <div class="card special zoom">
                         <div class="card-image">
@@ -55,11 +52,9 @@
                         </div>
                     </div>
                     <!-- ZOOM -->
-
                 </div>
 
                 <div class="col s12 l4">
-                
                     <!-- ZOOM TEXT -->
                     <div class="card special zoom">
                         <div class="card-image">
@@ -73,11 +68,9 @@
                         </div>
                     </div>
                     <!-- ZOOM TEXT -->
-
                 </div>
 
                 <div class="col s12 l4">
-
                     <!-- SIMPLE FASHION TYPE CARD -->
                     <a href="{% url 'products_stock' %}?cat=femme">
                         <div class="card special centered z-depth-0">
@@ -90,7 +83,31 @@
                             </div>
                         </div>
                     </a>
+                </div>
 
+                <div class="col s12 l4">
+                    <!-- RIPPLE -->
+                    <div class="card special ripple z-depth-1 blue">
+                        <h3>Test</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Debitis earum et aliquam accusamus minima possimus inventore 
+                            vitae eaque optio modi ipsam autem at numquam, adipisci doloribus 
+                            quae quibusdam quod minus!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <!-- RIPPLE -->
+                    <div class="card special rotate z-depth-1 blue">
+                        <div class="front">
+                            <p>Test</p>
+                        </div>
+                        <div class="back grey">
+                            <p>Touparet</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

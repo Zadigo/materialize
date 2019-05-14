@@ -1,5 +1,3 @@
-@import "../../extended_materialize.css";
-
 .card.special {
   cursor: pointer;
   overflow: hidden;
