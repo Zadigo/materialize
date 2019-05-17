@@ -39,12 +39,6 @@
   height: auto;
 }
 
-.images-wall .image:hover {
-  background-color: #E53935;
-  -webkit-transform: translate(1px, -5px);
-          transform: translate(1px, -5px);
-}
-
 .images-wall.four-per-row {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
@@ -76,11 +70,5 @@
 .images-wall.four-per-row .image img {
   max-width: 100%;
   height: auto;
-}
-
-.images-wall.four-per-row .image:hover {
-  background-color: #E53935;
-  -webkit-transform: translate(1px, -5px);
-          transform: translate(1px, -5px);
 }
 /*# sourceMappingURL=tiles.css.map */
