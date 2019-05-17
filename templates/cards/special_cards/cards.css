@@ -1,3 +1,22 @@
+.card.ecommerce-filter [type="radio"]:checked + span:after, .card.ecommerce-filter [type="radio"].with-gap:checked + span:before, .card.ecommerce-filter [type="radio"].with-gap:checked + span:after {
+  border: 2px solid #a62626;
+}
+
+.card.ecommerce-filter [type="radio"]:checked + span:after, .card.ecommerce-filter [type="radio"].with-gap:checked + span:after {
+  background-color: #a62626;
+}
+
+.card .card-header {
+  background-color: inherit;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  position: relative;
+  padding: 16px 24px;
+}
+
+.card .card-header:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
 .card.special {
   cursor: pointer;
   overflow: hidden;
