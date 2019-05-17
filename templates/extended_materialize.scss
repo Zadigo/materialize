@@ -38,6 +38,19 @@ nav {
         color: white;
     }
 
+    @media only screen and (min-width: 300px) {
+        h4:not(:first-child),
+        h5:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: 601px) {
+        h4, h5 {
+            margin-top: 1.09333rem;
+        }
+    }
+
     #contact {
         p {
             * {

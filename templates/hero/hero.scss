@@ -97,7 +97,7 @@ div, section {
                     }
 
                     @media only screen and (min-width: 300px) {
-                        font-size: 1.55rem;
+                        font-size: 1.305rem;
                     }
 
                     @media only screen and (min-width: 601px) {
@@ -208,25 +208,41 @@ div, section {
         }
 
         &.image-tiles {
-            padding-top: 15px;
-          
-            .image-tiles .row .col {
-                padding: 0.75rem auto;
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            display: grid;
+            grid: {
+                template-columns: repeat(2, 1fr);
+                gap: .275em;
+                auto-rows: 300px;
             }
-            
-            .image-tiles .col {
-                padding: 0.75rem auto;
+
+            @media only screen and (min-width: 300px) {
+                grid-template-columns: repeat(1, 1fr);
             }
-            
+
+            @media only screen and (min-width: 601px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .image-tile {
                 position: relative;
-                padding: 5px;
-                
-                img {
-                    transition: .6s ease-in-out;
+                background-color: $blue;
+                overflow: hidden;
 
+                .tile-cover {
+                    position: absolute;
+                    background-color: black;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: .3s ease-in-out;
+    
                     &:hover {
-                        // pass
+                        opacity: .3;
                     }
                 }
 
@@ -240,12 +256,12 @@ div, section {
                     margin-top: 0px;
 
                     @media only screen and (min-width: 300px) {
-                        font-size: calc(2.92rem / 2);
+                        font-size: calc(2rem / 2);
                         left: calc(45px / 2);
                     }
 
                     @media only screen and (min-width: 601px) {
-                        font-size: 2.92rem;
+                        font-size: 2rem;
                     } 
                 }
             }

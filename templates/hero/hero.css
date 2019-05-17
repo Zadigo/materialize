@@ -84,7 +84,7 @@ div.hero .hero-wrapper .call-to-action div.lead-subtitle, section.hero .hero-wra
 
 @media only screen and (min-width: 300px) {
   div.hero .hero-wrapper .call-to-action div.lead-subtitle, section.hero .hero-wrapper .call-to-action div.lead-subtitle {
-    font-size: 1.55rem;
+    font-size: 1.305rem;
   }
 }
 
@@ -225,25 +225,50 @@ div.benefits .call-to-action, section.benefits .call-to-action {
 }
 
 div.benefits.image-tiles, section.benefits.image-tiles {
-  padding-top: 15px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: .275em;
+  grid-auto-rows: 300px;
 }
 
-div.benefits.image-tiles .image-tiles .row .col, section.benefits.image-tiles .image-tiles .row .col {
-  padding: 0.75rem auto;
+@media only screen and (min-width: 300px) {
+  div.benefits.image-tiles, section.benefits.image-tiles {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-div.benefits.image-tiles .image-tiles .col, section.benefits.image-tiles .image-tiles .col {
-  padding: 0.75rem auto;
+@media only screen and (min-width: 601px) {
+  div.benefits.image-tiles, section.benefits.image-tiles {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 div.benefits.image-tiles .image-tile, section.benefits.image-tiles .image-tile {
   position: relative;
-  padding: 5px;
+  background-color: #1565c0;
+  overflow: hidden;
 }
 
-div.benefits.image-tiles .image-tile img, section.benefits.image-tiles .image-tile img {
-  -webkit-transition: .6s ease-in-out;
-  transition: .6s ease-in-out;
+div.benefits.image-tiles .image-tile .tile-cover, section.benefits.image-tiles .image-tile .tile-cover {
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+div.benefits.image-tiles .image-tile .tile-cover:hover, section.benefits.image-tiles .image-tile .tile-cover:hover {
+  opacity: .3;
 }
 
 div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
@@ -258,14 +283,14 @@ div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .
 
 @media only screen and (min-width: 300px) {
   div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
-    font-size: calc(2.92rem / 2);
+    font-size: calc(2rem / 2);
     left: calc(45px / 2);
   }
 }
 
 @media only screen and (min-width: 601px) {
   div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
-    font-size: 2.92rem;
+    font-size: 2rem;
   }
 }
 
