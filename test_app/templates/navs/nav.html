@@ -1,11 +1,15 @@
+{% macro link(href, text) -%}
+    <li><a href="{{ href }}">{{ text }}</a></li>
+{%- endmacro %}
+
 <nav class="red darken-1">
     <div class="nav-wrapper">
         <div class="container">
-            <a href="#" class="brand-logo">Shop</a>
+            <a href="{{ url_for('index') }}" class="brand-logo">Shop</a>
             <ul id="nav-mobile" class="hide-on-med-and-down right">
-                <li><a href="#!">Boutique</a></li>
-                <li><a href="#!">A propos</a></li>
-                <li><a href="#!">Contact</a></li>
+                {% for href, text in [('', 'Boutique'), ('', 'A propos'), (url_for('contact'), 'Contact')] %}
+                    {{ link(href, text) }}
+                {% endfor %}
             </ul>
         </div>
     </div>
