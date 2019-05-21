@@ -16,7 +16,7 @@ def index():
 
 @app.route('/contact/', methods=['GET', 'POST'])
 def contact():
-    return render_template('other/contact.html')
+    return render_template('other/contact.html', form=ContactForm)
 
 
 if __name__ == "__main__":

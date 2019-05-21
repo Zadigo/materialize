@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-cors = "*"
+flask-wtf = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
