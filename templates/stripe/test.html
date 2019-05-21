@@ -7,30 +7,30 @@
 
         <title>Stripe</title>
 
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <link rel="stylesheet" href="../mat.css">
     </head>
 
     <body>
         <div class="container">
-            <div class="card-panel">
-                <form action="/charge/" method="POST" id="payment_form">
-                    <div class="input-field">
-                        <div id="card_number"></div>
+            <div class="row">
+                <div class="col s12 l6 m6 offset-l2">
+                    <div class="card-panel">
+                        <form action="/charge/" method="POST" id="payment_form">
+                            <div class="input-field">
+                                <div id="card_number"></div>
+                            </div>
+        
+                            <div class="input-field">
+                                <div id="card_expiry"></div>
+                            </div>
+        
+                            <div class="input-field">
+                                <div id="card_cvc"></div>
+                            </div>
+                            <button class="btn">Submit Payment</button>
+                        </form>
                     </div>
-
-                    <div class="input-field">
-                        <div id="card_expiry"></div>
-                    </div>
-
-                    <div class="input-field">
-                        <div id="card_cvc"></div>
-                    </div>
-                    <button class="btn">Submit Payment</button>
-                </form>
+                </div>
             </div>
         </div>
 

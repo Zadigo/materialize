@@ -1,11 +1,5 @@
 # materialize_for_startups
-Real world material design items for prototyping for startups
+Real world material design templates for prototyping a website for testing a startup idea.
 
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-C:\Windows\System32\cmd.exe
-
-npm install vue
-npm install --global vue-cli
-vue init webpack myproject
-cd myproject
-npm run dev
+## Test Application
+The test application is a small program based on Flask that can be used to rapidly test the different components on a Docker environment.
