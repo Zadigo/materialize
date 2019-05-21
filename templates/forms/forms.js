@@ -16,6 +16,7 @@ $(document).ready(function () {
 
         var buttonState = function() {
             var isChecked = $(this).is(':checked');
+
             if (isChecked === true) {
                 signupFormButton.removeClass('disabled');
             } else {
@@ -36,6 +37,7 @@ $(document).ready(function () {
             init: init
         }
     })();
+    
     RegistrationForm.init();
 
     var ProfileForms = (function($) {
