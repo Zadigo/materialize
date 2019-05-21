@@ -74,17 +74,6 @@
             }
         }
 
-        .header-nav {
-            position: absolute;
-            background-color: #0097a7;
-            top: 210px;
-            height: 75px;
-            width: 900px;
-            padding: 15px;
-            vertical-align: middle;
-            border-radius: .375rem;
-        }
-
         &-medium {
             @include header_helper(350px);
             @include header_titles();

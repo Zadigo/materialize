@@ -50,17 +50,6 @@
   margin-top: 25px;
 }
 
-.section.header .header-nav {
-  position: absolute;
-  background-color: #0097a7;
-  top: 210px;
-  height: 75px;
-  width: 900px;
-  padding: 15px;
-  vertical-align: middle;
-  border-radius: .375rem;
-}
-
 .section.header-medium {
   background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
   background-repeat: no-repeat;
