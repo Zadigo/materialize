@@ -73,8 +73,15 @@ $discount_card_color: #ec407a;
             opacity: 0;
             padding: 25px;
 
-            p {
+            span {
                 position: relative;
+                max-width: 100%;
+                padding: 24px;
+                font-size: 24px;
+                margin: {
+                    top: 0;
+                    bottom: 0;
+                };
                 color: white;
             }
         }
@@ -124,10 +131,10 @@ $discount_card_color: #ec407a;
 
         &:hover {
             .card-cover {
-                opacity: 0.3;
+                opacity: .7;
 
                 p {
-                    opacity: 0.9;
+                    opacity: 1;
                 }
             }
 
