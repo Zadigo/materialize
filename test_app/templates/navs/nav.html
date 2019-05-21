@@ -5,7 +5,9 @@
 <nav class="red darken-1">
     <div class="nav-wrapper">
         <div class="container">
-            <a href="{{ url_for('index') }}" class="brand-logo">Shop</a>
+            {# note: brand logo
+                <a href="{{ url_for('index') }}" class="brand-logo">Shop</a>
+            #}
             <ul id="nav-mobile" class="hide-on-med-and-down right">
                 {% for href, text in [('', 'Boutique'), ('', 'A propos'), (url_for('contact'), 'Contact')] %}
                     {{ link(href, text) }}
