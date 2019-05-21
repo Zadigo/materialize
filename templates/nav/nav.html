@@ -5,53 +5,85 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <title>Cards</title>
+        <title>Navigation</title>
 
-        <link rel="stylesheet" type="text/css" media="screen" href="hero.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../extended_materialize.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../hero/hero.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="nav.css" />
     </head>
-<body>
 
-    <!-- Hero and Nav -->
-    <div class="hero-image">
-        <div class="navbar-fixed">
-            <nav class="transparent">
-                <div class="nav-wrapper">
-                    <div class="container">
-                        <!-- <a href="#" class="brand-logo">Logo</a> -->
-                        <ul id="nav-mobile" class="right hide-on-med-and-down">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">JavaScript</a></li>
-                        </ul>
+    <body>
+
+        <!-- Hero and Nav -->
+        <div class="hero">
+            <div class="navbar-fixed">
+                <nav class="transparent">
+                    <div class="nav-wrapper">
+                        <div class="container">
+                            <!-- <a href="#" class="brand-logo">Logo</a> -->
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><a href="">Boutique</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Connexion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="hero-wrapper">
+                <div class="call-to-action">
+                    <div class="lead-stronger">We are heroes</div>
+                    <div class="lead-subtitle">
+                        You can press something here
+                    </div>
+                    <div class="lead-button">
+                        <button class="btn-large blue darken-1">Press</button>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
-        <div class="hero-wraper">
-            <div class="call-to-action">
-                <span class="lead-stronger">We are heroes</span>
-                <span class="lead-subtitle">
-                    You can press something here
-                </span>
-                <div class="lead-button">
-                    <button class="btn-large">Press</button>
+
+        <main>
+            <section class="section">
+                <div class="container center">
+                    <h2>Put things here</h2>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer blue darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Entreprise</h5>
+                        <p><a href="#!" target="_blank">Diffuser une offre</a></p>
+                        <p><a href="#!" target="_blank">Lancer sa boîte</a></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>Candidat</h5>
+                        <p><a href="#!" target="_blank">Candidater à une offre</a></p>
+                        <p><a href="#!" target="_blank">Chercher des offres</a></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>Contact</h5>
+                        <div id="contact">
+                            <p><i class="material-icons">map</i><a href="https://www.google.com/maps/?q=165 avenue de Bretagne" target="_blank" rel="noopener noreferrer">Avenue de Bretagne</a></p>
+                            <p><i class="material-icons">phone</i><a href="tel:+330655346698">0655346698</a></p>
+                            <p><i class="material-icons">email</i><a href="mailto:contact.kurrikulam@gmail.com">contact.kurrikulam@gmail.com</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- END Hero and Nav -->
-
-    <main>
-        <section class="section">
-            <div class="container center">
-                <h2>Put things here</h2>
+            <div class="footer-copyright">
+                2019 @entreprise
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="nav.js"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="nav.js"></script>
+    </body>
 </html>

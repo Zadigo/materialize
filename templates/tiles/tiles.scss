@@ -1,0 +1,60 @@
+$red: #ee6e73;
+$dark_red: #E53935;
+
+@mixin grid_helper($n) {
+    grid: {
+        template-columns: repeat($n, 1fr);
+        gap: .275em;
+        auto-rows: 300px;
+    }
+
+    @media only screen and (min-width: 300px) {
+        grid: {
+            template-columns: repeat(1, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 601px) {
+        grid: {
+            template-columns: repeat($n, 1fr);
+        }
+    }
+}
+
+@mixin image_item {
+    .image {
+        transition: all .3s ease-in-out;
+        position: relative;
+        background-color: $red;
+        // overflow: hidden;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        // &:hover {
+        //     background-color: $dark_red;
+        //     transform: translate(1px,-5px);
+        // }
+    }    
+}
+
+.images-wall {
+    padding: {
+        top: 25px;
+        bottom: 25px;
+    }
+    height: auto;
+    display: grid;
+
+    & {
+        @include grid_helper(3);
+        @include image_item;
+    }
+    
+    &.four-per-row {
+        @include grid_helper(4);
+        @include image_item;
+    }
+}

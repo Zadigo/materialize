@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block nav %}
+    {% include "navs/nav.html" %}
+{% endblock %}
+
+{% block body %}
+    <section class="section">
+        <div class="row">
+            <div class="col s12 l6 m6">
+                <h4>À propos</h4>
+                <p>
+                    Paragraphe. Cliquez ici pour ajouter votre propre texte. 
+                    Cliquez sur "Modifier Texte" ou double-cliquez ici pour ajouter 
+                    votre contenu et personnaliser les polices. Déplacez-moi où vous le 
+                    souhaitez sur votre page. Expliquez ici votre parcours et présentez 
+                    votre activité à vos visiteurs.
+                    <br>
+                    Présentez votre entreprise, vos services et vos équipes. 
+                    Utilisez cet espace pour décrire votre activité. Présentez votre équipe 
+                    et les services proposés. Expliquez à vos visiteurs vos motivations, 
+                    vos objectifs et soulignez vos avantages par rapport à vos concurrents. 
+                    Démarquez-vous et captivez l'attention de vos visiteurs.
+                </p>
+            </div>
+            <div class="col s12 m4 l4">
+                <h4>Contact</h4>
+                <p><a href="mailto:info@monsite.fr">info@monsite.fr</a></p>
+                <p><a href="tel:+330123456789">Tél : 01 23 45 67 89</a></p>
+                <div class="row">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <div class="row">
+                    <form method="post">
+                        <!-- PASS -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include "navs/footer.html" %}
+{% endblock %}
