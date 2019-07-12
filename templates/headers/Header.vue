@@ -1,0 +1,119 @@
+<template>
+    <header class="header">
+        <div class="header-title">
+            <h4>{{ header.title }}</h4>
+        </div>
+        <div class="header-navigation z-depth-1">
+
+            <HeaderNavigation @setActive="isActive" v-bind:header_links="header_links"/>
+
+        </div>
+    </header>
+</template>
+
+<script>
+import HeaderNavigation from '@/components/header/HeaderNavigation.vue';
+export default {
+    data() {
+        return {
+            header_links: [
+                { id: 1, title: 'Overview', active: true },
+                { id: 2, title: 'Exercises', active: false },
+                { id: 3, title: 'Other', active: false }
+            ]
+        }
+    },
+
+    components: {
+        HeaderNavigation
+    },
+
+    methods: {
+        isActive: function(id) {
+            this.$data.header_links.forEach(function(header_link) {
+                header_link.active = false
+                if (header_link.id == id) {
+                    header_link.active = true
+                }
+            })
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+$titles: h1, h2, h3, h4;
+
+header.header {
+    background-color: #303f9f;
+    color: white;
+    height: auto;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .header-title{
+        height: 120px;
+        line-height: 56px;
+    }
+
+    @each $title in $titles {
+        .header-title #{title} {
+            padding: 24px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 100%;
+        }
+    }
+
+    .header-navigation{
+        position: relative;
+        background-color: #1a237e;
+        padding: 0px 24px 0px 24px;
+        height: auto;
+        line-height: 56px;
+
+        .header-navigation-wrapper{
+            position: relative;
+            height: 100%;
+
+            a {
+                color: #fff;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 auto;
+                overflow-x: auto;
+                overflow-y: hidden;
+                width: 100%;
+                white-space: nowrap;
+                transition: background-color .3s;
+
+                li {
+                    display: inline-block;
+                    height: 100%;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    /* float: left; */
+                    padding: 0 15px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 48px;
+                    transition: background-color .3s;
+
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+
+                    &.active{
+                        border-bottom: 3px solid #f5f5f5;
+                    }
+                }
+            }
+        }
+    }
+}
+</style>
+
