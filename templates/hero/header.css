@@ -1,9 +1,9 @@
 .section.header {
-  background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
+  background-color: blue;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 250px;
+  height: auto;
   overflow: hidden;
   color: white;
   text-align: center;
@@ -50,165 +50,43 @@
   margin-top: 25px;
 }
 
-.section.header-medium {
-  background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 350px;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.section.header-medium div.header-title {
-  font-size: 2.75rem;
-  font-weight: 600;
+.section.header .search {
+  margin-top: 2.575rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1em;
 }
 
 @media only screen and (min-width: 300px) {
-  .section.header-medium div.header-title div.header-title {
-    font-size: 2rem;
+  .section.header .search {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-column-gap: 0em;
+    grid-row-gap: 1em;
   }
 }
 
 @media only screen and (min-width: 601px) {
-  .section.header-medium div.header-title div.header-title {
-    font-size: 2.75rem;
+  .section.header .search {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
   }
 }
 
-.section.header-medium div.header-subtitle {
-  font-size: 1.7rem;
-  font-weight: 300;
-  margin: 0 auto 0 auto;
+.section.header .search .input-wrapper {
+  background: white;
+  padding: 8px 8px 8px 8px;
+  border-radius: .275rem;
 }
 
-@media only screen and (min-width: 300px) {
-  .section.header-medium div.header-subtitle div.header-subtitle {
-    font-size: 1.25rem;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .section.header-medium div.header-subtitle div.header-subtitle {
-    font-size: 1.7rem;
-  }
-}
-
-.section.header-medium .btn, .section.header-medium .btn-small, .section.header-medium .btn-large {
-  margin-top: 25px;
-}
-
-.section.header-medium .search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.section.header-medium .search .input-field {
-  background-color: white;
-  margin: 0;
-  width: 25%;
-  padding: 5px 25px 15px 25px;
-  border-radius: 2px;
-}
-
-.section.header-medium .search .input-field input {
+.section.header .search .input-wrapper input {
   margin: 0;
 }
 
-.section.header-medium .search .input-field:not(:last-child) {
-  margin-right: 15px;
-}
-
-.section.header-large {
-  background-image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 500px;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.section.header-large div.header-title {
-  font-size: 2.75rem;
-  font-weight: 600;
-}
-
-@media only screen and (min-width: 300px) {
-  .section.header-large div.header-title div.header-title {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .section.header-large div.header-title div.header-title {
-    font-size: 2.75rem;
-  }
-}
-
-.section.header-large div.header-subtitle {
-  font-size: 1.7rem;
-  font-weight: 300;
-  margin: 0 auto 0 auto;
-}
-
-@media only screen and (min-width: 300px) {
-  .section.header-large div.header-subtitle div.header-subtitle {
-    font-size: 1.25rem;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .section.header-large div.header-subtitle div.header-subtitle {
-    font-size: 1.7rem;
-  }
-}
-
-.section.header-large .btn, .section.header-large .btn-small, .section.header-large .btn-large {
-  margin-top: 25px;
-}
-
-.section.header-large .search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.section.header-large .search .input-field {
-  background-color: white;
-  margin: 0;
-  width: 25%;
-  padding: 5px 25px 15px 25px;
-  border-radius: 2px;
-}
-
-.section.header-large .search .input-field input {
-  margin: 0;
-}
-
-.section.header-large .search .input-field:not(:last-child) {
-  margin-right: 15px;
+.section.header .search .btn-large {
+  margin-top: 0;
 }
 /*# sourceMappingURL=header.css.map */

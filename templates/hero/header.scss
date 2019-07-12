@@ -2,12 +2,12 @@
     // $text_position: $height / 3;
 
     background: {
-        image: url("https://s3.eu-west-3.amazonaws.com/jobswebsite/media/hero/hero5.jpg");
+        color: blue;
         repeat: no-repeat;
         position: center;
         size: cover;
     }
-    height: $height;
+    height: auto;
     overflow: hidden;
     color: white;
     text-align: center;
@@ -15,10 +15,6 @@
         top: 50px;
         bottom: 50px;
     }
-    // padding: {
-    //     top: $text_position;
-    //     bottom: $text_position;
-    // }
 }
 
 @mixin header_titles {
@@ -63,6 +59,36 @@
     }
 }
 
+@mixin search_actions {
+    margin-top: 2.575rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+
+    @media only screen and (min-width: 300px) {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0em;
+        grid-row-gap: 1em;
+    }
+
+    @media only screen and (min-width: 601px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1em;
+    }
+}
+
+@mixin search_input_fields {
+    .input-wrapper {
+        background: white;
+        padding:  8px 8px 8px 8px;
+        border-radius: .275rem;
+
+        input {
+            margin: 0;
+        }
+    }
+}
+
 .section.header {
     & {
         @include header_helper(250px);
@@ -74,70 +100,73 @@
             }
         }
 
-        &-medium {
-            @include header_helper(350px);
-            @include header_titles();
+        .search {
+            @include search_actions();
+            @include search_input_fields();
 
-            .btn {
-                &, &-small, &-large {
-                    margin-top: 25px;
-                }
+            .btn-large {
+                margin-top: 0;
             }
-
-            .search {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-    
-                .input-field {
-                    background-color: white;
-                    margin: 0;
-                    width: 25%;
-                    padding: 5px 25px 15px 25px;
-                    border-radius: 2px;
-    
-                    input {
-                        margin: 0;
-                    }
-    
-                    &:not(:last-child) {
-                        margin-right: 15px;
-                    }
-                }
-            }    
         }
 
-        &-large {
-            @include header_helper(500px);
-            @include header_titles();
+        // &-medium {
+        //     @include header_helper(350px);
+        //     @include header_titles();
+            
+        //     .btn {
+        //         &, &-small, &-large {
+        //             margin-top: 25px;
+        //         }
+        //     }
 
-            .btn {
-                &, &-small, &-large {
-                    margin-top: 25px;
-                }
-            }
+        //     .search {
+        //         @include search_actions();
+    
+        //         .input-field {
+        //             background-color: white;
+        //             margin: 0;
+        //             // width: 100%;
+        //             // padding: 5px 25px 15px 25px;
+        //             // border-radius: 2px;
+    
+        //             input {
+        //                 margin: 0;
+        //             }
+    
+        //             &:not(:last-child) {
+        //                 margin-right: 15px;
+        //             }
+        //         }
+        //     }    
+        // }
 
-            .search {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
+        // &-large {
+        //     @include header_helper(500px);
+        //     @include header_titles();
+
+        //     .btn {
+        //         &, &-small, &-large {
+        //             margin-top: 25px;
+        //         }
+        //     }
+
+        //     .search {    
+        //         .input-field {
+        //             background-color: white;
+        //             margin: 0;
+        //             width: 25%;
+        //             padding: 5px 25px 15px 25px;
+        //             border-radius: 2px;
     
-                .input-field {
-                    background-color: white;
-                    margin: 0;
-                    width: 25%;
-                    padding: 5px 25px 15px 25px;
-                    border-radius: 2px;
+        //             input {
+        //                 margin: 0;
+        //             }
     
-                    input {
-                        margin: 0;
-                    }
-    
-                    &:not(:last-child) {
-                        margin-right: 15px;
-                    }
-                }
-            }    
-        }
+        //             &:not(:last-child) {
+        //                 margin-right: 15px;
+        //             }
+        //         }
+        //     }    
+        // }
     }
 }
