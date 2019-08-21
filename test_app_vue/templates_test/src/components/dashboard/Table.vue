@@ -45,6 +45,10 @@ export default {
 
     methods: {
         changeActive: function(id) {
+            var toastHTML = '\
+                <span>I am toast content</span>\
+                <button onClick="alert()" class="btn-flat toast-action">Undo</button>'
+            M.toast({html: toastHTML});
             this.$emit('changeActive', id)
         }
     }
