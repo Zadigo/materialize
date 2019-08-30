@@ -1,0 +1,112 @@
+.card.forum-card {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0px;
+  border: 1px solid grey;
+  margin-bottom: 0rem;
+}
+
+.card.forum-card:not(:first-child) {
+  margin-top: 0rem;
+  border-top: 0px;
+}
+
+.card.forum-card .card-content {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media only screen and (min-width: 300px) {
+  .card.forum-card .card-content {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .card.forum-card .card-content {
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+  }
+}
+
+.card.forum-card .card-content .user-details {
+  text-align: center;
+}
+
+.card.forum-card .card-content .user-details .avatar {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 300px) {
+  .card.forum-card .card-content .user-details .avatar {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .card.forum-card .card-content .user-details .avatar {
+    height: 140px;
+    width: 140px;
+  }
+}
+
+.card.forum-card .card-content .user-details .avatar#active {
+  border: 3px solid #004d40;
+}
+
+.card.forum-card .card-content .user-details .avatar#inactive {
+  border: 3px solid #c62828;
+}
+
+.card.forum-card .card-content .user-details #details {
+  position: absolute;
+  padding: 25px;
+  text-align: left;
+  height: auto;
+  width: 200px;
+  top: 8px;
+  left: 105px;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.card.forum-card .card-content .user-details p {
+  padding: 0px;
+}
+
+.card.forum-card .card-content p {
+  padding: 0 2rem 0 2rem;
+}
+
+.card.forum-card .action {
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  position: relative;
+  margin-top: 1rem;
+  padding: 16px 24px;
+}
+
+.test .a, .test .b {
+  height: 100px;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+
+.test {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+}
+
+.test .b {
+  background-color: aquamarine;
+  padding: 15px;
+}
+/*# sourceMappingURL=forums.css.map */
