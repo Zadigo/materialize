@@ -1,5 +1,10 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!-- Nav -->
+    <NavBar />
+
+    <main>
+      <router-view/>
+    </main>
   </div>
 </template>
