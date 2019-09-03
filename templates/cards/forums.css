@@ -34,6 +34,10 @@
   text-align: center;
 }
 
+.card.forum-card .card-content .user-details #username {
+  font-weight: 600;
+}
+
 .card.forum-card .card-content .user-details .avatar {
   overflow: hidden;
   border-radius: 50%;
@@ -90,23 +94,5 @@
   position: relative;
   margin-top: 1rem;
   padding: 16px 24px;
-}
-
-.test .a, .test .b {
-  height: 100px;
-  width: 100%;
-  background-color: rebeccapurple;
-}
-
-.test {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
-}
-
-.test .b {
-  background-color: aquamarine;
-  padding: 15px;
 }
 /*# sourceMappingURL=forums.css.map */

@@ -29,6 +29,12 @@
         .user-details {
             text-align: center;
 
+            #username {
+                font: {
+                    weight: 600;
+                };
+            }
+
             .avatar {
                 // position: absolute;
                 overflow: hidden;
@@ -82,25 +88,5 @@
         position: relative;
         margin-top: 1rem;
         padding: 16px 24px;
-    }
-}
-
-%c {
-    height: 100px;
-    width: 100%;
-    background-color: rebeccapurple;
-}
-
-.test {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    .a {
-        @extend %c;
-    }
-
-    .b {
-        @extend %c;
-        background-color: aquamarine;
-        padding: 15px;
     }
 }

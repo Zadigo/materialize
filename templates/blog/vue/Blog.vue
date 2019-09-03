@@ -5,7 +5,7 @@
                 <h2>Title</h2>
                 
                 <!-- Content -->
-                <Content/>
+                <Content />
             </div>
         </div>
     </div>

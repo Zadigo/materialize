@@ -5,7 +5,7 @@
         </div>
         <div class="header-navigation z-depth-1">
 
-            <HeaderNavigation @setActive="isActive" v-bind:header_links="header_links"/>
+            <HeaderNavigation @setActive="isActive" v-bind:header_links="header_links" />
 
         </div>
     </header>
@@ -13,6 +13,7 @@
 
 <script>
 import HeaderNavigation from '@/components/header/HeaderNavigation.vue';
+
 export default {
     data() {
         return {

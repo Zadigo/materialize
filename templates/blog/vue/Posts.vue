@@ -1,20 +1,25 @@
 <template>
-<div class="content">
-    <div class="content-title">
-        <a href="./version1.html">
-            <h5>{{ post.title }}</h5>
-        </a>
-    </div>
+    <div class="content">
+        <!-- Title -->
+        <div class="content-title">
+            <a href="./version1.html">
+                <h5>{{ post.title }}</h5>
+            </a>
+        </div>
 
-    <p class="content-date">{{ post.date }}</p>
+        <!-- Date -->
+        <p class="content-date">
+            {{ post.date }}
+        </p>
 
-    <div class="content-text">
-        {{ post.content }}
+        <!-- Content -->
+        <div class="content-text">
+            {{ post.content }}
+        </div>
+        
+        <!-- Social -->
+        <Social />
     </div>
-    
-    <!-- Social -->
-    <Social/>
-</div>
 </template>
 
 <script>
