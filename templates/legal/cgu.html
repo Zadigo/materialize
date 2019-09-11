@@ -1,0 +1,32 @@
+{% block legal_content %}
+    <h6>Mentions légales et politique de confidentialité</h6>
+    <p>
+        {{ editeur }} soucieux des droits des individus, notamment au regard des traitements automatisés, et dans une volonté de 
+        transparence avec ses clients, a mis en place une politique reprenant l’ensemble de ces traitements, des finalités 
+        poursuivies par ces derniers ainsi que des moyens d’actions à la disposition des individus afin qu’ils puissent au 
+        mieux exercer leurs droits.
+        <br>
+        <br>
+        Pour toute information complémentaire sur la protection des données personnelles, 
+        nous vous invitons à consulter le site <a href="{{ cnil }}">{{ cnil }}</a>
+        La version actuellement en ligne de ces conditions d'utilisation est la seule opposable pendant toute 
+        la durée d'utilisation du site et jusqu'à ce qu'une nouvelle version la remplace.
+    </p>
+
+    <h6>Article 1 - Mentions légales</h6>
+    <p>
+        1.1 Site (ci-après « le site »)<br/>
+        Nawoka
+        <br>
+        <br>
+        1.2 Éditeur (ci-après « l'éditeur »)<br>
+        {{ editeur }} demeurant {{ adresse_editeur }}<br>
+        n° SIREN: {{ siren }}<br>
+        n° de téléphone: {{ telephone_editeur }}<br>
+        adresse mail: <a href="mailto:{{ email }}">{{ email }}</a>
+        <br>
+        <br>
+        1.3 Hébergeur (ci-après « l'hébergeur »)<br>
+        Nawoka hébergé par {{ hebergeur }}, dont le siège social est situé {{ hebergeur_adresse }}.
+    </p>
+{% endblock %}

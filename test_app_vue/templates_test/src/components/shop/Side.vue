@@ -1,22 +1,31 @@
 <template>
-    <div class="col s3 m3 l3">
-        <div class="card-panel">
-            <p>
-                <label>
-                    <input type="checkbox" name="test" id="test">
-                    <span>Test</span>
-                </label>
-            </p>
-        </div>
+    <div class="card-panel">
+        <CheckBox :inputs="inputs" />
     </div>
 </template>
 
 <script>
-export default {
+import CheckBox from '@/components/shop/CheckBox.vue'
 
+export default {
+    components: {
+        CheckBox
+    },
+    data() {
+        return {
+            inputs: [
+                {
+                    name: "active",
+                    id: "active",
+                    title: "Active"
+                },
+                {
+                    name: "inactive",
+                    id: "inactive",
+                    title: "Inactive"
+                }
+            ]
+        }
+    }
 }
 </script>
-
-<style>
-
-</style>

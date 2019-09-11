@@ -1,29 +1,43 @@
 <template>
     <div id="products">
-        <div v-for="item in items" :key="item.id" class="col s4 m4 l4">
+        <transition name="card">
             <div class="card special push-up">
                 <div class="card-image">
                     <img :src="item.image" alt="image">
                 </div>
 
                 <div class="hover-cover-4">
-                    <h5>Jupe</h5>
-                    <p>Some text here</p>
+                    <h5>{{ item.title }}</h5>
+                    <p>{{ item.text }}</p>
                 </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['items']
+    props: ['item']
 }
 </script>
 
 <style lang="scss" scoped>
 @mixin hover-cover {
     position: absolute;
+}
+
+.card {
+    &-enter-active {
+        transition: all 1s ease-in-out;
+    }
+
+    &-enter, &-leave-to {
+        opacity: 0;
+    }
+
+    &-enter-to, &-leave {
+        opacity: 1;
+    }
 }
 
 .card {
