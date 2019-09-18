@@ -12,6 +12,10 @@ $lead_font_weight: 600;
     padding-top: $section * $multiple;
 }
 
+@mixin grid_template_columns($n) {
+    grid-template-columns: repeat($n, 1fr);
+}
+
 %hero {
     background-color: $blue;
     height: 100vh !important;
@@ -118,6 +122,12 @@ div, section {
     &.benefits {
         width: 100%;
 
+        &.contain {
+            margin: 0 auto;
+            max-width: 1280px;
+            width: 70%;
+        }
+
         .benefit {
             padding: 65px 0 65px 0;
             margin-bottom: 0;
@@ -207,15 +217,19 @@ div, section {
             text-align: center;
         }
 
+        // Tiles
         &.image-tiles {
-            padding-top: 16px;
-            padding-bottom: 16px;
+            padding: {
+                top: 16px;
+                bottom: 16px;
+            }
 
             display: grid;
             grid: {
                 template-columns: repeat(2, 1fr);
                 gap: .275em;
                 auto-rows: 300px;
+                // auto-columns: 300px;
             }
 
             @media only screen and (min-width: 300px) {
@@ -227,43 +241,37 @@ div, section {
             }
 
             .image-tile {
-                position: relative;
-                background-color: $blue;
+                // position: relative;
+                background-color: inherit;
                 overflow: hidden;
+                
+                img {
+                    // height: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    transition: all .5s ease-in-out;
+                }
 
-                .tile-cover {
-                    position: absolute;
-                    background-color: black;
-                    height: 100%;
-                    width: 100%;
-                    top: 0;
-                    left: 0;
-                    opacity: 0;
-                    transition: .3s ease-in-out;
+                &:hover {
+                    img {
+                        transform: scale(1.1, 1.1)
+                    }
+                }
+
+                // .tile-cover {
+                //     position: absolute;
+                //     background-color: black;
+                //     height: 100%;
+                //     width: 100%;
+                //     top: 0;
+                //     left: 0;
+                //     opacity: 0;
+                //     transition: .3s ease-in-out;
     
-                    &:hover {
-                        opacity: .3;
-                    }
-                }
-
-                .tile-title {
-                    position: absolute;
-                    width: 100;
-                    color: white;
-                    bottom: 35px;
-                    left: 45px;
-                    text-align: center;
-                    margin-top: 0px;
-
-                    @media only screen and (min-width: 300px) {
-                        font-size: calc(2rem / 2);
-                        left: calc(45px / 2);
-                    }
-
-                    @media only screen and (min-width: 601px) {
-                        font-size: 2rem;
-                    } 
-                }
+                //     &:hover {
+                //         opacity: .3;
+                //     }
+                // }
             }
         }
 

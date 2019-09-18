@@ -1,0 +1,125 @@
+$border_color: #ddd;
+$box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+body {
+    &.dashboard {
+        font-family: 'Roboto', 'serif';
+        background-color: #f4f4f4;
+        transition: all .2s ease-in-out;
+
+        .btn {
+            &.rounded {
+                border-radius: 30px;
+            }
+
+            &.space {
+                margin-bottom: 3rem;
+                margin-right: 1rem;
+            }
+        }
+
+        main > .container {
+            margin-top: 10px;
+        
+            @media only screen and (min-width: 300px) {
+                max-width: 90%;
+            }
+        
+            @media only screen and (min-width: 993px) {
+                width: calc(100% - 320px);
+                margin-right: 10px;
+                float: right;
+            }
+        }        
+    }
+}
+
+.sidenav {
+    box-shadow: none;
+        -webkit-box-shadow: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+    .logo-container {
+        height: 64px;
+        line-height: 64px;
+        font-size: 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        box-sizing: content-box;
+
+        a {
+            height: 100%;
+            text-transform: uppercase;
+            font-size: 22px;
+            font-weight: 600;
+
+            i.material-icons {
+                line-height: inherit;
+                margin: 0 20px 0 0;
+                color: rgba(0, 0, 0, 0.54);
+            }
+        }
+    }
+
+    .divider {
+        margin: 0;
+    }
+
+    li {
+        &.bottom-line {
+            border-bottom: 1px solid black;
+        }
+
+        & > a {
+            height: 64px;
+            line-height: 64px;
+        }
+    }
+}
+
+.navbar {
+    padding-left: 28px;
+    padding-right: 28px;
+
+    ul a {
+        color: black;
+    }
+}
+
+#editor {
+    height: 300px;
+}
+
+%setting {
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1.5;
+    padding: 24px;
+    background-color: #fff;
+    border-bottom: 1px solid $border_color;
+}
+
+$sides: 'top', 'right', 'left';
+
+.settings-group {
+    @each $side in $sides {
+        border-#{$side}: 1px solid $border_color;
+    }
+
+    margin: .5rem 0 1rem 0;
+    -webkit-box-shadow: $box_shadow;
+    box-shadow: $box_shadow;
+    
+    .collapsible {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin: 0;
+        border: none;
+
+        .collapsible-header {
+            padding: 24px;
+        }        
+    }
+
+    .setting {
+        @extend %setting;
+    }
+}

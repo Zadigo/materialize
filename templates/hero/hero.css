@@ -104,6 +104,12 @@ div.benefits, section.benefits {
   width: 100%;
 }
 
+div.benefits.contain, section.benefits.contain {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 70%;
+}
+
 div.benefits .benefit, section.benefits .benefit {
   padding: 65px 0 65px 0;
   margin-bottom: 0;
@@ -250,48 +256,20 @@ div.benefits.image-tiles, section.benefits.image-tiles {
 }
 
 div.benefits.image-tiles .image-tile, section.benefits.image-tiles .image-tile {
-  position: relative;
-  background-color: #1565c0;
+  background-color: inherit;
   overflow: hidden;
 }
 
-div.benefits.image-tiles .image-tile .tile-cover, section.benefits.image-tiles .image-tile .tile-cover {
-  position: absolute;
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+div.benefits.image-tiles .image-tile img, section.benefits.image-tiles .image-tile img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-div.benefits.image-tiles .image-tile .tile-cover:hover, section.benefits.image-tiles .image-tile .tile-cover:hover {
-  opacity: .3;
-}
-
-div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
-  position: absolute;
-  width: 100;
-  color: white;
-  bottom: 35px;
-  left: 45px;
-  text-align: center;
-  margin-top: 0px;
-}
-
-@media only screen and (min-width: 300px) {
-  div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
-    font-size: calc(2rem / 2);
-    left: calc(45px / 2);
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  div.benefits.image-tiles .image-tile .tile-title, section.benefits.image-tiles .image-tile .tile-title {
-    font-size: 2rem;
-  }
+div.benefits.image-tiles .image-tile:hover img, section.benefits.image-tiles .image-tile:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
 div.benefits .benefits .team, section.benefits .benefits .team {

@@ -1,0 +1,17 @@
+<table id="{{ id }}">
+    <thead>
+        {% for title in titles %}
+            <th>{{ title.title}}</th>
+        {% endfor %}
+    </thead>
+
+    <tbody>
+        {% for content in contents %}
+            <tr>
+                <td>{{ content.a }}</td>
+                <td>{{ content.b }}</td>
+                <td>{{ content.c }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tableau de bord</title>
+
+        <link rel="stylesheet" href="../mat.css">
+        <link rel="stylesheet" href="../extended_materialize.css">
+        <link rel="stylesheet" href="../mat.css">
+        <link rel="stylesheet" href="./sidenav.css">
+    </head>
+    <body class="dashboard">
+        <!-- Header -->
+        <header>
+            <div class="navbar-fixed">
+                <nav class="navbar white">
+                    <div class="nav-wrapper">
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                <a href="#!" data-target="dropdown-notifications"><i class="material-icons">notifications</i></a>
+                                <div class="dropdown-content" id="dropdown_notifications"></div>    
+                            </li>
+                            <li>
+                                <a href="#!" data-target="dropdown_settings"><i class="material-icons">settings</i></a>
+                                <div class="dropdown-content" id="dropdown-settings">
+                                    <div class="settings-group">
+                                        <div class="setting">
+                                            Night mode
+                                            <div class="switch right" id="night-mode">
+                                                <label>
+                                                    <input type="checkbox"><span class="lever"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <ul class="collection">
+                                        <li class="collection-item avatar">
+                                            <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+                                            <span class="title">Title</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <ul id="slide-out" class="sidenav sidenav-fixed has-fixed-sidenav hide-on-med-and-down">
+                <li class="logo-container">
+                    <a href="{% url 'dashboard' %}"><i class="material-icons">spa</i>Dashboard</a>
+                </li>
+                <!-- <li><a href="{% url 'dashboard' %}">Test</a></li> -->
+            
+                <!-- <li><div class="divider"></div></li> -->
+                
+                <li><a href="./editor.html">Produits</a></li>
+                <li><a href="{% url 'page_two' %}">Commandes</a></li>
+                <li><a href="{% url 'settings' %}">Paramètres</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </header>
+            
+        <main>
+            <div class="container">
+                <div class="card-panel">
+                    <!-- <button class="btn white black-text rounded space right">Create</button>
+                    <button class="btn white black-text rounded space right">New</button> -->
+
+                    <table>
+                        <thead>
+                            <th>Test</th>
+                            <th>Test2</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Google</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

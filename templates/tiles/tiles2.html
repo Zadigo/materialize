@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tiles II</title>
+
+        <link rel="stylesheet" href="../mat.css">
+        <link rel="stylesheet" href="../extended_materialize.css">
+
+        <style>
+            .images-block .col {
+                padding: 0rem;
+            }
+
+            .images-block .col:first-child {
+                padding-left: 2rem; 
+            }
+
+            .images-block .col:last-child {
+                padding-right: 2rem;
+            }
+
+            .images-block .col:nth-child(2) {
+                padding-right: 2rem;
+            }
+
+            .images-block .col:nth-child(3) {
+                padding-left: 2rem;
+            }
+
+            .col .image {
+                width: 100%;
+                height: 200px;
+                padding: 2rem;
+                background-color: blue;
+                color: white;
+                text-align: center;
+            }
+
+            .image.halfsize {
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row images-block">
+                <div class="col s12 l4 m4">
+                    <div class="image">
+                        <div class="text">
+                            Great text
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l8 m8">
+                    <div class="image">2</div>
+                </div>
+                <div class="col s12 l6 m4">
+                    <div class="image halfsize">
+                        <div class="text">
+                            Great texts
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 m4">
+                    <div class="image halfsize">4</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            var imagesBlock = (function(urls) {
+                var blocks = $(".images-block").find(".image")
+
+                var alterCss = function(b, i) {
+                    var css = {
+                        "background-image": "url(" + urls[i] + ")",
+                        "background-position": "center",
+                        "background-repeat": "no-repeat",
+                        "background-size": "cover"
+                    }
+                    b.css(css)
+                }
+
+                var parseBlock = function() {
+                    blocks.each(block => {
+                        var singleBlock = $(blocks[block])
+                        alterCss(singleBlock, block)
+                    })
+                }
+
+                var checkUrls = function() {
+                    // If we don't have four URLS
+                    // then tell the user that
+                    // we need four
+                    if (urls.length != 4) {
+                        console.error("There are not enough urls")
+                    }
+
+                    urls.forEach(url => {
+                        if (url == "" || url == undefined) {
+                            console.error("The following url '" + urls[url] + "' does not seem to be valid")
+                        }
+                    })
+                }
+
+                checkUrls()
+                parseBlock()
+            })
+        </script>
+        <script>
+            var images = [
+                "./jam.jpg"
+            ]
+            imagesBlock(images)
+        </script>
+    </body>
+</html>
