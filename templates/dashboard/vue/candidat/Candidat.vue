@@ -3,17 +3,19 @@
     <div class="col s12 m8 l8">
         <div class="card-panel">
             <div class="row">
-                <div class="col s12 m7 l7">
+                <!-- <div class="col s12 m7 l7">
                     <img src="https://s3.eu-west-3.amazonaws.com/jobswebsite/media/avatars/avatar2.png" 
                         alt="avatar_candidat" class="responsive-img">
-                </div>
+                </div> -->
+                <Image v-bind:candidat="candidat" />
     
-                <div class="col s12 m5 l5">
+                <!-- <div class="col s12 m5 l5">
                     <h5>{{ candidature.id_candidat.prenom }} {{ candidature.id_candidat.nom }}</h5>
                     <hr>            
-                </div>
+                </div> -->
+                <Candidature v-bind:candidature="candidature" />
 
-                <div class="col s12 m5 l5">
+                <!-- <div class="col s12 m5 l5">
                     <table>
                         <tbody>
                             <tr>
@@ -34,8 +36,10 @@
                             </tr>
                         </tbody>
                     </table>        
-                </div>
+                </div> -->
+                <Details v-bind:candidat="candidat" />
             </div>
+            
             <div class="row">
                 <div class="col s12 m12 l12">
                     <p>
