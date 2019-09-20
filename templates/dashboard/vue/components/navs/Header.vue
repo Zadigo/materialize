@@ -1,11 +1,11 @@
 <template>
-<header>
-    <div class="navbar-fixed">
-        <NavBar />
-    </div>
+    <header>
+        <div class="navbar-fixed">
+            <NavBar />
+        </div>
 
-    <Sidebar />
-</header>
+        <Sidebar />
+    </header>
 </template>
 
 <script>
@@ -14,10 +14,10 @@ import Sidebar from "@/components/"
 import DropDown from "@/components"
 
 export default {
-   components: {
+    components: {
        NavBar,
        Sidebar,
        DropDown
-   }
+    }
 }
 </script>

@@ -107,7 +107,19 @@ div.benefits, section.benefits {
 div.benefits.contain, section.benefits.contain {
   margin: 0 auto;
   max-width: 1280px;
-  width: 70%;
+  width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+  div.benefits.contain, section.benefits.contain {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  div.benefits.contain, section.benefits.contain {
+    width: 75%;
+  }
 }
 
 div.benefits .benefit, section.benefits .benefit {
@@ -230,48 +242,6 @@ div.benefits .call-to-action, section.benefits .call-to-action {
   text-align: center;
 }
 
-div.benefits.image-tiles, section.benefits.image-tiles {
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  grid-gap: .275em;
-  grid-auto-rows: 300px;
-}
-
-@media only screen and (min-width: 300px) {
-  div.benefits.image-tiles, section.benefits.image-tiles {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  div.benefits.image-tiles, section.benefits.image-tiles {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-div.benefits.image-tiles .image-tile, section.benefits.image-tiles .image-tile {
-  background-color: inherit;
-  overflow: hidden;
-}
-
-div.benefits.image-tiles .image-tile img, section.benefits.image-tiles .image-tile img {
-  max-width: 100%;
-  height: auto;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-}
-
-div.benefits.image-tiles .image-tile:hover img, section.benefits.image-tiles .image-tile:hover img {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-}
-
 div.benefits .benefits .team, section.benefits .benefits .team {
   text-align: center;
 }
@@ -298,5 +268,61 @@ div.benefits .team .social, section.benefits .team .social {
 
 div.benefits .team .fab, section.benefits .team .fab {
   font-size: 1.33333em;
+}
+
+.image-tiles-group .image-tiles {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 90%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: .275em;
+  grid-auto-rows: 300px;
+}
+
+@media only screen and (min-width: 300px) {
+  .image-tiles-group .image-tiles {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .image-tiles-group .image-tiles {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  .image-tiles-group .image-tiles {
+    -ms-grid-columns: (2fr)[1];
+        grid-template-columns: repeat(1, 2fr);
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .image-tiles-group .image-tiles {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.image-tiles-group .image-tiles .image-tile {
+  overflow: hidden;
+  background-color: #1565c0;
+}
+
+.image-tiles-group .image-tiles .image-tile img {
+  height: auto;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.image-tiles-group .image-tiles .image-tile img:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 /*# sourceMappingURL=hero.css.map */
