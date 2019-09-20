@@ -1,0 +1,10 @@
+<section class="section image-tiles-group">
+    <h4 class="center">{{ title }}</h4>
+    <div class="image-tiles">
+        {% for image in images %}
+            <div class="image-tile">
+                <img src="{{ image.url }}" alt="{{ image.alt }}">
+            </div>
+        {% endfor %}
+    </div>
+</section>
