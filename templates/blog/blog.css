@@ -30,14 +30,64 @@ div.blog-container {
 }
 
 div.blog-container .content {
-  background-color: #ffffff;
+  position: relative;
+}
+
+div.blog-container .content {
+  background-color: white;
   padding: 24px;
   margin-bottom: 15px;
   max-height: 100%;
   overflow: hidden;
   border-radius: 0 0 2px 2px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.blog-container .content .author {
+  display: block;
+}
+
+div.blog-container .content .author .details {
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 15px;
+  left: 200px;
+  width: 250px;
+  height: auto;
+  background-color: white;
+  padding: 1.25rem;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  color: inherit;
+}
+
+div.blog-container .content .author .details .avatar {
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.blog-container .content .author i {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin: 0 0 0 .5rem;
+}
+
+div.blog-container .content .author i:focus + .details,
+div.blog-container .content .author i:hover + .details {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
 }
 
 div.blog-container .content-date {

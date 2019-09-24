@@ -1,4 +1,6 @@
 $header_color: #26a69a;
+$box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+$content_shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 
 div.blog {
     &-header {
@@ -30,15 +32,57 @@ div.blog {
         }
 
         .content {
+            position: relative;
+
             & {
-                background-color: #ffffff;
+                background-color: white;
                 padding: 24px;
                 margin-bottom: 15px;
                 max-height: 100%;
                 overflow: hidden;
                 border-radius: 0 0 2px 2px;
-                -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-                    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+                box-shadow: $content_shadow;
+            }
+            
+            .author {
+                display: block;
+
+                .details {
+                    opacity: 0;
+                    position: absolute;
+                    overflow: hidden;
+                    top: 15px;
+                    left: 200px;
+                    width: 250px;
+                    height: auto;
+                    background-color: white;
+                    padding: 1.25rem;
+                    box-shadow: $box_shadow;
+                    transform:  translateX(15px);
+                    transition: all .4s ease;
+                    color: inherit;
+
+                    .avatar {
+                        height: 60px;
+                        width: 60px;
+                        overflow: hidden;
+                        border-radius: 30px;
+                        box-shadow: $box_shadow;
+                    }
+                }
+
+                i {
+                    width: 24px;
+                    height: 24px;
+                    vertical-align: middle;
+                    margin: 0 0 0 .5rem;
+                }
+
+                i:focus + .details,
+                i:hover + .details {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
             }
 
             &-date {

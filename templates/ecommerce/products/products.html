@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="../../mat.css">
         <link rel="stylesheet" href="../../extended_materialize.css">
         <link rel="stylesheet" href="../../hero/hero.css">
-        <link rel="stylesheet" href="../../cards/special_cards/cards.css">
+        <link rel="stylesheet" href="../../cards/cards.css">
+        <link rel="stylesheet" href="./ecommerce.css">
     
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -30,14 +31,40 @@
             </div>
         </nav>
 
+        <!-- BAR -->
+        <div class="filterbar show-on-med-and-down">
+            <div class="filter with-drop">
+                Trier
+            </div>
+            <div class="filter with-slider">
+                Filtrer
+            </div>
+
+            <div class="drop">
+                <ul>
+                    <li><a href="#!">Prix</a></li>
+                    <li><a href="#!">Couleur</a></li>
+                    <li><a href="#!">Style</a></li>
+                </ul>
+            </div>
+
+            <div class="slider">
+                <div class="title"><h4>Filtrer</h4></div>
+                <ul>
+                    <li><button>Marque</button></li>
+                    <li><button>Couleur</button></li>
+                </ul>
+            </div>
+        </div>
+        
         <main>
-            <div class="container">
-                <section class="section">
+            <section class="section">
+                <div class="container">
                     <div class="row">
                         <div class="col s12 m3 l3">
-                            <div class="card ecommerce-filter">
+                            <div class="card ecommerce-filter hide-on-med-and-down">
                                 <div class="card-header red lighten-1">
-                                    Filters
+                                    First filter
                                 </div>
                                 <div class="card-content">
                                     <p>
@@ -61,9 +88,9 @@
                                 </div>
                             </div>
 
-                            <div class="card ecommerce-filter">
+                            <div class="card ecommerce-filter hide-on-med-and-down">
                                 <div class="card-header red lighten-1">
-                                    Filters
+                                    Second filter
                                 </div>
                                 <div class="card-content">
                                     <form action="#">
@@ -76,15 +103,17 @@
                         </div>
 
                         <div class="col s12 m4 l4">
-                            <div class="card special push-up">
-                                <div class="card-image">
-                                    <img src="../../../assets/images/product1.webp" alt="">
+                            <a href="./product.html">
+                                <div class="card special push-up">
+                                    <div class="card-image">
+                                        <img src="../../../assets/images/product1.webp" alt="">
+                                    </div>
+                                    <div class="hover-cover-4">
+                                        <h5>Jupe</h5>
+                                        <p>Some text here</p>
+                                    </div>
                                 </div>
-                                <div class="hover-cover-4">
-                                    <h5>Jupe</h5>
-                                    <p>Some text here</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col s12 m4 l4">
                             <div class="card special push-up">
@@ -153,5 +182,45 @@
                 2019 @entreprise
             </div>
         </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script>
+            var filterBar = (function(params) {
+                var bar = $(".filterbar")
+                var sideBarSize = params.width
+
+                var showSlider = function() {
+                    var css = {
+                        "display": "block",
+                        "transform": "translateX(0px)"
+                    }
+
+                    var newCss = Object.assign({}, css, params)
+
+                    $(".slider").css(newCss)
+                }
+
+                var showDrop = function() {
+                    $(".filterbar .drop").css(
+                        {
+                            "display": "block",
+                            "transform-origin": "0px 0px",
+                            // "transform": "scaleX(1) scaleY(1)"
+                        }
+                    )
+                }
+                
+                var addEvent = function() {
+                    $(".with-drop").on("click", showDrop)
+                    $(".with-slider").on("click", showSlider)
+                }
+
+                addEvent()
+            })
+
+            filterBar({"width": 320})
+        </script>
     </body>
 </html>
