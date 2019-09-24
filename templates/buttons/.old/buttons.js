@@ -59,6 +59,7 @@ $(document).ready(function () {
             init: init
         }
     })();
+    
     Quantity.init()
 
     (function( $ ) {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <!-- <link rel="stylesheet" href="../extended_materialize.css"> -->
+        <link rel="stylesheet" href="../mat.css">
+        <link rel="stylesheet" href="../hero/hero.css">
+        <link rel="stylesheet" href="./buttons.css">
+    </head>
+    <body>
+        <div class="hero karousel">
+            <div class="hero-wrapper">
+                <div class="call-to-action">
+                    <div class="lead karousel-item" id="one">Maryline Pérez</div>
+                    <div class="lead karousel-item" id="two">Kendall Jenner</div>
+                    <div class="lead karousel-item" id="three">Aurélie Lopez</div>
+                    <div class="lead karousel-item" id="four">Julie Pierce</div>
+
+                    <ol class="indicators"></ol>
+                </div>
+            </div>
+        </div>
+        <div class="espace"></div>
+
+        <!-- <div class="round_button_group">
+            <div class="round_button">
+                <i class="material-icons">create</i>
+            </div>
+            <div class="round_button">
+                <i class="material-icons">shopping_cart</i>
+            </div>
+        </div> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="../hero/carousel.js"></script>
+        <script>
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true
+            });
+        </script>
+    </body>
+</html>
