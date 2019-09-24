@@ -9,27 +9,41 @@
 
         <link rel="stylesheet" href="../mat.css">
         <link rel="stylesheet" href="../extended_materialize.css">
-        <link rel="stylesheet" href="test.css" />
+        <link rel="stylesheet" href="./cards.css" />
     </head>
     <body>
         <div class="container">
             <div class="row">
+                <!-- BOTTOM-UP -->
                 <div class="col s12 l4">
-                    <!-- BOTTOM-UP -->
                     <div class="card special push-up">
                         <div class="card-image">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="image">
                         </div>
-                        <div class="hover-cover-4">
+                        <div class="hover-cover">
                             <h5>Jupe</h5>
                             <p>Some text here</p>
                         </div>
                     </div>
-                    <!-- BOTTOM-UP -->
                 </div>
+                <!-- BOTTOM-UP -->
 
+                <!-- BOTTOM-UP IMAGE -->
                 <div class="col s12 l4">
-                    <!-- BOTTOM-UP SOCIAL -->
+                    <div class="card special push-up-with-image">
+                        <div class="card-image">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample10.jpg" alt="image">
+                        </div>
+                        <div class="hover-cover">
+                            <h5>Jupe</h5>
+                            <p>Some text here</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- BOTTOM-UP IMAGE -->
+
+                <!-- BOTTOM-UP SOCIAL -->
+                <div class="col s12 l4">
                     <div class="card special push-up">
                         <div class="discount">15%</div>
                         <div class="card-image">
@@ -41,8 +55,8 @@
                             <a href="#!"><i class="material-icons">share</i></a>
                         </div>
                     </div>
-                    <!-- BOTTOM-UP SOCIAL -->
                 </div>
+                <!-- BOTTOM-UP SOCIAL -->
 
                 <div class="col s12 l4">
                     <!-- ZOOM -->
@@ -54,8 +68,8 @@
                     <!-- ZOOM -->
                 </div>
 
+                <!-- ZOOM TEXT -->
                 <div class="col s12 l4">
-                    <!-- ZOOM TEXT -->
                     <div class="card special zoom">
                         <div class="card-image">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample7.jpg" alt="image">
@@ -65,11 +79,21 @@
                             <span>Jupe de luxe</span>
                         </div>
                     </div>
-                    <!-- ZOOM TEXT -->
                 </div>
+                <!-- ZOOM TEXT -->
 
+                <!-- ZOOM TEXT -->
                 <div class="col s12 l4">
-                    <!-- SIMPLE FASHION TYPE CARD -->
+                    <div class="card special dim">
+                        <div class="card-image">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <!-- ZOOM TEXT -->
+
+                <!-- SIMPLE FASHION TYPE CARD -->
+                <div class="col s12 l4">
                     <a href="{% url 'products_stock' %}?cat=femme">
                         <div class="card special centered z-depth-0">
                             <div class="card-image">
@@ -81,11 +105,11 @@
                             </div>
                         </div>
                     </a>
-                    <!-- SIMPLE FASHION TYPE CARD -->
                 </div>
+                <!-- SIMPLE FASHION TYPE CARD -->
 
+                <!-- RIPPLE -->
                 <div class="col s12 l4">
-                    <!-- RIPPLE -->
                     <div class="card special ripple z-depth-1 blue">
                         <h3>Test</h3>
                         <p>
@@ -96,15 +120,41 @@
                         </p>
                     </div>
                 </div>
-
+                <!-- RIPPLE -->
+                
+                <!-- FILTER CARDS -->
                 <div class="col s12 l4">
-                    <div class="card special z-depth-1">
-                        <div class="card-image">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample8.jpg" alt="image">
+                    <div class="card with-filters">
+                        <div class="card-content">
+                            <p>
+                                <label>
+                                    <input type="radio" name="filter1" id="filter1">
+                                    <span>Clothes</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="radio" name="filter1" id="filter1">
+                                    <span>Skirts</span>
+                                </label>
+                            </p>
                         </div>
                     </div>
                 </div>
+                <!-- FILTER CARDS -->
 
+                <!-- WITH HEADERS -->
+                <div class="col s12 l4">
+                    <div class="card">
+                        <div class="card-header">
+                            Title
+                        </div>
+                        <div class="card-content">
+                            Content
+                        </div>
+                    </div>
+                </div>
+                <!-- WITH HEADERS -->
             </div>
         </div>
 
