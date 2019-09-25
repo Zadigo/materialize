@@ -4,6 +4,11 @@ $discount_card_color: #ec407a;
     position: absolute;
 }
 
+@mixin responsive_image {
+    max-width: 100%;
+    height: auto;
+}
+
 .card {
     .card-header {
         position: relative;
@@ -29,6 +34,89 @@ $discount_card_color: #ec407a;
         }
     }
 
+    // &.with-more {        
+    //     i {
+    //         position: absolute;
+    //         bottom: 0;
+    //         right: 0;
+    //         padding: 1rem;
+    //         // z-index: 9999;
+
+    //         @keyframes slide_in_effect {
+    //             0% {
+    //                 width: 0%;
+    //                 height: 0%;
+    //                 opacity: 0;
+    //             }
+
+    //             100% {
+    //                 width: 100%;
+    //                 height: auto;
+    //                 opacity: 1;
+    //             }
+    //         }
+
+    //         &:hover + .more-content {
+    //             // opacity: 0;
+    //             animation-name: slide_in_effect;
+    //             animation-duration: .5s;
+    //         }
+    //     }
+
+    //     .more-content {
+    //         position: absolute;
+    //         overflow: hidden;
+    //         // bottom: 0;
+    //         top: 0;
+    //         background-color: white;
+    //         opacity: 0;
+    //         padding: 1rem;
+    //         transition: all .3s ease;
+    //     }
+    // }
+
+    &.with-slider {
+        .wrapper {
+            overflow: hidden;
+            
+            img {
+                @include responsive_image();
+                transition: all .5s ease;
+            }
+        }
+
+        .navigation {
+            position: absolute;
+            top: 190px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @media only screen and (min-width: 300px) {
+                top: 190px;
+            }
+
+            @media only screen and (min-width: 601px) {
+                top: 140px;
+            }
+
+            i {
+                font-size: 44px;
+                cursor: pointer;
+                transition: all .6s ease;
+
+                &:hover#right {
+                    transform: translateX(-5px);
+                }
+
+                &:hover#left {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+
     &.special {
         cursor: pointer;
         overflow: hidden;
@@ -40,6 +128,18 @@ $discount_card_color: #ec407a;
         .card-image {
             max-height: 60%;
             overflow: hidden;
+
+            p {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: rgba(255, 255, 255, .8);
+                font-size: 24px;
+                z-index: 9999;
+                margin-top: 0;
+                padding: 1rem;
+            
+            }
         }
 
         .text-overlay {
@@ -128,35 +228,6 @@ $discount_card_color: #ec407a;
             color: white;
         }
 
-        &.ripple {
-            position: relative;
-            overflow: hidden;
-            transform: translate3d(0, 0, 0);
-
-            &:after {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                pointer-events: none;
-                background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
-                background-repeat: no-repeat;
-                background-position: 50%;
-                transform: scale(10, 10);
-                opacity: 0;
-                transition: transform .5s, opacity 1s;
-            }
-    
-            &:active:after {
-                transform: scale(0, 0);
-                opacity: .3;
-                transition: 0s;
-            }
-        }
-
         &:hover {
             .card-cover {
                 opacity: .7;
@@ -227,6 +298,47 @@ $discount_card_color: #ec407a;
                 .card-image img {
                     transform: scale(1.1, 1.1);
                 }
+            }
+
+            &.blur {
+                .card-image {
+                    img {
+                        filter: blur(2px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-panel {
+    &.special {
+        &.ripple {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+    
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                transform: scale(10, 10);
+                opacity: 0;
+                transition: transform .5s, opacity 1s;
+            }
+    
+            &:active:after {
+                transform: scale(0, 0);
+                opacity: .3;
+                transition: 0s;
             }
         }
     }
