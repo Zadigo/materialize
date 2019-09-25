@@ -119,4 +119,41 @@
   text-align: left;
   padding: 0;
 }
+
+.section .side-images img {
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  cursor: pointer;
+}
+
+.section .side-images img:hover {
+  opacity: .5;
+}
+
+.section .main-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section .information .price-infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.section .information .price-infos div:not(:first-child) {
+  margin-left: 15px;
+}
+
+.section .information .price-infos .price {
+  font-size: 20px;
+  font-weight: 600;
+}
 /*# sourceMappingURL=ecommerce.css.map */

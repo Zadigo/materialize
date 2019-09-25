@@ -10,7 +10,10 @@
     }
 }
 
-
+@mixin responsive_image {
+    max-width: 100%;
+    height: auto;
+}
 
 .filterbar {
     position: relative;
@@ -113,6 +116,53 @@
                     padding: 0;
                 }
             }
+        }
+    }
+}
+
+.section {
+    .side-images {
+        img {
+            transition: opacity .5s ease;
+
+            cursor: pointer;
+    
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+    
+    .main-image {
+        img {
+            @include responsive_image();
+        }
+    }
+
+    .information {
+        .price-infos {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+
+            div:not(:first-child) {
+                margin-left: 15px;
+            }
+
+            .price {
+                font: {
+                    size: 20px;
+                    weight: 600;
+                }
+            }
+            
+            // .discount {
+            //     background: #26a69a;
+            //     padding: .45rem;
+            //     border-radius: 1rem;
+            //     color: white;
+            //     font-weight: 500;
+            // }
         }
     }
 }

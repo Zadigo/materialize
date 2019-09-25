@@ -87,4 +87,32 @@ $(document).ready(function () {
     })();
 
     cardSlider.init()
+
+
+    var cardActions = (function() {
+        var action = $(".with-action .actions #star")
+
+        var addEvent = function() {
+            action.on("click", function(e) {
+                var itag = $(this).find("i")
+                var text = itag.text()
+
+                if (text === "star_border") {
+                    itag.text("star")
+                } else {
+                    itag.text("star_border")
+                }
+            })
+        }
+
+        var init = function() {
+            addEvent()
+        }
+
+        return {
+            init
+        }
+    })()
+
+    cardActions.init()
 });
