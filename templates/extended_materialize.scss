@@ -1,10 +1,12 @@
-$slim_card_height: 180px;
+$headers_font: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
+$content_font: "Roboto", sans-serif;
 
 html {
-    font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
+    font-family: $headers_font;
 
-    p, a, li, span, .content-text, .content-tags .chip {
-        font-family: "Roboto", sans-serif;
+    p, a, li, span, .content-text, .content-tags .chip,
+    .hover-cover {
+        font-family: $content_font;
     }
 }
 
@@ -89,31 +91,4 @@ nav {
             }
         }
     }
-}
-
-
-// CARD SLIM
-
-.card {
-    &.horizontal {
-        &.slim {
-            height: $slim_card_height;
-
-            .card-image {
-                overflow: hidden;
-            }
-            
-            .card-content {
-                height: calc(100% - $slim_card_height);
-
-                @for $title from 1 through 5 {
-                    h#{$title} {
-                        margin-top: 0;
-                        font-size: 1.254rem;
-                    }
-                }
-            }
-        }
-    }
-    
 }

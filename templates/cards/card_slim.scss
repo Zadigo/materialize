@@ -1,0 +1,25 @@
+$slim_card_height: 180px;
+
+.card {
+    &.horizontal {
+        &.slim {
+            height: $slim_card_height;
+
+            .card-image {
+                overflow: hidden;
+            }
+            
+            .card-content {
+                height: calc(100% - $slim_card_height);
+
+                @for $title from 1 through 5 {
+                    h#{$title} {
+                        margin-top: 0;
+                        font-size: 1.254rem;
+                    }
+                }
+            }
+        }
+    }
+    
+}

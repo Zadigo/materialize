@@ -2,6 +2,10 @@
   position: absolute;
 }
 
+.card-special-link {
+  color: black;
+}
+
 .card .card-header {
   position: relative;
   background-color: inherit;

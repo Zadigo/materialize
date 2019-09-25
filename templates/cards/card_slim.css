@@ -1,0 +1,37 @@
+.card.horizontal.slim {
+  height: 180px;
+}
+
+.card.horizontal.slim .card-image {
+  overflow: hidden;
+}
+
+.card.horizontal.slim .card-content {
+  height: calc(100% - $slim_card_height);
+}
+
+.card.horizontal.slim .card-content h1 {
+  margin-top: 0;
+  font-size: 1.254rem;
+}
+
+.card.horizontal.slim .card-content h2 {
+  margin-top: 0;
+  font-size: 1.254rem;
+}
+
+.card.horizontal.slim .card-content h3 {
+  margin-top: 0;
+  font-size: 1.254rem;
+}
+
+.card.horizontal.slim .card-content h4 {
+  margin-top: 0;
+  font-size: 1.254rem;
+}
+
+.card.horizontal.slim .card-content h5 {
+  margin-top: 0;
+  font-size: 1.254rem;
+}
+/*# sourceMappingURL=card_slim.css.map */

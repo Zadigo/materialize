@@ -9,6 +9,10 @@ $discount_card_color: #ec407a;
     height: auto;
 }
 
+.card-special-link {
+    color: rgba($color: #000000, $alpha: 1.0)
+}
+
 .card {
     .card-header {
         position: relative;

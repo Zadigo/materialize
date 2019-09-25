@@ -2,7 +2,8 @@ html {
   font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
 }
 
-html p, html a, html li, html span, html .content-text, html .content-tags .chip {
+html p, html a, html li, html span, html .content-text, html .content-tags .chip,
+html .hover-cover {
   font-family: "Roboto", sans-serif;
 }
 
@@ -73,42 +74,5 @@ nav .avatar {
   font-size: 18px;
   line-height: inherit;
   vertical-align: middle;
-}
-
-.card.horizontal.slim {
-  height: 180px;
-}
-
-.card.horizontal.slim .card-image {
-  overflow: hidden;
-}
-
-.card.horizontal.slim .card-content {
-  height: calc(100% - $slim_card_height);
-}
-
-.card.horizontal.slim .card-content h1 {
-  margin-top: 0;
-  font-size: 1.254rem;
-}
-
-.card.horizontal.slim .card-content h2 {
-  margin-top: 0;
-  font-size: 1.254rem;
-}
-
-.card.horizontal.slim .card-content h3 {
-  margin-top: 0;
-  font-size: 1.254rem;
-}
-
-.card.horizontal.slim .card-content h4 {
-  margin-top: 0;
-  font-size: 1.254rem;
-}
-
-.card.horizontal.slim .card-content h5 {
-  margin-top: 0;
-  font-size: 1.254rem;
 }
 /*# sourceMappingURL=extended_materialize.css.map */
