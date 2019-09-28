@@ -1,3 +1,7 @@
+.card-slim-link {
+  color: inherit;
+}
+
 .card.horizontal.slim {
   height: 180px;
 }
@@ -7,7 +11,7 @@
 }
 
 .card.horizontal.slim .card-content {
-  height: calc(100% - $slim_card_height);
+  height: calc(100% - 180px);
 }
 
 .card.horizontal.slim .card-content h1 {
@@ -33,5 +37,29 @@
 .card.horizontal.slim .card-content h5 {
   margin-top: 0;
   font-size: 1.254rem;
+}
+
+.card.horizontal.slim .like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.card.horizontal.slim .like i {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.card.horizontal.animate img {
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.card.horizontal.animate:hover .card-image img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 /*# sourceMappingURL=card_slim.css.map */
