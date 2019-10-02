@@ -28,9 +28,9 @@
         </nav>
 
         <!-- FILTER BAR -->
-        <div class="filterbar show-on-med-and-down">
+        <div class="filterbar">
             <div class="filter with-drop">
-                Test
+                <div class="trigger">Test</div>
                 <div class="drop">
                     <ul>
                         <li><a href="#!">Prix</a></li>
@@ -41,6 +41,7 @@
             </div>
 
             <div class="filter with-drawer">
+                <div class="trigger">Filtrer</div>
                 <div class="drawer">
                     <div class="title"><h4>Filtrer</h4></div>
                     <ul>
@@ -197,22 +198,22 @@
 
                     var newCss = Object.assign({}, css, params)
 
-                    $(".slider").css(newCss)
+                    $(".drawer").css(newCss)
                 }
 
                 var showDrop = function() {
                     $(".filterbar .drop").css(
                         {
                             "display": "block",
-                            "transform-origin": "0px 0px",
-                            // "transform": "scaleX(1) scaleY(1)"
+                            // "transform-origin": "0px 0px",
+                            "transform": "scaleX(1) scaleY(1)"
                         }
                     )
                 }
                 
                 var addEvent = function() {
-                    $(".with-drop").on("click", showDrop)
-                    $(".with-slider").on("click", showSlider)
+                    $(".with-drop .trigger").on("click", showDrop)
+                    $(".with-drawer .trigger").on("click", showSlider)
                 }
 
                 addEvent()

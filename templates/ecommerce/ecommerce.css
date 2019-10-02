@@ -236,6 +236,10 @@
   text-align: center;
 }
 
+.filterbar .filter.with-drop {
+  z-index: 1;
+}
+
 .filterbar .filter.with-drop .drop {
   display: none;
 }

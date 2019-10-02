@@ -1,5 +1,13 @@
-.card.special .hover-cover, .card.special .hover-cover-icons {
-  position: absolute;
+@media only screen and (min-width: 601px) {
+  .card.special .hover-cover, .card.special .hover-cover-icons {
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.special .hover-cover, .card.special .hover-cover-icons {
+    position: absolute;
+  }
 }
 
 .card-special-link {

@@ -10,7 +10,6 @@
     @media only screen and (min-width: 993px) {
         width: 70%;
     }
-
 }
 
 %ecommerce_sub_section {
@@ -193,6 +192,8 @@
         text-align: center;
 
         &.with-drop {
+            z-index: 1;
+            
             .drop {
                 display: none;
 
