@@ -1,17 +1,17 @@
-.section.ecommerce#product .details, .section.ecommerce#product .more {
+.section.ecommerce#product .details, .section.ecommerce#product .more, section.ecommerce-grid .container {
   margin: 0 auto;
   max-width: 1280px;
   width: 90%;
 }
 
 @media only screen and (min-width: 601px) {
-  .section.ecommerce#product .details, .section.ecommerce#product .more {
+  .section.ecommerce#product .details, .section.ecommerce#product .more, section.ecommerce-grid .container {
     width: 85%;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .section.ecommerce#product .details, .section.ecommerce#product .more {
+  .section.ecommerce#product .details, .section.ecommerce#product .more, section.ecommerce-grid .container {
     width: 70%;
   }
 }
@@ -19,6 +19,10 @@
 .section.ecommerce#product .product, .section.ecommerce#product .details {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.card-link {
+  color: inherit;
 }
 
 .section.ecommerce#product hr.section-separation {
@@ -122,8 +126,8 @@
   vertical-align: baseline;
 }
 
-.section.ecommerce#product .product #add_to_cart {
-  margin-top: 3rem;
+.section.ecommerce#product .product #btn_add_to_cart {
+  margin-top: 30px;
 }
 
 .section.ecommerce#product .details {
@@ -324,5 +328,79 @@
   border: none;
   text-align: left;
   padding: 0;
+}
+
+section.ecommerce-grid .container {
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 15px;
+}
+
+@media only screen and (min-width: 601px) {
+  section.ecommerce-grid .container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  section.ecommerce-grid .container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section.ecommerce-grid .card.ecommerce {
+  border-radius: 0rem;
+}
+
+section.ecommerce-grid .card.ecommerce .card-content {
+  padding-left: 0;
+}
+
+section.ecommerce-grid .card.ecommerce .title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+section.ecommerce-grid .price {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
+.ecommerce-bar {
+  background-color: #c62828;
+  margin-bottom: 3rem;
+  z-index: -999;
+}
+
+.ecommerce-bar ul {
+  overflow: hidden;
+  margin: 0;
+}
+
+.ecommerce-bar ul li {
+  float: left;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.ecommerce-bar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ecommerce-bar ul li.best-offers {
+  background-color: #66bb6a;
+}
+
+.ecommerce-bar ul li.best-offers:hover {
+  background-color: rgba(102, 187, 106, 0.5);
+}
+
+.ecommerce-bar ul li a {
+  display: block;
+  color: white;
+  padding: 20px;
 }
 /*# sourceMappingURL=ecommerce.css.map */

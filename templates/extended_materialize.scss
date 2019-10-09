@@ -1,15 +1,4 @@
-$headers_font: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
-$content_font: "Roboto", sans-serif;
-
-html {
-    font-family: $headers_font;
-
-    p, a, li, span, .content-text, .content-tags .chip,
-    .hover-cover {
-        font-family: $content_font;
-    }
-}
-
+@import "./fonts.scss";
 
 // AVATAR
 
@@ -68,7 +57,16 @@ nav {
 
     .footer-copyright {
         margin-top: 40px;
+        display: flex;
         justify-content: center;
+
+        * {
+            color: white;
+
+            :not(:first-child) {
+                margin-left: 20px; 
+            }
+        }
 
         &.social {
             justify-content: space-around;

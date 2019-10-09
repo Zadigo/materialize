@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500&display=swap");
+
 html {
-  font-family: "Montserrat", "Poppins", "Raleway", "Ubuntu", sans-serif;
+  font-family: "Poppins", "Monserrat", "Raleway", "Ubuntu", sans-serif;
 }
 
-html p, html a, html li, html span, html .content-text, html .content-tags .chip,
+html p, html a, html li, html span,
+html .content-text, html .content-tags .chip,
 html .hover-cover {
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", "Roboto", sans-serif;
 }
 
 nav .avatar {
@@ -51,9 +55,20 @@ nav .avatar {
 
 .page-footer .footer-copyright {
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.page-footer .footer-copyright * {
+  color: white;
+}
+
+.page-footer .footer-copyright * :not(:first-child) {
+  margin-left: 20px;
 }
 
 .page-footer .footer-copyright.social {

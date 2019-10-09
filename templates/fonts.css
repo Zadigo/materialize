@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500&display=swap");
+html {
+  font-family: "Poppins", "Monserrat", "Raleway", "Ubuntu", sans-serif;
+}
+
+html p, html a, html li, html span,
+html .content-text, html .content-tags .chip,
+html .hover-cover {
+  font-family: "Raleway", "Roboto", sans-serif;
+}
+/*# sourceMappingURL=fonts.css.map */

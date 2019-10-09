@@ -335,6 +335,25 @@
           filter: blur(2px);
 }
 
+.card.flat-ecommerce {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card.flat-ecommerce .card-content {
+  padding-left: 0;
+}
+
+.card.flat-ecommerce .title {
+  font-size: 14px;
+}
+
+.card.flat-ecommerce .price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: .525rem;
+}
+
 .card-panel.special.ripple {
   position: relative;
   overflow: hidden;
