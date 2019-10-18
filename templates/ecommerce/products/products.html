@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../../mat.css">
         <link rel="stylesheet" href="../../extended_materialize.css">
         <link rel="stylesheet" href="../../cards/cards.css">
+        <link rel="stylesheet" href="../../footer.css">
         <link rel="stylesheet" href="../ecommerce.css">
     </head>
 
@@ -44,6 +45,7 @@
                 <div class="trigger">Filtrer</div>
                 <div class="drawer">
                     <div class="title"><h4>Filtrer</h4></div>
+                    <span class="trigger-close">x</span>
                     <ul>
                         <li><button>Marque</button></li>
                         <li><button>Couleur</button></li>
@@ -178,7 +180,9 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                2019 @entreprise
+                <p>2019 @ Template</p>
+                <a href="#!">Conditions générales</a>
+                <a href="#!">Confidentialité et cookies</a>
             </div>
         </footer>
 
@@ -196,9 +200,17 @@
                         "transform": "translateX(0px)"
                     }
 
-                    var newCss = Object.assign({}, css, params)
+                    var newCss = Object.assign(css, params)
 
                     $(".drawer").css(newCss)
+                }
+
+                var closeSlider = function() {
+                    var css = {
+                        "transform": "translate(" + sideBarSize + "px)"
+                    }
+
+                    $(".drawer").css(css)
                 }
 
                 var showDrop = function() {
@@ -213,6 +225,7 @@
                 
                 var addEvent = function() {
                     $(".with-drop .trigger").on("click", showDrop)
+                    $(".with-drawer .trigger-close").on("click", closeSlider)
                     $(".with-drawer .trigger").on("click", showSlider)
                 }
 

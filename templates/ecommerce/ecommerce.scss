@@ -1,3 +1,6 @@
+$red_darken_1: #e53935;
+$red_darken_3: #c62828;
+
 %container {
     margin: 0 auto;
     max-width: 1280px;
@@ -68,8 +71,11 @@
                     #{$title} {
                         font: {
                             size: 22px;
-                            weight: 400;
+                            weight: 300;
                         }
+                        margin: {
+                            top: 0;
+                        };
                     }
                 }
     
@@ -120,8 +126,11 @@
                         text-transform: uppercase;
                         line-height: 1.7;
                         vertical-align: baseline;
+                        color: rgba(0, 0, 0, 0.8)
                     }
-                    margin-top: 21px;
+                    margin: {
+                        top: 10px;
+                    }
                 }
             }
     
@@ -329,12 +338,8 @@ section.ecommerce-grid {
     }
 }
 
-$red_darken_1: #e53935;
-$red_darken_3: #c62828;
-
 .ecommerce-bar {
     background-color: $red_darken_3;
-    margin-bottom: 3rem;
     z-index: -999;
     
     ul {

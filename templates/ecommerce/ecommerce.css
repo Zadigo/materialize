@@ -55,27 +55,32 @@
 
 .section.ecommerce#product .product .information h1 {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .section.ecommerce#product .product .information h2 {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .section.ecommerce#product .product .information h3 {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .section.ecommerce#product .product .information h4 {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .section.ecommerce#product .product .information h5 {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 .section.ecommerce#product .product .information .infos {
@@ -115,7 +120,7 @@
 }
 
 .section.ecommerce#product .product .information .coloration, .section.ecommerce#product .product .information .size {
-  margin-top: 21px;
+  margin-top: 10px;
 }
 
 .section.ecommerce#product .product .information .coloration label, .section.ecommerce#product .product .information .size label {
@@ -124,6 +129,7 @@
   text-transform: uppercase;
   line-height: 1.7;
   vertical-align: baseline;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .section.ecommerce#product .product #btn_add_to_cart {
@@ -371,7 +377,6 @@ section.ecommerce-grid .price {
 
 .ecommerce-bar {
   background-color: #c62828;
-  margin-bottom: 3rem;
   z-index: -999;
 }
 
