@@ -1,0 +1,169 @@
+$color_a: #d81b60;
+$color_b: #ff5c8d;
+$color_c: #a00037;
+
+$primary_grey: #fafafa;
+$lighter_grey: #ffffff;
+$dark_grey: #c7c7c7;
+
+$box_padding: 1rem;
+$z_depth_1: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+
+%container {
+    // height: 100vh;
+    max-width: 1280px;
+}
+
+%template_grids {
+    // box-shadow: $z_depth_1;
+    background-color: white;
+}
+
+%links {
+    color: white;
+}
+
+.ecommerce {
+    @extend %container;
+    background-color: rgba($color: $dark_grey, $alpha: .4);
+
+    .grid {
+        display: grid;
+        grid-template-rows: minmax(400px) minmax(200px) 180px;
+        grid-row-gap: 15px;
+        // grid-template-rows: repeat(auto-fit, minmax(280px, 1fr));
+        
+        .product{
+            @extend %template_grids;
+
+            .side-images {
+                position: relative;
+                min-height: 411px;
+
+                .counter {
+                    position: absolute;
+                    background-color: rgba(0,0,0,0.14);
+                    color: rgba($color: white, $alpha: 0.5);
+                    top: 20px;
+                    right: 15px;
+                    border-radius: 10%;
+                    text-align: center;
+                    transition: all .3s ease-in-out;
+                    z-index: 1;
+                    
+                    span {
+                        display: block;
+                        padding: .25rem;
+                        height: 30px;
+                        width: 50px;
+                    }
+                }                
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            
+            .information {
+                padding: $box_padding;
+
+                @each $title in h1, h2, h3 {
+                    #{$title} {
+                        margin: 0 0 .25rem 0;
+                        font: {
+                            size: 18px;
+                            weight: 400;
+                        }
+                    }
+                }
+
+                .price-details {
+                    display: flex;
+                    justify-content: left;
+                    .price {
+                        font: {
+                            size: 24px;
+                            weight: 600;
+                        }
+                    }
+    
+                    .discounted-price {
+                        text-decoration: line-through;
+                        padding-left: 14px;
+                        line-height: 3.3;
+                    }
+                }
+            }
+        }
+        
+        .details {
+            @extend %template_grids;
+            padding: $box_padding;
+
+            h4 {
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .more {
+        @extend %template_grids;
+        
+        padding: $box_padding;
+        margin-top: 1rem;
+
+        h4 {
+            text: {
+                transform: uppercase;
+                align: center;
+            }
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+
+            .product {
+                overflow: hidden;
+
+                .price {
+                    font-weight: 600;
+                }
+
+                a {
+                    @extend %links;
+                    color: inherit;
+
+                    img {
+                        width: 100%;
+                        height: auto ;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.minimalist-footer {
+    padding: $box_padding;
+
+    .links {
+        display: flex;
+        justify-content: space-evenly;
+
+        a {
+            @extend %links;
+        }
+    }
+}

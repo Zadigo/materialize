@@ -7,11 +7,11 @@
 
         <title>Mobile version</title>
 
-        <link rel="stylesheet" href="../../mat.css">
-        <link rel="stylesheet" href="../../footer.css">
-        <link rel="stylesheet" href="../../extended_materialize.css">
-        <link rel="stylesheet" href="../ecommerce_custom_grid.css">
-        <link rel="stylesheet" href="../ecommerce_bar.css">
+        <link rel="stylesheet" href="../../../mat.css">
+        <link rel="stylesheet" href="../../../footer.css">
+        <link rel="stylesheet" href="../../../extended_materialize.css">
+        <link rel="stylesheet" href="../../ecommerce_mobile_grid.css">
+        <link rel="stylesheet" href="../../ecommerce_bar.css">
     </head>
 
     <body>
@@ -22,8 +22,6 @@
                     <div class="container">
                         <a href="#" class="brand-logo">Shop</a>
                         <ul id="nav-mobile" class="hide-on-med-and-down right">
-                            <li><a href="#!">Boutique</a></li>
-                            <li><a href="#!">A propos</a></li>
                             <li><a href="#!">Contact</a></li>
                         </ul>
                     </div>
@@ -31,15 +29,16 @@
             </nav>
         </div>
 
+        <!-- Ecommerce Bar -->
         <div class="ecommerce-bar for-mobile">
             <ul>
                 <li id="#drawer1">
-                    <a href="#!">
+                    <a>
                         <i class="material-icons">shopping_basket</i>
                     </a>
                 </li>
                 <li id="#drawer2">
-                    <a href="#!">
+                    <a>
                         <i class="material-icons">search</i>
                     </a>
                 </li>
@@ -82,10 +81,12 @@
                     <div id="product">
                         <div class="product-grid">
                             <!-- Side -->
-                            <div class="side-images">
+                            <div class="side-images" id="mobile">
+                                <div class="counter"><span></span></div>
+                               
                                 <div class="images">
-                                    <img src="../../../assets/images/image3.jpg" alt="image1">
-                                    <img src="../../../assets/images/image4.jpg" alt="image2">
+                                    <img src="../../../../assets/images/image3.jpg" alt="image1">
+                                    <img src="../../../../assets/images/image4.jpg" alt="image2">
                                 </div>
         
                                 <div class="information">
@@ -151,149 +152,24 @@
             </div>
 
             <!-- PAYMENT -->
-            <section class="section">
+            <!-- <section class="section">
                 <i class="fab fa-cc-mastercard"></i>
                 <i class="fab fa-cc-visa"></i>
                 <i class="fab fa-cc-paypal"></i>
-            </section>
+            </section> -->
             
-            <footer class="page-footer red darken-1">
+            <!-- <footer class="page-footer red darken-1">
                 <div class="footer-copyright">
                     <p> 2019 @ Entreprise</p>
                     <a href="{% url 'cgv' %}">conditions générales</a>
                     <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
                 </div>
-            </footer>
+            </footer> -->
         </main>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="../ecommerce.js"></script>
-
-        <script>
-            // Add to cart
-            var addToCart = function() {
-                var button = $("#btn_add_to_cart")
-
-                var pushDataLayer = function() {
-                    alert("Push DataLayer")
-                }
-                
-                var createAjax = function() {
-                    alert("Create AJAX")
-
-                    pushDataLayer()
-                }
-
-                var addEvent = function() {
-                    button.on("click", createAjax)
-                }
-
-                addEvent()
-            }
-
-            // Drawer action
-            var ecommerceBar = function() {
-                var bar = $(".ecommerce-bar")
-                var links = bar.find("li")
-
-                var transparentOnScroll = function() {
-                    // bar.scroll(function() {
-                    //     bar.addClass("transparent-on-scroll")
-                    // })
-                    console.log(bar.attr("class"))
-                }
-
-                var closeDrawer = function(linkiD) {
-                    $(linkiD).find(".close").on("click", function() {
-                        $(linkiD).css(
-                            {
-                                "transform": "translateX(310px)"
-                            }
-                        )
-                    })
-                }
-
-                var openDrawer = function() {
-                    links.each(function(link) {
-                        var linkiD = $(this).attr("id")
-
-                        $(this).on("click", function() {
-                            $(linkiD).css(
-                                {
-                                    "transform": "translateX(0px)"
-                                }
-                            )
-                        })
-                        closeDrawer(linkiD)
-                    })
-                }
-
-                openDrawer()
-                // transparentOnScroll()
-            }
-
-            // Browse images
-            var browseImages = function() {
-                var images = $(".side-images").find("img")
-                var imagesCount = images.length
-                var currentIndex = 0
-
-                // var items = $(".s .i")
-                
-                
-                images.each(id => {
-                    if (id == 0) {
-                        $(images[id]).css({"visibility": "visible"})
-                    } else {
-                        $(images[id]).css({"visibility": "hidden"})
-                    }
-
-                    // items.append(
-                    //     "<div class='box'></div>"
-                    // )
-
-                    // items.find(".box").first().addClass("active")
-
-                    $(images[id]).on("click", function() {         
-                        currentIndex = currentIndex + 1
-                        previousIndex = currentIndex - 1
-
-                        if (currentIndex > imagesCount - 1) {
-                            currentIndex = currentIndex - currentIndex
-                        }
-
-                        if (previousIndex < 0) {
-                            previousIndex = 0
-                        }
- 
-                        var currentImage = $(images[currentIndex])
-                        var previousImage = $(images[previousIndex])
-                        
-                        previousImage.css(
-                            {
-                                "visibility": "hidden",
-                            }
-                        )
-
-                        currentImage.css(
-                            {
-                                "visibility": "visible",
-                            }
-                        )
-
-                        var boxes = $(items).find(".box")
-                        
-                        $(boxes[currentIndex]).addClass("active")
-                        $(boxes[previousIndex]).removeClass("active")
-                    })
-                })
-            }
-
-            ecommerceBar()
-            addToCart()
-            browseImages()
-        </script>
+        <script src="../../ecommerce.js"></script>
     </body>
 </html>

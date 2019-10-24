@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Grid testing</title>
+
+        <link rel="stylesheet" href="../mat.css">
+        <link rel="stylesheet" href="./grid.css">
+        <link rel="stylesheet" href="../ecommerce/ecommerce_bar.css">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar-fixed">
+            <nav class=" red darken-1">
+                <div class="container">
+                    <a href="#" class="brand-logo">Shop</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="hide-on-med-and-down right">
+                        <li><a href="#!">Boutique</a></li>
+                        <li><a href="#apropos">A propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+
+        <!-- Ecommerce Bar -->
+        <div class="ecommerce-bar for-mobile">
+            <ul>
+                <li id="#drawer1">
+                    <a>
+                        <i class="material-icons">shopping_basket</i>
+                    </a>
+                </li>
+                <li id="#drawer2">
+                    <a>
+                        <i class="material-icons">search</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Drawers -->
+        <div class="ecommerce-bar-drawer" id="drawer1">
+            <div class="drawer">
+                <div class="close">x</div>
+                <div class="title">Collections</div>
+                <ul>
+                    <li class="highlighted"><a href="#!">Sacs</a></li>
+                    <li class="highlighted"><a href="#!">Promotions</a></li>
+                    <li class="highlighted"><a href="#!">Nouveautés</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="close"><span>x</span></div>
+                <div>
+                    <form class="search">
+                        <div class="search-field">
+                            <input type="text" name="search" class="browser-default" id="search" placeholder="Rechercher">
+                            <div class="btn-search">
+                                <a href="#!"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="ecommerce">
+            <div class="grid">
+                <!-- Product -->
+                <div class="product">
+                    <div class="side-images" id="mobile">
+                        <div class="counter"><span></span></div>
+                        <img src="../../assets/images/image3.jpg" alt="">
+                        <img src="../../assets/images/image4.jpg" alt="">
+                    </div>
+                    <div class="information">
+                        <div class="price-details">
+                            <div class="price">5874€</div>
+                            <div class="discounted-price">147.75€</div>
+                        </div>
+                        <h1>Bracelet en cuir</h1>
+                        <p class="description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            At voluptatibus accusamus ipsum ratione, quam tenetur 
+                            optio obcaecati impedit cum dolore eos, ullam vero 
+                            ipsam molestias deserunt eaque totam est atque.
+                        </p>
+                        <button href="#!" class="btn-large red darken-3" id="btn_add_to_cart">
+                            <i class="material-icons left">shopping_cart</i>
+                            Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="details">
+                    <div class="detail">
+                        <h4>Informations article</h4>
+                        <ul class="browser-default">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                            <li>Ullam fugit sed qui impedit provident consectetur cumque alias accusantium</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail">
+                        <h4>Code produit</h4>
+                        COR-ART-ERT7
+                    </div>
+
+                    <div class="detail">
+                        <h4>Autres</h4>
+                        Matière en laine de coton 100%
+                    </div>
+                </div>
+            </div>
+
+            <div class="more">
+                <h4>Vous allez aussi aimer</h4>
+                <div class="images-grid">
+                    <div class="product">
+                        <a href="#!">
+                            <img src="../../assets/images/image3.jpg" alt="">
+                            <div class="details">
+                                <div class="title">Jupe en cuir</div>                                
+                                <div class="price">57€</div>                                
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="#!">
+                            <img src="../../assets/images/image4.jpg" alt="">
+                            <div class="details">
+                                <div class="title">Jupe en cuir</div>                                
+                                <div class="price">57€</div>                                
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="#!">
+                            <img src="../../assets/images/image3.jpg" alt="">
+                            <div class="details">
+                                <div class="title">Jupe en cuir</div>                                
+                                <div class="price">57€</div>                                
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="#!">
+                            <img src="../../assets/images/image3.jpg" alt="">
+                        </a>
+                        <div class="details">
+                            <div class="title">Jupe en cuir</div>                                
+                            <div class="price">57€</div>                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="minimalist-footer red darken-1">
+            <div class="links">
+                <a href="#!">Conditions générales</a>
+                <a href="#!">Confidentialité</a>
+            </div>
+        </div>
+
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="../ecommerce/ecommerce.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            });
+        </script>
+    </body>
+</html>
