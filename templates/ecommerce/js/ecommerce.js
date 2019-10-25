@@ -21,15 +21,19 @@ var addToCart = function() {
 
 // Drawer action
 var ecommerceBar = function() {
-    var bar = $(".ecommerce-bar")
+    // Ecommerce bar
+    // var bar = $(".ecommerce-bar")
+    // var links = bar.find("li")
+    
+    var bar = $("nav #ecommerce-mobile")
     var links = bar.find("li")
 
-    var transparentOnScroll = function() {
-        // bar.scroll(function() {
-        //     bar.addClass("transparent-on-scroll")
-        // })
-        console.log(bar.attr("class"))
-    }
+    // var transparentOnScroll = function() {
+    //     // bar.scroll(function() {
+    //     //     bar.addClass("transparent-on-scroll")
+    //     // })
+    //     console.log(bar.attr("class"))
+    // }
 
     var closeDrawer = function(linkiD) {
         $(linkiD).find(".close").on("click", function() {
@@ -48,7 +52,8 @@ var ecommerceBar = function() {
             $(this).on("click", function() {
                 $(linkiD).css(
                     {
-                        "transform": "translateX(0px)"
+                        "transform": "translateX(0px)",
+                        // "opacity": 1
                     }
                 )
             })
