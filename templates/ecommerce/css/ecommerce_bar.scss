@@ -30,7 +30,7 @@ nav .brand-logo {
 }
 
 .ecommerce-bar {
-    background-color: $ecommercebar_grey;
+    background-color: $secondary_color;
     z-index: -999;
     min-height: 46px;
 
@@ -51,10 +51,10 @@ nav .brand-logo {
             }
 
             &.best-offers {
-                background-color: #66bb6a;
+                background-color: $highlight_color;
 
                 &:hover {
-                    background-color: rgba(102, 187, 106, 0.5);
+                    background-color: rgba($color: $highlight_color, $alpha: .5);
                 }
             }
             
@@ -138,7 +138,7 @@ nav .brand-logo {
                         text-transform: uppercase;
                         font-weight: 500;
                         padding: .75rem;
-                        background-color: $grey;                        
+                        background-color: #eee;                        
                     }
                 }
 
@@ -175,7 +175,7 @@ nav .brand-logo {
                     position: absolute;
                     top: 0;
                     right: 0;
-                    background-color: $red_darken_1;
+                    background-color: $secondary_color;
                     // box-shadow: $z_depth_1;
 
                     display: inline-block;

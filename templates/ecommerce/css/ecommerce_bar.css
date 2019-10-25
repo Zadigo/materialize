@@ -31,11 +31,11 @@ nav .brand-logo {
 }
 
 .ecommerce-bar ul li.best-offers {
-  background-color: #66bb6a;
+  background-color: #E53935;
 }
 
 .ecommerce-bar ul li.best-offers:hover {
-  background-color: rgba(102, 187, 106, 0.5);
+  background-color: rgba(229, 57, 53, 0.5);
 }
 
 .ecommerce-bar ul li a {
@@ -162,7 +162,7 @@ nav .brand-logo {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #e53935;
+  background-color: #484848;
   display: inline-block;
   overflow: hidden;
   z-index: 1;
