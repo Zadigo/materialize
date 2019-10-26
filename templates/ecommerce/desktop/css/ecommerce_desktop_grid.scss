@@ -3,7 +3,14 @@
 %container {
     margin: 0 auto;
     max-width: 1280px;
-    width: 90%;
+    
+    @media only screen and (min-width: 301px) {
+        width: 98%;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        width: 75%;
+    }
 }
 
 %ecommerce_sub_section {
@@ -178,7 +185,7 @@
             @extend %ecommerce_sub_section;
 
             display: grid;
-            grid-column-gap: 10px;
+            grid-gap: 10px;
             padding: 1rem;
             
             @media only screen and (min-width: 301px) {
@@ -222,10 +229,16 @@
 
     .grid#products {
         display: grid;
-        grid-template-columns: 300px 300px 300px;
-        grid-auto-rows: minmax(300px);
-        grid-column-gap: 15px;
-        grid-row-gap: 15px;
+        
+        @media only screen and (min-width: 301px) {
+            grid-template-columns: repeat(2, minmax(80px, 1fr));
+            grid-gap: 4px;
+        }
+
+        @media only screen and (min-width: 993px) {
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-gap: 15px;
+        }
         
         .product {
             // background-color: #e53935;
@@ -244,9 +257,11 @@
                     width: 100%;
                     height: auto;
                     transition: transform .3s ease-in-out;
-    
-                    &:hover {
-                        transform: scale(1.1, 1.1);
+                    
+                    @media only screen and (min-width: 993px) {
+                        &:hover {
+                            transform: scale(1.1, 1.1);
+                        }
                     }
                 }
 
@@ -270,7 +285,14 @@
 
                 .price {
                     font-weight: 700;
-                    font-size: 1.1rem;
+
+                    @media only screen and (min-width: 301px) {
+                        font-size: 1rem;
+                    }
+
+                    @media only screen and (min-width: 993px) {
+                        font-size: 1.1rem;
+                    }
                 }
                 
                 .price-details {

@@ -11,6 +11,22 @@ html .hover-cover {
   font-family: "Lato", "Raleway", "Roboto", sans-serif;
 }
 
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px;
+  border: 1px solid #888;
+}
+
 .ecommerce {
   margin: 0 auto;
   max-width: 1280px;
@@ -28,13 +44,17 @@ html .hover-cover {
   }
 }
 
-.ecommerce .grid#product .breadcrumbs, .ecommerce .grid#product .side-images, .ecommerce .grid#product .main-image, .ecommerce .grid#product .information, .ecommerce .grid#product .details, .ecommerce .grid#product .more {
-  background-color: blue;
-}
-
 .ecommerce .grid#product .main-image img {
   width: 100%;
   height: auto;
+}
+
+.card-link {
+  color: inherit;
+}
+
+.ecommerce .grid#products .product a, .promotion-banner a {
+  color: inherit;
 }
 
 .ecommerce {
@@ -61,7 +81,7 @@ html .hover-cover {
     -ms-grid-columns: min-content;
         grid-template-columns: -webkit-min-content;
         grid-template-columns: min-content;
-        grid-template-areas: "breadcrumbs breadcrumbs breadcrumbs" "side-images main-image information" "details details ." "more more more";
+        grid-template-areas: "breadcrumbs breadcrumbs breadcrumbs" "side-images main-image information" "details details details" "more more more";
   }
 }
 
@@ -71,6 +91,10 @@ html .hover-cover {
 
 .ecommerce .grid#product .breadcrumbs .breadcrumb {
   color: inherit;
+}
+
+.ecommerce .grid#product .breadcrumbs .breadcrumb:last-child {
+  color: #c7c7c7;
 }
 
 .ecommerce .grid#product .side-images {
@@ -135,7 +159,7 @@ html .hover-cover {
 
 .ecommerce .grid#product .information {
   grid-area: information;
-  padding: 0 .25rem;
+  padding: 0 .45rem;
 }
 
 .ecommerce .grid#product .information h4 {
@@ -156,7 +180,18 @@ html .hover-cover {
 
 .ecommerce .grid#product .information .infos .price {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.75rem;
+}
+
+.ecommerce .grid#product .information .infos .discounted-price {
+  line-height: 3.45;
+  margin-left: .75rem;
+}
+
+.ecommerce .grid#product .information .other-details .color > span, .ecommerce .grid#product .information .other-details .size > span {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .85rem;
 }
 
 @media only screen and (min-width: 301px) {
@@ -181,10 +216,51 @@ html .hover-cover {
   .ecommerce .grid#product .information .other-details {
     display: block;
   }
+  .ecommerce .grid#product .information .other-details div:last-child {
+    margin-left: 0;
+  }
+}
+
+.ecommerce .grid#product .information #btn_add_to_cart {
+  margin: 2.5rem 0 0 0;
 }
 
 .ecommerce .grid#product .details {
   grid-area: details;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#product .details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#product .details {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.ecommerce .grid#product .details .detail > p {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #c7c7c7;
+  margin-top: 1rem;
 }
 
 .ecommerce .grid#product .more {
@@ -195,6 +271,7 @@ html .hover-cover {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
+  margin: 2.75rem 0 2.75rem 0;
 }
 
 @media only screen and (min-width: 301px) {
@@ -255,4 +332,131 @@ html .hover-cover {
     max-height: 200px;
   }
 }
-/*# sourceMappingURL=grid.css.map */
+
+.ecommerce .grid#products {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products {
+    -ms-grid-columns: (minmax(80px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
+    grid-gap: 4px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products {
+    -ms-grid-columns: (minmax(200px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
+}
+
+.ecommerce .grid#products .product {
+  overflow: hidden;
+}
+
+.ecommerce .grid#products .product .image {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.ecommerce .grid#products .product .image img {
+  width: 100%;
+  height: auto;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .image img:hover {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+}
+
+.ecommerce .grid#products .product .image .discount-pct {
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  height: 35px;
+  width: 45px;
+  padding: .25rem;
+  font-weight: 700;
+  font-size: .9rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.ecommerce .grid#products .product .details .price {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products .product .details .price {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .details .price {
+    font-size: 1.1rem;
+  }
+}
+
+.ecommerce .grid#products .product .details .price-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.ecommerce .grid#products .product .details .price-details .price {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.ecommerce .grid#products .product .details .price-details .discounted-price {
+  text-decoration: line-through;
+  margin-left: .75rem;
+  line-height: 1.68;
+}
+
+.promotion-banner {
+  position: relative;
+  top: 0;
+  height: auto;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 2rem;
+  background-color: #E53935;
+}
+
+.promotion-banner a .big-title {
+  margin-bottom: .35rem;
+}
+
+.promotion-banner a .presentation {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.promotion-banner a .legal {
+  font-size: .75rem;
+  padding: .25rem;
+  font-weight: 400;
+}
+
+.page-footer, .minimalist-footer {
+  margin-top: 4rem;
+}
+/*# sourceMappingURL=ecommerce_grid.css.map */

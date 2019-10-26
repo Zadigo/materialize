@@ -1,4 +1,5 @@
-@import "../fonts.scss";
+@import "../../css/fonts.scss";
+@import "./variables.scss";
 
 %container {
     margin: 0 auto;
@@ -20,6 +21,14 @@
 %image {
     width: 100%;
     height: auto;
+}
+
+.card-link {
+    color: inherit;
+}
+
+%links {
+    color: inherit;
 }
 
 @mixin side_images($height) {
@@ -54,21 +63,25 @@
             grid-template-areas: 
             "breadcrumbs breadcrumbs breadcrumbs"
             "side-images main-image information"
-            "details details ."
+            "details details details"
             "more more more";
         }
 
         .breadcrumbs {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: breadcrumbs;
 
             .breadcrumb {
                 color: inherit;
+
+                &:last-child {
+                    color: $dark_grey;
+                }
             }
         }
 
         .side-images {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: side-images;
 
             @media only screen and (min-width: 301px) {
@@ -103,7 +116,7 @@
         }
         
         .main-image {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: main-image;
             // grid-template-rows: minmax(100px, 400px);
             // grid-template-columns: minmax(100px, 400px);
@@ -128,9 +141,9 @@
         }
         
         .information {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: information;
-            padding:  0 .25rem;
+            padding:  0 .45rem;
 
             h4 {
                 font-weight: 300;
@@ -144,11 +157,22 @@
                 
                 .price {
                     font-weight: 700;
-                    font-size: 30px;
+                    font-size: 1.75rem;
+                }
+
+                .discounted-price {
+                    line-height: 3.45;
+                    margin-left: .75rem;
                 }
             }
 
             .other-details {
+                .color > span, .size > span {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: .85rem;
+                }
+
                 @media only screen and (min-width: 301px) {
                     display: flex;
                     flex-direction: row;
@@ -161,23 +185,54 @@
                 
                 @media only screen and (min-width: 993px) {
                     display: block;
+
+                    div:last-child {
+                        margin-left: 0;
+                    }
                 }
+            }
+
+            #btn_add_to_cart {
+                margin: 2.5rem 0 0 0;
             }
         }
 
         .details {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: details;
+
+            display: flex;
+            padding: 1rem;
+
+            @media only screen and (min-width: 301px) {
+                flex-direction: column;
+                justify-content: left;
+            }
+            
+            @media only screen and (min-width: 993px) {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .detail {
+                &> p {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: $dark_grey;
+                    margin-top: 1rem;
+                }
+            }
         }
 
         .more {
-            @extend %area_properties;
+            // @extend %area_properties;
             grid-area: more;
             
             h4 {
                 text-align: center;
                 text-transform: uppercase;
                 font-weight: 700;
+                margin: 2.75rem 0 2.75rem 0;
             }
 
             @media only screen and (min-width: 301px) {
@@ -228,4 +283,122 @@
             }
         }
     }
+
+    .grid#products {
+        display: grid;
+        
+        @media only screen and (min-width: 301px) {
+            grid-template-columns: repeat(2, minmax(80px, 1fr));
+            grid-gap: 4px;
+        }
+
+        @media only screen and (min-width: 993px) {
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-gap: 15px;
+        }
+        
+        .product {
+            // background-color: #e53935;
+            overflow: hidden;
+
+            a {
+                @extend %links;
+            }
+            
+            .image {
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    transition: transform .3s ease-in-out;
+                    
+                    @media only screen and (min-width: 993px) {
+                        &:hover {
+                            transform: scale(1.1, 1.1);
+                        }
+                    }
+                }
+
+                .discount-pct {
+                    position: absolute;
+                    color: white;
+                    top: 0;
+                    right: 0;
+                    height: 35px;
+                    width: 45px;
+                    padding: .25rem;
+                    font-weight: 700;
+                    font-size: .9rem;
+                    text-align: center;
+                    line-height: 2;
+                }
+            }
+            .details {
+                .price {
+                    font-weight: 700;
+
+                    @media only screen and (min-width: 301px) {
+                        font-size: 1rem;
+                    }
+
+                    @media only screen and (min-width: 993px) {
+                        font-size: 1.1rem;
+                    }
+                }
+                
+                .price-details {
+                    display: flex;
+                    justify-content: left;
+
+                    .price {
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                    }
+
+                    .discounted-price {
+                        text-decoration: line-through;
+                        margin-left: .75rem;
+                        line-height: 1.68;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.promotion-banner {
+    position: relative;
+    top: 0;
+    height: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 2rem;
+    background-color: $highlight_color;
+    
+    a {
+        @extend %links;
+        
+        .big-title {
+            margin-bottom: .35rem;
+        }
+        
+        .presentation {
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .legal {
+            font-size: .75rem;
+            padding: .25rem;
+            font-weight: 400;
+        }
+    }
+}
+
+.page-footer, .minimalist-footer {
+    margin-top: 4rem;
 }

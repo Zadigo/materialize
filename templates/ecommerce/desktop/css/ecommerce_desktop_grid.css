@@ -1,7 +1,18 @@
 .ecommerce, .ecommerce#product .details, .ecommerce#product .more {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce, .ecommerce#product .details, .ecommerce#product .more {
+    width: 98%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce, .ecommerce#product .details, .ecommerce#product .more {
+    width: 75%;
+  }
 }
 
 .ecommerce#product .product, .ecommerce#product .details {
@@ -187,7 +198,7 @@
 .ecommerce#product .details {
   display: -ms-grid;
   display: grid;
-  grid-column-gap: 10px;
+  grid-gap: 10px;
   padding: 1rem;
 }
 
@@ -273,11 +284,22 @@
 .ecommerce .grid#products {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 300px 300px 300px;
-      grid-template-columns: 300px 300px 300px;
-  grid-auto-rows: minmax(300px);
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products {
+    -ms-grid-columns: (minmax(80px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
+    grid-gap: 4px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products {
+    -ms-grid-columns: (minmax(200px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
 }
 
 .ecommerce .grid#products .product {
@@ -299,9 +321,11 @@
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
-.ecommerce .grid#products .product .image img:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .image img:hover {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
 }
 
 .ecommerce .grid#products .product .image .discount-pct {
@@ -320,7 +344,18 @@
 
 .ecommerce .grid#products .product .details .price {
   font-weight: 700;
-  font-size: 1.1rem;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products .product .details .price {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .details .price {
+    font-size: 1.1rem;
+  }
 }
 
 .ecommerce .grid#products .product .details .price-details {
