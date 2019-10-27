@@ -57,8 +57,16 @@ pre {
   color: inherit;
 }
 
+.section#cart_success i, .section#cart_empty i {
+  font-size: 2rem;
+}
+
 .ecommerce {
   padding-top: 1rem;
+}
+
+.ecommerce .product-count {
+  color: #c7c7c7;
 }
 
 .ecommerce .grid#product {
@@ -441,6 +449,12 @@ pre {
   background-color: #E53935;
 }
 
+.promotion-banner.smaller {
+  padding: .75rem;
+  font-size: 1rem;
+  color: white;
+}
+
 .promotion-banner a .big-title {
   margin-bottom: .35rem;
 }
@@ -458,5 +472,101 @@ pre {
 
 .page-footer, .minimalist-footer {
   margin-top: 4rem;
+}
+
+@media only screen and (min-width: 301px) {
+  .section#grids .ecommerce:not(:first-child), div#grids .ecommerce:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .section#grids .ecommerce:not(:first-child), div#grids .ecommerce:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
+
+.section#grids .ecommerce .collection-landing-page, div#grids .ecommerce .collection-landing-page {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.section#grids .ecommerce .collection-landing-page:not(:first-child), div#grids .ecommerce .collection-landing-page:not(:first-child) {
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 301px) {
+  .section#grids .ecommerce .collection-landing-page.two, div#grids .ecommerce .collection-landing-page.two {
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -ms-grid-rows: 400px;
+        grid-template-rows: 400px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .section#grids .ecommerce .collection-landing-page.two, div#grids .ecommerce .collection-landing-page.two {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 400px;
+        grid-template-rows: 400px;
+  }
+}
+
+.section#grids .ecommerce .collection-landing-page.two .item, div#grids .ecommerce .collection-landing-page.two .item {
+  background-color: aqua;
+}
+
+@media only screen and (min-width: 301px) {
+  .section#grids .ecommerce .collection-landing-page.five, div#grids .ecommerce .collection-landing-page.five {
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    -ms-grid-rows: 200px;
+        grid-template-rows: 200px;
+    grid-auto-rows: 100px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .section#grids .ecommerce .collection-landing-page.five, div#grids .ecommerce .collection-landing-page.five {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: 200px;
+        grid-template-rows: 200px;
+    grid-auto-rows: 100px;
+  }
+}
+
+.section#grids .ecommerce .collection-landing-page.five .item, div#grids .ecommerce .collection-landing-page.five .item {
+  background-color: aqua;
+}
+
+.section#grids .ecommerce .collection-landing-page.five .item.bigger, div#grids .ecommerce .collection-landing-page.five .item.bigger {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.section#cart_success i {
+  font-size: 4rem;
+}
+
+.section#cart_success p {
+  margin-top: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.section#cart_success #order-reference {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.section#cart_empty .message {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 2.2rem 0 2.2rem 0;
 }
 /*# sourceMappingURL=ecommerce_grid.css.map */

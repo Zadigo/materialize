@@ -11,6 +11,21 @@
         <link rel="stylesheet" href="./css/ecommerce_grid.css">
         <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
         <link rel="stylesheet" href="../code.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <script>
+            dataLayer.push({
+                "event": "checkout",
+                "ecommerce": {
+                    "checkout": {
+                    "actionField": {
+                        "step": 1
+                    },
+                    "products": []
+                    },
+                }
+            });
+        </script>
     </head>
 
     <body>
@@ -32,7 +47,7 @@
         
         <!-- Main -->
         <main>
-            <section class="section" id="cart">
+            <section class="section" id="cart_success">
                 <div class="container">
                     <div class="row">
                         <div class="col s12 m12 l12">
@@ -40,13 +55,13 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col s12 m12 l12">
-                                            <i class="material-icons">check</i>
+                                            <i class="material-icons green-text">check_circle</i>
                                             <p>
                                                 Merci d'avoir acheté Nawoka. Votre numéro de commande est le 
-                                                {{ order_reference }}. Si vous avez le moindre doute, contactez
-                                                notre service client.
+                                                <span id="order-reference">{{ order_reference }}</span>.
+                                                Si vous avez la moindre question, sur votre commande notre service client.
                                             </p>
-                                            <a href="./products.html" class="btn-large waves-effect waves-light grey darken-1">
+                                            <a href="./products.html" class="btn-large waves-effect waves-light grey darken-4 z-depth-0">
                                                 Retourner à la boutique
                                             </a>
                                         </div>
