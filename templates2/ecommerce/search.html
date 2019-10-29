@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Paiement réussi</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce_grid.css">
+        <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
+        <link rel="stylesheet" href="../code.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <script>
+            dataLayer.push({
+                "event": "checkout",
+                "ecommerce": {
+                    "checkout": {
+                    "actionField": {
+                        "step": 1
+                    },
+                    "products": []
+                    },
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- Nav -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="./products.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Main -->
+        <main>
+            <section class="section" id="no_search">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <div class="card-panel center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col s12 m12 l12">
+                                            <i class="material-icons">search</i>
+                                            <p>
+                                                Oops ! Rien ne correspond à {{ terms }}.
+                                            </p>
+                                            <p>
+                                                En essayant un autre term nous pourrions y arriver.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ecommerce">
+                <p class="section-title">Recommendations pour vous</p>
+                <!-- Recommendations -->
+                <div class="grid recommendation" id="products">
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                    <div class="discounted-price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                    <div class="discounted-price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                    <div class="discounted-price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                    <div class="discounted-price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="../js/ecommerce.js"></script>
+    </body>
+</html>

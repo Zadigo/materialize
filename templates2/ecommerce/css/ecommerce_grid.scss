@@ -15,7 +15,7 @@
 }
 
 %area_properties {
-    background-color: blue;
+    background-color: white;
 }
 
 %image {
@@ -40,13 +40,96 @@
     font-size: 2rem;
 }
 
+%product {
+    // background-color: #e53935;
+    overflow: hidden;
+
+    a {
+        @extend %links;
+    }
+    
+    .image {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            transition: transform .3s ease-in-out;
+            
+            @media only screen and (min-width: 993px) {
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                }
+            }
+        }
+
+        .discount-pct {
+            position: absolute;
+            color: white;
+            top: 0;
+            right: 0;
+            height: 35px;
+            width: 45px;
+            padding: .25rem;
+            font-weight: 700;
+            font-size: .9rem;
+            text-align: center;
+            line-height: 2;
+        }
+    }
+
+    .details {
+        .price {
+            font-weight: 700;
+
+            @media only screen and (min-width: 301px) {
+                font-size: 1rem;
+            }
+
+            @media only screen and (min-width: 993px) {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .price-details {
+            display: flex;
+            justify-content: left;
+
+            .price {
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+
+            .discounted-price {
+                text-decoration: line-through;
+                margin-left: .75rem;
+                line-height: 1.68;
+            }
+        }
+    }
+}
+
 
 .ecommerce {
     @extend %container;
-    padding-top: 1rem;
+
+    p.section-title {
+        text-align: center;
+        font-weight: 700;
+    }
 
     .product-count {
         color: $dark_grey;
+    }
+    
+    @media only screen and (min-width: 301px) {
+        padding-top: 0;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        padding-top: 1rem;
     }
 
     .grid#product {
@@ -62,7 +145,8 @@
             "information"
             "details"
             "more";
-            grid-row-gap: 5px;     
+            grid-row-gap: 5px;
+            background-color: $primary_grey;
         }
         
         @media only screen and (min-width: 993px) {
@@ -73,11 +157,17 @@
             "side-images main-image information"
             "details details details"
             "more more more";
+            background-color: white;
         }
 
         .breadcrumbs {
-            // @extend %area_properties;
+            @extend %area_properties;
             grid-area: breadcrumbs;
+            padding: {
+                top: 1rem;
+                bottom: 1rem;
+            }
+            font-size: .85rem;
 
             .breadcrumb {
                 color: inherit;
@@ -85,11 +175,18 @@
                 &:last-child {
                     color: $dark_grey;
                 }
+
+                &:before {
+                    color: inherit;
+                    // display: inherit;
+                    line-height: 1.2;
+                    font-size: 1.5rem;
+                }
             }
         }
 
         .side-images {
-            // @extend %area_properties;
+            @extend %area_properties;
             grid-area: side-images;
 
             @media only screen and (min-width: 301px) {
@@ -124,7 +221,8 @@
         }
         
         .main-image {
-            // @extend %area_properties;
+            @extend %area_properties;
+
             grid-area: main-image;
             // grid-template-rows: minmax(100px, 400px);
             // grid-template-columns: minmax(100px, 400px);
@@ -149,7 +247,8 @@
         }
         
         .information {
-            // @extend %area_properties;
+            @extend %area_properties;
+
             grid-area: information;
             padding:  0 .45rem;
 
@@ -169,8 +268,9 @@
                 }
 
                 .discounted-price {
-                    line-height: 3.45;
+                    line-height: 3;
                     margin-left: .75rem;
+                    text-decoration: line-through;
                 }
             }
 
@@ -201,12 +301,19 @@
             }
 
             #btn_add_to_cart {
-                margin: 2.5rem 0 0 0;
+                @media only screen and (min-width: 301px) {
+                    margin: 2.5rem 0 2.5rem 0;
+                }
+                
+                @media only screen and (min-width: 993px) {
+                    margin: 2.5rem 0 0 0;
+                }
             }
         }
 
         .details {
-            // @extend %area_properties;
+            @extend %area_properties;
+
             grid-area: details;
 
             display: flex;
@@ -233,7 +340,8 @@
         }
 
         .more {
-            // @extend %area_properties;
+            @extend %area_properties;
+
             grid-area: more;
             
             h4 {
@@ -241,6 +349,10 @@
                 text-transform: uppercase;
                 font-weight: 700;
                 margin: 2.75rem 0 2.75rem 0;
+            }
+
+            a {
+                @extend %links;
             }
 
             @media only screen and (min-width: 301px) {
@@ -268,6 +380,15 @@
                         img {
                             width: 100%;
                             height: auto;
+                        }
+                    }
+
+                    .details {
+                        display: flex;
+                        flex-direction: column;
+
+                        .price {
+                            font-weight: 700;
                         }
                     }
                 }
@@ -306,73 +427,26 @@
         }
         
         .product {
-            // background-color: #e53935;
-            overflow: hidden;
+            @extend %product
+        }
+    }
 
-            a {
-                @extend %links;
-            }
-            
-            .image {
-                position: relative;
-                overflow: hidden;
-                height: 100%;
+    .grid.recommendation#products {
+        display: grid;
+        padding: 0 .25rem 0 .25rem;
+        
+        @media only screen and (min-width: 301px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4px;
+        }
 
-                img {
-                    width: 100%;
-                    height: auto;
-                    transition: transform .3s ease-in-out;
-                    
-                    @media only screen and (min-width: 993px) {
-                        &:hover {
-                            transform: scale(1.1, 1.1);
-                        }
-                    }
-                }
+        @media only screen and (min-width: 993px) {
+            grid-template-columns: repeat(4, minmax(200px, 1fr));
+            grid-gap: 15px;
+        }
 
-                .discount-pct {
-                    position: absolute;
-                    color: white;
-                    top: 0;
-                    right: 0;
-                    height: 35px;
-                    width: 45px;
-                    padding: .25rem;
-                    font-weight: 700;
-                    font-size: .9rem;
-                    text-align: center;
-                    line-height: 2;
-                }
-            }
-            .details {
-                .price {
-                    font-weight: 700;
-
-                    @media only screen and (min-width: 301px) {
-                        font-size: 1rem;
-                    }
-
-                    @media only screen and (min-width: 993px) {
-                        font-size: 1.1rem;
-                    }
-                }
-                
-                .price-details {
-                    display: flex;
-                    justify-content: left;
-
-                    .price {
-                        font-weight: 700;
-                        font-size: 1.1rem;
-                    }
-
-                    .discounted-price {
-                        text-decoration: line-through;
-                        margin-left: .75rem;
-                        line-height: 1.68;
-                    }
-                }
-            }
+        .product {
+            @extend %product;
         }
     }
 }

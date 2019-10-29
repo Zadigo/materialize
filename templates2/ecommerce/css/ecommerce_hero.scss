@@ -1,0 +1,35 @@
+%banner_text {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 400;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.section.ecommerce-hero  {
+    .presentation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 290px;
+        grid-column-gap: 10px;
+
+        .presentation {
+            background-color: blue;
+        }
+    }
+}
+
+.banner {
+    background-color: red;
+    margin-top: 1rem;
+    overflow: hidden;
+
+    .wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    &.bigger {
+        height: 180px;
+    }
+}
