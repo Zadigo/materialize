@@ -5,54 +5,149 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Hero n°5</title>
+        <title>Acceil</title>
 
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../hero/css/hero.css">
         <link rel="stylesheet" href="../ecommerce/css/ecommerce_hero.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="./css/ecommerce_bar.css">
     </head>
     <body>
+        <!-- Nav -->
         <div class="navbar-fixed">
-            <nav class="blue lighten-1"></nav>
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="./hero.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
 
-        <div class="hero blue darken-1">
-            <div class="hero-wrapper">
-                <div class="call-to-action">
-                    <div class="lead">Beauté et mode tierces</div>
-                    <div class="lead-subtitle">Faites au mieux, la mode est là</div>
-                    <a href="#!" class="btn-large blue lighten-1">Press</a>
+        <!-- Ecommerce bar -->
+        <!-- <div class="ecommerce-bar">
+            <div class="container">
+                <ul>
+                    <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                    <li><a href="./shop.html">Collectios</a></li>
+                    <li><a href="./products.html">Sacs</a></li>
+                    <li><a href="./products.html">Bracelets</a></li>
+                </ul>
+            </div>
+        </div> -->
+
+        <!-- <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper">
+                    <div class="actions">
+                        <div class="close">x</div>
+                        <div class="title">Collections</div>
+                    </div>
+                    <ul>
+                        <li class="highlighted"><a href="./products.html">Sacs</a></li>
+                        <li class="highlighted"><a href="./products.html">Vêtements</a></li>
+                        <li class="highlighted"><a href="./products.html">Montres</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper search">
+                    <div class="close">x</div>
+                    <div class="search">
+                        <form action="./products.html" method="GET">
+                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <section class="section ecommerce-hero">
-            <div class="presentation-grid">
-                <div class="presentation">
-                    A
+        <main>
+            <div class="hero blue darken-1 responsivity" style="background-image: url('../images/image19.jpg');">
+                <div class="hero-wrapper">
+                    <div class="call-to-action">
+                        <div class="lead">Beauté et mode tierces</div>
+                        <div class="lead-subtitle">Faites au mieux, la mode est là</div>
+                        <a href="./shop.html" class="btn-large grey darken-1">Collections</a>
+                    </div>
                 </div>
-                <div class="presentation">
-                    A
+            </div>
+    
+            <section class="section ecommerce-benefits">
+                <div class="presentation-grid">
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Nouveautés</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image13.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Promotions</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="banner">
+                    <div class="wrapper">
+                        <img src="./assets/Banners.jpg" alt="banner1">
+                    </div>
+                </div>
+        
+                <div class="banner">
+                    <div class="wrapper">
+                        <img src="./assets/Banners2.jpg" alt="banner2">
+                    </div>
+                </div>
+        
+                <div class="banner">
+                    C
+                </div> -->
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <div class="banner">
-            <div class="wrapper">
-                <img src="./assets/Banners.jpg" alt="banner1">
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
             </div>
-        </div>
+        </footer>
 
-        <div class="banner bigger">
-            <div class="wrapper">
-                <img src="./assets/Banners2.jpg" alt="banner2">
-            </div>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <div class="section banner bigger">
-            C
-        </div>
-
+        <script src="../js/ecommerce.js"></script>
     </body>
 </html>

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="./css/ecommerce_grid.css">
         <link rel="stylesheet" href="./css/ecommerce_bar.css">
+        <link rel="stylesheet" href="./css/ecommerce_image_grids.css">
         <link rel="stylesheet" href="../code.css">
         <link rel="stylesheet" href="../css/footer.css">
     </head>
@@ -20,7 +21,7 @@
             <nav class="grey darken-4">
                 <div class="nav-wrapper">
                     <div class="container">
-                        <a href="#" class="brand-logo">Shop</a>
+                        <a href="./hero.html" class="brand-logo">Shop</a>
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right" id="ecommerce-mobile">
                             <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
@@ -36,9 +37,39 @@
             <div class="container">
                 <ul>
                     <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                    <li><a href="./shop.html">Collections</a></li>
                     <li><a href="./products.html">Sacs</a></li>
                     <li><a href="./products.html">Bracelets</a></li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper">
+                    <div class="actions">
+                        <div class="close">x</div>
+                        <div class="title">Collections</div>
+                    </div>
+                    <ul>
+                        <li class="highlighted"><a href="./products.html">Sacs</a></li>
+                        <li class="highlighted"><a href="./products.html">Vêtements</a></li>
+                        <li class="highlighted"><a href="./products.html">Montres</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper search">
+                    <div class="close">x</div>
+                    <div class="search">
+                        <form action="./products.html" method="GET">
+                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -71,21 +102,45 @@
         
         <!-- Main -->
         <main>
-            <section class="section" id="grids">
+            <section class="section images" id="grids">
                 <div class="ecommerce">
                     <div class="collection-landing-page five">
-                        <div class="item">A</div>
-                        <div class="item bigger">B</div>
-                        <div class="item">C</div>
-                        <div class="item">R</div>
-                        <div class="item">M</div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <div class="item bigger">
+                            <div class="image-background" style="background-image: url('../images/image18.jpg');"></div>
+                            <div class="call-to-action position-center">
+                                <div class="text">Montres</div>
+                                <a href="./products.html" class="btn white z-depth-0 black-text">Faire son shopping</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image-background" style="background-image: url('');"></div>
+                        </div>
+                        <div class="item">
+                            <div class="image-background" style="background-image: url('');"></div>
+                        </div>
+                        <div class="item">
+                            <div class="image-background" style="background-image: url('');"></div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="ecommerce">
                     <div class="collection-landing-page two">
-                        <div class="item">R</div>
-                        <div class="item">M</div>
+                        <div class="item">
+                            <div class="image-background" style="background-image: url('../images/image13.jpg')"></div>
+                        </div>
+                        <div class="item">
+                            <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                            <div class="call-to-action position-center">
+                                <div class="text">Toutes les nouveautés</div>
+                                <a href="./products.html" class="btn white z-depth-0 black-text">Faire son shopping</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

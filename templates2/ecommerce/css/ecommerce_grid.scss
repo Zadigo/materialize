@@ -40,6 +40,22 @@
     font-size: 2rem;
 }
 
+%price {
+    font-weight: 700;
+
+    @media only screen and (min-width: 301px) {
+        font-size: 1rem;
+    }
+
+    @media only screen and (min-width: 993px) {
+        font-size: 1.1rem;
+    }
+}
+
+%discounted_price {
+    text-decoration: line-through;
+}
+
 %product {
     // background-color: #e53935;
     overflow: hidden;
@@ -51,7 +67,6 @@
     .image {
         position: relative;
         overflow: hidden;
-        height: 100%;
 
         img {
             width: 100%;
@@ -81,36 +96,25 @@
     }
 
     .details {
-        .price {
-            font-weight: 700;
-
-            @media only screen and (min-width: 301px) {
-                font-size: 1rem;
-            }
-
-            @media only screen and (min-width: 993px) {
-                font-size: 1.1rem;
-            }
-        }
-        
         .price-details {
-            display: flex;
-            justify-content: left;
-
             .price {
-                font-weight: 700;
-                font-size: 1.1rem;
+                @extend %price;
             }
 
             .discounted-price {
-                text-decoration: line-through;
+                @extend %discounted_price;
+
                 margin-left: .75rem;
-                line-height: 1.68;
+                line-height: 2;
+            }
+
+            &.with-discount {
+                display: flex;
+                justify-content: left;
             }
         }
     }
 }
-
 
 .ecommerce {
     @extend %container;
@@ -212,11 +216,8 @@
                     &:not(:first-child) {
                         margin-top: .25rem;
                     }
-                
                     cursor: pointer;
                 }
-
-
             }
         }
         
@@ -427,25 +428,6 @@
         }
         
         .product {
-            @extend %product
-        }
-    }
-
-    .grid.recommendation#products {
-        display: grid;
-        padding: 0 .25rem 0 .25rem;
-        
-        @media only screen and (min-width: 301px) {
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 4px;
-        }
-
-        @media only screen and (min-width: 993px) {
-            grid-template-columns: repeat(4, minmax(200px, 1fr));
-            grid-gap: 15px;
-        }
-
-        .product {
             @extend %product;
         }
     }
@@ -489,70 +471,6 @@
 
 .page-footer, .minimalist-footer {
     margin-top: 4rem;
-}
-
-.section#grids, div#grids {
-    .ecommerce {
-        @media only screen and (min-width: 301px) {
-            &:not(:first-child) {
-                margin-top: 0;
-            }
-        }
-        
-        @media only screen and (min-width: 993px) {
-            &:not(:first-child) {
-                margin-top: 3rem;
-            }
-        }
-
-        .collection-landing-page {
-            display: grid;
-            grid-gap: 10px;
-
-            &:not(:first-child) {
-                margin-top: 2rem;
-            }
-
-            &.two {
-                @media only screen and (min-width: 301px) {
-                    grid-template-rows: repeat(2, 1fr);
-                    grid-template-rows: 400px;            
-                }
-                
-                @media only screen and (min-width: 993px) {
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-template-rows: 400px;
-                }
-
-                .item {
-                    background-color: aqua;
-                }
-            }
-
-            &.five {
-                @media only screen and (min-width: 301px) {
-                    grid-template-rows: repeat(3, 1fr);
-                    grid-template-rows: 200px;
-                    grid-auto-rows: 100px;
-                }
-                
-                @media only screen and (min-width: 993px) {
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: 200px;
-                    grid-auto-rows: 100px;                
-                }
-                
-                .item {
-                    background-color: aqua;
-
-                    &.bigger {
-                        grid-row-start: 1;
-                        grid-row-end: 3;
-                    }
-                }
-            }
-        }
-    }
 }
 
 .section {

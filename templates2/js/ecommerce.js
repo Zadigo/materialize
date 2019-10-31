@@ -46,7 +46,7 @@ var ecommerceBar = function(size) {
                 $(linkiD).css(
                     {
                         "transform": "translateX(0px)",
-                        // "opacity": 1
+                        "opacity": 1
                     }
                 )
             })

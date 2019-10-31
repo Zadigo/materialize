@@ -5,8 +5,7 @@ $lead_font_weight: 600;
 
 @mixin hero_grid_calculator($multiple) {
     // Calculates the top padding
-    // for the lead titles. Increments
-    // from 12.5%
+    // for the lead titles. Increments by 12.5%
     $base_grid: 100;
     $section: $base_grid / 8;
     padding-top: $section * $multiple;
@@ -27,6 +26,12 @@ $lead_font_weight: 600;
     height: $height;
     text-align: center;
     color: white;
+}
+
+%container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
 }
 
 %hero-wrapper {
@@ -55,8 +60,20 @@ $lead_font_weight: 600;
 
 div, section {
     &.hero {
-        // @extend %hero;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
+        &.responsivity {
+            @media only screen and (min-width: 301px) {
+                background-position-y: -50px;
+            }
+            
+            @media only screen and (min-width: 993px) {
+                background-position-y: -250px;
+            }
+        }
+        
         @media only screen and (min-width: 301px) {
             @include hero(50vh);
         }
@@ -137,11 +154,12 @@ div, section {
         width: 100%;
 
         &.contain {
-            margin: 0 auto;
-            max-width: 1280px;
-            width: 90%;
+            // margin: 0 auto;
+            // max-width: 1280px;
+            // width: 90%;
+            @extend %container;
 
-            @media only screen and (min-width: 601px) {
+            @media only screen and (min-width: 301px) {
                 width: 85%;
             }
 
@@ -333,56 +351,56 @@ div, section {
     }
 }
 
-// Tiles
-.image-tiles-group {
-    .image-tiles {
-        max-width: 1280px;
-        margin: 0 auto;
-        width: 90%;
+// // Tiles
+// .image-tiles-group {
+//     .image-tiles {
+//         max-width: 1280px;
+//         margin: 0 auto;
+//         width: 90%;
 
-        padding: {
-            right: 1rem;
-            left: 1rem;
-        } 
+//         padding: {
+//             right: 1rem;
+//             left: 1rem;
+//         } 
 
-        @media only screen and (min-width: 300px) {
-            width: 90%;
-        }
+//         @media only screen and (min-width: 300px) {
+//             width: 90%;
+//         }
 
-        @media only screen and (min-width: 993px) {
-            width: 70%;
-        }
+//         @media only screen and (min-width: 993px) {
+//             width: 70%;
+//         }
 
-        display: grid;
+//         display: grid;
 
-        grid: {
-            template-columns: repeat(2, 1fr);
-            gap: .275em;
-            auto-rows: 300px;
-        }
+//         grid: {
+//             template-columns: repeat(2, 1fr);
+//             gap: .275em;
+//             auto-rows: 300px;
+//         }
 
-            @media only screen and (min-width: 300px) {
-                @include grid_template_columns(1, 2fr)
-            }
+//             @media only screen and (min-width: 300px) {
+//                 @include grid_template_columns(1, 2fr)
+//             }
 
-            @media only screen and (min-width: 601px) {
-                @include grid_template_columns(2, 1fr)
-            }
+//             @media only screen and (min-width: 601px) {
+//                 @include grid_template_columns(2, 1fr)
+//             }
 
 
-        .image-tile {
-            overflow: hidden;
-            background-color: #1565c0;
+//         .image-tile {
+//             overflow: hidden;
+//             background-color: #1565c0;
 
-            img {
-                height: auto;
-                transition: all .5s ease-in-out;
+//             img {
+//                 height: auto;
+//                 transition: all .5s ease-in-out;
 
-                &:hover {
-                    transform: scale(1.1, 1.1);
-                }
+//                 &:hover {
+//                     transform: scale(1.1, 1.1);
+//                 }
 
-            }
-        }
-    }
-}
+//             }
+//         }
+//     }
+// }
