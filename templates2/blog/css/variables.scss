@@ -1,0 +1,25 @@
+$header_color: #26a69a;
+$box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+$content_shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+%links {
+    color: inherit;
+}
+
+%container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 70%;
+}
+
+@mixin main_title($size, $color: inherit) {
+    font-size: $size;
+    margin: {
+        bottom: 1rem;
+    }
+    @if $color == inherit {
+        color: inherit;
+    } @else {
+        color: $color;
+    }
+}

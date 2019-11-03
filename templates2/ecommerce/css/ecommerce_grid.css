@@ -38,6 +38,10 @@ pre {
   height: auto;
 }
 
+.ecommerce .grid#products .product a, .ecommerce .grid#product .more a, .promotion-banner a {
+  color: inherit;
+}
+
 .ecommerce {
   margin: 0 auto;
   max-width: 1280px;
