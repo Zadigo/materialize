@@ -1,0 +1,337 @@
+.card.with-slider .wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.card.special .fixed-hover-cover, .card.special .hover-cover {
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  padding: .75rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.special .fixed-hover-cover, .card.special .hover-cover {
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.special .fixed-hover-cover, .card.special .hover-cover {
+    position: absolute;
+  }
+}
+
+.card.ecommerce.with-action .actions, .card.flat-ecommerce.with-action .actions {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  padding: 2rem;
+  width: auto;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.ecommerce.with-action .actions, .card.flat-ecommerce.with-action .actions {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .card.ecommerce.with-action .actions, .card.flat-ecommerce.with-action .actions {
+    padding: 1.26rem;
+  }
+}
+
+.card.ecommerce.with-action .actions .action, .card.flat-ecommerce.with-action .actions .action {
+  padding: 1rem;
+  height: 54px;
+  width: 54px;
+  border-radius: 34px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  -webkit-transition: width .4s ease;
+  transition: width .4s ease;
+  cursor: pointer;
+}
+
+.card.ecommerce.with-action .actions .action span, .card.flat-ecommerce.with-action .actions .action span {
+  position: absolute;
+  font-weight: 600;
+  margin: 0 0 0 14px;
+  opacity: 0;
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+.card.ecommerce.with-action .actions .action:not(:first-child), .card.flat-ecommerce.with-action .actions .action:not(:first-child) {
+  margin-left: 1rem;
+}
+
+@media only screen and (min-width: 300px) {
+  .card.ecommerce.with-action .actions .action:not(:first-child), .card.flat-ecommerce.with-action .actions .action:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .card.ecommerce.with-action .actions .action:not(:first-child), .card.flat-ecommerce.with-action .actions .action:not(:first-child) {
+    margin-left: .526rem;
+  }
+}
+
+.card.ecommerce .discount, .card.flat-ecommerce .discount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px;
+  background-color: #ec407a;
+  z-index: 1;
+  opacity: 0.85;
+  color: white;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card .card-header {
+  position: relative;
+  background-color: inherit;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 16px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.card .card-header:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+.card.special * {
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.card.special .hover-cover {
+  bottom: -115px;
+}
+
+.card.special .hover-cover p {
+  margin-top: 0;
+}
+
+.card.special .hover-cover-icons {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+  bottom: -48px;
+}
+
+.card.special .hover-cover-icons a {
+  display: block;
+  color: inherit;
+  height: 25px;
+  width: 25px;
+}
+
+.card.special .hover-cover-icons a:not(:last-child) {
+  margin-right: 32px;
+}
+
+.card.special .hover-cover-icons a > i {
+  background-color: white;
+  line-height: 15px;
+  padding: 15px;
+}
+
+.card.special.push-up:hover .hover-cover {
+  -webkit-transform: translateY(-115px);
+          transform: translateY(-115px);
+}
+
+.card.special.push-up:hover .hover-cover-icons {
+  -webkit-transform: translateY(-295%);
+          transform: translateY(-295%);
+  color: inherit;
+}
+
+.card.special.push-up:hover .hover-cover-icons i:hover {
+  background-color: black;
+  color: white;
+}
+
+.card.special.push-up-with-image:hover .card-image img {
+  -webkit-transform: translateY(-55px);
+          transform: translateY(-55px);
+}
+
+.card.special.push-up-with-image:hover .hover-cover {
+  -webkit-transform: translateY(-115px);
+          transform: translateY(-115px);
+}
+
+.card.special.zoom:hover .card-image img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+.card.special.blur:hover .card-image img {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.card.special.dim:hover .card-image img {
+  opacity: 0.7;
+}
+
+.card.special.soft-fade * {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.card.special.soft-fade:hover .hover-cover, .card.special.soft-fade:focus .hover-cover {
+  -webkit-transform: translateY(-115px);
+          transform: translateY(-115px);
+  opacity: 1;
+}
+
+.card.special.soft-fade .hover-cover {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+}
+
+.card.ecommerce * {
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.card.ecommerce.zoom:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+.card.ecommerce.zoom-rotate:hover img {
+  -webkit-transform: scale(1.2, 1.2) rotate(8deg);
+          transform: scale(1.2, 1.2) rotate(8deg);
+}
+
+.card.ecommerce.with-action .actions.animate:hover .action {
+  width: 160px;
+}
+
+.card.ecommerce.with-action .actions.animate:hover .action span {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.card.flat-ecommerce .card-content .title {
+  font-weight: 400;
+}
+
+.card.flat-ecommerce .card-content .price {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.card.with-slider .wrapper {
+  overflow: hidden;
+}
+
+.card.with-slider .wrapper img {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.card.with-slider .navigation {
+  position: absolute;
+  top: 190px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (min-width: 300px) {
+  .card.with-slider .navigation {
+    top: 190px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .card.with-slider .navigation {
+    top: 140px;
+  }
+}
+
+.card.with-slider .navigation i {
+  cursor: pointer;
+  font-size: 44px;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+  color: white;
+}
+
+.card.with-slider .navigation i:hover#right {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.card.with-slider .navigation i:hover#left {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.card.with-filters [type="radio"]:checked + span:after,
+.card.with-filters [type="radio"].with-gap:checked + span:before,
+.card.with-filters [type="radio"].with-gap:checked + span:after {
+  border: 2px solid #a62626;
+}
+
+.card.with-filters [type="radio"]:checked + span:after,
+.card.with-filters [type="radio"].with-gap:checked + span:after {
+  background-color: #a62626;
+}
+/*# sourceMappingURL=cards.css.map */

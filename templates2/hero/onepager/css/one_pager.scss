@@ -1,0 +1,111 @@
+.page-nav {
+    width: 100%;
+    height: auto;
+    font: {
+        size: 18px;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        font: {
+            weight: 700;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+
+        ul {
+            margin: 0;
+            
+            li {
+                display: inline-block;
+                
+                a {
+                    color: inherit;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 95%;
+
+    &.images {
+        .grid {
+            display: grid;
+            grid: {
+                template-columns: repeat(3, 1fr);
+                auto-rows: min-content;
+                gap: 1px;
+            }
+
+            .image {
+                // background-color: blue;
+                overflow: hidden;
+                position: relative;
+
+                figure {
+                    margin: 1rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                &.bigger {
+                    grid: {
+                        row-start: 1;
+                        row-end: 2;
+                        column-start: 2;
+                    }
+                }
+
+                .cover {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: black;
+                    opacity: 0;
+                    transition: all .1s ease-in-out;
+                    padding: 1rem;
+
+                    .title {
+                        position: relative;
+                        display: block;
+                        color: white;
+                        opacity: 1;
+                        text-align: center;
+                        font-size: 18px;
+                        font-weight: 700;
+                        top: 50%;
+                    }
+
+                    &:hover {
+                        opacity: .3;
+                        border: 1px solid black;
+
+                        .title {
+                            opacity: 1;
+                            cursor: pointer;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
