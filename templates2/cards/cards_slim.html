@@ -4,28 +4,85 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Card horizontal</title>
 
-        <link rel="stylesheet" href="../mat.css">
-        <link rel="stylesheet" href="./card_slim.css">
+        <!-- <link rel="stylesheet" href="../css/fonts.css"> -->
+        <!-- <link rel="stylesheet" href="../css/mat.css"> -->
+        <link rel="stylesheet" href="../css/extended_materialize.css">
+        <link rel="stylesheet" href="./css/card_slim.css">
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col s12 m8 l8">
-                    <div class="card horizontal slim animate">
-                        <div class="card-image">
-                            <img src="../../assets/images/product2.webp" alt="">
-                            
-                            <div class="like">
-                                <i class="material-icons">star_border</i>
+                    <div class="col s12 m12 l12">
+                        <div class="card horizontal slim animate">
+                            <div class="card-image">
+                                <img src="../../assets/images/product2.webp" alt="">
+                                
+                                <div class="like">
+                                    <i class="material-icons">star_border</i>
+                                </div>
                             </div>
+    
+                            <a href="#!" class="card-slim-link">
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <h4>Karlie Kloss</h4>
+                                        <!-- <p>First - second - third - fourth</p> -->
+                                        <div class="static-chips">
+                                            <div class="chip"><i class="material-icons">check</i>Great</div>
+                                            <div class="chip"><i class="material-icons">check</i>Another</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
+                    </div>
+
+                    <div class="col s12 m12 l12">
+                        <div class="card horizontal slim animate">
+                            <div class="card-image">
+                                <img src="../../assets/images/product2.webp" alt="">
+                                
+                                <div class="like">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+    
+                                <div class="filter"></div>
+                            </div>
+    
+                            <a href="#!" class="card-slim-link">
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <h4>Karlie Kloss</h4>
+                                        <p>First - Second - Third - Fourth</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l12">
                         <a href="#!" class="card-slim-link">
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                    <h4>Karlie Kloss</h4>
-                                    Something - that - is - great
+                            <div class="card horizontal slim animate">
+                                <div class="card-image">
+                                    <img src="../../assets/images/product2.webp" alt="">
+                                    
+                                    <div class="like">
+                                        <i class="material-icons">star_border</i>
+                                    </div>
+                                </div>
+        
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <h4>Conseiller commercial</h4>
+                                        <div class="static-chips with-transparency">
+                                            <div class="chip"><i class="material-icons">check</i>First</div>
+                                            <div class="chip"><i class="material-icons">access_time</i>Second</div>
+                                            <div class="chip"><i class="material-icons">map</i>Third</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -37,6 +94,9 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="./card_slim.js"></script>
+        <script src="./js/card_slim.js"></script>
+        <script>
+            // var start = $("test")
+        </script>
     </body>
 </html>

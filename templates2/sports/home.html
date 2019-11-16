@@ -5,14 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Accueil</title>
+        <title>Acceil</title>
 
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="../hero/css/hero.css">
-        <link rel="stylesheet" href="../ecommerce/css/ecommerce_hero.css">
         <link rel="stylesheet" href="../css/footer.css">
-        <link rel="stylesheet" href="./css/ecommerce_bar.css">
+        <link rel="stylesheet" href="./css/sports_bar.css">
     </head>
     <body>
         <!-- Nav -->
@@ -20,7 +19,7 @@
             <nav class="grey darken-4">
                 <div class="nav-wrapper">
                     <div class="container">
-                        <a href="./hero.html" class="brand-logo">Shop</a>
+                        <a href="./hero.html" class="brand-logo">FIVB</a>
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right" id="ecommerce-mobile">
                             <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
@@ -31,68 +30,39 @@
             </nav>
         </div>
 
-        <!-- Ecommerce bar -->
-        <!-- <div class="ecommerce-bar">
+        <!-- Sports bar -->
+        <div class="sports-bar">
             <div class="container">
                 <ul>
-                    <li class="best-offers"><a href="./products.html">Promotions</a></li>
-                    <li><a href="./shop.html">Collectios</a></li>
-                    <li><a href="./products.html">Sacs</a></li>
-                    <li><a href="./products.html">Bracelets</a></li>
+                    <li><a href="./products.html">Competitions</a></li>
+                    <li><a href="./shop.html">Calendar</a></li>
+                    <li><a href="./products.html">World Rankings</a></li>
                 </ul>
             </div>
-        </div> -->
-        <!-- Mobile -->
-        <div class="ecommerce-bar for-filters">
-            <div class="container">
-                <div class="filter">Trier <i class="material-icons">keyboard_arrow_down</i></div>
-                <div class="filter" id="#drawer1">Collections</div>
-            </div>
         </div>
 
-        <div class="ecommerce-bar-drawer" id="drawer1">
-            <div class="drawer">
-                <div class="wrapper">
-                    <div class="actions">
-                        <div class="close">x</div>
-                        <div class="title">Collections</div>
-                    </div>
-                    <ul>
-                        <li class="highlighted"><a href="./products.html">Sacs</a></li>
-                        <li class="highlighted"><a href="./products.html">Vêtements</a></li>
-                        <li class="highlighted"><a href="./products.html">Montres</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="ecommerce-bar-drawer" id="drawer2">
-            <div class="drawer">
-                <div class="wrapper search">
-                    <div class="close">x</div>
-                    <div class="search">
-                        <form action="./products.html" method="GET">
-                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="sports-bar-menu">
+            <ul>
+                <li><a href="">Volleyball Nations League</a></li>
+                <li><a href="">Men's World Championship</a></li>
+                <li><a href="">Women's World Championship</a></li>
+            </ul>
         </div>
 
         <main>
-            <div class="hero blue darken-1 responsivity" style="background-image: url('../images/image19.jpg');">
+            <div class="hero blue darken-1 responsivity" style="background-image: url('http://www.fivb.org/Vis2009/Images/GetImage.asmx?type=press&no=89367&maxsize=2500');">
                 <div class="hero-wrapper">
                     <div class="call-to-action">
-                        <div class="lead">Beauté et mode tierces</div>
+                        <div class="lead">This is volleyball</div>
                         <div class="lead-subtitle">Faites au mieux, la mode est là</div>
-                        <a href="./shop.html" class="btn-large grey darken-1">Collections</a>
+                        <a href="#presentation" class="btn-large grey darken-1">Discover</a>
                     </div>
                 </div>
             </div>
     
             <section class="section ecommerce-benefits">
                 <div class="presentation-grid">
-                    <div class="presentation">
+                    <div class="presentation" id="presentation">
                         <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
                         <div class="call-to-action">
                             <div class="text">Nouveautés</div>
@@ -106,7 +76,6 @@
                             <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="banner">
@@ -156,6 +125,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="../js/ecommerce.js"></script>
+        <script src="./js/sports.js"></script>
     </body>
 </html>

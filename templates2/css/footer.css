@@ -1,4 +1,4 @@
-.minimalist-footer .links a {
+.minimalist-footer .links a, .enhanced-minimalist-footer .with-social a, .enhanced-minimalist-footer .links a {
   color: inherit;
 }
 
@@ -123,5 +123,76 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.enhanced-minimalist-footer {
+  margin-top: 4rem;
+  border-top: 1px solid #c7c7c7;
+}
+
+.enhanced-minimalist-footer .with-payments {
+  padding: 1.5rem;
+  border-bottom: 1px solid white;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.enhanced-minimalist-footer .with-payments .payment-methods {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.enhanced-minimalist-footer .with-payments .payment-methods i {
+  font-size: 32px;
+  color: #484848;
+}
+
+.enhanced-minimalist-footer .with-payments .payment-methods i:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.enhanced-minimalist-footer .with-payments p {
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  text-align: center;
+  margin: .75rem 0 0 0;
+}
+
+.enhanced-minimalist-footer .with-payments p i {
+  padding-right: .55rem;
+  vertical-align: middle;
+}
+
+.enhanced-minimalist-footer .with-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid white;
+  padding: 1.5rem;
+}
+
+.enhanced-minimalist-footer .with-social a {
+  font-size: 24px;
+}
+
+.enhanced-minimalist-footer .with-social a:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.enhanced-minimalist-footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1.5rem;
 }
 /*# sourceMappingURL=footer.css.map */

@@ -22,15 +22,18 @@ var addToCart = function() {
 // Drawer action
 var ecommerceBar = function(size) {
     // Ecommerce bar
-    // var bar = $(".ecommerce-bar")
-    // var links = bar.find("li")
-    // Navbar
-    var bar = $("nav #ecommerce-mobile")
-    var links = bar.find("li")
+    var bar = $(".ecommerce-bar.for-filters")
+    var filters = bar.find(".filter")
 
-    var closeDrawer = function(linkiD) {
-        $(linkiD).find(".close").on("click", function() {
-            $(linkiD).css(
+    // Navbar
+    var navBar = $("nav #ecommerce-mobile")
+    var links = navBar.find("li")
+
+    var closeDrawer = function(e) {
+        var targetId = $(e.currentTarget).attr("id")
+
+        $(targetId).find(".close").on("click", function() {
+            $(targetId).css(
                 {
                     "transform": "translateX(" + size + ")"
                 }
@@ -38,24 +41,36 @@ var ecommerceBar = function(size) {
         })
     }
 
-    var openDrawer = function() {
-        links.each(function(link) {
-            var linkiD = $(this).attr("id")
+    var openDrawer = function(e) {
+        var targetId = $(e.currentTarget).attr("id")
+        
+        $(targetId).css(
+            {
+                "transform": "translateX(0px)",
+                "opacity": 1
+            }
+        )
+    }
 
-            $(this).on("click", function() {
-                $(linkiD).css(
-                    {
-                        "transform": "translateX(0px)",
-                        "opacity": 1
-                    }
-                )
-            })
-            closeDrawer(linkiD)
+    var addEvent = function() {
+        filters.each(function(index) {
+            $(filters[index]).on("click", openDrawer)
+            $(filters[index]).on("click", closeDrawer)
+        })
+
+        links.each(function(index) {
+            $(links[index]).on("click", openDrawer)
+            $(links[index]).on("click", closeDrawer)
         })
     }
 
-    openDrawer()
-    // transparentOnScroll()
+    var init = function() {
+        addEvent()
+    }
+
+    return {
+        init: init
+    }
 }
 
 // Browse images
@@ -141,6 +156,6 @@ var browseImages = function() {
     }
 }
 
-ecommerceBar("310px")
+ecommerceBar("310px").init()
 addToCart()
 browseImages()

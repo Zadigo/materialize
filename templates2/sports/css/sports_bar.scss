@@ -35,7 +35,7 @@ nav .brand-logo {
 }
 
 // BAR
-.ecommerce-bar {
+.sports-bar {
     background-color: $secondary_color;
     z-index: -999;
     min-height: 46px;
@@ -83,38 +83,10 @@ nav .brand-logo {
             }
         }
     }
-
-    &.for-filters {
-        color: white;
-        text-transform: uppercase;
-        
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            text-align: center;
-
-            .filter {
-                position: relative;
-                padding: .25rem;
-                height: 46px;
-                width: 100px;
-                vertical-align: middle;
-                line-height: 38px;
-
-                i {
-                    position: absolute;
-                    color: inherit;
-                    line-height: inherit;
-                    padding-left: .35rem;
-                }
-            }
-        }
-    }
 }
 
 // DRAWERS
-.ecommerce-bar-drawer {
+.sports-bar-drawer {
     position: fixed;
     display: block;
     top: 0;
@@ -219,3 +191,35 @@ nav .brand-logo {
         }
     }        
 }        
+
+.sports-bar-menu {
+    position: absolute;
+    background-color: white;
+    // display: initial;
+    opacity: 0;
+    left: 200px;
+    box-shadow: $z_depth_1;
+    transform: translateX(20px);
+    transition: all .3s ease-in-out;
+
+    ul {
+        border-radius: .25rem;
+        // display: none;
+
+        li {
+            &:not(:last-child) {
+                border-bottom: 1px #eee solid;
+            }
+
+            // &:hover {
+            //     opacity: .8;
+            // }
+
+            a {
+                display: block;
+                padding: .75rem;
+                color: inherit;
+            }
+        }
+    }
+}

@@ -1,8 +1,6 @@
-$box_padding: 2rem;
+@import "./global.scss";
 
-%links {
-    color: inherit;
-}
+$box_padding: 2rem;
 
 %page-footer {
     padding-top: 40px;
@@ -110,6 +108,74 @@ $box_padding: 2rem;
     .links {
         display: flex;
         justify-content: space-evenly;
+
+        a {
+            @extend %links;
+        }
+    }
+}
+
+.enhanced-minimalist-footer {
+    margin-top: 4rem;
+    border-top: 1px solid #c7c7c7;
+    
+    .with-payments {
+        padding: $box_padding - .5rem;
+        border-bottom: 1px solid white;
+        border-bottom: 1px solid #c7c7c7;
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+
+            i {
+                font-size: 32px;
+                color: #484848;
+
+                &:not(:last-child) {
+                    padding-right: 1rem;
+                }
+            }
+
+        }
+
+        p {
+            font: {
+                size: 18px;
+                weight: 300;
+            };
+            width: 100%;
+            text-align: center;
+            margin: .75rem 0 0 0;
+
+            i {
+                padding-right: .55rem;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .with-social {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid white;
+        padding: $box_padding - .5rem;
+
+        a {
+            @extend %links;
+
+            font-size: 24px;
+
+            &:not(:last-child) {
+                padding-right: 1rem;
+            }
+        }
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-evenly;
+        padding: $box_padding - .5rem;
 
         a {
             @extend %links;

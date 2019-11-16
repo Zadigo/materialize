@@ -1,0 +1,13 @@
+@import "./global.scss";
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./mat.scss";
+
+.static-chips {
+    .chip > i {
+        float: left;
+        font-size: 16px;
+        line-height: 32px;
+        padding-right: 8px;
+    }
+}

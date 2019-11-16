@@ -5,7 +5,7 @@ html {
   font-family: "Lato", "Poppins", "Monserrat", "Raleway", "Ubuntu", sans-serif;
 }
 
-html p, html a, html li, html span,
+html p, html a, html li, html span, html input,
 html .content-text, html .content-tags .chip,
 html .hover-cover {
   font-family: "Lato", "Raleway", "Roboto", sans-serif;
@@ -33,12 +33,7 @@ pre {
   width: 90%;
 }
 
-.ecommerce .grid#product .main-image img {
-  width: 100%;
-  height: auto;
-}
-
-.ecommerce .grid#products .product a, .ecommerce .grid#product .more a, .promotion-banner a {
+.ecommerce .grid#products .product a, .ecommerce .more a, .promotion-banner a {
   color: inherit;
 }
 
@@ -55,24 +50,19 @@ pre {
 
 @media only screen and (min-width: 993px) {
   .ecommerce {
-    width: 70%;
+    width: 90%;
   }
 }
 
-.ecommerce .grid#product .breadcrumbs, .ecommerce .grid#product .side-images, .ecommerce .grid#product .main-image, .ecommerce .grid#product .information, .ecommerce .grid#product .details, .ecommerce .grid#product .more {
+.ecommerce .breadcrumbs, .ecommerce .side-images, .ecommerce .main-image, .ecommerce .information, .ecommerce .details, .ecommerce .more {
   background-color: white;
-}
-
-.ecommerce .grid#product .main-image img {
-  width: 100%;
-  height: auto;
 }
 
 .card-link {
   color: inherit;
 }
 
-.ecommerce .grid#products .product a, .ecommerce .grid#product .more a, .promotion-banner a {
+.ecommerce .grid#products .product a, .ecommerce .more a, .promotion-banner a {
   color: inherit;
 }
 
@@ -192,7 +182,7 @@ pre {
   .ecommerce .grid#product {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-        grid-template-areas: "breadcrumbs" "side-images" "main-image" "information" "details" "more";
+        grid-template-areas: "breadcrumbs" "side-images" "information" "details" "more";
     grid-row-gap: 5px;
     background-color: #fafafa;
   }
@@ -200,54 +190,55 @@ pre {
 
 @media only screen and (min-width: 993px) {
   .ecommerce .grid#product {
-    -ms-grid-columns: min-content;
-        grid-template-columns: -webkit-min-content;
-        grid-template-columns: min-content;
-        grid-template-areas: "breadcrumbs breadcrumbs breadcrumbs" "side-images main-image information" "details details details" "more more more";
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "breadcrumbs breadcrumbs breadcrumbs breadcrumbs breadcrumbs" "side-images main-image main-image main-image information" "details details details details details" "more more more more more";
     background-color: white;
   }
 }
 
-.ecommerce .grid#product .breadcrumbs {
+.ecommerce .breadcrumbs {
   grid-area: breadcrumbs;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: .85rem;
+  padding: 1rem .45rem;
 }
 
-.ecommerce .grid#product .breadcrumbs .breadcrumb {
+.ecommerce .breadcrumbs .breadcrumb {
   color: inherit;
+  font-size: 15px;
 }
 
-.ecommerce .grid#product .breadcrumbs .breadcrumb:last-child {
+.ecommerce .breadcrumbs .breadcrumb:last-child {
   color: #c7c7c7;
 }
 
-.ecommerce .grid#product .breadcrumbs .breadcrumb:before {
+.ecommerce .breadcrumbs .breadcrumb:before {
   color: inherit;
   line-height: 1.2;
   font-size: 1.5rem;
 }
 
-.ecommerce .grid#product .side-images {
+.ecommerce .side-images {
   grid-area: side-images;
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .side-images {
+  .ecommerce .side-images {
     min-height: 380px;
   }
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .side-images img {
+  .ecommerce .side-images img {
     max-width: 100%;
     height: auto;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .side-images img {
+  .ecommerce .side-images img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -259,48 +250,52 @@ pre {
     max-height: 80px;
     cursor: pointer;
   }
-  .ecommerce .grid#product .side-images img:hover {
+  .ecommerce .side-images img:hover {
     opacity: .7;
   }
-  .ecommerce .grid#product .side-images img:not(:first-child) {
+  .ecommerce .side-images img:not(:first-child) {
     margin-top: .25rem;
   }
 }
 
-.ecommerce .grid#product .main-image {
+.ecommerce .main-image {
   grid-area: main-image;
 }
 
-.ecommerce .grid#product .main-image .image {
+.ecommerce .main-image .image {
   overflow: hidden;
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .main-image .image {
+  .ecommerce .main-image .image {
     max-height: auto;
     max-width: 100%;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .main-image .image {
-    max-height: 400px;
-    max-width: 400px;
+  .ecommerce .main-image .image {
+    width: 600px;
   }
 }
 
-.ecommerce .grid#product .information {
+.ecommerce .main-image img {
+  width: 100%;
+  height: auto;
+}
+
+.ecommerce .information {
   grid-area: information;
   padding: 0 .45rem;
 }
 
-.ecommerce .grid#product .information h4 {
+.ecommerce .information h4 {
   font-weight: 300;
   font-size: 2rem;
   margin: 0 0 .25rem 0;
 }
 
-.ecommerce .grid#product .information .infos {
+.ecommerce .information .infos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,25 +305,25 @@ pre {
           flex-direction: row;
 }
 
-.ecommerce .grid#product .information .infos .price {
+.ecommerce .information .infos .price {
   font-weight: 700;
   font-size: 1.75rem;
 }
 
-.ecommerce .grid#product .information .infos .discounted-price {
+.ecommerce .information .infos .discounted-price {
   line-height: 3;
   margin-left: .75rem;
   text-decoration: line-through;
 }
 
-.ecommerce .grid#product .information .other-details .color > span, .ecommerce .grid#product .information .other-details .size > span {
+.ecommerce .information .other-details .color > span, .ecommerce .information .other-details .size > span {
   text-transform: uppercase;
   font-weight: 600;
   font-size: .85rem;
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .information .other-details {
+  .ecommerce .information .other-details {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -340,33 +335,33 @@ pre {
         -ms-flex-pack: left;
             justify-content: left;
   }
-  .ecommerce .grid#product .information .other-details div:last-child {
+  .ecommerce .information .other-details div:last-child {
     margin-left: .75rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .information .other-details {
+  .ecommerce .information .other-details {
     display: block;
   }
-  .ecommerce .grid#product .information .other-details div:last-child {
+  .ecommerce .information .other-details div:last-child {
     margin-left: 0;
   }
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .information #btn_add_to_cart {
+  .ecommerce .information #btn_add_to_cart {
     margin: 2.5rem 0 2.5rem 0;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .information #btn_add_to_cart {
+  .ecommerce .information #btn_add_to_cart {
     margin: 2.5rem 0 0 0;
   }
 }
 
-.ecommerce .grid#product .details {
+.ecommerce .details {
   grid-area: details;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,7 +370,7 @@ pre {
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .details {
+  .ecommerce .details {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -387,7 +382,7 @@ pre {
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .details {
+  .ecommerce .details {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -397,18 +392,18 @@ pre {
   }
 }
 
-.ecommerce .grid#product .details .detail > p {
+.ecommerce .details .detail > p {
   text-transform: uppercase;
   font-weight: 700;
   color: #c7c7c7;
   margin-top: 1rem;
 }
 
-.ecommerce .grid#product .more {
+.ecommerce .more {
   grid-area: more;
 }
 
-.ecommerce .grid#product .more h4 {
+.ecommerce .more h4 {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
@@ -416,25 +411,25 @@ pre {
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .more h4 {
+  .ecommerce .more h4 {
     font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .more h4 {
+  .ecommerce .more h4 {
     font-size: 1.5rem;
   }
 }
 
-.ecommerce .grid#product .more .images {
+.ecommerce .more .images {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 @media only screen and (min-width: 301px) {
-  .ecommerce .grid#product .more .images {
+  .ecommerce .more .images {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -443,14 +438,14 @@ pre {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .ecommerce .grid#product .more .images .image {
+  .ecommerce .more .images .image {
     overflow: hidden;
   }
-  .ecommerce .grid#product .more .images .image img {
+  .ecommerce .more .images .image img {
     width: 100%;
     height: auto;
   }
-  .ecommerce .grid#product .more .images .details {
+  .ecommerce .more .images .details {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -459,13 +454,13 @@ pre {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .ecommerce .grid#product .more .images .details .price {
+  .ecommerce .more .images .details .price {
     font-weight: 700;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .ecommerce .grid#product .more .images {
+  .ecommerce .more .images {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -474,13 +469,13 @@ pre {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .ecommerce .grid#product .more .images .image {
+  .ecommerce .more .images .image {
     overflow: hidden;
   }
-  .ecommerce .grid#product .more .images .image:not(:first-child) {
+  .ecommerce .more .images .image:not(:first-child) {
     margin: 0 0 0 .25rem;
   }
-  .ecommerce .grid#product .more .images .image img {
+  .ecommerce .more .images .image img {
     max-width: 200px;
     max-height: 200px;
   }
