@@ -10,7 +10,21 @@
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="./css/ecommerce_grid.css">
         <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
-        <link rel="stylesheet" href="../code.css">
+
+        <style>
+            .fade-leave-active {
+                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .fade-leave {
+                opacity: 1;
+            }
+
+            .fade-leave-to {
+                opacity: 0;
+                transform: scale(.9, .9);
+            }
+        </style>
     </head>
 
     <body>
@@ -43,31 +57,9 @@
                                 <a href="./cart_success.html" class="btn-large grey darken-4 waves-effect waved-light">Payer</a>
                             </div>
                         </div>
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="cart_product">
-                                        <span>Product 1</span>
-                                        <button><i class="material-icons">delete</i></button>
-                                    </div>
-                                    <div class="cart_product">
-                                        <span>Product 2</span>
-                                        <button><i class="material-icons">delete</i></button>
-                                    </div>
-                                    <div class="cart_product">
-                                        <span>Pas de produits</span>
-                                    </div>
-                                    
-                                    <div class="details">
-                                        <p class="delivery">Livraison: 3.99€</p>
-                                        <p class="total">Total : 54€</p>
-                                    </div>
-                                </div>
-                                <div class="card-action">
-                                    <div class="fas fa-info-circle"></div>
-                                    En savoir plus sur nos frais de livraison.
-                                </div>
-                            </div>
+
+                        <div class="col s12 m4 l4" id="app">
+                            <products v-bind:products="products" />
                         </div>                        
                     </div>
                 </div>
@@ -77,7 +69,8 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="../js/ecommerce.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script src="../js/ecommerce.js"></script> -->
         <script src="./js/cart_vue.js"></script>
     </body>
 </html>
