@@ -38,13 +38,12 @@
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  padding: 2rem;
   width: auto;
 }
 
 @media only screen and (min-width: 301px) {
   .card.ecommerce.with-action .actions, .card.flat-ecommerce.with-action .actions {
-    padding: 1rem;
+    padding: .65rem;
   }
 }
 
@@ -106,6 +105,38 @@
   z-index: 1;
   opacity: 0.85;
   color: white;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.ecommerce .card-content, .card.flat-ecommerce .card-content {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.ecommerce .card-content, .card.flat-ecommerce .card-content {
+    padding: 24px;
+  }
+}
+
+.card.flat-ecommerce .card-content .price {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.flat-ecommerce .card-content .price {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.flat-ecommerce .card-content .price {
+    font-size: 1.2rem;
+  }
+}
+
+.card-link {
+  color: inherit;
 }
 
 .card {
@@ -260,13 +291,45 @@
           transform: translateY(0px);
 }
 
-.card.flat-ecommerce .card-content .title {
-  font-weight: 400;
+.card.flat-ecommerce {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
-.card.flat-ecommerce .card-content .price {
-  font-weight: 700;
-  font-size: 1.2rem;
+.card.flat-ecommerce .card-image {
+  overflow: hidden;
+}
+
+.card.flat-ecommerce .card-image img {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+@media only screen and (min-width: 993px) {
+  .card.flat-ecommerce.zoom-rotate:hover img {
+    -webkit-transform: scale(1.2, 1.2) rotate(8deg);
+            transform: scale(1.2, 1.2) rotate(8deg);
+  }
+}
+
+.card.flat-ecommerce .card-content {
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.flat-ecommerce .card-content {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.flat-ecommerce .card-content {
+    padding-bottom: 24px;
+  }
+}
+
+.card.flat-ecommerce .card-content .title {
+  font-weight: 400;
 }
 
 .card.with-slider .wrapper {

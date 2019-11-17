@@ -31,11 +31,11 @@ $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1p
     display: flex;
     flex-direction: row;
     justify-content: right;
-    padding: 2rem;
+    // padding: 2rem;
     width: auto;
 
     @media only screen and (min-width: 301px) {
-        padding: 1rem;
+        padding: .65rem;
     }
 
     @media only screen and (min-width: 601px) {
@@ -87,6 +87,32 @@ $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1p
     z-index: 1;
     opacity: 0.85;
     color: white;
+}
+
+%card_content {
+    @media only screen and (min-width: 301px) {
+        padding: 10px;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        padding: 24px;
+    }
+}
+
+%price {
+    font-weight: 700;
+    
+    @media only screen and (min-width: 301px) {
+        font-size: 1rem;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        font-size: 1.2rem;
+    }
+}
+
+.card-link {
+    color: inherit;
 }
 
 .card {
@@ -221,6 +247,10 @@ $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1p
     }
 
     &.ecommerce {
+        .card-content {
+            @extend %card_content;
+        }
+
         .discount {
             @extend %discount_pct_indicator;
         }
@@ -264,7 +294,19 @@ $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1p
     }
 
     &.flat-ecommerce {
-        // box-shadow: none;
+        box-shadow: none;
+
+        .card-content {
+            @extend %card_content;
+        }
+
+        .card-image {
+            img {
+                transition: all .3s ease-in-out;
+            }
+
+            overflow: hidden;
+        }
 
         .discount {
             @extend %discount_pct_indicator;
@@ -279,20 +321,34 @@ $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1p
                 }
             }
         }
-
+        
+        @media only screen and (min-width: 993px) {
+            &.zoom-rotate:hover {
+                img {
+                    transform: scale(1.2, 1.2) rotate(8deg);
+                }
+            }
+        }
+        
         .card-content {
-            // padding-left: 0;
+            padding-left: 0;
+
+            @media only screen and (min-width: 301px) {
+                padding-bottom: 0;
+            }
+            
+            @media only screen and (min-width: 993px) {
+                padding-bottom: 24px;
+            }
 
             .title {
                 font-weight: 400;
             }
     
             .price {
-                font-weight: 700;
-                font-size: 1.2rem;
+                @extend %price;
             }
         }
-
     }
 
     &.with-slider {

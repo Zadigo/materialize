@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vue Test</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="../css/extended_materialize.css">
+
+        <style>
+            #cards {
+                transition: all .5s cubic-bezier(0.71, -0.1, 0.31, 0.6);
+            }
+            #images {
+                position: relative;
+                overflow: hidden;
+                height: 600px;
+            }
+            #images img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+            }
+
+            .slide-enter-active,
+            .slide-leave-active {
+                transition: all .1s ease-in-out;
+            }
+            .slide-enter,
+            .slide-leave-to
+            {
+                transform: scale(.9, .9);
+                opacity: 0;
+            }
+            .slide-leave,
+            .slide-enter-to {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section class="section">
+                <div class="container">
+                    <div id="app">
+                        <div class="row">
+                            <input v-model="searchedItem" type="text" name="search" id="search">
+                            <searchbutton @startsearch="doSearch()" />
+                        </div>
+                        <div class="row">
+                            <filterbutton @filterlist="doFilter" v-bind:items="items" />
+                        </div>
+                        <div class="row">
+                            <transition-group name="slide">
+                                <div v-for="item in filteredItems" :key="item.id" v-if="item.actif" :class="setColor(item.name)" id="cards">
+                                    {{ item.name }}
+                                    <p>
+                                        <label>
+                                            <input v-model="item.actif" type="checkbox" name="actif" id="actif">
+                                            <span>Actif</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </transition-group>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <transition-group name="slide">
+                                <div v-for="item in filteredItems" :key="item.id" v-if="!item.actif" :class="setColor(item.name)">
+                                    {{ item.name }}
+                                    <p>
+                                        <label>
+                                            <input v-model="item.actif" type="checkbox" name="actif" id="actif">
+                                            <span>Actif</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </transition-group>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div id="images">
+                                <img v-for="image in images" :key="image.id" :src="image.src" :alt="image.id" id="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var searchbutton = {
+                template: "<button @click='startSearch()' class='btn-large blue darken-4'>Search</button>",
+                methods: {
+                    startSearch: function() {
+                        this.$emit('startsearch')
+                    }
+                }
+            }
+
+            var filterbutton = {
+                props: ["items"],
+                template: "\
+                    <div>\
+                    <button @click='onlySac(\"All\")' class='btn-large blue darken-2'>All</button>\
+                    <button @click='onlySac(\"Sac\")' class='btn-large blue darken-2'>Sac</button>\
+                    </div>",
+                methods: {
+                    onlySac: function(name) {
+                        if (name == "All") {
+                            return this.$emit("filterlist", this.$props.items)
+                        }
+
+                        var filtereditems = this.$props.items.filter(function(item){return item.name == name})
+                        // var filtereditems = this.$props.items.filter(function(item) {return item.includes("Sac")})
+                        this.$emit("filterlist", filtereditems)
+                    },
+
+                }
+            }
+
+            var app = new Vue({
+                // delimiters: ["[[", "]]"],
+                el: "#app",
+
+                components: {
+                    filterbutton,
+                    searchbutton
+                },
+
+                data: function() {
+                    return {
+                        items: [
+                            {"id": 1, "name": "Paris", "actif": true},
+                            {"id": 2, "name": "Google", "actif": true},
+                            {"id": 3, "name": "Balenciaga", "actif": false},
+                            {"id": 4, "name": "Sac", "actif": true},
+                            {"id": 5, "name": "Mode", "actif": false}
+                        ],
+                        result: [],
+                        searchedItem: "",
+                        images: [
+                            {"id": 1, "src": "../../assets/images/image3.jpg", "show": true},
+                            {"id": 2, "src": "../../assets/images/image4.jpg", "show": false}
+                        ]
+                    }
+                },
+
+                computed: {
+                    filteredItems: function() {
+                        if (this.$data.result.length > 0) {
+                            items = this.$data.result
+                            return items
+                        } else {
+                            return this.$data.items
+                        }
+                    }
+                },
+
+                methods: {
+                    doFilter: function(items) {
+                        this.$data.result = items
+                    },
+                    setColor: function(name) {
+                        if (name == "Sac") {
+                            return "card-panel red darken-1"
+                        } else {
+                            return "card-panel"
+                        }
+                    },
+                    doSearch: function() {
+                        var items = this.$data.items
+
+                        if (this.$data.searchedItem == "") {
+                            return items
+                        }
+                        items.forEach(function(item) {
+                            if (item.name.includes(this.$data.searchedItem)) {
+                                return item
+                            }
+                        })
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
