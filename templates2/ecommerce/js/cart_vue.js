@@ -1,3 +1,46 @@
+var store = {
+    data: {
+        totalToPay: null,
+        priceAfterCoupon: null
+    }
+}
+
+var coupon = {
+    template: "\
+        <div id='coupon'>\
+            <transition name='coupon'>\
+                <p v-if='validCoupon' class='coupon_applied'>{{ coupon }}<i class='material-icons right'>check</i></p>\
+            </transition>\
+            <input v-model='coupon' type='text' name='coupon' id='coupon'>\
+            <button @click='applyCoupon()' class='btn-large grey darken-4 waves-effect waves-light'>Appliquer</button>\
+        </div>\
+    ",
+    
+    data() {
+        return {
+            coupon: "",
+            validCoupon: false,
+            totalToPay: null
+        }
+    },
+
+    mounted() {
+        // Get the total to pay from the store
+        this.$data.totalToPay = store.data.totalToPay
+    },
+
+    methods: {
+        applyCoupon: function() {
+            var discountedPct = 15
+            // Coupon is valid?
+            var discountedPrice = this.$data.totalToPay * (1 - (discountedPct / 100))
+            // console.log(discountedPrice)
+            store.data.priceAfterCoupon = discountedPrice
+            this.$data.validCoupon = !this.$data.validCoupon
+        }
+    }
+}
+
 var products = {
     props: ["products"],
 
@@ -25,6 +68,7 @@ var products = {
     data() {
         return {
             total_to_pay: 0
+            // finalPrice: store.data.priceAfterCoupon || store.data.totalToPay
         }
     },
 
@@ -38,13 +82,15 @@ var products = {
             // true for VueJS
             product['in_cart'] = true
         })
+        // Set total in the store
+        store.data.totalToPay = self.$data.total_to_pay
     },
 
     filters: {
         euro: function(price) {
             // Formats a price such as
             // 2 becomes 2€
-            return price.toString() + "€"
+            return price + "€"
         }
     },
 
@@ -65,13 +111,20 @@ var products = {
             })
         }
     }
+
+    // computed: {
+    //     displayPrice: function() {
+    //         return this.$data.finalPrice
+    //     }
+    // }
 }
 
 var app = new Vue({
     el: "#app",
 
     components: {
-        products
+        products,
+        coupon
     },
 
     data() {
