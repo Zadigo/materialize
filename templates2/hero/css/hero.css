@@ -133,6 +133,38 @@ div.hero .hero-wrapper .call-to-action div.lead-button, section.hero .hero-wrapp
   margin-top: 10px;
 }
 
+div.hero .hero-wrapper .with-input, section.hero .hero-wrapper .with-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: .85rem;
+}
+
+@media only screen and (min-width: 993px) {
+  div.hero .hero-wrapper .with-input, section.hero .hero-wrapper .with-input {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+div.hero .hero-wrapper .with-input .btn, div.hero .hero-wrapper .with-input .btn-large, section.hero .hero-wrapper .with-input .btn, section.hero .hero-wrapper .with-input .btn-large {
+  margin: 0;
+}
+
+div.hero .hero-wrapper .with-input input, section.hero .hero-wrapper .with-input input {
+  height: 53px;
+  width: 30%;
+  border: none;
+  border-radius: 2px;
+  padding: .35rem;
+  margin-right: .75rem;
+}
+
 div.benefits, section.benefits {
   width: 100%;
 }

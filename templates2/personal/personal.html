@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>John PM</title>
+
+        <link rel="stylesheet" href="../css/extended_materialize.css">
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="../hero/css/hero.css">
+        <link rel="stylesheet" href="./css/custom.css">
+    </head>
+
+    <body>
+        <!-- NAV -->
+        <nav class="transparent z-depth-0" style="position: absolute;">
+            <div class="container">
+                <ul class="right">
+                    <li><a href="#presentation">Présentation</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- HERO -->
+        <div class="hero" style="background-image: url('../assets/image17.jpg');">
+            <div class="hero-wrapper">
+                <div class="call-to-action">
+                    <div class="lead">Votre génie marketing à votre service</div>
+                    <div class="lead-subtitle">Templates for prototyping</div>
+                    <a href="#!" class="btn-large red darken-1">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="section" id="app">
+                <div class="scrollspy" id="presentation">
+                    <h4 class="section-title">Ce que je propose</h4>
+
+                    <div class="grid">
+                        <div class="card">a</div>
+                        <div class="card">v</div>
+                        <div class="card">c</div>
+                    </div>
+                </div>
+
+                <div class="scrollspy" id="skills">
+                    <div class="container">
+                        <skillsection v-bind:radioitems="radioitems" v-bind:tags="tags" />
+                    </div>
+                </div>
+                
+                <div class="grey lighten-3 scrollspy" id="contact">
+                    <h4 class="section-title">Contact</h4>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <formitem />
+                        </div>
+
+                        <div class="row">
+                            <div id="map">
+                                <img src="./assets/images/map.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./js/vue.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+    </body>
+</html>
