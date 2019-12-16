@@ -146,6 +146,50 @@ div, section {
                     margin-top: 10px;
                 }
             }
+
+            .with-input {
+                display: flex;
+                
+                // @media only screen and (min-width: 301px) {
+                //     flex-direction: column;
+                //     // justify-content: left;
+                // }
+                
+                @media only screen and (min-width: 993px) {
+                    flex-direction: row;
+                    justify-content: center;
+                }
+                
+                margin: {
+                    top: .85rem;
+                }
+
+                .btn, .btn-large {
+                    margin: 0;
+                }
+
+                input {
+                    // @media only screen and (min-width: 301px) {
+                    //     width: 90%;
+                    //     margin: {
+                    //         bottom: .85rem;
+                    //     }
+                    // }
+                    
+                    // @media only screen and (min-width: 993px) {
+                    //     width: max($numbers: 400px);
+                    // }
+
+                    height: 53px;
+                    width: 30%;
+                    border: none;
+                    border-radius: 2px;
+                    padding: .35rem;
+                    margin: {
+                        right: .75rem;
+                    }
+                }
+            }
         }
     }
 

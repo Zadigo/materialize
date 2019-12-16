@@ -1,0 +1,58 @@
+%sub_section {
+    padding: 1rem;
+    text-align: center;
+}
+
+#presentation {
+    @extend %sub_section;
+
+    .section-title {
+        margin-bottom: 4rem;
+        font-weight: 600;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 300px;
+        grid-column-gap: 20px;
+    }
+}
+
+#skills {
+    height: 400px;
+}
+
+#contact {
+    @extend %sub_section;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.tags {
+    &-enter-active,
+    &-leave-active {
+        transition: all .2s ease-in-out;
+    }
+
+    &-leave-to,
+    &-enter {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+
+    &-leave,
+    &-enter-to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
