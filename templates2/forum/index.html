@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Produits</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/forum.css">
+        <link rel="stylesheet" href="../css/footer.css">
+    </head>
+
+    <body>
+        <!-- Nav -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="./hero.html" class="brand-logo">Forum</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">person</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <div class="section" id="posts">
+                <div class="container">
+                    <div class="post">
+                        <div class="user">
+                            <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="avatar">
+                            <div class="details">
+                                <div class="username">A</div>
+                                <div class="join-date">B</div>
+                                <div class="posts-count">C</div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="quote">
+                                <div class="author">Kendall Jenner <span>said:</span></div>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium 
+                                temporibus cumque numquam dolorem, doloremque cum nihil autem quod assumenda sunt 
+                                magnam minus, harum rerum voluptatem alias minima voluptas culpa.
+                            </div>
+
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit 
+                            veritatis quam voluptates error assumenda at, tenetur laborum 
+                            mollitia ipsa distinctio deserunt ipsam id voluptatem quae deleniti 
+                            sed neque voluptatibus est.
+                        </div>
+                        <div class="action">
+                            <div class="btn-group right">
+                                <div class="btn z-depth-0"><i class="material-icons left">send</i>Reply</div>
+                                <div class="btn z-depth-0"><i class="material-icons left">send</i>Quote</div>
+                                <div class="btn z-depth-0"><i class="material-icons left">share</i>Share</div>
+                                <div class="btn z-depth-0 grey lighten-1"><i class="material-icons left">info</i>Report</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <postcard v-bind:posts="posts" />
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+
+        <!-- Mini footer -->
+        <!-- <div class="minimalist-footer grey darken-4">
+            <div class="links white-text">
+                <a href="#!">Conditions générales</a>
+                <a href="#!">Confidentialité</a>
+            </div>
+        </div> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./js/forum.js"></script>
+    </body>
+</html>

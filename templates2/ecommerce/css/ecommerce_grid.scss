@@ -1,6 +1,12 @@
 @import "../../css/fonts.scss";
 @import "./variables.scss";
 
+nav.white {
+    * {
+        color: rgba($color: #000000, $alpha: 1.0);
+    }
+}
+
 %container {
     margin: 0 auto;
     max-width: 1280px;

@@ -29,8 +29,8 @@
         display: block;
         height: 100%;
         width: 30%;
+        
         input {
-            background-color: blue;
             width: 100%;
             height: max-content;
         }
@@ -42,8 +42,9 @@
 
     .wrapper {
         display: grid;
+        grid-template-columns: 300px repeat(3, 1fr);
         grid-template-areas:
-        "side main main main main main";
+        "side main main main";
         height: 100vh;
     
         .side {
@@ -78,11 +79,24 @@
         .main {
             grid-area: main;
             // background-color: green;
-            padding: 1rem;
+            padding: 1.5rem;
+
+            .actionbar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
 
             .btn-group {
                 text-align: right;
                 margin-bottom: 2rem;
+            }
+
+            table {
+                td > p {
+                    margin: 0;
+                }
             }
         }
     }

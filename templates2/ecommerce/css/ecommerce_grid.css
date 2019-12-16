@@ -37,6 +37,10 @@ pre {
   color: inherit;
 }
 
+nav.white * {
+  color: black;
+}
+
 .ecommerce {
   margin: 0 auto;
   max-width: 1280px;

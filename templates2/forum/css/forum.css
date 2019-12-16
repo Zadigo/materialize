@@ -1,0 +1,48 @@
+#posts .post {
+  min-height: 200px;
+  height: auto;
+  width: 100%;
+  background-color: #fcfcfc;
+  border: 1px solid #d5d5d5;
+  border-radius: .25rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 180px 1fr;
+      grid-template-columns: 180px 1fr;
+  margin-bottom: 1rem;
+}
+
+#posts .post .user {
+  padding-right: 1.5rem;
+}
+
+#posts .post .user img {
+  width: 100%;
+  height: auto;
+}
+
+#posts .post .user .details .username, #posts .post .user .details .join-date, #posts .post .user .details .posts-count {
+  padding-left: 1rem;
+}
+
+#posts .post .content {
+  padding-top: 1rem;
+}
+
+#posts .post .content .author {
+  margin-bottom: .5rem;
+}
+
+#posts .post .content .quote {
+  width: 70%;
+  border: 1px solid #d5d5d5;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#posts .post .action {
+  grid-column-end: 3;
+  border-top: 1px solid #d5d5d5;
+  padding: 1rem;
+}
+/*# sourceMappingURL=forum.css.map */
