@@ -1,3 +1,11 @@
+.dashboard .wrapper .main .settings-group .setting {
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.5;
+  padding: 24px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
 .navigation {
   height: 70px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -44,6 +52,7 @@
 
 .dashboard {
   z-index: -999;
+  background-color: #f4f4f4;
 }
 
 .dashboard .wrapper {
@@ -56,6 +65,7 @@
 }
 
 .dashboard .wrapper .side {
+  background-color: red;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: side;
@@ -64,7 +74,6 @@
 }
 
 .dashboard .wrapper .side .bar {
-  background-color: red;
   width: auto;
   height: 100vh;
 }
@@ -112,5 +121,25 @@
 
 .dashboard .wrapper .main table td > p {
   margin: 0;
+}
+
+.dashboard .wrapper .main .settings-group {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin: .5rem 0 1rem 0;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dashboard .wrapper .main .settings-group .collapsible {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  margin: 0;
+  border: none;
+}
+
+.dashboard .wrapper .main .settings-group .collapsible .collapsible-header {
+  padding: 24px;
 }
 /*# sourceMappingURL=dashboard.css.map */

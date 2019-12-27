@@ -1,5 +1,18 @@
 @import "./variables.scss";
 
+$border_color: #ddd;
+$box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+$sides: 'top', 'right', 'left';
+
+%setting {
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1.5;
+    padding: 24px;
+    background-color: #fff;
+    border-bottom: 1px solid $border_color;
+}
+
+
 .navigation {
     height: 70px;
     box-shadow: $z_depth_1;
@@ -39,7 +52,8 @@
 
 .dashboard {
     z-index: -999;
-
+    background-color: #f4f4f4;
+    
     .wrapper {
         display: grid;
         grid-template-columns: 300px repeat(3, 1fr);
@@ -48,12 +62,12 @@
         height: 100vh;
     
         .side {
+            background-color: red;
             grid-area: side;
             position:  relative;
             z-index: -9999;
 
             .bar {
-                background-color: red;
                 // position: fixed;
                 width: auto;
                 height: 100vh;
@@ -98,6 +112,31 @@
                     margin: 0;
                 }
             }
+
+            .settings-group {
+                @each $side in $sides {
+                    border-#{$side}: 1px solid $border_color;
+                }
+            
+                margin: .5rem 0 1rem 0;
+                -webkit-box-shadow: $box_shadow;
+                box-shadow: $box_shadow;
+                
+                .collapsible {
+                    box-shadow: none;
+                        -webkit-box-shadow: none;
+                    margin: 0;
+                    border: none;
+            
+                    .collapsible-header {
+                        padding: 24px;
+                    }        
+                }
+            
+                .setting {
+                    @extend %setting;
+                }
+            }            
         }
     }
 }

@@ -5,14 +5,90 @@ var store = {
     }
 }
 
+var stripeid = 'pk_test_eo8zzqww6iuVFzWmLQEJ4F7K'
+var stripe = Stripe(stripeid)
+
+var payment = { 
+    template: "\
+        <form @submit.prevent='startpayment' method='POST' id='payment_form'>\
+            <div id='card_element'></div>\
+            <button class='btn-large red darken-3 waves-effect waves-light' style='margin-top: 25px;'>\
+                <i class='material-icons left'>credit_card</i>Payer\
+            </button>\
+        </form>\
+    ",
+    data() {
+        return {
+            paymentform: "",
+            card: undefined
+        }
+    },
+    mounted() {
+        // This section essentially just
+        // creates the card element to be
+        // used for the payment
+
+        var self = this
+        var elements = stripe.elements()
+        var style = {
+            base: {
+                color: '#32325d',
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                color: '#aab7c4'
+                }
+            }
+        }
+        // Mount the payment card element
+        self.$data.card = elements.create('card', {style: style})
+
+        // Set the payment form as a global so that
+        // we can access it from all the application
+        self.$data.paymentform = document.getElementById('payment_form')
+        self.$data.card.mount('#card_element')
+    },
+
+    methods: {
+        startpayment: function() {
+            var self = this
+            var processtoken = function(token) {
+                // A function created in order to
+                // deal with the token result
+                var datatopost = {
+                    pricedue:store.data.totalToPay,
+                    token: token
+                } 
+                
+                // AJAX
+                // var request = new XMLHttpRequest()
+                // request.open('POST', 'https://www.example.com/', false)
+                // request.send()
+                var response = {'orderid': 'zeuzubfzufzif'}
+                document.location.href = 'http://127.0.0.1:5500/templates2/ecommerce/cart_success.html' + '?order_id=' + response.orderid 
+            }
+
+            stripe.createToken(self.$data.card).then(function(result) {
+                if (result.error) {
+                    var errorElement = document.getElementById("card-errors")
+                    errorElement.textContent = result.error.message
+                } else {
+                    processtoken(result)
+                }
+            })
+        }
+    }
+}
+
 var coupon = {
     template: "\
         <div id='coupon'>\
             <transition name='coupon'>\
                 <p v-if='validCoupon' class='coupon_applied'>{{ coupon }}<i class='material-icons right'>check</i></p>\
             </transition>\
-            <input v-model='coupon' type='text' name='coupon' id='coupon'>\
-            <button @click='applyCoupon()' class='btn-large grey darken-4 waves-effect waves-light'>Appliquer</button>\
+            <input v-if='!validCoupon' v-model='coupon' type='text' name='coupon' id='coupon'>\
+            <button v-if='!validCoupon' @click='startDiscount' class='btn-large grey darken-4 waves-effect waves-light'>Appliquer</button>\
         </div>\
     ",
     
@@ -30,13 +106,20 @@ var coupon = {
     },
 
     methods: {
-        applyCoupon: function() {
-            var discountedPct = 15
-            // Coupon is valid?
-            var discountedPrice = this.$data.totalToPay * (1 - (discountedPct / 100))
-            // console.log(discountedPrice)
-            store.data.priceAfterCoupon = discountedPrice
-            this.$data.validCoupon = !this.$data.validCoupon
+        startDiscount: function() {
+            var applydiscount = function(price, pct) {
+                return price * (1 - (pct / 100))
+            }
+
+            // AJAX
+            var result = {valid: true, pct: 15}
+            if (result) {
+                if (result.valid == true) {
+                    var discountedprice = applydiscount(store.data.totalToPay, result.pct)
+                    store.data.priceAfterCoupon = discountedprice
+                    this.$data.validCoupon = !this.$data.validCoupon
+                }
+            }
         }
     }
 }
@@ -124,7 +207,8 @@ var app = new Vue({
 
     components: {
         products,
-        coupon
+        coupon,
+        payment
     },
 
     data() {

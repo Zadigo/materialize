@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="post">
+        <div class="user">
+            <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="avatar">
+            <div class="details">
+                <div class="username">A</div>
+                <div class="join-date">B</div>
+                <div class="posts-count">C</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="quote">
+                <div class="author">Kendall Jenner <span>said:</span></div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium 
+                temporibus cumque numquam dolorem, doloremque cum nihil autem quod assumenda sunt 
+                magnam minus, harum rerum voluptatem alias minima voluptas culpa.
+            </div>
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit 
+            veritatis quam voluptates error assumenda at, tenetur laborum 
+            mollitia ipsa distinctio deserunt ipsam id voluptatem quae deleniti 
+            sed neque voluptatibus est.
+        </div>
+        <div class="action">
+            <div class="btn-group right">
+                <div class="btn z-depth-0"><i class="material-icons left">send</i>Reply</div>
+                <div class="btn z-depth-0"><i class="material-icons left">send</i>Quote</div>
+                <div class="btn z-depth-0"><i class="material-icons left">share</i>Share</div>
+                <div class="btn z-depth-0 grey lighten-1"><i class="material-icons left">info</i>Report</div>
+            </div>
+        </div>
+    </div>
+</div>

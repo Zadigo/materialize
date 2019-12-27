@@ -5,11 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Produits</title>
+        <title>Forums</title>
 
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="./css/forum.css">
         <link rel="stylesheet" href="../css/footer.css">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <style>
+            #editor {
+                height: 250px;
+            }
+
+            .posts-enter-active {
+                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .posts-enter {
+                opacity: 0;
+                transform: scale(1.1, 1.1);
+            }
+
+            .fade-enter-to {
+                opacity: 1;
+            }
+        </style>
     </head>
 
     <body>
@@ -30,45 +49,22 @@
         </div>
 
         <main>
-            <div class="section" id="posts">
+            <div class="section forum" id="app">
                 <div class="container">
-                    <div class="post">
-                        <div class="user">
-                            <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="avatar">
-                            <div class="details">
-                                <div class="username">A</div>
-                                <div class="join-date">B</div>
-                                <div class="posts-count">C</div>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="quote">
-                                <div class="author">Kendall Jenner <span>said:</span></div>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium 
-                                temporibus cumque numquam dolorem, doloremque cum nihil autem quod assumenda sunt 
-                                magnam minus, harum rerum voluptatem alias minima voluptas culpa.
-                            </div>
-
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit 
-                            veritatis quam voluptates error assumenda at, tenetur laborum 
-                            mollitia ipsa distinctio deserunt ipsam id voluptatem quae deleniti 
-                            sed neque voluptatibus est.
-                        </div>
-                        <div class="action">
-                            <div class="btn-group right">
-                                <div class="btn z-depth-0"><i class="material-icons left">send</i>Reply</div>
-                                <div class="btn z-depth-0"><i class="material-icons left">send</i>Quote</div>
-                                <div class="btn z-depth-0"><i class="material-icons left">share</i>Share</div>
-                                <div class="btn z-depth-0 grey lighten-1"><i class="material-icons left">info</i>Report</div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- <forumcards @createpost='docreate' v-bind:posts="posts" /> -->
+                    <forumcards v-bind:posts="posts" />
                 </div>
-
-                <br>
-
-                <postcard v-bind:posts="posts" />
+                <div class="container">
+                    <posteditor @createnewpost='docreate' />
+                </div>
+                
             </div>
+            
+            <!-- <div class="section">
+                <div class="container">
+                    <div id="posteditor"></div>
+                </div>
+            </div> -->
         </main>
 
         <!-- Footer -->
@@ -106,7 +102,8 @@
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="./js/forum.js"></script>
     </body>

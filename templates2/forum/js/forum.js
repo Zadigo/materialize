@@ -1,6 +1,6 @@
 var posteditor = {
     template: "\
-        <div class='card-panel'>\
+        <div class='card-panel' id='new_post'>\
             <div v-show='preview' id='preview'></div>\
             <div id='editor'></div>\
             <p>\
@@ -57,7 +57,11 @@ var posteditor = {
             var newpost = {
                 id: 5,
                 content: text,
-                user: {}
+                user: {
+                    "avatar": "https://www.w3schools.com/bootstrap4/img_avatar4.png",
+                    "join_date": "03-06-2015",
+                    "post_count": 11564
+                }
             }
 
             // var request = new XMLHttpRequest()
@@ -98,7 +102,7 @@ var forumcards = {
                 </div>\
                 <div class='action'>\
                     <div class='btn-group right'>\
-                        <div @click='createpost' class='btn z-depth-0'><i class='material-icons left'>send</i>Reply</div>\
+                        <a href='#new_post' class='btn z-depth-0'><i class='material-icons left'>send</i>Reply</a>\
                         <div @click='createquote(post)' class='btn z-depth-0'><i class='material-icons left'>send</i>Quote</div>\
                         <div class='btn z-depth-0'><i class='material-icons left'>share</i>Share</div>\
                         <div class='btn z-depth-0 grey lighten-1'><i class='material-icons left'>info</i>Report</div>\
