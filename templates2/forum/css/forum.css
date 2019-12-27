@@ -1,4 +1,8 @@
-#posts .post {
+#btn_new_post, #btn_preview {
+  margin-top: 1rem;
+}
+
+.forum .post {
   min-height: 200px;
   height: auto;
   width: 100%;
@@ -9,38 +13,38 @@
   display: grid;
   -ms-grid-columns: 180px 1fr;
       grid-template-columns: 180px 1fr;
-  margin-bottom: 1rem;
+  margin-bottom: .55rem;
 }
 
-#posts .post .user {
+.forum .post .user {
   padding-right: 1.5rem;
 }
 
-#posts .post .user img {
+.forum .post .user img {
   width: 100%;
   height: auto;
 }
 
-#posts .post .user .details .username, #posts .post .user .details .join-date, #posts .post .user .details .posts-count {
+.forum .post .user .details .username, .forum .post .user .details .join-date, .forum .post .user .details .posts-count {
   padding-left: 1rem;
 }
 
-#posts .post .content {
+.forum .post .content {
   padding-top: 1rem;
 }
 
-#posts .post .content .author {
+.forum .post .content .author {
   margin-bottom: .5rem;
 }
 
-#posts .post .content .quote {
+.forum .post .content .quote {
   width: 70%;
   border: 1px solid #d5d5d5;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
-#posts .post .action {
+.forum .post .action {
   grid-column-end: 3;
   border-top: 1px solid #d5d5d5;
   padding: 1rem;
