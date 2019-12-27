@@ -25,6 +25,8 @@ div.hero .hero-wrapper .call-to-action div.lead, section.hero .hero-wrapper .cal
 }
 
 div.hero, section.hero {
+  position: relative;
+  overflow: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -163,6 +165,18 @@ div.hero .hero-wrapper .with-input input, section.hero .hero-wrapper .with-input
   border-radius: 2px;
   padding: .35rem;
   margin-right: .75rem;
+}
+
+div.hero .background-img-wrapper, section.hero .background-img-wrapper {
+  position: absolute;
+  height: 100vh;
+  min-width: 100%;
+  z-index: -9999;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 div.benefits, section.benefits {

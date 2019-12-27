@@ -5,7 +5,8 @@ $lead_font_weight: 600;
 
 @mixin hero_grid_calculator($multiple) {
     // Calculates the top padding
-    // for the lead titles. Increments by 12.5%
+    // for the lead titles.
+    // Increments by 12.5%
     $base_grid: 100;
     $section: $base_grid / 8;
     padding-top: $section * $multiple;
@@ -60,6 +61,8 @@ $lead_font_weight: 600;
 
 div, section {
     &.hero {
+        position: relative;
+        overflow: hidden;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -190,6 +193,20 @@ div, section {
                     }
                 }
             }
+        }
+
+        .background-img-wrapper {
+            // A special wrapper for utilizing a background
+            // image -; great for including filters like blur...
+            // background-image: url(hero1.jpg);
+            position: absolute;
+            height: 100vh;
+            min-width: 100%;
+            z-index: -9999;
+            filter: blur(1px);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     }
 
