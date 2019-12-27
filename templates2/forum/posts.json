@@ -19,8 +19,8 @@
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea harum ipsam saepe minima nostrum minus illo autem debitis",
             "user": {
                 "avatar": "https://www.w3schools.com/bootstrap4/img_avatar4.png",
-                "join_date": "",
-                "post_count": ""
+                "join_date": "03-06-2015",
+                "post_count": 11564
             }
         },
         {
@@ -28,9 +28,8 @@
             "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea harum ipsam saepe minima nostrum minus illo autem debitis",
             "user": {
                 "avatar": "https://www.w3schools.com/bootstrap4/img_avatar5.png",
-                "username": "Kimberley Garner",
-                "join_date": "",
-                "post_count": ""
+                "join_date": "05-11-2018",
+                "post_count": 250
             }
         }
     ]
