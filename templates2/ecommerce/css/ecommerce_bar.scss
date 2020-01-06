@@ -34,6 +34,41 @@ nav .brand-logo {
     font-size: 20px;
 }
 
+.ecommerce-header {
+    .sales-info-bar {
+        background-color: rgba($color: #b0bcc2, $alpha: 1.0);
+        color: white;
+        height: 50px;
+        // text-align: center;
+
+        p {
+            font-weight: 600;
+        }
+
+        .container {
+            max-height: 100%;
+            
+            .row {
+                margin-bottom: 0;
+                // vertical-align: middle;
+
+                .col {
+                    max-height: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    
+                    i {
+                        font-size: 2rem;
+                        margin-right: .5rem;
+                        vertical-align: middle;
+                        line-height: 1.75;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // BAR
 .ecommerce-bar {
     background-color: $secondary_color;

@@ -135,7 +135,7 @@ nav.white {
     }
 }
 
-.ecommerce {
+.ecommerce, .section.latest-products {
     @extend %container;
 
     p.section-title {

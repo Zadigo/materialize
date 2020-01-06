@@ -24,6 +24,42 @@ nav .brand-logo {
   font-size: 20px;
 }
 
+.ecommerce-header .sales-info-bar {
+  background-color: #b0bcc2;
+  color: white;
+  height: 50px;
+}
+
+.ecommerce-header .sales-info-bar p {
+  font-weight: 600;
+}
+
+.ecommerce-header .sales-info-bar .container {
+  max-height: 100%;
+}
+
+.ecommerce-header .sales-info-bar .container .row {
+  margin-bottom: 0;
+}
+
+.ecommerce-header .sales-info-bar .container .row .col {
+  max-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ecommerce-header .sales-info-bar .container .row .col i {
+  font-size: 2rem;
+  margin-right: .5rem;
+  vertical-align: middle;
+  line-height: 1.75;
+}
+
 .ecommerce-bar {
   background-color: #484848;
   z-index: -999;

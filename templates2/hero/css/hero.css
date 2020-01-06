@@ -30,6 +30,7 @@ div.hero, section.hero {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 @media only screen and (min-width: 301px) {
