@@ -1,0 +1,152 @@
+nav.white * {
+  color: black;
+}
+
+.ecommerce, .section.latest-products {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce, .section.latest-products {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce, .section.latest-products {
+    width: 90%;
+  }
+}
+
+.card-link {
+  color: inherit;
+}
+
+.ecommerce .grid#products .product a, .section.latest-products .grid#products .product a {
+  color: inherit;
+}
+
+.ecommerce .grid#products .product .details .price-details .price, .section.latest-products .grid#products .product .details .price-details .price {
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products .product .details .price-details .price, .section.latest-products .grid#products .product .details .price-details .price {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .details .price-details .price, .section.latest-products .grid#products .product .details .price-details .price {
+    font-size: 1.1rem;
+  }
+}
+
+.ecommerce .grid#products .product .details .price-details .discounted-price, .section.latest-products .grid#products .product .details .price-details .discounted-price {
+  text-decoration: line-through;
+}
+
+.ecommerce .grid#products .product, .section.latest-products .grid#products .product {
+  overflow: hidden;
+}
+
+.ecommerce .grid#products .product .image, .section.latest-products .grid#products .product .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.ecommerce .grid#products .product .image img, .section.latest-products .grid#products .product .image img {
+  width: 100%;
+  height: auto;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products .product .image img:hover, .section.latest-products .grid#products .product .image img:hover {
+    opacity: .7;
+  }
+}
+
+.ecommerce .grid#products .product .image .discount-pct, .section.latest-products .grid#products .product .image .discount-pct {
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 0;
+  height: 35px;
+  width: 45px;
+  padding: .25rem;
+  font-weight: 700;
+  font-size: .9rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.ecommerce .grid#products .product .image .banner, .section.latest-products .grid#products .product .image .banner {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+  background-color: #eee;
+}
+
+.ecommerce .grid#products .product .details .price-details .discounted-price, .section.latest-products .grid#products .product .details .price-details .discounted-price {
+  margin-left: .75rem;
+  line-height: 1.66;
+}
+
+.ecommerce .grid#products .product .details .price-details.with-discount, .section.latest-products .grid#products .product .details .price-details.with-discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.ecommerce p.section-title, .section.latest-products p.section-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.ecommerce .product-count, .section.latest-products .product-count {
+  color: #eee;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce, .section.latest-products {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce, .section.latest-products {
+    padding-top: 1rem;
+  }
+}
+
+.ecommerce .grid#products, .section.latest-products .grid#products {
+  display: -ms-grid;
+  display: grid;
+}
+
+@media only screen and (min-width: 301px) {
+  .ecommerce .grid#products, .section.latest-products .grid#products {
+    -ms-grid-columns: (minmax(80px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(80px, 1fr));
+    grid-gap: 4px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .ecommerce .grid#products, .section.latest-products .grid#products {
+    -ms-grid-columns: (minmax(200px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
+}
+/*# sourceMappingURL=products_tests.css.map */
