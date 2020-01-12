@@ -40,13 +40,13 @@
                             <li><a href="./hero2.html">Hero 2</a></li>
                             <li><a href="./hero3.html">Hero 3</a></li>
                             
-                            <sliderlink @showslider="applyValue" v-bind:show='show' />
+                            <!-- <sliderlink @showslider="applyValue" v-bind:show='show' /> -->
                         </ul>
                     </div>
                 </nav>
             </div>
     
-            <slider v-bind:show="show" />
+            <!-- <slider v-bind:show="show" /> -->
         </div>
 
         <!-- Hero -->
@@ -58,6 +58,17 @@
                     <a href="#!" class="btn-large red darken-1">Call to action</a>
                 </div>
             </div>
+
+            <div class="hero-icons-bar">
+                <div class="icons">
+                    <img src="../assets/icons/python.png" alt="python" class="icon">
+                    <img src="../assets/icons/github.png" alt="github" class="icon">
+                    <img src="../assets/icons/aws.png" alt="Aws Logo Icon by Maninder Kaur" class="icon">
+                    <img src="../assets/icons/django.png" alt="Django Logo Icon by Icon Mafia" class="icon">
+                    <img src="../assets/icons/postgres.png" alt="postgres" class="icon">
+                    <img src="../assets/icons/vuejs.png" alt="Vuejs Icon by Icon Mafia" class="icon">
+                </div>
+            </div>
         </div>
 
         <!-- Benefits -->
@@ -66,10 +77,8 @@
                 <div class="container center">
                     <div class="row">
                         <div class="col s12 m12">
-                            <h4>Votre recrutement</h4>
-                            <h5>
-                                Faites votre vie
-                            </h5>
+                            <h4>Your porotype template in seconds</h4>
+                            <h5>Fast iteration is key to testing your business</h5>
                         </div>
                     </div>
                 </div>
@@ -79,7 +88,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12 m6 l6">
-                            <h4>Simplicité <span class="lighten">d'action</span></h4>
+                            <h4>Ease <span class="lighten">of use</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Nihil consequatur perspiciatis praesentium earum quaerat in ex voluptatum 
@@ -92,7 +101,7 @@
                         <div class="col s12 m6 l6">
                             <div class="card z-depth-0">
                                 <div class="card-image">
-                                    <img src="./analyze_data.svg" alt="test">
+                                    <img src="../assets/image17.jpg" alt="image">
                                 </div>
                             </div>
                         </div>
@@ -101,14 +110,14 @@
             </section>
 
             <div class="separator-with-image">
-                <div class="container">
+                <div class="container center">
                     <div class="seperator-content">
-                        <h1>Section intermédiaire</h1>
-                        <h5>Ceci est un autre texte</h5>
-                        <a href="http://">En savoir plus</a>
+                        <h4>A section with an image</h4>
+                        <h5>A template for prototyping quickly</h5>
+                        <a href="http://">More</a>
                     </div>
                 </div>
-                <div class="seperator-img"></div>
+                <div class="seperator-img" style="background-image: url('../assets/image17.jpg');"></div>
             </div>
 
 
@@ -118,12 +127,12 @@
                         <div class="col s12 m6 l6">
                             <div class="card z-depth-0">
                                 <div class="card-image">
-                                    <img src="./analyze_finance.svg" alt="test">
+                                    <img src="../assets/image17.jpg" alt="test">
                                 </div>
                             </div>
                         </div>
                         <div class="col s12 m6 l6">
-                            <h4>Rapidité <span class="lighten">d'action</span></h4>
+                            <h4>Quick <span class="lighten">iterations</span></h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Nihil consequatur perspiciatis praesentium earum quaerat in ex voluptatum
@@ -154,7 +163,7 @@
                         <div class="col s12 m6 l6">
                             <div class="card z-depth-0">
                                 <div class="card-image">
-                                    <img src="./content_digital.svg" alt="test">
+                                    <img src="../assets/image17.jpg" alt="test">
                                 </div>
                             </div>
                         </div>
@@ -170,7 +179,7 @@
                             <div class="card-panel">
                                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg" class="teammate-avatar">
                                 <h6 class="teammate-name">John PENDENQUE</h6>
-                                <p>This is a test</p>
+                                <p>CEO, Founder</p>
                                 <div class="row social">
                                     <div class="col s12 m4 l4">
                                         <i class="fab fa-linkedin"></i>
@@ -186,9 +195,9 @@
                         </div>
                         <div class="col s12 m4 l4">
                             <div class="card-panel">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg" class="teammate-avatar">
-                                <h6 class="teammate-name">John PENDENQUE</h6>
-                                <p>This is a test</p>
+                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(28).jpg" class="teammate-avatar">
+                                <h6 class="teammate-name">Myrtille Doe</h6>
+                                <p>CTO</p>
                                 <div class="row social">
                                     <div class="col s12 m4 l4">
                                         <i class="fab fa-linkedin"></i>
@@ -204,9 +213,9 @@
                         </div>
                         <div class="col s12 m4 l4">
                             <div class="card-panel">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg" class="teammate-avatar">
-                                <h6 class="teammate-name">John PENDENQUE</h6>
-                                <p>This is a test</p>
+                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(21).jpg" class="teammate-avatar">
+                                <h6 class="teammate-name">Maryenne Zoé</h6>
+                                <p>CMO</p>
                                 <div class="row social">
                                     <div class="col s12 m4 l4">
                                         <i class="fab fa-linkedin"></i>
@@ -233,7 +242,7 @@
                                 Diffusez votre première offre <strong>gratuitement</strong> et commencer
                                 à recruter les talents qui vont faire croître votre entreprise
                             </p>
-                            <a href="#!" class="btn-large blue lighten-1">Diffuser une offre</a>
+                            <a href="#!" class="btn-large red darken-1">Me contacter</a>
                         </div>
                     </div>
                 </div>
@@ -295,6 +304,6 @@
             });
         </script>
 
-        <script src="./js/vue.js"></script>
+        <!-- <script src="./js/vue.js"></script> -->
     </body>
 </html>

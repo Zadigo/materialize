@@ -59,6 +59,13 @@ $lead_font_weight: 600;
     margin-bottom: 1.250rem;
 }
 
+%separator {
+    position: relative;
+    padding: 65px 0 65px 0;
+    margin-bottom: 0;
+    background-color: #eee;
+}
+
 div, section {
     &.hero {
         position: relative;
@@ -209,6 +216,22 @@ div, section {
             background-size: cover;
             background-repeat: no-repeat;
         }
+
+        .hero-icons-bar {
+            position: absolute;
+            background-color: white;
+            padding: 1.5rem;
+            bottom: 0;
+            width: 100%;
+            border: {
+                top: 1px solid #eee;
+                bottom: 1px solid #eee;
+            }
+
+            .icons .icon:not(:last-child) {
+                margin-right: 2rem;
+            }
+        }
     }
 
     // BENEFITS
@@ -216,9 +239,6 @@ div, section {
         width: 100%;
 
         &.contain {
-            // margin: 0 auto;
-            // max-width: 1280px;
-            // width: 90%;
             @extend %container;
 
             @media only screen and (min-width: 301px) {
@@ -267,8 +287,9 @@ div, section {
         }
 
         .separator {
-            padding: 65px 0 65px 0;
-            background-color: #eeeeee;
+            // padding: 65px 0 65px 0;
+            // background-color: #eeeeee;
+            @extend %separator;
 
             .row {
                 margin-top: 0;
@@ -284,103 +305,42 @@ div, section {
         }
         
         .separator-with-image {
-            overflow:hidden;
-            height:375px;
-            width:100%;
-            background-color:grey;
-            text-align: center;
-            color: white;
+            @extend %separator;
 
-            .seperator-content {
-                z-index: 999;
-                position: absolute;
-                width: inherit;
+            // overflow:hidden;
+            // height:375px;
+            // width:100%;
+            // background-color:grey;
+            // text-align: center;
+            // color: white;
+
+            // .seperator-content {
+            //     z-index: 999;
+            //     position: absolute;
+            //     width: inherit;
                 
-                a {
-                    color: white;
-                }
-            }
+            //     a {
+            //         color: white;
+            //     }
+            // }
 
-            .seperator-img {
-                position:relative;
-                top:0;
-                right:0;
-                left:0;
-                background: {
-                    image: url('./images/fashion_1.jpeg');
-                    position: center;
-                }
-                height: 100%;
-                width: auto;
-            }
+            // .seperator-img {
+            //     position:relative;
+            //     top:0;
+            //     right:0;
+            //     left:0;
+            //     background: {
+            //         image: url('./images/fashion_1.jpeg');
+            //         position: center;
+            //     }
+            //     height: 100%;
+            //     width: auto;
+            // }
         }
 
         .call-to-action {
             text-align: center;
         }
-
-        // Tiles
-        // &.image-tiles {
-        //     padding: {
-        //         top: 16px;
-        //         bottom: 16px;
-        //     }
-
-        //     display: grid;
-
-        //     grid: {
-        //         template-columns: repeat(2, 1fr);
-        //         gap: .275em;
-        //         auto-rows: 300px;
-        //     }
-
-        //     @media only screen and (min-width: 300px) {
-        //         grid-template-columns: repeat(1, 1fr);
-        //     }
-
-        //     @media only screen and (min-width: 601px) {
-        //         grid-template-columns: repeat(2, 1fr);
-        //     }
-
-        //     .image-tile {
-        //         background-color: inherit;
-        //         overflow: hidden;
-
-        //         // @media only screen and (min-width: 601px) {
-        //         //     &.full {
-        //         //         grid-column-start: 1;
-        //         //         grid-column-end: 3;
-        //         //     }
-        //         // }
-                
-        //         img {
-        //             // max-width: 100%;
-        //             height: auto;
-        //             transition: all .5s ease-in-out;
-        //         }
-
-        //         &:hover {
-        //             img {
-        //                 transform: scale(1.1, 1.1)
-        //             }
-        //         }
-
-        //         // .tile-cover {
-        //         //     position: absolute;
-        //         //     background-color: black;
-        //         //     height: 100%;
-        //         //     width: 100%;
-        //         //     top: 0;
-        //         //     left: 0;
-        //         //     opacity: 0;
-        //         //     transition: .3s ease-in-out;
-    
-        //         //     &:hover {
-        //         //         opacity: .3;
-        //         //     }
-        //         // }
-        //     }
-        // }
 
         .benefits .team {
             text-align: center;
@@ -412,57 +372,3 @@ div, section {
           
     }
 }
-
-// // Tiles
-// .image-tiles-group {
-//     .image-tiles {
-//         max-width: 1280px;
-//         margin: 0 auto;
-//         width: 90%;
-
-//         padding: {
-//             right: 1rem;
-//             left: 1rem;
-//         } 
-
-//         @media only screen and (min-width: 300px) {
-//             width: 90%;
-//         }
-
-//         @media only screen and (min-width: 993px) {
-//             width: 70%;
-//         }
-
-//         display: grid;
-
-//         grid: {
-//             template-columns: repeat(2, 1fr);
-//             gap: .275em;
-//             auto-rows: 300px;
-//         }
-
-//             @media only screen and (min-width: 300px) {
-//                 @include grid_template_columns(1, 2fr)
-//             }
-
-//             @media only screen and (min-width: 601px) {
-//                 @include grid_template_columns(2, 1fr)
-//             }
-
-
-//         .image-tile {
-//             overflow: hidden;
-//             background-color: #1565c0;
-
-//             img {
-//                 height: auto;
-//                 transition: all .5s ease-in-out;
-
-//                 &:hover {
-//                     transform: scale(1.1, 1.1);
-//                 }
-
-//             }
-//         }
-//     }
-// }

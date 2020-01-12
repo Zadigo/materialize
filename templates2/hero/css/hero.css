@@ -24,6 +24,13 @@ div.hero .hero-wrapper .call-to-action div.lead, section.hero .hero-wrapper .cal
   margin-bottom: 1.250rem;
 }
 
+div.benefits .separator, section.benefits .separator, div.benefits .separator-with-image, section.benefits .separator-with-image {
+  position: relative;
+  padding: 65px 0 65px 0;
+  margin-bottom: 0;
+  background-color: #eee;
+}
+
 div.hero, section.hero {
   position: relative;
   overflow: hidden;
@@ -180,6 +187,20 @@ div.hero .background-img-wrapper, section.hero .background-img-wrapper {
   background-repeat: no-repeat;
 }
 
+div.hero .hero-icons-bar, section.hero .hero-icons-bar {
+  position: absolute;
+  background-color: white;
+  padding: 1.5rem;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+div.hero .hero-icons-bar .icons .icon:not(:last-child), section.hero .hero-icons-bar .icons .icon:not(:last-child) {
+  margin-right: 2rem;
+}
+
 div.benefits, section.benefits {
   width: 100%;
 }
@@ -261,11 +282,6 @@ div.benefits .benefit h4 > span.lighten, section.benefits .benefit h4 > span.lig
   }
 }
 
-div.benefits .separator, section.benefits .separator {
-  padding: 65px 0 65px 0;
-  background-color: #eeeeee;
-}
-
 div.benefits .separator .row, section.benefits .separator .row {
   margin-top: 0;
 }
@@ -280,36 +296,6 @@ div.benefits .separator .row, section.benefits .separator .row {
   div.benefits .separator, section.benefits .separator {
     padding-top: 65px;
   }
-}
-
-div.benefits .separator-with-image, section.benefits .separator-with-image {
-  overflow: hidden;
-  height: 375px;
-  width: 100%;
-  background-color: grey;
-  text-align: center;
-  color: white;
-}
-
-div.benefits .separator-with-image .seperator-content, section.benefits .separator-with-image .seperator-content {
-  z-index: 999;
-  position: absolute;
-  width: inherit;
-}
-
-div.benefits .separator-with-image .seperator-content a, section.benefits .separator-with-image .seperator-content a {
-  color: white;
-}
-
-div.benefits .separator-with-image .seperator-img, section.benefits .separator-with-image .seperator-img {
-  position: relative;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-image: url("./images/fashion_1.jpeg");
-  background-position: center;
-  height: 100%;
-  width: auto;
 }
 
 div.benefits .call-to-action, section.benefits .call-to-action {
