@@ -27,19 +27,16 @@ $padding_top: 3.25%;
         right: auto;
         bottom: 20px;
     }
-    // padding: {
-    //     top: $padding_top;
-    // };
 }
 
 section, header {
     &.header {
+        overflow: hidden;
+        color: white;
         background-color: #303f9f;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        overflow: hidden;
-        color: white;
         width: 100%;
 
         @media only screen and (min-width: 301px) {
@@ -93,7 +90,9 @@ section, header {
                     
                     @media only screen and (min-width: 993px) {
                         flex-direction: row;
+                        justify-items: center;
                         justify-content: center;
+
                     }
                     
                     margin: {
@@ -102,6 +101,13 @@ section, header {
 
                     .btn, .btn-large {
                         margin: 0;
+                    }
+
+                    .select-wrapper {
+                        background-color: white;
+                        height: 53px;
+                        border-radius: 2px;
+                        margin-right: .75rem;
                     }
 
                     input {

@@ -11,12 +11,12 @@ section.header .header-wrapper .content, section.header .header-wrapper .call-to
 }
 
 section.header, header.header {
+  overflow: hidden;
+  color: white;
   background-color: #303f9f;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  overflow: hidden;
-  color: white;
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -84,6 +84,7 @@ section.header .header-wrapper .content .with-input, section.header .header-wrap
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    justify-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -92,6 +93,13 @@ section.header .header-wrapper .content .with-input, section.header .header-wrap
 
 section.header .header-wrapper .content .with-input .btn, section.header .header-wrapper .content .with-input .btn-large, section.header .header-wrapper .call-to-action .with-input .btn, section.header .header-wrapper .call-to-action .with-input .btn-large, header.header .header-wrapper .content .with-input .btn, header.header .header-wrapper .content .with-input .btn-large, header.header .header-wrapper .call-to-action .with-input .btn, header.header .header-wrapper .call-to-action .with-input .btn-large {
   margin: 0;
+}
+
+section.header .header-wrapper .content .with-input .select-wrapper, section.header .header-wrapper .call-to-action .with-input .select-wrapper, header.header .header-wrapper .content .with-input .select-wrapper, header.header .header-wrapper .call-to-action .with-input .select-wrapper {
+  background-color: white;
+  height: 53px;
+  border-radius: 2px;
+  margin-right: .75rem;
 }
 
 section.header .header-wrapper .content .with-input input, section.header .header-wrapper .call-to-action .with-input input, header.header .header-wrapper .content .with-input input, header.header .header-wrapper .call-to-action .with-input input {
