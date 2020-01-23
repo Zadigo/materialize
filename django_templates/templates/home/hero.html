@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}
+    {% trans "Nawoka: Tous vos désirs au même endroit" %}
+{% endblock %}
+
+{% block hero %}
+    {% with hero_image="https://jobswebsite.s3.eu-west-3.amazonaws.com/nawoka/media/image5.jpg" %}
+        <div class="hero red darken-3 responsivity" style="background-image: url({% static 'images/hero/hero2.jpg' %});">
+            <div class="hero-wrapper">
+                <div class="call-to-action">
+                    <div class="lead">{% trans "Tous vos désirs mode au même endroit" %}</div>
+                    <div class="lead-subtitle">{% trans "Produits mode et beauté uniques" %}</div>
+                    <a href="{% url 'product_collection' 'promos' %}" class="btn-large grey darken-4 waves-effect waves-light" id="btn_call_to_action">
+                        {% trans "Commencer mon shopping" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endwith %}
+    
+    <!-- TILES -->
+    {# {% include "./components/tiles.html" with section_title="Nos collections" %} #}
+
+    <!-- BENEFITS -->
+    {% include "./benefits.html" %}
+
+    <!-- CONTACT -->
+    {# {% include "./contact.html" %} #}
+
+    <!-- VARIOUS -->
+    {# {% include "./components/various.html" %} #}
+{% endblock %}

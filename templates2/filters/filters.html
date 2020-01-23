@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Design for tools</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="filters.css">
+
+        <style>
+            .slide {
+                backface-visibility: hidden;
+            }
+
+            .slide-enter-active,
+            .slide-leave-active {
+                transition: all .3s ease-out;
+            }
+            .slide-enter,
+            .slide-leave-to {
+                opacity: 0;
+                /* transform: translateY(-2px); */
+            }
+            .slide-enter-to,
+            .slide-leave-enter {
+                opacity: 1;
+                /* transform: translateY(0px); */
+            }
+            .slide-move {
+                transition: all .3s ease;
+            }
+            .chip-fade-active {
+                transition: all .3s ease-in;
+            }
+
+            .chip-fade-enter {
+                opacity: 0;
+            }
+
+            .chip-fade-enter-to {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar_fixed">
+            <nav class="indigo"></nav c>
+        </div>
+
+        <main>
+            <div class="container">
+                <div class="section">
+                    <!-- Filterbar -->
+                    <!-- <div id="app">
+                        <div class="row">
+                            <filterbar v-bind:testdata='testdata' />
+                        </div>
+                        
+                        <div class="row">
+                            <cards v-bind:data="testdata" />
+                        </div>
+                    </div> -->
+
+                    <!-- Filterselect -->
+                    <div id="app">
+                        <div class="row">
+                            <filterselect v-bind:testdata="testdata" />
+                        </div>
+                        
+                        <div class="row">
+                            <cards v-bind:data="testdata" />
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </main>
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            // $(document).ready(function(){
+            //     $('select').formSelect();
+            // });
+        </script>
+        
+        <!-- Minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        
+        <!-- Vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- <script src="test.js"></script> -->
+        <!-- <script src="filters.js"></script> -->
+        <script src="filters2.js"></script>
+    </body>
+</html>

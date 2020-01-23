@@ -1,0 +1,35 @@
+.filters .items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    border-bottom: 1px solid #eee;
+    z-index: -9999;
+  }
+  
+  .filters .items .icon {
+    padding: .5rem;
+  }
+  
+  .filters .items .filter {
+    padding: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .filters .dropdown {
+    height: auto;
+    width: 100%;
+    padding: .45rem;
+  }
+  
+  .filters .dropdown .chip {
+    cursor: pointer;
+  }
+  
