@@ -11,7 +11,31 @@
         <link rel="stylesheet" href="./css/ecommerce_grid.css">
         <link rel="stylesheet" href="./css/ecommerce_bar.css">
         <link rel="stylesheet" href="../css/footer.css">
-        <link rel="stylesheet" href="../code.css">
+        <!-- <link rel="stylesheet" href="../css/"> -->
+
+        <style>
+            .product_card-enter-active {
+                transition: all .2s ease-in;
+            }
+            .product_card-enter {
+                opacity: 0;
+            }
+            .product_card-enter-to {
+                opacity: 1;
+            }
+            .product_card-leave-active {
+                transition: all .2s ease-out;
+            }
+            .product_card-leave {
+                opacity: 1;
+            }
+            .product_card-leave-to {
+                opacity: 0;
+            }
+            .product_card-move {
+                transition: all .5s ease-in;
+            }
+        </style>
     </head>
 
     <body>
@@ -106,95 +130,16 @@
         
         <!-- Main -->
         <main>
-            <div class="ecommerce">
+            <div class="ecommerce" id="app">
+                <div class='ecommerce filterbar'>
+                    <filterbar @filterprice="applyfilter" />
+                </div>
+                
                 <!-- Prouct quantity -->
                 <p class="product-count center">2 351 produits trouvées</p>
 
                 <!-- Products -->
-                <div class="grid" id="products">
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image3.jpg" alt="image3">
-                                <div class="banner">Exclusive</div>
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details">
-                                    <div class="price">295€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image3.jpg" alt="image3">
-                                <div class="discount-pct grey darken-2">-52%</div>
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details with-discount">
-                                    <div class="price">123€</div>
-                                    <div class="discounted-price">275€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image4.jpg" alt="image3">
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details">
-                                    <div class="price">385€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image3.jpg" alt="image3">
-                                <div class="discount-pct grey darken-2">-52%</div>
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details with-discount">
-                                    <div class="price">302€</div>
-                                    <div class="discounted-price">132€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image4.jpg" alt="image3">
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details">
-                                    <div class="price">245€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="product">
-                        <a href="product.html">
-                            <div class="image">
-                                <img src="../images/image4.jpg" alt="image3">
-                            </div>
-                            <div class="details">
-                                <div class="title">Jupe en talon</div>
-                                <div class="price-details">
-                                    <div class="price">245€</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <cards v-bind:products="listproducts" />
                 </div>
             </div>
         </main>
@@ -255,12 +200,15 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="../js/ecommerce.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script src="./js/ecommerce.js"></script>
 
         <script>
             $(document).ready(function(){
                 $('.sidenav').sidenav();
                 $('.modal').modal();
+                $('select').formSelect();
 
                 $(".enhanced-ecommerce").on("click", function() {
                     var modal = $(this).data("for")

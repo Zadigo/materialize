@@ -365,6 +365,34 @@ nav.white * {
   }
 }
 
+.ecommerce .information .policies, .section.latest-products .information .policies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.ecommerce .information .policies .policy, .section.latest-products .information .policies .policy {
+  width: 100px;
+  padding: 1rem;
+}
+
+.ecommerce .information .policies .policy:first-child, .section.latest-products .information .policies .policy:first-child {
+  padding-left: 0;
+}
+
+.ecommerce .information .policies .policy i, .section.latest-products .information .policies .policy i {
+  font-size: 28px;
+}
+
 .ecommerce .details, .section.latest-products .details {
   grid-area: details;
   display: -webkit-box;

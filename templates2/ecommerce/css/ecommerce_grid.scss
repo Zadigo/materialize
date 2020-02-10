@@ -329,6 +329,29 @@ nav.white {
                 margin: 2.5rem 0 0 0;
             }
         }
+
+        .policies {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+
+            .policy {
+                width: 100px;
+                padding: 1rem;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                i {
+                    font-size: 28px;
+                }
+            }
+        }
     }
 
     .details {

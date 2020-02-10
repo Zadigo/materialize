@@ -11,69 +11,72 @@
         <link rel="stylesheet" href="./css/materialize_ecommerce_canvas.css">
 
         <style>
-            .slide-enter-active {
-                transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            .slide {
+                backface-visibility: hidden;
             }
-
-            .slide-enter {
-                transform: scale(.9, .9);
+            .slide-enter-active {
+                transition: all .5s ease-out;
+            }
+            .slide-leave-active {
+                transition: all .2s ease-in;
+            }
+            .slide-enter,
+            .slide-leave-to {
                 opacity: 0;
             }
-
-            /* .slide-leave {
+            .slide-enter-to,
+            .slide-leave {
                 opacity: 1;
-            } */
-
-            
+            }
+            .slide-move {
+                transition: all .2s ease;
+            }
         </style>
     </head>
 
     <body>
+        <!-- NAVBAR -->
         <div class="navbar-fixed">
-            <nav class="blue lighten-3">
-                <ul>
-                    <li></li>
-                </ul>
-            </nav>
+            <nav class="blue lighten-3"></nav>
         </div>
         
         <main>
             <section class="section products" id="app">
                 <div class="container">
-                    <div class="row">
-                        <!--Filters  -->
+                    <interface v-bind:products="products" />
+                    <!-- <div class="row">
                         <div class="col s12 m2 l2">
-                            <sidefilter @startfilter="applyFilter" @otherfilters="applyOtherFilter" v-bind:products="products" />
+                            <sidefilter v-bind:products="products" />
                         </div>
 
-                        <!-- Products -->
                         <div class="col s12 m10 l10" id="prducts_col">
                             <transition-group name="slide">
-                                <a href="#!" v-for="product in allProducts" :key="product.id" class="card-link">
+                                <a href="#!" v-for="product in products" :key="product.id" class="card-link">
                                     <div class="col s6 m4 l4">
                                         <div class="card flat-ecommerce with-action zoom-rotate">
-                                            <div v-show="product.markeddown" class="discount">{{ product.markeddown_pct|percentage }}</div>
+                                            <div v-show="product.markeddown" class="discount">[% product.markeddown_pct|percentage %]</div>
                                             <div class="card-image">
-                                                <img :src="parseImage(product.images)" :alt="product.name">
+                                                <img :src="parseimage(product.images)" :alt="product.name">
                                                 <div class="actions">
-                                                    <!-- <div class="action" id="star"><i class="material-icons">star</i></div> -->
                                                     <div class="action" id="star"><i class="material-icons">star_border</i></div>
                                                 </div>
                                             </div>
                                             <div class="card-content">
-                                                <div class="title">{{ product.name }}</div>
-                                                <div class="price">{{ product.price|euros }}</div>
+                                                <div class="title">[% product.name %]</div>
+                                                <div class="price">[% product.price|euros %]</div>
                                             </div>
                                         </div>                                    
                                     </div>
                                 </a>
                             </transition-group>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
         </main>
 
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -82,12 +85,11 @@
         <script>
             $(document).ready(function(){
                 // Select
-                $('select').formSelect();
+                $("select").formSelect();
             });
         </script>
 
         <!-- Vue -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="./js/vue.js"></script>
+        <script src="./js/vue_products2.js"></script>
     </body>
 </html>

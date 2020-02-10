@@ -68,7 +68,8 @@
             </div>
         </div>
 
-        <div class="cart-drawer">
+        <!-- Cart drawer -->
+        <!-- <div class="cart-drawer">
             <div class="drawer">
                 <div class="drawer-title">
                     Votre panier
@@ -96,7 +97,7 @@
 
                 <a href="cart.html" class="btn-large btn-checkout black z-depth-0">Panier</a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Ecommerce bar -->
         <div class="ecommerce-bar">
@@ -114,7 +115,7 @@
                 <i class="material-icons">information</i>
             </div>
     
-            <div class="ecommerce">
+            <div class="ecommerce" id="app">
                 <div class="grid" id="product">
                     <!-- Breadcrumb -->
                     <div class="breadcrumbs">
@@ -159,10 +160,29 @@
                             <div class="color"><span>Couleur :</span> Noir</span></div>
                             <div class="size"><span>Taille :</span> Unique</div>
                         </div>
-                        <button class="btn-large waves-effect waves-light red darken-1 z-depth-0" id="btn_add_to_cart" data-for="modal2">
+                        <button @click="addtocart" class="btn-large waves-effect waves-light red darken-1 z-depth-0" id="btn_add_to_cart" data-for="modal2">
                             <i class="material-icons left">shopping_cart</i>
                             Ajouter au panier
                         </button>
+
+                        <div class="policies">
+                            <div class="policy">
+                                <i class="material-icons">airplanemode_active</i>
+                                <div>Free delivery</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">local_shipping</i>
+                                <div>Retours 30 jours</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">star_border</i>
+                                <div>Garantie</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">lock</i>
+                                <div>100% secure checkout</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Details -->
@@ -269,7 +289,9 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="../js/ecommerce.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script src="./js/product.js"></script>
 
         <script>
             $(document).ready(function(){
