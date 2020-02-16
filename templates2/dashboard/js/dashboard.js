@@ -1,80 +1,210 @@
-var store = {
-    data: {}
+// $(document).ready(function () {
+//     $("#trigger-for-sidebar").on("click", function() {
+//         // $(".dashboard .wrapper").toggle(".show-side-bar")
+//         $(".dashboard .wrapper").toggle("hide")
+//     })    
+// });
+
+
+var productdetailsurl = window.location.origin + "/dashboard/products/"
+
+var constructurl = function(id, slug) {
+    return  productdetailsurl + id + "/" + slug
 }
 
-var filterbutton = {
-    // This filters the products according
-    // to the parameter present in the
-    // the select
+var updateform = {
     template: "\
-    <select name='filter' id='filter'>\
-        <option v-for='selectoption in selectoptions' :value='selectoption'>{{ selectoption }}</option>\
-    </select>\
+    <form @submit.prevent='updateitem'>\
+        <div class='row'>\
+            <div v-for='field in fields' :key='field.name' :class='\"input-field col s12 \" + field.size'>\
+                <input :type='field.type' :name='field.name' :id='field.name' :placeholder='field.placeholder'>\
+            </div>\
+        </div>\
+        <button type='submit' class='btn-large red darken-1'>Update</button>\
+    </form>\
     ",
     data() {
         return {
-            selectoptions: ["-----", "Prix croissant", "Prix décroissant"]
+            fields: [
+                {type: "text", name: "name", placeholder: "Name", size: "m12 l12"},
+                {type: "text", name: "category", placeholder: "Category", size: "m4 l4"},
+            ],
+            productid: undefined
+        }
+    },
+    beforeMount() {
+        var self = this
+        var url = new URLSearchParams(window.location.search)
+        var product = url.get("product")
+        if (product) {
+            // $.ajax({
+            //     type: "GET",
+            //     url: "http://example.com",
+            //     success: function (response) {
+            //         self.$data.product = product
+            //     }
+            // })
+        }
+    },
+    methods: {
+        updateitem: function() {
+            window.location.href = "http://127.0.0.1:5500/materialize_for_startups/templates2/dashboard/_index.html"
         }
     }
 }
 
-var deleteproductbutton = {
+var createform = {
+    template: "\
+    <form @submit.prevent='createitem'>\
+        <div class='row'>\
+            <div v-for='field in fields' :key='field.name' :class='\"input-field col s12 \" + field.size'>\
+                <input :type='field.type' :name='field.name' :id='field.name' :placeholder='field.placeholder'>\
+            </div>\
+        </div>\
+        <button class='btn-large indigo lighten-1 waves-effect waves-light'>Create</button>\
+    </form>\
+    ",
+    data() {
+        return {
+            fields: [
+                {type: "text", name: "name", placeholder: "Name", size: "m12 l12"},
+                {type: "text", name: "category", placeholder: "Category", size: "m4 l4"},
+                {type: "number", name: "price", placeholder: "Price", size: "m4 l4"}
+            ]
+        }
+    },
+    methods: {
+        createitem: function() {
+            window.location.href = "http://127.0.0.1:5500/materialize_for_startups/templates2/dashboard/_products.html"
+        }
+    }
+}
+
+var messages = {
+    template: "\
+        <transition name='show_message'>\
+            <div v-if='show'>Supprimer un cours est une action irréversible.</div>\
+        </transition>\
+    ",
+    data() {
+        return {
+            show: false
+        }
+    }
+}
+
+var deletebutton = {
     // This commponent allows the user to
     // delete an item from the database
     // after having selected them
 
-    props: ['selectedvalues'],
-    template: "<a @click='deleteProduct()' class='btn-large' id='delete_product'>{{ title }}</a>",
+    props: ["selectedproducts"],
+    template: "\
+        <a @click='deleteitems' class='btn-large' id='delete_product' :disabled='showdeletebutton'>\
+            <i class='material-icons left'>delete</i>\
+            {{ title }}\
+        </a>\
+    ",
     data() {
         return {
             title: "Delete"
         }
     },
+    computed: {
+        showdeletebutton() {
+            if (this.$props.selectedproducts.length > 0) {
+                return false
+            } else {
+                return true
+            }
+        }
+    },
     methods: {
-        deleteProduct: function() {
-            // A method that iterates through the
-            // the iDs of the products and creates
-            // an AJAX request to delete them
-            console.log(this.$props.selectedvalues)
+        deleteitems: function() {
+            this.$emit('deleteitems')
+        }
+    }
+}
+
+var filterproducts = {
+    template: "\
+    <select id='filter_products'>\
+        <option @click='doselect(option.value)' v-for='option in options' :key='option.value' :value='option.value'>{{ option.name }}</option>\
+    </select>\
+    ",
+    data() {
+        return {
+            options: [
+                {value: "all", name: "-----", selected: true},
+                {value: "croissant", name: "Croissant", selected: false},
+                {value: "decroissant", name: "Décroissant", selected: false},
+            ]
+        }
+    },
+    methods: {
+        doselect: function(value) {
+            this.$data.options.forEach(option => {
+                option.selected = false
+                if (option.value === value) {
+                    option.selected = true
+                }
+            })
+        }
+    },
+    computed: {
+        selectedfilter() {
+            return this.$data.options.filter(option => {
+                return option.selected === true
+            })
         }
     }
 }
 
 var vuetable = {
-    // This component creates a table
-    // for the dashboard and with the
-    // the provided data
-
     props: ["products"],
     template: "\
-    <table :class='isStriped()'>\
-        <thead>\
-            <tr>\
-                <th v-for='title in titles' :key='title'>{{ title|capitalize }}</th>\
-            </tr>\
-        </thead>\
-        <tbody>\
-            <tr v-for='(product, i) in products' :key='product.id'>\
-                <td>\
-                    <p>\
+        <table class='highlight responsive-table'>\
+            <thead>\
+                <tr>\
+                    <th>\
                         <label>\
-                            <input @click='createprocess' type='checkbox' v-model='checkbox_data[i]' :name='product.name|slugify' :id='product.name|slugify'>\
+                            <input @click='selectall' type='checkbox' name='select_all' id='selct_all' />\
                             <span></span>\
                         </label>\
-                    </p>\
-                </td>\
-                <td>{{ product.name }}</td>\
-                <td>{{ product.surname }}</td>\
-                <td>{{ product.price|euros }}</td>\
-            </tr>\
-        </tbody>\
-    </table>\
+                    </th>\
+                    <th v-for='title in titles' :key='title'>{{ title|capitalize }}</th>\
+                </tr>\
+            </thead>\
+            <tbody>\
+                <tr v-if='!product.deleted' v-for='(product, index) in products' :key='product.id'>\
+                    <td>\
+                        <p>\
+                            <label>\
+                                <input @click='selectitem(index)' type='checkbox' :name='product.name|slugify' :id='product.name|slugify' :checked='product.checked'>\
+                                <span></span>\
+                            </label>\
+                        </p>\
+                    </td>\
+                    <td><a :href='\"./details.html?product=\" + product.id'>{{ product.id }}</a></td>\
+                    <td>{{ product.name }}</td>\
+                    <td>{{ product.surname }}</td>\
+                    <td>{{ product.price|euros }}</td>\
+                    <td><a :href='\"./update.html?product=\" + product.id'><i class='material-icons'>create</i></a></td>\
+                </tr>\
+            </tbody>\
+        </table>\
     ",
     data() {
         return {
-            striped: false,
-            titles: ["id", "name", "surname", "price"],
-            checkbox_data: {"data": []}
+            titles: ["iD", "name", "surname", "price", "update"],
+        }
+    },
+    methods: {
+        selectitem: function(index) {
+            this.$emit('selectitem', index)
+        },
+        selectall: function(index) {
+            this.$emit('selectall')
         }
     },
     filters: {
@@ -92,42 +222,64 @@ var vuetable = {
         euros: function(value) {
             return value + "€"
         }
-    },
-    methods: {
-        isStriped: function() {
-            // Toggle the stripes on
-            // the table
-            if (this.$data.striped) {
-                return "striped"
-            }
-        },
-        createprocess: function() {
-            // When we click on the checkbox,
-            // create an emmit in order to process
-            // an action behind: delete etc.
-            this.$emit('createprocess', this.$data.checkbox_data)
-        }
     }
 }
 
-var app = new Vue({
-    el: "#vuetable",
-    components: { vuetable, deleteproductbutton, filterbutton },
+var dashboard = new Vue({
+    el: "#vue_dashboard",
+    components: {vuetable, deletebutton, filterproducts, createform, 
+                    updateform, messages},
     data() {
         return {
             products: [
-                {"id": 1, "name": "Kendall", "surname": "Jenner", "price": 145},
-                {"id": 2, "name": "Hailey", "surname": "Baldwin", "price": 345},
-                {"id": 3, "name": "Taylor", "surname": "Swift", "price": 175}
+                {id: 1, name: "Kendall", surname: "Jenner", price: 145, selected: false, checked: false, deleted: false},
+                {id: 2, name: "Hailey", surname: "Baldwin", price: 345, selected: false, checked: false, deleted: false},
+                {id: 3, name: "Taylor", surname: "Swift", price: 175, selected: false, checked: false, deleted: false}
             ],
-            selectedvalues: []
+            showsidebar: true
+        }
+    },
+    computed: {
+        selectedproducts() {
+            return this.$data.products.filter(product => {
+                return product.selected === true && product.deleted === false
+            })
         }
     },
     methods: {
-        selectedValues: function(values) {
-            // Receives the selected values
-            // in order to do something with them
-            this.$data.selectedvalues = values
+        doselect: function(index) {
+            this.$data.products[index].selected = !this.$data.products[index].selected
+        },
+        getall: function() {
+            this.$data.products.forEach(product => {
+                product.checked = !product.checked
+                product.selected = !product.selected
+            })
+        },
+        applydelete: function() {
+            this.selectedproducts.forEach(product => {
+                this.$data.products.forEach((actualproduct, index) => {
+                    if (product.id === actualproduct.id) {
+                        product.deleted = !product.deleted
+                    }
+                })
+            })
+
+            // A method that iterates through the
+            // the iDs of the products and creates
+            // an AJAX request to delete them
+            $.ajax({
+                type: "DELETE",
+                url: "http://example.com",
+                data: self.$props.selectedproducts,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        },
+        togglesidebar: function() {
+            this.$data.showsidebar = !this.$data.showsidebar
         }
-    }
+    },
 })

@@ -56,38 +56,54 @@ $sides: 'top', 'right', 'left';
     
     .wrapper {
         display: grid;
-        grid-template-columns: 300px repeat(3, 1fr);
+        grid-template-columns: 300px repeat(4, 1fr);
         grid-template-areas:
-        "side main main main";
-        height: 100vh;
+        "side topnav topnav topnav topnav"
+        "side stats stats stats stats"
+        "side main main main main";
+        max-width: 1280px;
+        width: 100%;
     
         .side {
-            background-color: red;
             grid-area: side;
             position:  relative;
-            z-index: -9999;
+            background-color: white;
 
             .bar {
-                // position: fixed;
-                width: auto;
+                position: fixed;
+                width: 300px;
                 height: 100vh;
-            }
 
-            .content {
-                padding: .25rem;
-
-                ul {
-                    margin: 0;
-
-                    li {
-                        a {
-                            display: block;
-                            padding: 1rem;
-                            color: white;
+                .content {
+                    // padding: .25rem;
+    
+                    ul {
+                        margin: 0;
+    
+                        li {
+                            a {
+                                display: block;
+                                padding: 1rem;
+                                color: black;
+                            }
+                        }
+    
+                        li:hover {
+                            background-color: black;
+                            
+                            a {
+                                color: white;
+                            }
                         }
                     }
                 }
             }
+        }
+
+        .topnav {
+            grid-area: topnav;
+            grid-column-start: 2;
+            grid-column-end: 6;
         }
         
         .main {

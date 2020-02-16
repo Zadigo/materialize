@@ -58,44 +58,59 @@
 .dashboard .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 300px (1fr)[3];
-      grid-template-columns: 300px repeat(3, 1fr);
-      grid-template-areas: "side main main main";
-  height: 100vh;
+  -ms-grid-columns: 300px (1fr)[4];
+      grid-template-columns: 300px repeat(4, 1fr);
+      grid-template-areas: "side topnav topnav topnav topnav" "side stats stats stats stats" "side main main main main";
+  max-width: 1280px;
+  width: 100%;
 }
 
 .dashboard .wrapper .side {
-  background-color: red;
   -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: side;
   position: relative;
-  z-index: -9999;
+  background-color: white;
 }
 
 .dashboard .wrapper .side .bar {
-  width: auto;
+  position: fixed;
+  width: 300px;
   height: 100vh;
 }
 
-.dashboard .wrapper .side .content {
-  padding: .25rem;
-}
-
-.dashboard .wrapper .side .content ul {
+.dashboard .wrapper .side .bar .content ul {
   margin: 0;
 }
 
-.dashboard .wrapper .side .content ul li a {
+.dashboard .wrapper .side .bar .content ul li a {
   display: block;
   padding: 1rem;
+  color: black;
+}
+
+.dashboard .wrapper .side .bar .content ul li:hover {
+  background-color: black;
+}
+
+.dashboard .wrapper .side .bar .content ul li:hover a {
   color: white;
 }
 
-.dashboard .wrapper .main {
+.dashboard .wrapper .topnav {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 4;
+  grid-area: topnav;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+
+.dashboard .wrapper .main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-area: main;
   padding: 1.5rem;
 }

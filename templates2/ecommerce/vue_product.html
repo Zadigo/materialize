@@ -11,11 +11,23 @@
         <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
         <link rel="stylesheet" href="../code.css">
         <link rel="stylesheet" href="../css/footer.css">
+
+        <style>
+            .appear-enter-active {
+                transition: all .3s ease;
+            }
+            .appear-enter {
+                opacity: 0;
+            }
+            .appear-enter-to {
+                opacity: 1;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
         <div class="navbar-fixed">
-            <nav class="white">
+            <nav class="grey darken-4">
                 <div class="container">
                     <a href="hero.html" class="brand-logo">Shop</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -69,35 +81,9 @@
         </div>
 
         <!-- Cart drawer -->
-        <!-- <div class="cart-drawer">
-            <div class="drawer">
-                <div class="drawer-title">
-                    Votre panier
-                </div>
-                <div class="product">
-                    <div class="details">
-                        <div class="product-image">
-                            <img src="../images/image4.jpg" alt="image1">
-                        </div>
-                        <div class="product-title">
-                            <div class="title">Care taker</div>
-                            <div class="reference">3EZFZ4EZFZEf</div>
-                        </div>
-                        <div class="product-price">
-                            165€
-                        </div>
-                        <p class="remove-link">Remove</p>
-                    </div>
-                </div>
-
-                <div class="sub-total">
-                    <span class="title">Sous-total</span>
-                    <div class="sum">155€</div>
-                </div>
-
-                <a href="cart.html" class="btn-large btn-checkout black z-depth-0">Panier</a>
-            </div>
-        </div> -->
+        <div id="cart_drawer">
+            <cartdrawer />
+        </div>
 
         <!-- Ecommerce bar -->
         <div class="ecommerce-bar">
@@ -123,27 +109,21 @@
                         <a href="#!" class="breadcrumb">Collections</a>
                         <a class="breadcrumb">Jupe en cuir de fauve</a>
                     </div>
-
-                    <!-- Images -->
-                    <div class="side-images">
-                        <img src="../../assets/images/image3.jpg" alt="image3">
-                        <!-- <img src="../../assets/images/image4.jpg" alt="image3"> -->
-                        <!-- <img src="../../assets/images/image3.jpg" alt="image3"> -->
-                    </div>
-
-                    <!-- Product -->
-                    <div class="main-image">
-                        <!-- <button class="btn" id="info_button" data-for="modal1">Press</button> -->
-
-                        <div class="image">
-                            <img src="../../assets/images/image4.jpg" alt="image4">
-                            <!-- <img src="https://ae01.alicdn.com/kf/H663be83368b54dd49e23228668b21fd7G/ACELURE-New-Casual-Plaid-Shoulder-Bag-Fashion-Stitching-Wild-Messenger-Brand-Female-Totes-Crossbody-Bags-Women.jpg_640x640.jpg" alt="image4"> -->
-                            <!-- <img src="https://www.sudexpress.com/media/catalog/product/cache/1/image/575x805/9df78eab33525d08d6e5fb8d27136e95/h/1/h19_19435_gris-6.jpg" alt="image4"> -->
+                    
+                    <div id="app">
+                        <div>
+                            <!-- Images -->
+                            <sideimages @returnmainimage="setmainimage" />
+                        </div>
+                        
+                        <div>
+                            <!-- Product -->
+                            <previewimage v-bind:mainimage="mainimage" />
                         </div>
                     </div>
 
                     <!-- Information -->
-                    <div class="information">
+                    <div class="information" id="product_actions">
                         <h4>Bracelet en diamant pure</h4>
 
                         <div class="infos">
@@ -160,24 +140,11 @@
                             <div class="color"><span>Couleur :</span> Noir</span></div>
                             <div class="size"><span>Taille :</span> Unique</div>
 
-                            <!-- <div class="color-boxes">
-                                <div class="colors" style="display: flex;flex-direction: row;min-height: auto;padding: 1rem;">
-                                    <div class="color" style="height: 40px;width: 40px;background-color: red;margin-right: 1rem;"></div>
-                                    <div class="color" style="height: 40px;width: 40px;background-color: blue;"></div>
-                                </div>
-                            </div>
-                
-                            <div class="size-boxes" style="font-weight: 700;">
-                                <div class="colors" style="display: flex;flex-direction: row;min-height: auto;padding: 1rem;">
-                                    <div class="color" style="height: 32px;width: 32px;margin-right: .5rem;border: 2px solid black;padding: .35rem;border-radius:1px;text-align: center;line-height:1;cursor: pointer;">M</div>
-                                    <div class="color" style="height: 32px;width: 32px;border: 2px solid black;padding: .35rem;border-radius:1px;text-align: center;line-height:1;cursor: pointer;">L</div>
-                                </div>
-                            </div> -->
+                            <selectdetails @sendselection='setselection' />
                         </div>
-                        <button class="btn-large waves-effect waves-light red darken-1 z-depth-0" id="btn_add_to_cart" data-for="modal2">
-                            <i class="material-icons left">shopping_cart</i>
-                            Ajouter au panier
-                        </button>
+                        <div id="cart_button">
+                            <cartbutton v-bind:currentselection='currentselection' />
+                        </div>
 
                         <div class="policies">
                             <div class="policy">
@@ -200,7 +167,7 @@
                     </div>
 
                     <!-- Details -->
-                    <!-- <div class="details">
+                    <div class="details">
                         <div class="detail">
                             <p>Information article</p>
                             <p>
@@ -218,7 +185,7 @@
                         <div class="detail">
                             <p>Tailles et coupes</p>
                         </div>
-                    </div> -->
+                    </div>
 
                     <!-- More -->
                     <div class="more">
@@ -230,7 +197,7 @@
                                     <i class="material-icons">information</i>
                                 </div>
                                 
-                                <img src="./assets/image2.jpg" alt="image4">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
                                 <div class="details">
                                     <div class="title">Jupe en cuir</div>
                                     <div class="price">54€</div>
@@ -248,14 +215,14 @@
                                 </a>
                             </div>
                             <div class="image">
-                                <img src="./assets/image3.jpg" alt="image4">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
                                 <div class="details">
                                     <div class="title">Sac de vuitton</div>
                                     <div class="price">54€</div>
                                 </div>
                             </div>
                             <div class="image">
-                                <img src="./assets/image1.jpg" alt="image4">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
                                 <div class="details">
                                     <div class="title">Tote bag divaga</div>
                                     <div class="price">54€</div>
@@ -311,6 +278,7 @@
             $(document).ready(function(){
                 $('.sidenav').sidenav();
                 $('.modal').modal();
+                $('select').formSelect();
 
                 $(".enhanced-ecommerce, #btn_add_to_cart").on("click", function() {
                     var modal = $(this).data("for")

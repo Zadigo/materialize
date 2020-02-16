@@ -1,0 +1,258 @@
+$background_color: rgba($color: #f4f4f4, $alpha: 1);
+$light_blue: rgba($color: #5c6bc0, $alpha: 1);
+$border_color: rgba($color: #f5f5f5, $alpha: 1);
+$dark_grey: rgba($color: #9e9e9e, $alpha: 1);
+
+
+%dashboard_card {
+    border-radius: 5px;
+}
+
+%dashboard_card_clean {
+    @extend %dashboard_card;
+    border: 1px solid $dark_grey;
+    box-shadow: none;
+}
+
+%setting {
+    -webkit-tap-highlight-color: transparent;
+    line-height: 1.5;
+    padding: 24px;
+    background-color: #fff;
+    border-bottom: 1px solid $border_color;
+}
+
+
+.dashboard {
+    background-color: $background_color;
+
+    .btn, .btn-large {
+        background-color: $light_blue;
+    }
+
+    .statistics {
+        .card, .card-panel {
+            @extend %dashboard_card;
+        }
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 300px repeat(4, 1fr);
+        grid-template-rows: min-content repeat(4, 1fr);
+        grid-template-areas: 
+        "side topnav topnav topnav topnav"
+        "side main main main main"
+        "side main main main main"
+        "side main main main main"
+        "side main main main main";
+        height: 100vh;
+
+        .btn-group *:not(:last-child) {
+            margin: {
+                right: 1rem;
+            }
+        }
+
+        &.show-side-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5 1fr);    
+            grid-template-areas: 
+            "topnav topnav topnav topnav topnav"
+            "main main main main main"
+            "main main main main main"
+            "main main main main main"
+            "main main main main main";
+            height: 100vh;
+
+            // .side {
+            //     display: none;
+            // }
+
+            .topnav {
+                grid-area: topnav;
+                grid-column-start: 1;
+                grid-column-end: 6;
+                grid-auto-rows: 3px;
+                // background-color: blue;
+
+                .nav {
+                    background-color: white;
+                }
+            }
+        }
+
+        .side {
+            grid-area: side;
+            grid-row-start: 1;
+            grid-row-end: 6;
+            background-color: red;
+
+            .bar {
+                background-color: white;
+                width: 300px;
+                height: 100vh;
+                position: fixed;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+
+                    li {
+                        width: auto;
+
+                        &.header {
+                            font: {
+                                size: 1.2rem;
+                                weight: 700;
+                            }
+                            text: {
+                                align: center;
+                                transform: uppercase;
+                            }
+                            padding: .25rem;
+                            height: 70px;
+                            border-bottom: 1px solid $border_color;
+                        }
+
+                        a {
+                            transition: background-color .3s;
+                            font-size: 1rem;
+                            color: black;
+                            display: block;
+                            padding: 25px 15px;
+
+                            &:hover {
+                                background-color: rgba($color: #000000, $alpha: .1);
+                            }
+                        }
+                    }
+                }
+
+                .bar-footer {
+                    position: absolute;
+                    bottom: 0;
+                    height: 70px;
+                    width: 300px;
+                    background-color: yellowgreen;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .topnav {
+            grid-area: topnav;
+            grid-column-start: 2;
+            grid-column-end: 6;
+            background-color: blue;
+
+            .nav {
+                background-color: white;
+                height: auto;
+                border-bottom: 1px solid $dark_grey;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0;
+                    
+                    li {
+                        width: auto;
+
+                        a {
+                            transition: background-color .3s;
+                            font-size: 1rem;
+                            color: black;
+                            display: block;
+                            padding: 25px 15px;
+
+                            &:hover {
+                                background-color: rgba($color: #000000, $alpha: .1);
+                            }
+                        }
+
+                        &.menu {
+                            display: block;
+                            padding: 20px 15px;
+                            text-align: center;
+                            line-height: 1.45;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main {
+            grid-area: main;
+            // background-color: green;
+            // background-color: $light_grey;
+            padding: 1rem;
+
+            .statistics {
+                .container {
+                    margin: {
+                        left: 0;
+                        right: 0;
+                    };
+                    width: 100%;
+                }
+            }
+
+            .settings-group {
+                $sides: "right", "left", "top", "bottom";
+                @each $side in $sides {
+                    border-#{$side}: 1px solid $dark_grey;
+                }
+            
+                margin: .5rem 0 1rem 0;
+                // box-shadow: $box_shadow;
+                
+                .collapsible {
+                    box-shadow: none;
+                        -webkit-box-shadow: none;
+                    margin: 0;
+                    border: none;
+            
+                    .collapsible-header {
+                        padding: 24px;
+                    }
+
+                    .collapsible-body {
+                        background-color: white;
+                    }
+                }
+            
+                .setting {
+                    @extend %setting;
+                }
+            }    
+        }
+
+        .bottomnav {
+            grid-area: bottomnav;
+        }
+
+        .card-panel.special {
+            padding: 0;
+
+            .header {
+                position: relative;
+                background-color: inherit;
+                border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+                padding: 16px 24px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                background-color: $light_blue;
+                color: white;
+            }
+
+            .content {
+                padding: 24px;
+            }
+        }
+    }
+}
