@@ -56,11 +56,82 @@ html {
 }
 
 .card_items-move {
-    transition: all .2s ease-out;
+    transition: all .4s ease-out;
+}
+
+.side {
+    position: fixed;
+    background-color: red;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    z-index: 1;
+    transition: all .4s ease;
+
+    .bar {
+        &.with-borders {
+            border-right: 1px solid $border_color;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+
+            li {                        
+                &.header {
+                    font: {
+                        size: 1.2rem;
+                        weight: 700;
+                    }
+                    text: {
+                        align: center;
+                        transform: uppercase;
+                    }
+                    padding: .25rem;
+                    height: 70px;
+                    border-bottom: 1px solid $border_color;
+                }
+
+                a {
+                    display: block;
+                    font-size: 1rem;
+                    color: $not_active_color;
+                    transition: all .3s ease;
+                    padding: 15px 15px;
+                    font-weight: 600;
+
+                    &:hover {
+                        background-color: $hover_color;
+                        color: $colored_hover_color;
+                        border-left: 3px solid $colored_hover_color;
+                    }
+                }
+
+                &:hover {
+
+                }
+            }
+        }
+
+        .bar-footer {
+            position: absolute;
+            bottom: 0;
+            height: 70px;
+            width: 300px;
+            background-color: $theme_color;
+            padding: 1rem;
+        }
+    }
 }
 
 .dashboard {
     background-color: $background_color;
+    
+    &.sidebar-active {
+        width: calc(100% - 300px);
+        float: right;
+    }
 
     .btn, .btn-large {
         background-color: $light_blue;
@@ -77,11 +148,11 @@ html {
         grid-template-columns: 300px repeat(4, 1fr);
         grid-template-rows: min-content repeat(4, 1fr);
         grid-template-areas: 
-        "side topnav topnav topnav topnav"
-        "side main main main main"
-        "side main main main main"
-        "side main main main main"
-        "side main main main main";
+        "topnav topnav topnav topnav topnav"
+        "main main main main main"
+        "main main main main main"
+        "main main main main main"
+        "main main main main main";
         height: 100vh;
 
         .btn-group *:not(:last-child) {
@@ -102,113 +173,32 @@ html {
             }
         }
 
-        &.show-side-bar {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(5 1fr);    
-            grid-template-areas: 
-            "topnav topnav topnav topnav topnav"
-            "main main main main main"
-            "main main main main main"
-            "main main main main main"
-            "main main main main main";
-            height: 100vh;
-
-            // .side {
-            //     display: none;
-            // }
-
-            .topnav {
-                grid-area: topnav;
-                grid-column-start: 1;
-                grid-column-end: 6;
-                grid-auto-rows: 3px;
-                // background-color: blue;
-
-                .nav {
-                    background-color: white;
-                }
-            }
-        }
-
-        .side {
-            grid-area: side;
-            grid-row-start: 1;
-            grid-row-end: 6;
-            // background-color: red;
-
-            .bar {
-                &.with-borders {
-                    border-right: 1px solid $border_color;
-                }
-
-                position: fixed;
-                background-color: white;
-                width: 300px;
-                height: 100vh;
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    margin: 0;
-
-                    li {                        
-                        &.header {
-                            font: {
-                                size: 1.2rem;
-                                weight: 700;
-                            }
-                            text: {
-                                align: center;
-                                transform: uppercase;
-                            }
-                            padding: .25rem;
-                            height: 70px;
-                            border-bottom: 1px solid $border_color;
-                        }
-
-                        a {
-                            display: block;
-                            font-size: 1rem;
-                            color: $not_active_color;
-                            transition: all .3s ease;
-                            padding: 15px 15px;
-                            font-weight: 600;
-
-                            &:hover {
-                                background-color: $hover_color;
-                                color: $colored_hover_color;
-                                border-left: 3px solid $colored_hover_color;
-                            }
-                        }
-
-                        &:hover {
-
-                        }
-                    }
-                }
-
-                .bar-footer {
-                    position: absolute;
-                    bottom: 0;
-                    height: 70px;
-                    width: 300px;
-                    background-color: $theme_color;
-                    padding: 1rem;
-                }
-            }
-        }
-
         .topnav {
             grid-area: topnav;
-            grid-column-start: 2;
-            grid-column-end: 6;
             // background-color: blue;
 
             .nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
                 background-color: white;
                 height: auto;
                 border-bottom: 1px solid $border_color;
+
+                .trigger-for-sidebar {
+                    width: 40px;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover > i {
+                        color: $colored_hover_color;
+                    }
+                    i {
+                        line-height: 3;
+                        vertical-align: middle;
+                        color: $not_active_color;
+                    }
+                }
 
                 ul {
                     display: flex;
