@@ -40,6 +40,25 @@ html {
     }
 }
 
+.card_items-leave-active,
+.card_items-enter-active {
+    transition: all .2s ease-in;
+}
+
+.card_items-leave,
+.card_items-enter-to {
+    opacity: 1;
+}
+
+.card_items-leave-to,
+.card_items-enter {
+    opacity: 0;
+}
+
+.card_items-move {
+    transition: all .2s ease-out;
+}
+
 .dashboard {
     background-color: $background_color;
 
@@ -68,6 +87,18 @@ html {
         .btn-group *:not(:last-child) {
             margin: {
                 right: 1rem;
+            }
+        }
+
+        table {
+            td {
+                a {
+                    color: $theme_color;
+                    cursor: pointer;
+                    &:not(:last-child) {
+                        margin-right: 1.5rem;
+                    }
+                }
             }
         }
 

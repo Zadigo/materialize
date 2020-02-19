@@ -5,12 +5,15 @@
 //     })    
 // });
 
+// UTILITIES
 
 var productdetailsurl = window.location.origin + "/dashboard/products/"
 
 var constructurl = function(id, slug) {
     return  productdetailsurl + id + "/" + slug
 }
+
+// FORMS
 
 var formbutton = {
     props: ["formbuttonname"],
@@ -124,15 +127,111 @@ var createform = {
     }
 }
 
-var messages = {
+// var filterproducts = {
+//     template: "\
+//     <select id='filter_products'>\
+//         <option @click='doselect(option.value)' v-for='option in options' :key='option.value' :value='option.value'>{{ option.name }}</option>\
+//     </select>\
+//     ",
+//     data() {
+//         return {
+//             options: [
+//                 {value: "all", name: "-----", selected: true},
+//                 {value: "croissant", name: "Croissant", selected: false},
+//                 {value: "decroissant", name: "Décroissant", selected: false},
+//             ]
+//         }
+//     },
+//     methods: {
+//         doselect: function(value) {
+//             this.$data.options.forEach(option => {
+//                 option.selected = false
+//                 if (option.value === value) {
+//                     option.selected = true
+//                 }
+//             })
+//         }
+//     },
+//     computed: {
+//         selectedfilter() {
+//             return this.$data.options.filter(option => {
+//                 return option.selected === true
+//             })
+//         }
+//     }
+// }
+
+// LISTS
+
+var vuecards = {
+    props: ["products"],
     template: "\
-        <transition name='show_message'>\
-            <div v-if='show'>Supprimer un cours est une action irréversible.</div>\
-        </transition>\
+    <div class='row'>\
+        <div class='col s12 m12 l12'>\
+            <div class='col s3 m3 l3'>\
+                <select v-model='selectedoption' name='card-filter' id='card-filter'>\
+                    <option v-for='option in items' :key='option.value' :value='option.value'>{{ option.name }}</option>\
+                </select>\
+            </div>\
+        </div>\
+        <div class='col s12 m12 l12'>\
+            <transition-group name='card_items'>\
+                <div v-for='card in productlist' :key='card.name' class='col s12 m4 l4'>\
+                    <div class='card'>\
+                        <div class='card-content'>\
+                            <span class='card-title'>{{ card.name }}</span>\
+                            <p>{{ card.content }}</p>\
+                        </div>\
+                        <div class='card-action'>\
+                            <a href='' class='btn'><i class='material-icons left'>watch</i>Details</a>\
+                        </div>\
+                    </div>\
+                </div>\
+            </transition-group>\
+        </div>\
+    </div>\
     ",
     data() {
         return {
-            show: false
+            items: [
+                {value: "all", name: "-----"},
+                {value: "first", name: "First"},
+                {value: "second", name: "Second"}
+            ],
+            selectedoption: "all"
+        }
+    },
+    computed: {
+        productlist() {
+            // Returns a list of products that were
+            // previously filtered by other methods
+            if (this.$data.selectedoption === "all") {
+                return this.$props.products
+            }
+            if (this.$data.selectedoption === "first") {
+                return this.filternames
+            }
+            if (this.$data.selectedoption === "second") {
+                return this.filterprices
+            }
+        },
+        filterprices() {
+            // Method to filter prices which avoids
+            // messing up the original values
+            var products = []
+            var productcopy = {}
+            this.$props.products.forEach(product => {
+                products.push(Object.assign(productcopy, product))
+                productcopy = {}
+            })
+            return products.sort(function (a, b) {
+                return b.price - a.price
+            })
+        },
+        filternames() {
+            return this.$props.products.filter(product => {
+                return product.name === "Kendall"
+            })
         }
     }
 }
@@ -169,40 +268,6 @@ var deletebutton = {
     methods: {
         deleteitems: function() {
             this.$emit('deleteitems')
-        }
-    }
-}
-
-var filterproducts = {
-    template: "\
-    <select id='filter_products'>\
-        <option @click='doselect(option.value)' v-for='option in options' :key='option.value' :value='option.value'>{{ option.name }}</option>\
-    </select>\
-    ",
-    data() {
-        return {
-            options: [
-                {value: "all", name: "-----", selected: true},
-                {value: "croissant", name: "Croissant", selected: false},
-                {value: "decroissant", name: "Décroissant", selected: false},
-            ]
-        }
-    },
-    methods: {
-        doselect: function(value) {
-            this.$data.options.forEach(option => {
-                option.selected = false
-                if (option.value === value) {
-                    option.selected = true
-                }
-            })
-        }
-    },
-    computed: {
-        selectedfilter() {
-            return this.$data.options.filter(option => {
-                return option.selected === true
-            })
         }
     }
 }
@@ -247,7 +312,7 @@ var vuetable = {
     ",
     data() {
         return {
-            titles: ["iD", "name", "surname", "price", "update"],
+            titles: ["iD", "name", "surname", "price", "update"]
         }
     },
     methods: {
@@ -295,10 +360,26 @@ var vuetable = {
     }
 }
 
+var messages = {
+    template: "\
+        <transition name='show_message'>\
+            <div v-if='show'>Supprimer un cours est une action irréversible.</div>\
+        </transition>\
+    ",
+    data() {
+        return {
+            show: false
+        }
+    }
+}
+
+
+// DASHBOARD
+
 var dashboard = new Vue({
     el: "#vue_dashboard",
-    components: {vuetable, deletebutton, filterproducts, createform, 
-                    updateform, messages},
+    components: {vuetable, deletebutton, createform, 
+                    updateform, messages, vuecards},
     data() {
         return {
             products: [

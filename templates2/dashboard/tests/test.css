@@ -22,6 +22,27 @@ html {
   padding-left: 0;
 }
 
+.card_items-leave-active,
+.card_items-enter-active {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.card_items-leave,
+.card_items-enter-to {
+  opacity: 1;
+}
+
+.card_items-leave-to,
+.card_items-enter {
+  opacity: 0;
+}
+
+.card_items-move {
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
 .dashboard {
   background-color: #e8eaf6;
 }
@@ -44,6 +65,15 @@ html {
 
 .dashboard .wrapper .btn-group *:not(:last-child) {
   margin-right: 1rem;
+}
+
+.dashboard .wrapper table td a {
+  color: #3f51b5;
+  cursor: pointer;
+}
+
+.dashboard .wrapper table td a:not(:last-child) {
+  margin-right: 1.5rem;
 }
 
 .dashboard .wrapper.show-side-bar {
