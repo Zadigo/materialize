@@ -52,14 +52,14 @@
                         <div class="nav">
                             <div class="trigger-for-sidebar"><i class="material-icons">menu</i></li></div>
                             <ul>
-                                <li><a href="../settings.html">Account</a></li>
-                                <li><a href="./settings.html">Settings</a></li>
+                                <li><a href="./account.html"><i class="material-icons">person</i></li></a></li>
+                                <li><a href="./settings.html"><i class="material-icons">settings</i></li></a></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- MAIN -->
-                    <div class="main" id="vue_details">
+                    <div class="main" id="vue_profile">
 
                         <!-- CONTENT -->
                         <div class="row">
@@ -162,36 +162,57 @@
                             <div class="col s12 m8 l8">
                                 <actionbuttons />
                             </div>
+
+                            <div id="modal1" class="modal modal-fixed-footer meeting">
+                                <div class="modal-content">
+                                    <h4>Rendez-vous</h4>
+                                    <form action="http://example.com" method="POST">
+                                        <div class="input-field">
+                                            <input type="date" name="meeting_date" id="meeting_date">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="time" name="meeting_time" id="meeting_time">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="text" name="address" id="address" autocomplete="street-address">
+                                        </div>
+                                        <button type="submit">Envoyer</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
 
-            <!-- Vue JS -->
-            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- Vue JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-            <!-- JQuery -->
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+                // Tooltip
+                $('.tooltipped').tooltip();
+            });
+        </script>
     
-            <!-- Materialize scripts -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    // Sidenav
-                    $('.sidenav').sidenav();
-                    // Scrollspy
-                    $('.scrollspy').scrollSpy();
-                    // Select
-                    $('select').formSelect();
-                    // Modals
-                    $('.modal').modal();
-                    // Tooltip
-                    $('.tooltipped').tooltip();
-                });
-            </script>
-    
-            <script src="./js/details.js"></script>
-            <script src="./js/sidebar.js"></script>
+        <script src="./js/profile.js"></script>
+        <script src="./js/sidebar.js"></script>
     </body>
 </html>

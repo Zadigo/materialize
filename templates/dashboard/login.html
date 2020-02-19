@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./css/dashboard.css">
+    </head>
+    <body>
+        <main>
+            <div class="dashboard" id="vue_dashboard">
+                <div class="login">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col s12 m5 l5 offset-m4 offset-l4">
+                                <div class="box">
+                                    <div class="card-panel registration">
+                                        <form method="post">
+                                            <div class="input-field">
+                                                <input type="email" name="email" id="email" autocomplete="email" placeholder="Email">
+                                            </div>
+                                            <div class="input-field">
+                                                <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Password">
+                                            </div>
+                                            <button class="btn-large waves-effect waves-light right" type="submit"><i class="material-icons left">lock</i> Se connecter</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Vue JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+    </body>
+</html>

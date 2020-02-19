@@ -263,6 +263,19 @@ html {
   background-color: white;
 }
 
+.dashboard .wrapper .main .settings-group .setting.flex-setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .dashboard .wrapper .bottomnav {
   grid-area: bottomnav;
 }
@@ -285,5 +298,31 @@ html {
 
 .dashboard .wrapper .card-panel.special .content {
   padding: 24px;
+}
+
+.dashboard .login {
+  background-image: url("../../assets/image17.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.dashboard .login .box {
+  height: 500px;
+}
+
+.dashboard .login .box {
+  position: relative;
+}
+
+.dashboard .login .box .registration {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+
+.dashboard .login .box .registration .btn, .dashboard .login .box .registration .btn-large {
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=dashboard.css.map */

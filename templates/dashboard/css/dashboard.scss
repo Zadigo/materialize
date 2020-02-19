@@ -143,6 +143,8 @@ html {
         }
     }
 
+    // MAIN
+
     .wrapper {
         display: grid;
         grid-template-columns: 300px repeat(4, 1fr);
@@ -291,6 +293,12 @@ html {
             
                 .setting {
                     @extend %setting;
+
+                    &.flex-setting {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
                 }
             }    
         }
@@ -316,6 +324,34 @@ html {
 
             .content {
                 padding: 24px;
+            }
+        }
+    }
+
+    // REGISTRATIONS
+
+    .login {
+        background-image: url("../../assets/image17.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+
+        .box {
+            height: 500px;
+        }
+
+        .box {
+            position: relative;
+            // overflow: hidden;
+            .registration {
+                position: absolute;
+                top: 200px;
+                width: 100%;
+
+                .btn, .btn-large {
+                    margin-top: 2rem;
+                }
             }
         }
     }
