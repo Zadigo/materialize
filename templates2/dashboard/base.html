@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Products</title>
+        <title>Base template</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
@@ -17,61 +17,78 @@
                 <!-- <div class="wrapper show-side-bar"> -->
                     <!-- SIDEBAR -->
                     <div class="side">
-                        <div class="bar">
+                        <div class="bar with-borders">
                             <ul>
                                 <li class="header"><p>Dashboard</p></li>
                                 <li><a href="./index.html">Home</a></li>
-                                <li><a href="./_products.html">Products</a></li>
-                                <li><a href="./_create.html">Create</a></li>
+                                <li><a href="./base.html">Base</a></li>
+                                <li><a href="./products2.html">Products</a></li>
+                                <li><a href="./create.html">Create</a></li>
                             </ul>
-                            <div class="bar-footer">
+                            <!-- <div class="bar-footer">
                                 Test
-                            </div>
+                            </div> -->
                         </div>
-
                     </div>
 
                     <!-- TOPNAV -->
                     <div class="topnav">
                         <div class="nav">
                             <ul>
-                                <li class="menu"><i class="material-icons">menu</i></li>
+                                <!-- <li class="menu" id="trigger-for-sidebar"><i class="material-icons">menu</i></li> -->
+                                <!-- <sidebartrigger @showsidebar="togglesidebar" /> -->
                                 <li><a href="../settings.html">Account</a></li>
                                 <li><a href="./settings.html">Settings</a></li>
+                                <!-- <li><a href="../settings.html"><i class="material-icons">person</i></a></li>
+                                <li><a href="./settings.html"><i class="material-icons">settings</i></a></li> -->
                             </ul>
                         </div>
                     </div>
 
                     <!-- MAIN -->
                     <div class="main">
-                        <!-- ACTIONBAR -->
+                        <!-- STATISTICS -->
                         <div class="row">
-                            <div class="col s12 m12 l12">
-                                <div class="btn-group">
-                                    <a href="./_create.html" class="btn-large">Add</a>
-                                    <deletebutton @deleteitems='applydelete' v-bind:selectedproducts="selectedproducts" />
+                            <div class="statistics">
+                                <div class="col s12 m3 l3">
+                                    <div class="card-panel statistic">
+                                        <div class="title">CTR</div>
+                                        <span class="data">135</span>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3 l3">
+                                    <div class="card-panel statistic">
+                                        <div class="title">Revenue</div>
+                                        <span class="data">115 <span class="metric">GB</span></span>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3 l3">
+                                    <div class="card-panel statistic">
+                                        <div class="title">Technique</div>
+                                        <span class="data">1.3</span>
+                                    </div>
+                                </div>
+                                <div class="col s12 m3 l3">
+                                    <div class="card-panel statistic">
+                                        <div class="title">STDev</div>
+                                        <span class="data">1.34</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- CONTENT -->
-                        <div class="card-panel special">
-                            <div class="header">Products</div>
-                            <div class="content">
-                                <vuetable @selectitem="doselect" @selectall="getall" v-bind:products="products" />
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
+            <!-- JQuery -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
             <!-- Vue JS -->
             <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-            <!-- JQuery -->
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
             <!-- Materialize scripts -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
             <script>

@@ -12,7 +12,17 @@ var constructurl = function(id, slug) {
     return  productdetailsurl + id + "/" + slug
 }
 
+var formbutton = {
+    props: ["formbuttonname"],
+    template: "\
+    <button type='submit' class='btn-large indigo lighten-1 waves-effect waves-light'>\
+        <i class='material-icons left'>create</i>{{ formbuttonname }}\
+    </button>\
+    "
+}
+
 var updateform = {
+    components: {formbutton},
     template: "\
     <form @submit.prevent='updateitem'>\
         <div class='row'>\
@@ -20,7 +30,7 @@ var updateform = {
                 <input :type='field.type' :name='field.name' :id='field.name' :placeholder='field.placeholder'>\
             </div>\
         </div>\
-        <button type='submit' class='btn-large red darken-1'>Update</button>\
+        <formbutton v-bind:formbuttonname='formbuttonname' />\
     </form>\
     ",
     data() {
@@ -29,7 +39,8 @@ var updateform = {
                 {type: "text", name: "name", placeholder: "Name", size: "m12 l12"},
                 {type: "text", name: "category", placeholder: "Category", size: "m4 l4"},
             ],
-            productid: undefined
+            productid: undefined,
+            formbuttonname: "Update"
         }
     },
     beforeMount() {
@@ -48,12 +59,13 @@ var updateform = {
     },
     methods: {
         updateitem: function() {
-            window.location.href = "http://127.0.0.1:5500/materialize_for_startups/templates2/dashboard/_index.html"
+            window.location.href = "/materialize_for_startups/templates2/dashboard/products2.html"
         }
     }
 }
 
 var createform = {
+    components: {formbutton},
     template: "\
     <form @submit.prevent='createitem'>\
         <div class='row'>\
@@ -61,7 +73,7 @@ var createform = {
                 <input :type='field.type' :name='field.name' :id='field.name' :placeholder='field.placeholder'>\
             </div>\
         </div>\
-        <button class='btn-large indigo lighten-1 waves-effect waves-light'>Create</button>\
+        <formbutton v-bind:formbuttonname='formbuttonname' />\
     </form>\
     ",
     data() {
@@ -70,13 +82,45 @@ var createform = {
                 {type: "text", name: "name", placeholder: "Name", size: "m12 l12"},
                 {type: "text", name: "category", placeholder: "Category", size: "m4 l4"},
                 {type: "number", name: "price", placeholder: "Price", size: "m4 l4"}
-            ]
+            ],
+            formbuttonname: "Create",
+            // testfields: {
+            //     "1": [
+            //         {type: "text", name: "name", placeholder: "Name", size: "m12 l12"},
+            //         {type: "text", name: "category", placeholder: "Category", size: "m4 l4"},
+            //         {type: "number", name: "price", placeholder: "Price", size: "m4 l4"}
+            //     ],
+            //     "2": [
+            //         {type: "text", name: "skill", placeholder: "Skill", size: "m12 l12"}
+            //     ]
+            // },
+            // w: []
         }
     },
+    // beforeMount() {
+    //     var self = this
+    //     var params = new URLSearchParams(window.location.search)
+    //     var currentstep = params.get("step")
+
+    //     if (currentstep === "" | ! currentstep) {
+    //         // Assume that we are at the first
+    //         // step directly
+    //     }
+    //     if (currentstep === "1") {
+    //         self.$data.w = self.$data.testfields["1"]
+    //     }
+    //     if (currentstep === "2") {
+    //         self.$data.w = self.$data.testfields["2"]
+    //     }
+    // },
     methods: {
         createitem: function() {
-            window.location.href = "http://127.0.0.1:5500/materialize_for_startups/templates2/dashboard/_products.html"
-        }
+            window.location.href = "/materialize_for_startups/templates2/dashboard/products2.html"
+        },
+        // changestep: function() {
+        //     var params = new URL(window.location.href)
+        //     params.searchParams.set("step", 2)
+        // }
     }
 }
 
@@ -100,7 +144,7 @@ var deletebutton = {
 
     props: ["selectedproducts"],
     template: "\
-        <a @click='deleteitems' class='btn-large' id='delete_product' :disabled='showdeletebutton'>\
+        <a @click='deleteitems' class='btn-large waves-effect waves-light' id='delete_product' :disabled='showdeletebutton'>\
             <i class='material-icons left'>delete</i>\
             {{ title }}\
         </a>\
@@ -112,6 +156,9 @@ var deletebutton = {
     },
     computed: {
         showdeletebutton() {
+            // Defines if the delete button should be enabled
+            // or not --; true if products are selected,
+            // otherwise false
             if (this.$props.selectedproducts.length > 0) {
                 return false
             } else {
@@ -175,7 +222,8 @@ var vuetable = {
                     <th v-for='title in titles' :key='title'>{{ title|capitalize }}</th>\
                 </tr>\
             </thead>\
-            <tbody>\
+            <tbody v-if='nondeletedproducts==0'>Vous n'avez aucun produits</tbody>\
+            <tbody v-else>\
                 <tr v-if='!product.deleted' v-for='(product, index) in products' :key='product.id'>\
                     <td>\
                         <p>\
@@ -189,7 +237,10 @@ var vuetable = {
                     <td>{{ product.name }}</td>\
                     <td>{{ product.surname }}</td>\
                     <td>{{ product.price|euros }}</td>\
-                    <td><a :href='\"./update.html?product=\" + product.id'><i class='material-icons'>create</i></a></td>\
+                    <td>\
+                        <a :href='\"./update.html?product=\" + product.id'><i class='material-icons'>create</i></a>\
+                        <a @click='deletesingleitem(product.id)'><i class='material-icons'>delete</i></a>\
+                    </td>\
                 </tr>\
             </tbody>\
         </table>\
@@ -205,6 +256,25 @@ var vuetable = {
         },
         selectall: function(index) {
             this.$emit('selectall')
+        },
+        deletesingleitem: function(productid) {
+            this.$emit('deletesingleitem', productid)
+        }
+    },
+    computed: {
+        nondeletedproducts() {
+            // Keeps track of the products that are
+            // not marked as deleted in order to
+            // to perform certain actions
+            var self = this
+            var numberofproducts = self.$props.products.length
+
+            self.$props.products.forEach(product => {
+                if (product.deleted === true) {
+                    numberofproducts -= 1
+                }
+            })
+            return numberofproducts
         }
     },
     filters: {
@@ -241,6 +311,8 @@ var dashboard = new Vue({
     },
     computed: {
         selectedproducts() {
+            // Returns a list of selected products that
+            // were also marked as not deleted
             return this.$data.products.filter(product => {
                 return product.selected === true && product.deleted === false
             })
@@ -248,15 +320,22 @@ var dashboard = new Vue({
     },
     methods: {
         doselect: function(index) {
+            // Selects a product in the table using
+            // a selectio checkbox
             this.$data.products[index].selected = !this.$data.products[index].selected
         },
         getall: function() {
+            // Selects all the products in the
+            // table by using the selection
+            // checkboxes
             this.$data.products.forEach(product => {
                 product.checked = !product.checked
                 product.selected = !product.selected
             })
         },
         applydelete: function() {
+            // Deletes items using the selection
+            // checkboxes in the table
             this.selectedproducts.forEach(product => {
                 this.$data.products.forEach((actualproduct, index) => {
                     if (product.id === actualproduct.id) {
@@ -264,14 +343,31 @@ var dashboard = new Vue({
                     }
                 })
             })
-
-            // A method that iterates through the
-            // the iDs of the products and creates
-            // an AJAX request to delete them
+            
             $.ajax({
                 type: "DELETE",
                 url: "http://example.com",
                 data: self.$props.selectedproducts,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        },
+        applydeletesingle: function(productid) {
+            // ALlows the deletionf of a single
+            // item from the table without going
+            // through the selection
+            this.$data.products.forEach(product => {
+                if (product.id === productid) {
+                    product.deleted = !product.deleted
+                }
+            })
+
+            $.ajax({
+                type: "DELETE",
+                url: "http://example.com",
+                data: {csrfmiddlewaretoken: "", reference: ""},
                 dataType: "json",
                 success: function (response) {
                     console.log(response)

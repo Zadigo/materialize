@@ -4,6 +4,18 @@ $border_color: #ddd;
 $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 $sides: 'top', 'right', 'left';
 
+.rows-leave-active {
+    transition: all .5s ease;
+}
+
+.rows-leave {
+    opacity: 1;
+}
+
+.rows-leave-to {
+    opacity: 0;
+}
+
 %setting {
     -webkit-tap-highlight-color: transparent;
     line-height: 1.5;
@@ -11,7 +23,6 @@ $sides: 'top', 'right', 'left';
     background-color: #fff;
     border-bottom: 1px solid $border_color;
 }
-
 
 .navigation {
     height: 70px;
@@ -74,16 +85,14 @@ $sides: 'top', 'right', 'left';
                 width: 300px;
                 height: 100vh;
 
-                .content {
-                    // padding: .25rem;
-    
+                .content {    
                     ul {
                         margin: 0;
     
                         li {
                             a {
                                 display: block;
-                                padding: 1rem;
+                                padding: .35rem;
                                 color: black;
                             }
                         }

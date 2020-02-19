@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Index</title>
+        <title>Products</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
@@ -12,7 +12,7 @@
     </head>
     <body>
         <main>
-            <div class="dashboard">
+            <div class="dashboard" id="vue_dashboard">
                 <div class="wrapper">
                 <!-- <div class="wrapper show-side-bar"> -->
                     <!-- SIDEBAR -->
@@ -21,8 +21,10 @@
                             <ul>
                                 <li class="header"><p>Dashboard</p></li>
                                 <li><a href="./index.html">Home</a></li>
-                                <li><a href="./_products.html">Products</a></li>
-                                <li><a href="!#">Create</a></li>
+                                <li><a href="./base.html">Base</a></li>
+                                <li><a href="./details2.html">Profile</a></li>
+                                <li><a href="./products2.html">Products</a></li>
+                                <li><a href="./create.html">Create</a></li>
                             </ul>
                             <div class="bar-footer">
                                 Test
@@ -36,7 +38,7 @@
                         <div class="nav">
                             <ul>
                                 <li class="menu"><i class="material-icons">menu</i></li>
-                                <li><a href="./account.html">Account</a></li>
+                                <li><a href="./settings.html">Account</a></li>
                                 <li><a href="./settings.html">Settings</a></li>
                             </ul>
                         </div>
@@ -44,29 +46,22 @@
 
                     <!-- MAIN -->
                     <div class="main">
-                        <div class="settings-group">
-                            <div class="setting">
-                                A
-                            </div>
-                            <div class="setting">
-                                B
-                            </div>
-                            <div class="setting">
-                                C
+                        <!-- ACTIONBAR -->
+                        <div class="row">
+                            <div class="col s12 m12 l12 correct-padding">
+                                <div class="btn-group right">
+                                    <a href="./create.html" class="btn-large waves-effect waves-light">Add</a>
+                                    <deletebutton @deleteitems='applydelete' v-bind:selectedproducts="selectedproducts" />
+                                </div>
                             </div>
                         </div>
 
-                        <div class="settings-group">
-                            <ul class="collapsible">
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">person</i>First</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                            </ul>
+                        <!-- CONTENT -->
+                        <div class="card-panel special">
+                            <div class="header">Products</div>
+                            <div class="content">
+                                <vuetable @selectitem="doselect" @selectall="getall" @deletesingleitem="applydeletesingle" v-bind:products="products" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,8 +86,6 @@
                     $('select').formSelect();
                     // Modals
                     $('.modal').modal();
-                    // Collapsible
-                    $('.collapsible').collapsible();
                 });
             </script>
     

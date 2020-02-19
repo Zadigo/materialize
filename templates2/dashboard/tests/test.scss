@@ -1,8 +1,19 @@
-$background_color: rgba($color: #f4f4f4, $alpha: 1);
 $light_blue: rgba($color: #5c6bc0, $alpha: 1);
-$border_color: rgba($color: #f5f5f5, $alpha: 1);
-$dark_grey: rgba($color: #9e9e9e, $alpha: 1);
 
+@import "../css/fonts.scss";
+
+$soft_shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+
+$theme_color: #3f51b5;
+$background_color: #e8eaf6;
+$hover_color: #f5f5f5;
+$colored_hover_color: #3f51b5;
+$border_color: rgba($color: black, $alpha: .14);
+$not_active_color: #9e9e9e;
+
+html {
+    font-family: "Lato";
+}
 
 %dashboard_card {
     border-radius: 5px;
@@ -10,18 +21,24 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
 
 %dashboard_card_clean {
     @extend %dashboard_card;
-    border: 1px solid $dark_grey;
+    // border: 1px solid $dark_grey;
     box-shadow: none;
 }
 
 %setting {
-    -webkit-tap-highlight-color: transparent;
     line-height: 1.5;
     padding: 24px;
     background-color: #fff;
     border-bottom: 1px solid $border_color;
+    -webkit-tap-highlight-color: transparent;
 }
 
+.col.correct-padding {
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
 
 .dashboard {
     background-color: $background_color;
@@ -87,22 +104,24 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
             grid-area: side;
             grid-row-start: 1;
             grid-row-end: 6;
-            background-color: red;
+            // background-color: red;
 
             .bar {
+                &.with-borders {
+                    border-right: 1px solid $border_color;
+                }
+
+                position: fixed;
                 background-color: white;
                 width: 300px;
                 height: 100vh;
-                position: fixed;
 
                 ul {
                     display: flex;
                     flex-direction: column;
                     margin: 0;
 
-                    li {
-                        width: auto;
-
+                    li {                        
                         &.header {
                             font: {
                                 size: 1.2rem;
@@ -118,15 +137,22 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
                         }
 
                         a {
-                            transition: background-color .3s;
-                            font-size: 1rem;
-                            color: black;
                             display: block;
-                            padding: 25px 15px;
+                            font-size: 1rem;
+                            color: $not_active_color;
+                            transition: all .3s ease;
+                            padding: 15px 15px;
+                            font-weight: 600;
 
                             &:hover {
-                                background-color: rgba($color: #000000, $alpha: .1);
+                                background-color: $hover_color;
+                                color: $colored_hover_color;
+                                border-left: 3px solid $colored_hover_color;
                             }
+                        }
+
+                        &:hover {
+
                         }
                     }
                 }
@@ -136,7 +162,7 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
                     bottom: 0;
                     height: 70px;
                     width: 300px;
-                    background-color: yellowgreen;
+                    background-color: $theme_color;
                     padding: 1rem;
                 }
             }
@@ -146,12 +172,12 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
             grid-area: topnav;
             grid-column-start: 2;
             grid-column-end: 6;
-            background-color: blue;
+            // background-color: blue;
 
             .nav {
                 background-color: white;
                 height: auto;
-                border-bottom: 1px solid $dark_grey;
+                border-bottom: 1px solid $border_color;
 
                 ul {
                     display: flex;
@@ -159,17 +185,15 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
                     margin: 0;
                     
                     li {
-                        width: auto;
-
                         a {
+                            display: block;
                             transition: background-color .3s;
                             font-size: 1rem;
                             color: black;
-                            display: block;
-                            padding: 25px 15px;
+                            padding: 23px 15px;
 
                             &:hover {
-                                background-color: rgba($color: #000000, $alpha: .1);
+                                background-color: $hover_color;
                             }
                         }
 
@@ -187,11 +211,30 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
 
         .main {
             grid-area: main;
-            // background-color: green;
-            // background-color: $light_grey;
             padding: 1rem;
 
             .statistics {
+                .statistic {
+                    .title {
+                        text-transform: uppercase;
+                        font: {
+                            weight: 300;
+                            size: 1.15rem;
+                        }
+                        color: $not_active_color;
+                    }
+                    .data {
+                        font: {
+                            size: 2.25rem;
+                        }
+                        .metric {
+                            font: {
+                                size: 1.3rem;
+                            }
+                            color: $not_active_color;
+                        }
+                    }
+                }
                 .container {
                     margin: {
                         left: 0;
@@ -203,9 +246,9 @@ $dark_grey: rgba($color: #9e9e9e, $alpha: 1);
 
             .settings-group {
                 $sides: "right", "left", "top", "bottom";
-                @each $side in $sides {
-                    border-#{$side}: 1px solid $dark_grey;
-                }
+                // @each $side in $sides {
+                //     border-#{$side}: 1px solid $dark_grey;
+                // }
             
                 margin: .5rem 0 1rem 0;
                 // box-shadow: $box_shadow;
