@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Paiement réussi</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce_grid.css">
+        <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
+        <link rel="stylesheet" href="../code.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <script>
+            dataLayer.push({
+                "event": "checkout",
+                "ecommerce": {
+                    "checkout": {
+                    "actionField": {
+                        "step": 1
+                    },
+                    "products": []
+                    },
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- Nav -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="./products.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Main -->
+        <main>
+            <section class="section" id="cart_success">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <div class="card-panel center">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col s12 m12 l12">
+                                            <i class="material-icons green-text">check_circle</i>
+                                            <p>
+                                                Merci d'avoir acheté Nawoka. Votre numéro de commande est le 
+                                                <span id="order-reference">{{ order_reference }}</span>.
+                                                Si vous avez la moindre question, sur votre commande notre service client.
+                                            </p>
+                                            <a href="./products.html" class="btn-large waves-effect waves-light grey darken-4 z-depth-0">
+                                                Retourner à la boutique
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="../js/ecommerce.js"></script>
+    </body>
+</html>

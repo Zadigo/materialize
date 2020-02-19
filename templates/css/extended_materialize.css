@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css");
+@import url("https://use.fontawesome.com/releases/v5.1.0/css/all.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+html {
+  font-family: "Lato", sans-serif;
+}
+
+html p, html a, html li, html span, html input,
+html .content-text, html .content-tags .chip,
+html .hover-cover {
+  font-family: "Lato", sans-serif;
+}
+
+html .product .banner {
+  font-family: "Oswald", sans-serif;
+}
+
+html .details .price {
+  font-family: "Oswald", sans-serif;
+}
+
+html .infos .price {
+  font-family: "Oswald", sans-serif;
+}
+
+nav .just-name {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.static-chips .chip > i {
+  float: left;
+  font-size: 16px;
+  line-height: 32px;
+  padding-right: 8px;
+}
+/*# sourceMappingURL=extended_materialize.css.map */

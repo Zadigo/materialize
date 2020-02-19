@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Tous nos produits</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce_grid.css">
+        <link rel="stylesheet" href="./css/ecommerce_bar.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../code.css">
+    </head>
+
+    <body>
+        <!-- Nav -->
+        <div class="navbar-fixed">
+            <nav class="white">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="hero.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Ecommerce bar -->
+        <div class="ecommerce-bar">
+            <div class="container">
+                <ul>
+                    <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                    <li><a href="./shop.html">Collections</a></li>
+                    <li><a href="./products.html">Sacs</a></li>
+                    <li><a href="./products.html">Bracelets</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper">
+                    <div class="actions">
+                        <div class="close">x</div>
+                        <div class="title">Collections</div>
+                    </div>
+                    <ul>
+                        <li class="highlighted"><a href="./products.html">Sacs</a></li>
+                        <li class="highlighted"><a href="./products.html">Vêtements</a></li>
+                        <li class="highlighted"><a href="./products.html">Montres</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper search">
+                    <div class="close">x</div>
+                    <div class="search">
+                        <form action="./products.html" method="GET">
+                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Promotion banner -->
+        <!-- <div class="promotion-banner">
+            <a href="./products.html">
+                <div class="promotion-wrapper">
+                    <div class="big-title">
+                        <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                    </div>
+                    <div class="presentation">
+                        Jusqu'à -15% sur tous les sacs
+                    </div>
+                    <div class="legal">
+                        Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                    </div>
+                </div>
+            </a>
+        </div> -->
+
+        <!-- <div class="promotion-banner smaller">
+            <div class="enhanced-ecommerce" data-for="modal1" style="position: absolute;cursor: pointer;">
+                <i class="material-icons">information</i>
+            </div>
+            <a href="./products.html">
+                <div class="promotion-wrapper">
+                    <div class="presentation">
+                        Jusqu'à -15% sur tous les sacs
+                    </div>
+                </div>
+            </a>
+        </div> -->
+        
+        <!-- Main -->
+        <main>
+            <div class="ecommerce">
+                <!-- Prouct quantity -->
+                <p class="product-count center">2 351 produits trouvées</p>
+
+                <!-- Products -->
+                <div class="grid" id="products">
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="./assets/image2.jpg" alt="image3">
+                                <!-- <div class="banner">Exclusive</div> -->
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en soie de Nabillou</div>
+                                <div class="price-details">
+                                    <div class="price">295€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                                <div class="discount-pct grey darken-2">-52%</div>
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details with-discount">
+                                    <div class="price">123€</div>
+                                    <div class="discounted-price">275€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="./assets/image1.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe borduré en syze</div>
+                                <div class="price-details">
+                                    <div class="price">385€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image3.jpg" alt="image3">
+                                <div class="discount-pct grey darken-2">-52%</div>
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details with-discount">
+                                    <div class="price">302€</div>
+                                    <div class="discounted-price">132€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="./assets/image3.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe en talon</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="product.html">
+                            <div class="image">
+                                <img src="../images/image4.jpg" alt="image3">
+                            </div>
+                            <div class="details">
+                                <div class="title">Jupe lizeautée</div>
+                                <div class="price-details">
+                                    <div class="price">245€</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <!-- <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer> -->
+
+        <!-- Mini footer -->
+        <!-- <div class="minimalist-footer grey darken-4">
+            <div class="links white-text">
+                <a href="#!">Conditions générales</a>
+                <a href="./confidentialite.html">Confidentialité</a>
+            </div>
+        </div> -->
+
+        <div class="enhanced-minimalist-footer">
+            <div class="with-payments">
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+                <p><i class="material-icons">lock</i>Paiement sécurisés</p>
+            </div>
+
+            <div class="with-social">
+                <a href="http://instagram.com/" target="_blank"><div class="fab fa-instagram"></div></a>
+                <a href="http://facebook.com/" target="_blank"><div class="fab fa-facebook"></div></a>
+            </div>
+
+            <div class="links white-text grey darken-4">
+                <a href="#!">Conditions générales</a>
+                <a href="./confidentialite.html">Confidentialité</a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="../js/ecommerce.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+                $('.modal').modal();
+
+                $(".enhanced-ecommerce").on("click", function() {
+                    var modal = $(this).data("for")
+                    var instance = M.Modal.getInstance($("#" + modal));
+                    instance.open()
+                })
+            });
+        </script>
+    </body>
+
+    <!-- EHANCED ECOMMERCE MODALS -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Promotion banner</h4>
+            <pre>
+            dataLayer.push({
+                "event": "promotionClick",
+                "ecommerce": {
+                    "promoClick": {
+                        "promotions": [{
+                            "id": "halloweween_banner",
+                            "name": "Back To School",
+                            "creative": "Halloween banner",
+                            "position": "top promo bar"
+                        }]
+                    }
+                }
+            });
+            </pre>
+        </div>
+    </div>
+</html>

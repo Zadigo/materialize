@@ -1,0 +1,25 @@
+{% if collection_links == "show" %}
+    <li><a href="{% url 'product_collection' 'promos' %}" id="collection_promos">Promos</a></li>
+    <li><a href="{% url 'product_collection' 'whatsnew' %}" id="collection_whats_new">Nouveautés</a></li>
+    <li><a href="{% url 'product_collection' 'sacs' %}" id="collection_sacs">Sacs</a></li>
+    <li><a href="{% url 'product_collection' 'bracelets' %}" id="collection_bracelets">Bracelets</a></li>
+    <li><a href="{% url 'product_collection' 'montres' %}" id="colleciton_montres">Montres</a></li>
+{% endif %}
+
+{% if sidenav == "False" %}
+    <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+    <li><a href="{% url 'cart' %}" id="link_cart"><i class="material-icons">shopping_cart</i></a></li>
+    {% if user.is_admin %}
+        <li><a href="/admin/" id="link_account" target="_blank"><i class="material-icons">person</i></a></li>
+    {% endif %}
+{% endif %}
+
+{% if user.is_admin %}
+    {% if mobile != "True" %}
+        <li><a href="{% url 'profile' %}">Mon compte</a></li>
+        <li><a href="/admin/" target="_blank">Admin</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+        {% endif %}
+    {% endif %}
+{% endif %}

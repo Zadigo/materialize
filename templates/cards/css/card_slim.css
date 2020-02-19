@@ -1,0 +1,138 @@
+.card-slim-link {
+  color: inherit;
+}
+
+.card.horizontal {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.card.horizontal.slim {
+  height: 160px;
+  position: relative;
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim.animate:focus, .card.horizontal.slim.animate:hover {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  .card.horizontal.slim.animate:focus img, .card.horizontal.slim.animate:hover img {
+    -webkit-filter: blur(1px);
+            filter: blur(1px);
+  }
+}
+
+.card.horizontal.slim .card-image {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-image img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-image img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.card.horizontal.slim .card-image .like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.card.horizontal.slim .card-image .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card.horizontal.slim .card-content {
+  height: 160px;
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-content {
+    padding: 12px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-content {
+    padding: 24px;
+  }
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-content h1 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-content h1 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-content h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 301px) {
+  .card.horizontal.slim .card-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .card.horizontal.slim .card-content h4 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.card.horizontal.slim .with-transparency .chip {
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 0;
+}
+/*# sourceMappingURL=card_slim.css.map */

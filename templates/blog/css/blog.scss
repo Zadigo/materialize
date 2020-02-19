@@ -1,0 +1,113 @@
+@import "../css/variables.scss";
+@import "../../css/colors.scss";
+
+div.blog {
+    &-header {
+        background-color: $header_color;
+        padding: 24px;
+        width: 100%;
+        height: 200px;
+    }
+
+    &-container{
+        @extend %container;
+
+        @media only screen and (min-width: 301px) {
+            width: 95%;
+
+            .main-title {
+               @include main_title(2.5rem);
+            }
+        }
+
+        @media only screen and (min-width: 601px) {
+            width: 70%;
+
+            .main-title {
+                @include main_title(3.25rem);
+            }
+        }
+
+        .content {
+            position: relative;
+            background-color: white;
+            padding: 24px;
+            margin-bottom: 15px;
+            max-height: 100%;
+            overflow: hidden;
+            border-radius: 0 0 2px 2px;
+            box-shadow: $content_shadow;
+            
+            .author {
+                display: block;
+
+                .details {
+                    opacity: 0;
+                    position: absolute;
+                    overflow: hidden;
+                    top: 15px;
+                    left: 200px;
+                    width: 250px;
+                    height: auto;
+                    background-color: white;
+                    padding: 1.25rem;
+                    box-shadow: $box_shadow;
+                    transform:  translateX(15px);
+                    transition: all .4s ease;
+                    color: inherit;
+
+                    .avatar {
+                        height: 60px;
+                        width: 60px;
+                        overflow: hidden;
+                        border-radius: 30px;
+                        box-shadow: $box_shadow;
+                    }
+                }
+
+                i {
+                    width: 24px;
+                    height: 24px;
+                    vertical-align: middle;
+                    margin: 0 0 0 .5rem;
+                }
+
+                i:focus + .details,
+                i:hover + .details {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            &-date {
+                color: #9e9e9e;
+                font-weight: 400;
+            }
+
+            &-title {
+                a {
+                    @extend %links;
+                }
+            }
+
+            &-social {
+                margin: {
+                    top: 18px;
+                }
+    
+                a {
+                    margin-right: 15px;
+                    color: inherit;
+    
+                    .fab:not(:last-child) {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            &-tags {
+                margin-top: 1.75rem;
+            }
+        }
+    }
+}

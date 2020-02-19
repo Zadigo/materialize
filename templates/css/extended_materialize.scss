@@ -1,0 +1,19 @@
+@import "./global.scss";
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./mat.scss";
+
+nav .just-name {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.static-chips {
+    .chip > i {
+        float: left;
+        font-size: 16px;
+        line-height: 32px;
+        padding-right: 8px;
+    }
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Accueil</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../hero/css/hero.css">
+        <link rel="stylesheet" href="../ecommerce/css/ecommerce_hero.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="./css/ecommerce_bar.css">
+    </head>
+    <body>
+        <header class="ecommerce-header">
+            <!-- Nav -->
+            <div class="navbar-fixed">
+                <nav class="white darken-4">
+                    <div class="nav-wrapper">
+                        <div class="container">
+                            <a href="./hero.html" class="brand-logo">Shop</a>
+                            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <ul class="right" id="ecommerce-mobile">
+                                <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                                <li><a href="./vue_cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- SALES INFO BAR -->
+            <div class="sales-info-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ecommerce bar -->
+            <!-- <div class="ecommerce-bar">
+                <div class="container">
+                    <ul>
+                        <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                        <li><a href="./shop.html">Collectios</a></li>
+                        <li><a href="./products.html">Sacs</a></li>
+                        <li><a href="./products.html">Bracelets</a></li>
+                    </ul>
+                </div>
+            </div> -->
+
+            <!-- Mobile -->
+            <!-- <div class="ecommerce-bar for-filters">
+                <div class="container">
+                    <div class="filter">Trier <i class="material-icons">keyboard_arrow_down</i></div>
+                    <div class="filter" id="#drawer1">Collections</div>
+                </div>
+            </div> -->
+        </header>
+
+
+        <!-- DRAWER -->
+        <div class="ecommerce-bar-drawer" id="drawer1">
+            <div class="drawer">
+                <div class="wrapper">
+                    <div class="actions">
+                        <div class="close">x</div>
+                        <div class="title">Collections</div>
+                    </div>
+                    <ul>
+                        <li class="highlighted"><a href="./products.html">Sacs</a></li>
+                        <li class="highlighted"><a href="./products.html">Vêtements</a></li>
+                        <li class="highlighted"><a href="./products.html">Montres</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <div class="wrapper search">
+                    <div class="close">x</div>
+                    <div class="search">
+                        <form action="./products.html" method="GET">
+                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <!-- HERO -->
+            <div class="hero blue darken-1 responsivity" style="background-image: url('../images/image19.jpg');">
+                <div class="hero-wrapper">
+                    <div class="call-to-action">
+                        <div class="lead">Beauté et mode tierces</div>
+                        <div class="lead-subtitle">Faites au mieux, la mode est là</div>
+                        <a href="./shop.html" class="btn-large grey darken-1">Collections</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- BENEFITS -->
+            <section class="section ecommerce-benefits">
+                <div class="presentation-grid">
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Nouveautés</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image13.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Promotions</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="banner">
+                    <div class="wrapper">
+                        <!-- <div class="image-background" style="background-image: url('./assets/Banners3.jpg');"></div> -->
+                        <img src="./assets/Banners3.jpg" alt="banner1">
+                    </div>
+                </div>
+        
+                <!-- <div class="banner">
+                    <div class="wrapper">
+                        <img src="./assets/Banners2.jpg" alt="banner2">
+                    </div>
+                </div>
+        
+                <div class="banner">
+                    C
+                </div> -->
+            </section>
+
+            <!-- LATEST -->
+            <!-- <section class="section latest-products">
+                <div class="ecommerce">
+                    <div class="grid" id="products">
+                        <div class="product">
+                            <a href="product.html">
+                                <div class="image">
+                                    <img src="../images/image3.jpg" alt="image3">
+                                    <div class="banner">Exclusive</div>
+                                </div>
+                                <div class="details">
+                                    <div class="title">Jupe en talon</div>
+                                    <div class="price-details">
+                                        <div class="price">295€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="product.html">
+                                <div class="image">
+                                    <img src="../images/image3.jpg" alt="image3">
+                                    <div class="discount-pct grey darken-2">-52%</div>
+                                </div>
+                                <div class="details">
+                                    <div class="title">Jupe en talon</div>
+                                    <div class="price-details with-discount">
+                                        <div class="price">123€</div>
+                                        <div class="discounted-price">275€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="product.html">
+                                <div class="image">
+                                    <img src="../images/image4.jpg" alt="image3">
+                                </div>
+                                <div class="details">
+                                    <div class="title">Jupe en talon</div>
+                                    <div class="price-details">
+                                        <div class="price">385€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="product.html">
+                                <div class="image">
+                                    <img src="../images/image3.jpg" alt="image3">
+                                    <div class="discount-pct grey darken-2">-52%</div>
+                                </div>
+                                <div class="details">
+                                    <div class="title">Jupe en talon</div>
+                                    <div class="price-details with-discount">
+                                        <div class="price">302€</div>
+                                        <div class="discounted-price">132€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="./customer_service.html" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="../js/ecommerce.js"></script>
+    </body>
+</html>

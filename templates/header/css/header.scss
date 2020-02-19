@@ -1,0 +1,185 @@
+$titles: h1, h2, h3, h4;
+$padding_top: 3.25%;
+
+@function padding_top_calculator($index) {
+    $total_height: 100%;
+
+    @if ($index  < 2 ) {
+        $index: 2;
+    }
+
+    @if ($index > 8 ) {
+        $index: 8;
+    }
+
+    @return $total_height / $index;
+}
+
+%header_wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+
+%call_to_action {
+    margin: {
+        left: auto;
+        right: auto;
+        bottom: 20px;
+    }
+}
+
+section, header {
+    &.header {
+        overflow: hidden;
+        color: white;
+        background-color: #303f9f;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+
+        @media only screen and (min-width: 301px) {
+            height: 50vh;
+        }
+        
+        @media only screen and (min-width: 993px) {
+            height: 40vh;
+        }
+
+        padding: {
+            top: 50px;
+            bottom: 50px;
+        }
+
+        .header-wrapper {
+            @extend %header_wrapper;
+
+            .content, .call-to-action {
+                @extend %call_to_action;
+
+                .header-title{
+                    height: auto;
+                    line-height: 56px;
+
+                    @each $title in $titles {
+                        #{$title} {
+                            padding: 24px;
+                            margin: {
+                                top: 0px;
+                                bottom: 0px;
+                            }
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .btn, .btn-large {
+                    margin: {
+                        top: .85rem;
+                    }
+                }
+
+                .with-input {
+                    display: flex;
+                    
+                    // @media only screen and (min-width: 301px) {
+                    //     flex-direction: column;
+                    //     // justify-content: left;
+                    // }
+                    
+                    @media only screen and (min-width: 993px) {
+                        flex-direction: row;
+                        justify-items: center;
+                        justify-content: center;
+
+                    }
+                    
+                    margin: {
+                        top: .85rem;
+                    }
+
+                    .btn, .btn-large {
+                        margin: 0;
+                    }
+
+                    .select-wrapper {
+                        background-color: white;
+                        height: 53px;
+                        border-radius: 2px;
+                        margin-right: .75rem;
+                    }
+
+                    input {
+                        // @media only screen and (min-width: 301px) {
+                        //     width: 90%;
+                        //     margin: {
+                        //         bottom: .85rem;
+                        //     }
+                        // }
+                        
+                        // @media only screen and (min-width: 993px) {
+                        //     width: max($numbers: 400px);
+                        // }
+
+                        height: 53px;
+                        border: none;
+                        border-radius: 2px;
+                        padding: .35rem;
+                        margin: {
+                            right: .75rem;
+                        }
+                    }
+                }
+            }    
+        }
+    }    
+
+    .header-navigation{
+        position: relative;
+        background-color: #1a237e;
+        padding: 0px 24px 0px 24px;
+        height: auto;
+        line-height: 56px;
+
+        .header-navigation-wrapper{
+            position: relative;
+            height: 100%;
+
+            a {
+                color: #fff;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 auto;
+                overflow-x: auto;
+                overflow-y: hidden;
+                width: 100%;
+                white-space: nowrap;
+                transition: background-color .3s;
+
+                li {
+                    display: inline-block;
+                    height: 100%;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    /* float: left; */
+                    padding: 0 15px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 48px;
+                    transition: background-color .3s;
+
+                    &:hover{
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+
+                    &.active{
+                        border-bottom: 3px solid #f5f5f5;
+                    }
+                }
+            }
+        }
+    }
+}

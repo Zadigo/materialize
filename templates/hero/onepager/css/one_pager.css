@@ -1,0 +1,114 @@
+.page-nav {
+  width: 100%;
+  height: auto;
+  font-size: 18px;
+}
+
+.page-nav .logo {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.page-nav .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-nav .wrapper ul {
+  margin: 0;
+}
+
+.page-nav .wrapper ul li {
+  display: inline-block;
+}
+
+.page-nav .wrapper ul li a {
+  color: inherit;
+  padding: 1rem;
+}
+
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.hero.images .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
+  grid-gap: 1px;
+}
+
+.hero.images .grid .image {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero.images .grid .image figure {
+  margin: 1rem;
+}
+
+.hero.images .grid .image img {
+  width: 100%;
+  height: auto;
+}
+
+.hero.images .grid .image.bigger {
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.hero.images .grid .image .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  padding: 1rem;
+}
+
+.hero.images .grid .image .cover .title {
+  position: relative;
+  display: block;
+  color: white;
+  opacity: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  top: 50%;
+}
+
+.hero.images .grid .image .cover:hover {
+  opacity: .3;
+  border: 1px solid black;
+}
+
+.hero.images .grid .image .cover:hover .title {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.hero.images .grid .image .cover:hover .title:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=one_pager.css.map */

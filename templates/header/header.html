@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Google stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <link rel="stylesheet" href="../css/extended_materialize.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="css/header.css">
+    </head>
+    <body>
+        <!-- NAV -->
+        <div class="navbar-fixed">
+            <nav class="light-blue darken-4"></nav>
+        </div>
+
+        <main>
+            <!-- HEADER -->
+            <header class="header center">
+                <div class="header-wrapper">
+                    <div class="content">
+                        <div class="header-title">
+                            <h4>Communication en marketing</h4>
+                        </div>
+
+                        <div class="with-input">
+                            <input type="text" name="search" id="search" class="browser-default">
+                            <select name="test" id="test">
+                                <option value="Great">Great</option>
+                            </select>
+                            <a href="#!" class="btn-large light-blue darken-4">Press</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+    </body>
+</html>

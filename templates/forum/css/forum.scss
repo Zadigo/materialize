@@ -1,0 +1,59 @@
+#btn_new_post, #btn_preview {
+    margin: {
+        top: 1rem;
+    }
+}
+
+.forum {
+    .post {
+        min-height: 200px;
+        height: auto;
+        width: 100%;
+        background-color: #fcfcfc;
+        border: 1px solid rgba($color: #d5d5d5, $alpha: 1.0);
+        border-radius: .25rem;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        margin-bottom: .55rem;
+        
+        .user {
+            padding-right: 1.5rem;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .details {
+                .username, .join-date, .posts-count {
+                    padding-left: 1rem;
+                }
+            }
+        }
+
+
+        .content {
+            padding: {
+                top: 1rem
+            };
+            
+            .author {
+                margin-bottom: .5rem;
+            }
+
+            .quote {
+                width: 70%;
+                border: 1px solid  rgba($color: #d5d5d5, $alpha: 1.0);
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        .action {
+            grid-column-end: 3;
+            border-top: 1px solid rgba($color: #d5d5d5, $alpha: 1.0);
+            // background-color: red;
+            padding: 1rem;
+        }
+    }
+}

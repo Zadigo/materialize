@@ -1,0 +1,42 @@
+// @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+
+// $headers_font: "Lato", "Poppins", "Monserrat", "Raleway", "Ubuntu", sans-serif;
+// $content_font: "Lato", "Raleway", "Roboto", sans-serif;
+
+// %container {
+//     margin: 0 auto;
+//     max-width: 1280px;
+//     width: 90%;
+// }
+
+// %image {
+//     width: 100%;
+//     height: auto;
+// }
+
+%links {
+    color: inherit;
+}
+
+%white_links {
+    @extend %links;
+    
+    color: white;
+}
+
+
+// html {
+//     font: {
+//         family: $headers_font;
+//     }
+
+//     p, a, li, span, input,
+//     .content-text, .content-tags .chip,
+//     .hover-cover {
+//         font: {
+//             family: $content_font
+//         }
+//     }
+// }

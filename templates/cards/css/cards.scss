@@ -1,0 +1,861 @@
+$discount_card_color: #ec407a;
+$border_bottom_color: #a0a0a0;
+$box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+%image {
+    width: 100%;
+    height: auto;
+}
+
+%hover_cover {
+    background-color: white;
+    width: 100%;
+    bottom: 0;
+    padding: .75rem;
+    text-align: center;
+
+    @media only screen and (min-width: 301px) {
+        position: relative;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        position: absolute;
+    }
+}
+
+%actions {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    // padding: 2rem;
+    width: auto;
+
+    @media only screen and (min-width: 301px) {
+        padding: .65rem;
+    }
+
+    @media only screen and (min-width: 601px) {
+        padding: 1.26rem;
+    }
+}
+
+%action {
+    padding: 1rem;
+    height: 54px;
+    width: 54px;
+    border-radius: 34px;
+    box-shadow: $box_shadow;
+    background-color: white;
+    transition: width .4s ease;
+    cursor: pointer;
+
+    span {
+        position: absolute;
+        font-weight: 600;
+        margin: 0 0 0 14px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 1s ease;
+    }
+
+    &:not(:first-child) {
+        margin-left: 1rem;
+
+        @media only screen and (min-width: 300px) {
+            margin-left: 1rem;
+        }
+
+        @media only screen and (min-width: 601px) {
+            margin-left: .526rem;
+        }
+    }
+}
+
+%discount_pct_indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px;
+    background-color: $discount_card_color;
+    z-index: 1;
+    opacity: 0.85;
+    color: white;
+}
+
+%card_content {
+    @media only screen and (min-width: 301px) {
+        padding: 10px;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        padding: 24px;
+    }
+}
+
+%price {
+    font-weight: 700;
+    
+    @media only screen and (min-width: 301px) {
+        font-size: 1rem;
+    }
+    
+    @media only screen and (min-width: 993px) {
+        font-size: 1.2rem;
+    }
+}
+
+.card-link {
+    color: inherit;
+}
+
+.card {
+    overflow: hidden;
+
+    .card-header {
+        position: relative;
+        background-color: inherit;
+        border-bottom: 1px solid rgba($color: $border_bottom_color, $alpha: .2);
+        padding: 16px 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+
+        &:last-child {
+            border-radius: 0 0 2px 2px;
+        }
+    }
+
+    &.special {
+        * {
+            transition: transform .3s ease-in-out;
+        }
+
+        .fixed-hover-cover {
+            @extend %hover_cover;
+        }
+
+        .hover-cover {
+            @extend %hover_cover;
+
+            bottom: -115px;
+
+            p {
+                margin-top: 0;
+            }
+        }
+
+        .hover-cover-icons {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            z-index: 1;
+            left: 50%;
+            right: 50%;
+            bottom: -48px;
+
+            a {
+                display: block;
+                color: inherit;
+                height: 25px;
+                width: 25px;
+
+                &:not(:last-child) {
+                    margin-right: 32px;
+                }
+
+                > i {
+                    background-color: white;
+                    line-height: 15px;
+                    padding: 15px;
+                }
+            }
+        }
+
+        &.push-up:hover {
+            .hover-cover {
+                transform: translateY(-115px);
+            }
+
+            .hover-cover-icons {
+                transform: translateY(-295%);
+                color: inherit;
+
+                i:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+
+        &.push-up-with-image:hover {
+            .card-image img {
+                transform: translateY(-55px);
+            }
+
+            .hover-cover {
+                transform: translateY(-115px);
+            }
+        }
+
+        &.zoom:hover {
+            .card-image img {
+                transform: scale(1.1, 1.1);
+            }
+        }
+
+        &.blur:hover {
+            .card-image {
+                img {
+                    filter: blur(2px);
+                }
+            }
+        }
+
+        &.dim:hover {
+            .card-image img {
+                opacity: 0.7;
+            }
+        }
+
+        &.soft-fade {
+            * {
+                transition: all .3s ease-in-out;
+            }
+
+            &:hover,
+            &:focus {
+                .hover-cover {
+                    transform: translateY(-115px);
+                    opacity: 1;
+                }
+            }
+
+            .hover-cover {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+        }
+    }
+
+    &.ecommerce {
+        .card-content {
+            @extend %card_content;
+        }
+
+        .discount {
+            @extend %discount_pct_indicator;
+        }
+
+        * {
+            transition: transform .3s ease-in-out;
+        }
+        
+        &.zoom:hover {
+            img {
+                transform: scale(1.2, 1.2);
+            }
+        }
+        
+        &.zoom-rotate:hover {
+            img {
+                transform: scale(1.2, 1.2) rotate(8deg);
+            }
+        }
+
+        &.with-action {
+            .actions {
+                @extend %actions;
+                
+                .action {
+                    @extend %action;
+                }
+
+                &.animate:hover {
+                    .action {
+                        width: 160px;
+                        
+                        span { 
+                            opacity: 1;
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.flat-ecommerce {
+        box-shadow: none;
+
+        .card-content {
+            @extend %card_content;
+        }
+
+        .card-image {
+            img {
+                transition: all .3s ease-in-out;
+            }
+
+            overflow: hidden;
+        }
+
+        .discount {
+            @extend %discount_pct_indicator;
+        }
+
+        &.with-action {
+            .actions {
+                @extend %actions;
+
+                .action {
+                    @extend %action;
+                }
+            }
+        }
+        
+        @media only screen and (min-width: 993px) {
+            &.zoom-rotate:hover {
+                img {
+                    transform: scale(1.2, 1.2) rotate(8deg);
+                }
+            }
+        }
+        
+        .card-content {
+            padding-left: 0;
+
+            @media only screen and (min-width: 301px) {
+                padding-bottom: 0;
+            }
+            
+            @media only screen and (min-width: 993px) {
+                padding-bottom: 24px;
+            }
+
+            .title {
+                font-weight: 400;
+            }
+    
+            .price {
+                @extend %price;
+            }
+        }
+    }
+
+    &.with-slider {
+        .wrapper {
+            overflow: hidden;
+            
+            img {
+                @extend %image;
+
+                transition: all .5s ease;
+            }
+        }
+
+        .navigation {
+            position: absolute;
+            top: 190px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @media only screen and (min-width: 300px) {
+                top: 190px;
+            }
+
+            @media only screen and (min-width: 601px) {
+                top: 140px;
+            }
+
+            i {
+                cursor: pointer;
+                font-size: 44px;
+                transition: all .6s ease;
+                color: white;
+
+                &:hover#right {
+                    transform: translateX(-5px);
+                }
+
+                &:hover#left {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+
+    &.with-filters {
+        [type="radio"]:checked + span:after,
+        [type="radio"].with-gap:checked + span:before,
+        [type="radio"].with-gap:checked + span:after {
+            border: 2px solid #a62626;
+        }
+        
+        [type="radio"]:checked + span:after,
+        [type="radio"].with-gap:checked + span:after {
+            background-color: #a62626;
+        }
+    }
+}
+
+
+
+
+
+
+// $discount_card_color: #ec407a;
+// $box_shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+// %hover_cover {
+//     @media only screen and (min-width: 601px) {
+//         position: relative
+//     }
+
+//     @media only screen and (min-width: 993px) {
+//         position: absolute;
+//     }
+// }
+
+// @mixin responsive_image {
+//     max-width: 100%;
+//     height: auto;
+// }
+
+// .card-special-link {
+//     color: rgba($color: #000000, $alpha: 1.0)
+// }
+
+// .card {
+//     .card-header {
+//         position: relative;
+//         background-color: inherit;
+//         border-bottom: 1px solid rgba(160,160,160,0.2);
+//         padding: 16px 24px;
+
+//         &:last-child {
+//             border-radius: 0 0 2px 2px;
+//         }
+//     }
+
+//     &.with-filters {
+//         [type="radio"]:checked + span:after,
+//         [type="radio"].with-gap:checked + span:before,
+//         [type="radio"].with-gap:checked + span:after {
+//             border: 2px solid #a62626;
+//         }
+        
+//         [type="radio"]:checked + span:after,
+//         [type="radio"].with-gap:checked + span:after {
+//             background-color: #a62626;
+//         }
+//     }
+
+//     // &.with-more {        
+//     //     i {
+//     //         position: absolute;
+//     //         bottom: 0;
+//     //         right: 0;
+//     //         padding: 1rem;
+//     //         // z-index: 9999;
+
+//     //         @keyframes slide_in_effect {
+//     //             0% {
+//     //                 width: 0%;
+//     //                 height: 0%;
+//     //                 opacity: 0;
+//     //             }
+
+//     //             100% {
+//     //                 width: 100%;
+//     //                 height: auto;
+//     //                 opacity: 1;
+//     //             }
+//     //         }
+
+//     //         &:hover + .more-content {
+//     //             // opacity: 0;
+//     //             animation-name: slide_in_effect;
+//     //             animation-duration: .5s;
+//     //         }
+//     //     }
+
+//     //     .more-content {
+//     //         position: absolute;
+//     //         overflow: hidden;
+//     //         // bottom: 0;
+//     //         top: 0;
+//     //         background-color: white;
+//     //         opacity: 0;
+//     //         padding: 1rem;
+//     //         transition: all .3s ease;
+//     //     }
+//     // }
+
+//     &.with-slider {
+//         .wrapper {
+//             overflow: hidden;
+            
+//             img {
+//                 @include responsive_image();
+//                 transition: all .5s ease;
+//             }
+//         }
+
+//         .navigation {
+//             position: absolute;
+//             top: 190px;
+//             width: 100%;
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+
+//             @media only screen and (min-width: 300px) {
+//                 top: 190px;
+//             }
+
+//             @media only screen and (min-width: 601px) {
+//                 top: 140px;
+//             }
+
+//             i {
+//                 font-size: 44px;
+//                 cursor: pointer;
+//                 transition: all .6s ease;
+
+//                 &:hover#right {
+//                     transform: translateX(-5px);
+//                 }
+
+//                 &:hover#left {
+//                     transform: translateX(5px);
+//                 }
+//             }
+//         }
+//     }
+
+//     &.with-action {
+//         // position: relative;
+
+//         .actions {
+//             position: absolute;
+//             display: block;
+//             bottom: 0;
+//             right: 0;
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: right;
+//             padding: 2rem;
+//             width: auto;
+
+//             @media only screen and (min-width: 300px) {
+//                 padding: 1rem;
+//             }
+
+//             @media only screen and (min-width: 601px) {
+//                 padding: 1.26rem;
+//             }
+
+//             .action {
+//                 padding: 1rem;
+//                 height: 54px;
+//                 width: 54px;
+//                 // width: 154px;
+//                 border-radius: 34px;
+//                 box-shadow: $box_shadow;
+//                 background-color: white;
+//                 transition: width .4s ease;
+
+//                 span {
+//                     position: absolute;
+//                     font-weight: 600;
+//                     margin: 0 0 0 14px;
+//                     opacity: 0;
+//                     transform: translateY(8px);
+//                     transition: opacity 1s ease;
+//                     // transition: transform .4s ease;
+//                 }
+
+//                 &.widden:hover {
+//                     width: 160px;
+                    
+//                     span { 
+//                         opacity: 1;
+//                         transform: translateY(0px);
+//                     }
+//                 }
+
+//                 &:not(:first-child) {
+//                     margin-left: 1rem;
+    
+//                     @media only screen and (min-width: 300px) {
+//                         margin-left: 1rem;
+//                     }
+        
+//                     @media only screen and (min-width: 601px) {
+//                         margin-left: .526rem;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     &.special {
+//         cursor: pointer;
+//         overflow: hidden;
+      
+//         * {
+//             transition: all 0.25s ease-in-out;
+//         }       
+        
+//         .card-image {
+//             max-height: 60%;
+//             overflow: hidden;
+
+//             p {
+//                 position: absolute;
+//                 bottom: 0;
+//                 left: 0;
+//                 color: rgba(255, 255, 255, .8);
+//                 font-size: 24px;
+//                 z-index: 9999;
+//                 margin-top: 0;
+//                 padding: 1rem;
+            
+//             }
+//         }
+
+//         .text-overlay {
+//             position: absolute;
+//             top: 166px;
+//             left: 25px;
+//             color: white;
+//         }
+
+//         .hover-cover {
+//             @extend %hover_cover;
+//             background-color: white;
+//             width: 100%;
+//             bottom: 0;
+//             padding: .75rem;
+//             bottom: -115px;
+//             text-align: center;
+
+//             p {
+//                 margin-top: 0;
+//             }
+//         }
+
+//         .hover-cover-icons {
+//             @extend %hover_cover;
+
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: center;
+//             z-index: 1;
+//             left: 50%;
+//             right: 50%;
+//             bottom: -48px;
+
+//             a {
+//                 display: block;
+//                 color: inherit;
+//                 height: 25px;
+//                 width: 25px;
+
+//                 &:not(:last-child) {
+//                     margin-right: 32px;
+//                 }
+
+//                 > i {
+//                     background-color: white;
+//                     line-height: 15px;
+//                     padding: 15px;
+//                 }
+//             }
+//         }
+
+//         .card-cover {
+//             z-index: 999;
+//             position: absolute;
+//             top: 0;
+//             background-color: black;
+//             height: 100%;
+//             width: 100%;
+//             opacity: 0;
+//             padding: 25px;
+
+//             span {
+//                 position: relative;
+//                 max-width: 100%;
+//                 padding: 24px;
+//                 font-size: 24px;
+//                 margin: {
+//                     top: 0;
+//                     bottom: 0;
+//                 };
+//                 color: white;
+//             }
+//         }
+
+//         div.discount {
+//             position: absolute;
+//             top: 0;
+//             right: 0;
+//             font-family: inherit;
+//             font-size: 14px;
+//             font-weight: 600;
+//             padding: 15px;
+//             background-color: $discount_card_color;
+//             z-index: 1;
+//             opacity: 0.85;
+//             color: white;
+//         }
+
+//         &:hover {
+//             .card-cover {
+//                 opacity: .7;
+
+//                 p {
+//                     opacity: 1;
+//                 }
+//             }
+
+//             // .text-overlay {
+//             //     position:absolute;
+//             //     top:166px;
+//             //     left:25px;
+//             //     color:white;
+
+//             //     @for $title from 1 through 5 {
+//             //         h#{$title} {
+//             //             margin-bottom: 0;
+//             //         }
+//             //     }
+    
+//             //     &.emphasize {
+//             //         @for $title from 1 through 5 {
+//             //             h#{$title} {
+//             //                 transform: translateY(-5px);
+//             //             }
+//             //         }
+//             //     }
+    
+//             //     p {
+//             //         margin-top: .25rem;
+//             //     }
+//             // }
+
+//             &.dim {
+//                 .card-image img {
+//                     opacity: 0.7;
+//                 }
+//             }
+
+//             &.push-up {
+//                 .hover-cover {
+//                     transform: translateY(-115px);
+//                 }
+
+//                 .hover-cover-icons {
+//                     transform: translateY(-295%);
+//                     color: inherit;
+
+//                     i:hover {
+//                         background-color: black;
+//                         color: white;
+//                     }
+//                 }
+//             }
+
+//             &.push-up-with-image {
+//                 .card-image img {
+//                     transform: translateY(-55px);
+//                 }
+
+//                 .hover-cover {
+//                     transform: translateY(-115px);
+//                 }
+//             }
+
+//             &.zoom {
+//                 .card-image img {
+//                     transform: scale(1.1, 1.1);
+//                 }
+//             }
+
+//             &.blur {
+//                 .card-image {
+//                     img {
+//                         filter: blur(2px);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     &.flat-ecommerce {
+//         box-shadow: none;
+    
+//         .card-content {
+//             padding-left: 0;
+//         }
+    
+//         .title {
+//             font: {
+//                 size: 14px;
+//             }
+//         }
+    
+//         .price {
+//             font: {
+//                 size: 18px;
+//                 weight: 700;
+//             }
+//             margin-top: .525rem;
+//         }
+//     }
+// }
+
+// .card-panel {
+//     &.special {
+//         &.ripple {
+//             position: relative;
+//             overflow: hidden;
+//             transform: translate3d(0, 0, 0);
+    
+//             &:after {
+//                 content: "";
+//                 display: block;
+//                 position: absolute;
+//                 width: 100%;
+//                 height: 100%;
+//                 top: 0;
+//                 left: 0;
+//                 pointer-events: none;
+//                 background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+//                 background-repeat: no-repeat;
+//                 background-position: 50%;
+//                 transform: scale(10, 10);
+//                 opacity: 0;
+//                 transition: transform .5s, opacity 1s;
+//             }
+    
+//             &:active:after {
+//                 transform: scale(0, 0);
+//                 opacity: .3;
+//                 transition: 0s;
+//             }
+//         }
+//     }
+// }

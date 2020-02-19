@@ -1,0 +1,205 @@
+.sports-bar ul, .sports-bar.for-mobile ul {
+  overflow: hidden;
+  margin: 0;
+}
+
+nav .brand-logo {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.sports-bar {
+  background-color: #484848;
+  z-index: -999;
+  min-height: 46px;
+}
+
+.sports-bar.transparent-on-scroll {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
+.sports-bar ul li {
+  float: left;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.sports-bar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sports-bar ul li.best-offers {
+  background-color: #E53935;
+}
+
+.sports-bar ul li.best-offers:hover {
+  background-color: rgba(229, 57, 53, 0.5);
+}
+
+.sports-bar ul li a {
+  display: block;
+  color: white;
+  padding: 18px;
+}
+
+.sports-bar.for-mobile ul li {
+  float: right;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.sports-bar.for-mobile ul li a {
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.sports-bar.for-mobile ul li i.material-icons {
+  line-height: 1;
+}
+
+.sports-bar-drawer {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 9999;
+  width: 310px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(312px);
+          transform: translateX(312px);
+  opacity: 0;
+}
+
+.sports-bar-drawer .drawer {
+  width: 100%;
+}
+
+.sports-bar-drawer .drawer .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  height: auto;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.sports-bar-drawer .drawer .actions :last-child {
+  margin-left: 1rem;
+}
+
+.sports-bar-drawer .drawer .wrapper.search {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (min-content)[2];
+      grid-template-rows: repeat(2, -webkit-min-content);
+      grid-template-rows: repeat(2, min-content);
+}
+
+.sports-bar-drawer .drawer .wrapper.search * {
+  padding: .25rem;
+}
+
+.sports-bar-drawer .drawer .wrapper.search .close {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sports-bar-drawer .drawer .wrapper.search .search {
+  display: block;
+}
+
+.sports-bar-drawer .drawer .wrapper.search .search input {
+  width: 95%;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: .75rem;
+}
+
+.sports-bar-drawer .drawer .wrapper ul {
+  margin-top: 0;
+}
+
+.sports-bar-drawer .drawer .wrapper ul li {
+  font-size: 1rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.sports-bar-drawer .drawer .wrapper ul li.highlighted {
+  margin-bottom: 1rem;
+  vertical-align: middle;
+}
+
+.sports-bar-drawer .drawer .wrapper ul li.highlighted:last-child {
+  margin-bottom: 0rem;
+}
+
+.sports-bar-drawer .drawer .wrapper ul li.highlighted a {
+  background-color: #eee;
+  text-transform: uppercase;
+  padding: .75rem;
+}
+
+.sports-bar-drawer .drawer .wrapper ul li a, .sports-bar-drawer .drawer .wrapper ul li button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-rendering: auto;
+  color: inherit;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-weight: 500;
+  padding: 0 0 1rem 0;
+}
+
+.sports-bar-menu {
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+  left: 200px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.sports-bar-menu ul {
+  border-radius: .25rem;
+}
+
+.sports-bar-menu ul li:not(:last-child) {
+  border-bottom: 1px #eee solid;
+}
+
+.sports-bar-menu ul li a {
+  display: block;
+  padding: .75rem;
+  color: inherit;
+}
+/*# sourceMappingURL=sports_bar.css.map */

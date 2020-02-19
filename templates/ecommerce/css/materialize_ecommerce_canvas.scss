@@ -1,0 +1,18 @@
+.section {
+    &.products {
+        .container {
+            width: 100%;
+
+            .row .col {
+                padding: 0 .25rem;
+            }
+        }
+
+        .col#prducts_col {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+}

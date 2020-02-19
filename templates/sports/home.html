@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Acceil</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../hero/css/hero.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="./css/sports_bar.css">
+    </head>
+    <body>
+        <!-- Nav -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a href="./hero.html" class="brand-logo">FIVB</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sports bar -->
+        <div class="sports-bar">
+            <div class="container">
+                <ul>
+                    <li><a href="./products.html">Competitions</a></li>
+                    <li><a href="./shop.html">Calendar</a></li>
+                    <li><a href="./products.html">World Rankings</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sports-bar-menu">
+            <ul>
+                <li><a href="">Volleyball Nations League</a></li>
+                <li><a href="">Men's World Championship</a></li>
+                <li><a href="">Women's World Championship</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <div class="hero blue darken-1 responsivity" style="background-image: url('http://www.fivb.org/Vis2009/Images/GetImage.asmx?type=press&no=89367&maxsize=2500');">
+                <div class="hero-wrapper">
+                    <div class="call-to-action">
+                        <div class="lead">This is volleyball</div>
+                        <div class="lead-subtitle">Faites au mieux, la mode est là</div>
+                        <a href="#presentation" class="btn-large grey darken-1">Discover</a>
+                    </div>
+                </div>
+            </div>
+    
+            <section class="section ecommerce-benefits">
+                <div class="presentation-grid">
+                    <div class="presentation" id="presentation">
+                        <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Nouveautés</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image13.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Promotions</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner">
+                    <div class="wrapper">
+                        <!-- <div class="image-background" style="background-image: url('./assets/Banners3.jpg');"></div> -->
+                        <img src="./assets/Banners3.jpg" alt="banner1">
+                    </div>
+                </div>
+        
+                <!-- <div class="banner">
+                    <div class="wrapper">
+                        <img src="./assets/Banners2.jpg" alt="banner2">
+                    </div>
+                </div>
+        
+                <div class="banner">
+                    C
+                </div> -->
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="./customer_service.html" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="./js/sports.js"></script>
+    </body>
+</html>

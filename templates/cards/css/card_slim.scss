@@ -1,0 +1,116 @@
+@import "../../css/colors.scss";
+@import "../../css/global.scss";
+
+$slim_card_height: 160px;
+
+@mixin font_mixin($size, $weight) {
+    font: {
+        size: $size;
+        weight: $weight;
+    }
+}
+
+.card-slim-link {
+    @extend %links;
+}
+
+.card.horizontal {
+    transition: all .5s ease-in-out;
+    
+    &.slim {
+        height: $slim_card_height;
+        position: relative;
+        
+        @media only screen and (min-width: 993px) {
+            &.animate:focus,
+            &.animate:hover {
+                transform: translateX(5px);
+
+                img {
+                    filter: blur(1px);
+                }
+            }
+        }
+
+        .card-image {
+            overflow: hidden;
+
+            @media only screen and (min-width: 301px) {
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            
+            @media only screen and (min-width: 993px) {
+                img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            .like {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 1rem;
+                z-index: 1;
+                cursor: pointer;
+            }
+
+            .filter {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgba($color: #000000, $alpha: .2);
+            }
+        }
+
+        .card-content {
+            height: $slim_card_height;
+            
+            @media only screen and (min-width: 301px) {
+                padding: 12px;
+            }
+            
+            @media only screen and (min-width: 993px) {
+                padding: 24px;
+            }
+
+            @each $title in h1, h2, h3, h4 {
+                @media only screen and (min-width: 301px) {
+                    #{$title} {
+                        @include font_mixin(18px, 700);
+                    }
+                }
+                
+                @media only screen and (min-width: 993px) {
+                    #{$title} {
+                        @include font_mixin(20px, 700);
+                    }
+                }
+            }
+        }
+
+        .with-transparency {
+            .chip {
+                background-color: rgba($color: #000000, $alpha: 0);
+                padding-left: 0;
+            }
+        }
+        
+        // transition: transform .3s ease-in-out;
+
+        // @media only screen and (min-width: 993px) {
+        //     &.animate{
+        //         // &:hover {
+        //         //     img {
+        //         //         transform: scale(1.2, 1.2);
+        //         //     }
+        //         // }
+        //     }            
+        // }
+    }
+}

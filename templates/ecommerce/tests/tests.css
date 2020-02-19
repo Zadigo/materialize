@@ -1,0 +1,24 @@
+.ecommerce-slider {
+  overflow: hidden;
+  max-width: 1280px;
+}
+
+.ecommerce-slider .slider-wrapper {
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.ecommerce-slider .slider-wrapper .image:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.ecommerce-slider .slider-wrapper .image img {
+  width: auto;
+  height: 100%;
+}
+/*# sourceMappingURL=tests.css.map */

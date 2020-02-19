@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Google stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="../../css/fonts.css">
+        <link rel="stylesheet" href="../../css/mat.css">
+        <link rel="stylesheet" href="./css/one_pager.css">
+    </head>
+    <body>
+        <div class="page-nav">
+            <div class="wrapper">
+                <div class="logo">LOGO</div>
+                <ul>
+                    <li><a href="http://">Google</a></li>
+                    <li><a href="http://">Google</a></li>
+                </ul>
+            </div>
+        </div>
+        <main>
+            <div class="hero images">
+                <div class="grid">
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image17.jpg" alt="image15">
+                        </figure>
+                        <div class="cover">
+                            <div class="title">A picture</div>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image15.jpg" alt="image15">
+                        </figure>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image17.jpg" alt="image18">
+                        </figure>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image17.jpg" alt="image18">
+                        </figure>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image15.jpg" alt="image18">
+                        </figure>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="../../assets/image17.jpg" alt="image18">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Materialize scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+    </body>
+</html>

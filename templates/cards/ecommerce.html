@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Cards</title>
+
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/cards.css" />
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav class="blue darken-4">
+                <div class="container">
+                    <ul class="right">
+                        <li><a href="./classic.html">Classic</a></li>
+                        <li><a href="./ecommerce.html">Ecommerce</a></li>
+                        <li><a href="./cards.html">Others</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <section class="section">
+                <div class="container">
+                    <div class="row">
+                        <!-- FILTER CARDS -->
+                        <div class="col s12 l4 m4">
+                            <div class="card with-filters">
+                                <div class="card-header">Filters</div>
+                                <div class="card-content">
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="filter1" id="filter1" checked>
+                                            <span>Clothes</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="filter1" id="filter1">
+                                            <span>Skirts</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FILTER CARDS -->
+                    </div>
+
+                    <div class="row">        
+                        <!-- WITH ACTIONS -->
+                        <div class="col s12 l4">
+                            <div class="card ecommerce with-action zoom">
+                                <div class="card-image zoom">
+                                    <img src="https://colorlib.com/preview/theme/divisima/img/product/2.jpg" alt="">
+                                </div>
+                                <div class="actions">
+                                    <!-- <div class="action"><i class="material-icons">shopping_cart</i><span>Add to cart</span></div> -->
+                                    <div class="action"><i class="material-icons">shopping_cart</i></div>
+                                    <div class="action" id="star"><i class="material-icons">star_border</i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- WITH ACTIONS -->
+        
+                        <!-- WITH ACTIONS -->
+                        <div class="col s12 l4">
+                            <div class="card flat-ecommerce with-action">
+                                <div class="discount">15%</div>
+                                <div class="card-image">
+                                    <img src="https://colorlib.com/preview/theme/divisima/img/product/3.jpg" alt="">
+                                    <div class="actions">
+                                        <div class="action" id="star"><i class="material-icons">star_border</i></div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="title">Sac de facetti marron</div>
+                                    <div class="price">54.45€</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- WITH ACTIONS -->
+
+                        <!-- ANIMATED ACTION -->
+                        <div class="col s12 l4">
+                            <div class="card ecommerce with-action">
+                                <div class="card-image">
+                                    <img src="https://colorlib.com/preview/theme/divisima/img/product/4.jpg" alt="image4">
+                                </div>
+                                <div class="actions animate">
+                                    <div class="action widden"><i class="material-icons">shopping_cart</i><span>Add to cart</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ANIMATED ACTION  -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <script src="./js/cards.js"></script>
+    </body>
+</html>

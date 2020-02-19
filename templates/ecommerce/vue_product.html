@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bracelet en diamant pure</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce_grid.css">
+        <link rel="stylesheet" href="../ecommerce/css/ecommerce_bar.css">
+        <link rel="stylesheet" href="../code.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <style>
+            .appear-enter-active {
+                transition: all .3s ease;
+            }
+            .appear-enter {
+                opacity: 0;
+            }
+            .appear-enter-to {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="container">
+                    <a href="hero.html" class="brand-logo">Shop</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right" id="ecommerce-mobile">
+                        <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                        <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Drawers -->
+        <div class="ecommerce-bar-drawer" id="drawer1">
+            <div class="drawer">
+                <div class="close">x</div>
+                <div class="title">Collections</div>
+                <ul>
+                    <li class="highlighted"><a href="#!">Sacs</a></li>
+                    <li class="highlighted"><a href="#!">Promotions</a></li>
+                    <li class="highlighted"><a href="#!">Nouveautés</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ecommerce-bar-drawer" id="drawer2">
+            <div class="drawer">
+                <!-- <div class="close"><span>x</span></div>
+                <div>
+                    <form action="./products.html" class="search">
+                        <div class="search-field">
+                            <input type="text" name="search" class="browser-default" id="search" placeholder="Rechercher">
+                            <div class="btn-search">
+                                <a href="#!"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="wrapper">
+                    <div class="close">x</div>
+                    <div class="search">
+                        <form action="./products.html" method="GET">
+                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                            <button class="btn grey darken-1" id="btn_search">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Cart drawer -->
+        <div id="cart_drawer">
+            <cartdrawer />
+        </div>
+
+        <!-- Ecommerce bar -->
+        <div class="ecommerce-bar">
+            <div class="container">
+                <ul>
+                    <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                    <li><a href="./products.html">Sacs</a></li>
+                    <li><a href="./products.html">Bracelets</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <main>
+            <div class="enhanced-ecommerce" data-for="modal1" style="position: absolute;cursor: pointer;">
+                <i class="material-icons">information</i>
+            </div>
+    
+            <div class="ecommerce">
+                <div class="grid" id="product">
+                    <!-- Breadcrumb -->
+                    <div class="breadcrumbs">
+                        <a href="./products.html" class="breadcrumb">Accueil</a>
+                        <a href="#!" class="breadcrumb">Collections</a>
+                        <a class="breadcrumb">Jupe en cuir de fauve</a>
+                    </div>
+                    
+                    <div id="app">
+                        <div>
+                            <!-- Images -->
+                            <sideimages @returnmainimage="setmainimage" />
+                        </div>
+                        
+                        <div>
+                            <!-- Product -->
+                            <previewimage v-bind:mainimage="mainimage" />
+                        </div>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="information" id="product_actions">
+                        <h4>Bracelet en diamant pure</h4>
+
+                        <div class="infos">
+                            <div class="price">54.95€</div>
+                            <div class="discounted-price">54€</div>
+                        </div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            Dignissimos labore vero sed, beatae, perferendis fuga 
+                            perspiciatis sunt soluta quo temporibus adipisci minus 
+                            rem id voluptas doloribus saepe! Totam, enim eius?
+                        </p>
+                        <div class="other-details">
+                            <div class="color"><span>Couleur :</span> Noir</span></div>
+                            <div class="size"><span>Taille :</span> Unique</div>
+
+                            <selectdetails @sendselection='setselection' />
+                        </div>
+                        <div id="cart_button">
+                            <cartbutton v-bind:currentselection='currentselection' />
+                        </div>
+
+                        <div class="policies">
+                            <div class="policy">
+                                <i class="material-icons">airplanemode_active</i>
+                                <div>Free delivery</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">local_shipping</i>
+                                <div>Retours 30 jours</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">star_border</i>
+                                <div>Garantie</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">lock</i>
+                                <div>100% secure checkout</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="details">
+                        <div class="detail">
+                            <p>Information article</p>
+                            <p>
+                                <ul class="browser-default">
+                                    <li>Description du produit</li>
+                                    <li>Description du produit</li>
+                                    <li>Description du produit</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="detail">
+                            <p>Code produit</p>
+                            <div class="sku">CAR-TAR-SKU</div>
+                        </div>
+                        <div class="detail">
+                            <p>Tailles et coupes</p>
+                        </div>
+                    </div>
+
+                    <!-- More -->
+                    <div class="more">
+                        <h4>Vous allez aussi aimer</h4>
+                        <div class="images">
+                            <div class="image">
+
+                                <div class="enhanced-ecommerce" data-for="modal3" style="position: absolute;cursor: pointer;">
+                                    <i class="material-icons">information</i>
+                                </div>
+                                
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Jupe en cuir</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <a href="./product.html">
+                                    <img src="../../assets/images/image4.jpg" alt="image4">
+                                    <div class="details">
+                                        <div class="price-details">
+                                            <div class="title">Jupe en velours</div>
+                                            <div class="price">54€</div>
+                                        </div>
+                                    </div>                                
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Sac de vuitton</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Tote bag divaga</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer grey darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright grey darken-1">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+
+        <!-- Mini footer -->
+        <!-- <div class="minimalist-footer grey darken-4">
+            <div class="links white-text">
+                <a href="#!">Conditions générales</a>
+                <a href="#!">Confidentialité</a>
+            </div>
+        </div> -->        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <script src="./js/product.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+                $('.modal').modal();
+                $('select').formSelect();
+
+                $(".enhanced-ecommerce, #btn_add_to_cart").on("click", function() {
+                    var modal = $(this).data("for")
+                    var instance = M.Modal.getInstance($("#" + modal));
+                    instance.open()
+                })
+            });
+
+        </script>
+    </body>
+
+    <!-- EHANCED ECOMMERCE MODALS -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Impressions</h4>
+            <pre>
+            dataLayer.push({
+                "ecommerce": {
+                        "impressions": [{
+                        "id": "9bdd2",
+                        "name": "Jupe en cuir",
+                        "price": "44.00",
+                        "brand": "Compton",
+                        "category": "Jupe",
+                        "position": 0
+                    },
+                    {
+                        "id": "6d9b0",
+                        "name": "Jupe de velours",
+                        "price": "62.00",
+                        "brand": "Jupe",
+                        "category": "T-Shirts",
+                        "position": 1
+                    },
+                    {
+                        "id": "bc823",
+                        "name": "Sac de vuitton",
+                        "price": "92.00",
+                        "brand": "Fuelworks",
+                        "category": "Sacs",
+                        "position": 2
+                    },
+                    {
+                        "id": "f6be8",
+                        "name": "Tote bag en divaga",
+                        "price": "33.00",
+                        "brand": "Comverges",
+                        "category": "T-Shirts",
+                        "position": 3
+                    }],
+                    "detail": {
+                        "products": [{
+                            "id": "f6be8",
+                            "name": "Bracelet en diamant pure",
+                            "price": "33.00",
+                            "brand": "Comverges",
+                            "category": "Bracelet",
+                            "position": 0
+                        }]
+                    },
+                    "promoView": {
+                        "promotions": [{
+                            "id": "bts",
+                            "name": "Back To School",
+                            "creative": "PRODUCT banner",
+                            "position": "right sidebar"
+                        }]
+                    }
+                }
+            });
+            </pre>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Add to cart</h4>
+            <pre>
+            dataLayer.push({
+                "event": "addToCart",
+                "ecommerce": {
+                    "currencyCode": "EUR",
+                    "add": {
+                    "products": [{
+                        "id": "f6be8",
+                        "name": "Bracelet en diamant pure",
+                        "price": "33.00",
+                        "brand": "Comverges",
+                        "category": "Bracelets",
+                        "variant": "red",
+                        "dimension1": "M",
+                        "position": 0,
+                        "quantity": 1
+                    }]
+                    }
+                }
+            });
+            </pre>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Product click - List</h4>
+            <pre>
+            dataLayer.push({
+                "event": "productClick",
+                "ecommerce": {
+                        "click": {
+                        "actionField": {
+                            "list": "vous allez aussi aimer"
+                        },
+                        "products": [{
+                            "id": "6c3b0",
+                            "name": "Jupe en cuir",
+                            "price": "99.00",
+                            "brand": "Zappix",
+                            "category": "Jupe",
+                            "position": "1"
+                        }]
+                    }
+                }
+            });
+            </pre>
+        </div>
+    </div>
+</html>

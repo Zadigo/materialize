@@ -1,0 +1,266 @@
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px;
+  border: 1px solid #888;
+}
+
+.ecommerce-bar ul, .ecommerce-bar.for-mobile ul {
+  overflow: hidden;
+  margin: 0;
+}
+
+nav .brand-logo {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.ecommerce-header .sales-info-bar {
+  background-color: #b0bcc2;
+  color: white;
+  height: 50px;
+}
+
+.ecommerce-header .sales-info-bar p {
+  font-weight: 600;
+}
+
+.ecommerce-header .sales-info-bar .container {
+  max-height: 100%;
+}
+
+.ecommerce-header .sales-info-bar .container .row {
+  margin-bottom: 0;
+}
+
+.ecommerce-header .sales-info-bar .container .row .col {
+  max-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ecommerce-header .sales-info-bar .container .row .col i {
+  font-size: 2rem;
+  margin-right: .5rem;
+  vertical-align: middle;
+  line-height: 1.75;
+}
+
+.ecommerce-bar {
+  background-color: #484848;
+  z-index: -999;
+  min-height: 46px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.ecommerce-bar.transparent-on-scroll {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
+.ecommerce-bar ul li {
+  float: left;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.ecommerce-bar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ecommerce-bar ul li.best-offers {
+  background-color: #E53935;
+}
+
+.ecommerce-bar ul li.best-offers:hover {
+  background-color: rgba(229, 57, 53, 0.5);
+}
+
+.ecommerce-bar ul li a {
+  display: block;
+  color: white;
+  padding: 18px;
+}
+
+.ecommerce-bar.for-mobile ul li {
+  float: right;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.ecommerce-bar.for-mobile ul li a {
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.ecommerce-bar.for-mobile ul li i.material-icons {
+  line-height: 1;
+}
+
+.ecommerce-bar.for-filters {
+  color: white;
+  text-transform: uppercase;
+}
+
+.ecommerce-bar.for-filters .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+.ecommerce-bar.for-filters .container .filter {
+  position: relative;
+  padding: .25rem;
+  height: 46px;
+  width: 100px;
+  vertical-align: middle;
+  line-height: 38px;
+}
+
+.ecommerce-bar.for-filters .container .filter i {
+  position: absolute;
+  color: inherit;
+  line-height: inherit;
+  padding-left: .35rem;
+}
+
+.ecommerce-bar-drawer {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 9999;
+  width: 310px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(312px);
+          transform: translateX(312px);
+  opacity: 0;
+}
+
+.ecommerce-bar-drawer .drawer {
+  width: 100%;
+}
+
+.ecommerce-bar-drawer .drawer .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  height: auto;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.ecommerce-bar-drawer .drawer .actions :last-child {
+  margin-left: 1rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper.search {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (min-content)[2];
+      grid-template-rows: repeat(2, -webkit-min-content);
+      grid-template-rows: repeat(2, min-content);
+}
+
+.ecommerce-bar-drawer .drawer .wrapper.search * {
+  padding: .25rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper.search .close {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper.search .search {
+  display: block;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper.search .search input {
+  width: 95%;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin-bottom: .75rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul {
+  margin-top: 0;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul li {
+  font-size: 1rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul li.highlighted {
+  margin-bottom: 1rem;
+  vertical-align: middle;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul li.highlighted:last-child {
+  margin-bottom: 0rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul li.highlighted a {
+  background-color: #eee;
+  text-transform: uppercase;
+  padding: .75rem;
+}
+
+.ecommerce-bar-drawer .drawer .wrapper ul li a, .ecommerce-bar-drawer .drawer .wrapper ul li button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-rendering: auto;
+  color: inherit;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-weight: 500;
+  padding: 0 0 1rem 0;
+}
+/*# sourceMappingURL=ecommerce_bar.css.map */

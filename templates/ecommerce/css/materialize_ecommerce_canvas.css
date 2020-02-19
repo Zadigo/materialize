@@ -1,0 +1,13 @@
+.section.products .container {
+  width: 100%;
+}
+
+.section.products .container .row .col {
+  padding: 0 .25rem;
+}
+
+.section.products .col#prducts_col {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*# sourceMappingURL=materialize_ecommerce_canvas.css.map */

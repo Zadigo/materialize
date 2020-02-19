@@ -1,0 +1,51 @@
+#presentation, #contact {
+  padding: 1rem;
+  text-align: center;
+}
+
+#presentation .section-title {
+  margin-bottom: 4rem;
+  font-weight: 600;
+}
+
+#presentation .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  grid-column-gap: 20px;
+}
+
+#skills {
+  height: 400px;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+#map img {
+  width: 100%;
+  height: auto;
+}
+
+.tags-enter-active, .tags-leave-active {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.tags-leave-to, .tags-enter {
+  opacity: 0;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+}
+
+.tags-leave, .tags-enter-to {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+/*# sourceMappingURL=custom.css.map */

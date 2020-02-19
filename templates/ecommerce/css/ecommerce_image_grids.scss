@@ -1,0 +1,139 @@
+@import "./variables.scss";
+
+%item {
+    position: relative;
+    overflow: hidden;
+}
+
+%image_background {
+    height: 100%;
+    width: 100%;
+    background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+}
+
+%call_to_action {
+    position: absolute;
+    display: blocks;
+    padding: 1rem;
+    bottom: 0;
+
+    .text {
+        text-transform: uppercase;
+        color: white;
+        font: {
+            size: 1.85rem;
+        }
+    }
+
+    .btn {
+        margin: {
+            top: .75rem;
+        };
+    }
+
+    &.position-center {
+        top: calc(100% - 70%);
+    }
+}
+
+.section.images#grids, div.images#grids {
+    .ecommerce {
+        max-width: 1280px;
+        
+        @media only screen and (min-width: 301px) {
+            &:not(:first-child) {
+                margin-top: 2rem;
+            }
+        }
+        
+        @media only screen and (min-width: 993px) {
+            width: 95%;
+
+            &:not(:first-child) {
+                margin-top: 3rem;
+            }
+        }
+
+        .collection-landing-page {
+            display: grid;
+            grid-gap: 10px;
+
+            &:not(:first-child) {
+                margin-top: 2rem;
+            }
+
+            &.two {
+                @media only screen and (min-width: 301px) {
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-rows: 400px;
+                    grid-auto-rows: 400px;     
+                }
+                
+                @media only screen and (min-width: 993px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: 400px;
+                }
+
+                .item {
+                    @extend %item;
+
+                    .image-background {
+                        @extend %image_background;
+                    }
+
+                    .call-to-action {
+                        @extend %call_to_action;
+                    }
+
+                    .image {
+                        img {
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+
+            &.five {
+                @media only screen and (min-width: 301px) {
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-template-rows: 200px;
+                    grid-auto-rows: 100px;
+                }
+                
+                @media only screen and (min-width: 993px) {
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: 200px;
+                    grid-auto-rows: 100px;                
+                }
+                
+                .item {
+                    @extend %item;
+
+                    .image-background {
+                        @extend %image_background;
+                    }
+
+                    .call-to-action {
+                        @extend %call_to_action;
+                    }
+                    
+                    .image {
+
+                        img {
+                            @extend %image;
+                        }
+                    }
+
+                    &.bigger {
+                        grid-row-start: 1;
+                        grid-row-end: 3;
+                    }
+                }
+            }
+        }
+    }
+}

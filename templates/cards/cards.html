@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Cards</title>
+
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/cards.css" />
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav class="blue darken-4">
+                <div class="container">
+                    <ul class="right">
+                        <li><a href="./classic.html">Classic</a></li>
+                        <li><a href="./ecommerce.html">Ecommerce</a></li>
+                        <li><a href="./cards.html">Others</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <main>
+            <section class="section">
+                <div class="container">
+                    <div class="row">
+                        
+    
+        
+                        <!-- ZOOM TEXT -->
+                        <div class="col s12 l4">
+                            <div class="card special zoom">
+                                <div class="card-image">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample7.jpg" alt="image">
+                                </div>
+                        
+                                <div class="card-cover">
+                                    <span>Jupe de luxe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ZOOM TEXT -->
+        
+                        <!-- ZOOM TEXT -->
+                        <div class="col s12 l4">
+                            <div class="card special dim">
+                                <div class="card-image">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ZOOM TEXT -->
+        
+                        <!-- SIMPLE FASHION TYPE CARD -->
+                        <div class="col s12 l4">
+                            <a href="{% url 'products_stock' %}?cat=femme">
+                                <div class="card special centered z-depth-0">
+                                    <div class="card-image">
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample5.jpg" alt="">
+                                    </div>
+                                    <div class="text-overlay emphasize">
+                                        <h4>Homme</h4>
+                                        <p>This is a great card</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- SIMPLE FASHION TYPE CARD -->
+        
+                        <!-- RIPPLE -->
+                        <div class="col s12 l4">
+                            <div class="card-panel special ripple z-depth-1 blue">
+                                <h3>Test</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                    Debitis earum et aliquam accusamus minima possimus inventore 
+                                    vitae eaque optio modi ipsam autem at numquam, adipisci doloribus 
+                                    quae quibusdam quod minus!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- RIPPLE -->                        
+        
+                        <!-- WITH HEADERS -->
+                        <!-- <div class="col s12 l4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Kendall is love
+                                </div>
+                                <div class="card-content">
+                                    Kendall is such a beautiful woman that the world has a
+                                    very hard time handling the wars she create for her fame
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- WITH HEADERS -->
+        
+                        <!-- WITH MORE -->
+                        <!-- <div class="col s12 l4">
+                            <div class="card with-more">
+                                <div class="card-image">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample1.jpg" alt="image">
+                                </div>
+                                <i class="material-icons">more_vert</i>
+                                <div class="more-content">
+                                    We can put some great content in there and
+                                    show it when we hover over the more icon
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- WITH MORE -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <script src="./js/cards.js"></script>
+    </body>
+</html>
