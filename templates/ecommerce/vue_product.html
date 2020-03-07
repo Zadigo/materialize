@@ -25,60 +25,62 @@
         </style>
     </head>
     <body>
-        <!-- Navbar -->
-        <div class="navbar-fixed">
-            <nav class="grey darken-4">
-                <div class="container">
-                    <a href="hero.html" class="brand-logo">Shop</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right" id="ecommerce-mobile">
-                        <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
-                        <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+        <header class="ecommerce-header">
+            <!-- Navbar -->
+            <div class="navbar-fixed">
+                <nav class="white">
+                    <div class="container">
+                        <a href="hero.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Drawers -->
+            <div class="ecommerce-bar-drawer" id="drawer1">
+                <div class="drawer">
+                    <div class="close">x</div>
+                    <div class="title">Collections</div>
+                    <ul>
+                        <li class="highlighted"><a href="#!">Sacs</a></li>
+                        <li class="highlighted"><a href="#!">Promotions</a></li>
+                        <li class="highlighted"><a href="#!">Nouveautés</a></li>
                     </ul>
                 </div>
-            </nav>
-        </div>
-
-        <!-- Drawers -->
-        <div class="ecommerce-bar-drawer" id="drawer1">
-            <div class="drawer">
-                <div class="close">x</div>
-                <div class="title">Collections</div>
-                <ul>
-                    <li class="highlighted"><a href="#!">Sacs</a></li>
-                    <li class="highlighted"><a href="#!">Promotions</a></li>
-                    <li class="highlighted"><a href="#!">Nouveautés</a></li>
-                </ul>
             </div>
-        </div>
 
-        <div class="ecommerce-bar-drawer" id="drawer2">
-            <div class="drawer">
-                <!-- <div class="close"><span>x</span></div>
-                <div>
-                    <form action="./products.html" class="search">
-                        <div class="search-field">
-                            <input type="text" name="search" class="browser-default" id="search" placeholder="Rechercher">
-                            <div class="btn-search">
-                                <a href="#!"><i class="material-icons">search</i></a>
+            <div class="ecommerce-bar-drawer" id="drawer2">
+                <div class="drawer">
+                    <!-- <div class="close"><span>x</span></div>
+                    <div>
+                        <form action="./products.html" class="search">
+                            <div class="search-field">
+                                <input type="text" name="search" class="browser-default" id="search" placeholder="Rechercher">
+                                <div class="btn-search">
+                                    <a href="#!"><i class="material-icons">search</i></a>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div> -->
-                <div class="wrapper">
-                    <div class="close">x</div>
-                    <div class="search">
-                        <form action="./products.html" method="GET">
-                            <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
-                            <button class="btn grey darken-1" id="btn_search">
-                                <i class="material-icons">search</i>
-                            </button>
                         </form>
+                    </div> -->
+                    <div class="wrapper">
+                        <div class="close">x</div>
+                        <div class="search">
+                            <form action="./products.html" method="GET">
+                                <input type="text" name="search" id="search" class="browser-default" placeholder="Rechercher">
+                                <button class="btn grey darken-1" id="btn_search">
+                                    <i class="material-icons">search</i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
+                    
                 </div>
-                
             </div>
-        </div>
+        </header>
 
         <!-- Cart drawer -->
         <div id="cart_drawer">
