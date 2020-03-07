@@ -264,6 +264,25 @@
   opacity: 0;
 }
 
+.card.special .card-cover {
+  position: absolute;
+  top: 0;
+  padding: 25px;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  opacity: .3;
+}
+
+.card.special .card-cover span {
+  position: relative;
+  max-width: 100%;
+  font-size: 24px;
+  font-weigth: 700;
+  color: white;
+  opacity: 1;
+}
+
 .card.ecommerce * {
   -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;

@@ -16,9 +16,9 @@
     </head>
     <body>
         <header class="ecommerce-header">
-            <!-- Nav -->
+            <!-- NAV -->
             <div class="navbar-fixed">
-                <nav class="white darken-4">
+                <nav class="white">
                     <div class="nav-wrapper">
                         <div class="container">
                             <a href="./hero.html" class="brand-logo">Shop</a>
@@ -32,12 +32,24 @@
                 </nav>
             </div>
 
+            <!-- ECOMMERCE BAR -->
+            <div class="ecommerce-bar hide-on-med-and-down">
+                <div class="container">
+                    <ul>
+                        <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                        <li><a href="./shop.html">Collections</a></li>
+                        <li><a href="./products.html">Sacs</a></li>
+                        <li><a href="./products.html">Bracelets</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <!-- SALES INFO BAR -->
-            <div class="sales-info-bar">
+            <div class="sales-info-bar hide-on-med-and-down">
                 <div class="container">
                     <div class="row">
                         <div class="col s12 m4 l4">
-                            <i class="material-icons">payment</i>
+                            <i class="material-icons">local_shipping</i>
                             <p>Livraison gratuite</p>
                         </div>
                         <div class="col s12 m4 l4">
@@ -51,18 +63,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Ecommerce bar -->
-            <!-- <div class="ecommerce-bar">
-                <div class="container">
-                    <ul>
-                        <li class="best-offers"><a href="./products.html">Promotions</a></li>
-                        <li><a href="./shop.html">Collectios</a></li>
-                        <li><a href="./products.html">Sacs</a></li>
-                        <li><a href="./products.html">Bracelets</a></li>
-                    </ul>
-                </div>
-            </div> -->
 
             <!-- Mobile -->
             <!-- <div class="ecommerce-bar for-filters">
@@ -106,7 +106,7 @@
 
         <main>
             <!-- HERO -->
-            <div class="hero blue darken-1 responsivity" style="background-image: url('../images/image19.jpg');">
+            <div class="hero blue darken-1" style="background-image: url('./assets/image5.jpg');">
                 <div class="hero-wrapper">
                     <div class="call-to-action">
                         <div class="lead">Beauté et mode tierces</div>
@@ -120,25 +120,23 @@
             <section class="section ecommerce-benefits">
                 <div class="presentation-grid">
                     <div class="presentation">
-                        <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                        <div class="image-background" style="background-image: url('./assets/image6.jpg');"></div>
                         <div class="call-to-action">
                             <div class="text">Nouveautés</div>
                             <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
                         </div>
                     </div>
                     <div class="presentation">
-                        <div class="image-background" style="background-image: url('../images/image13.jpg');"></div>
+                        <div class="image-background" style="background-image: url('./assets/image7.jpg');"></div>
                         <div class="call-to-action">
                             <div class="text">Promotions</div>
                             <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="banner">
                     <div class="wrapper">
-                        <!-- <div class="image-background" style="background-image: url('./assets/Banners3.jpg');"></div> -->
                         <img src="./assets/Banners3.jpg" alt="banner1">
                     </div>
                 </div>
@@ -222,7 +220,25 @@
         </main>
 
         <!-- FOOTER -->
-        <footer class="page-footer grey darken-4">
+        <footer class="page-footer with-payment-section grey darken-4">
+
+            <div class="payment-type-section">
+                <div class="social-media">
+                    <a href="http://">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="http://">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                <div class="horizontal-separator"></div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+                <!-- <p><i class="material-icons">lock</i>Paiement sécurisés</p> -->
+            </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col s12 m4 l4">

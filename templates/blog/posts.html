@@ -10,6 +10,18 @@
         <link rel="stylesheet" href="../css//fonts.css">
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="./css/blog.css" />
+
+        <style>
+            .card_items-enter-active {
+                transition: all .8s ease-out;
+            }
+            .card_items-enter {
+                opacity: 0;
+            }
+            .card_items-enter-to {
+                opacity: 1;
+            }
+        </style>
     </head>
 
     <body>
@@ -18,14 +30,15 @@
         </div>
 
         <main>
-            <div class="blog">
+            <div class="blog" id="app">
                 <div class="blog-header">
                     <div class="blog-container">
                         <!-- <h2>Material Style Blog</h2> -->
                         <div class="main-title">Material Style Blog</div>
-    
+                        
+                        <cards v-bind:posts="posts" />
                         <!-- Single post -->
-                        <div class="content">
+                        <!-- <div class="content">
                             <div class="content-title">
                                 <a href="./post.html"><h5>Just a blog post</h5></a>
                             </div>
@@ -44,7 +57,6 @@
                                 ornare sit amet fermentum et, tincidunt et orci.
                             </div>
                             
-                            <!-- Social -->
                             <div class="content-social">
                                 <a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a>
                                 <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
@@ -76,12 +88,14 @@
                                 <a href="http://twitter.com" class="link_share_twitter"><i class="fab fa-twitter"></i></a>
                                 <a href="http://snapchat.com" class="link_share_snapchat"><i class="fab fa-snapchat"></i></a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </main>
 
+        <!-- VUE JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./js/blog.js"></script>

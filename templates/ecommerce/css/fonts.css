@@ -1,25 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 html {
+  font-family: "Oswald", sans-serif;
+  color: #2b2b2b;
+}
+
+html p, html a, html li, html span, html input {
   font-family: "Lato", sans-serif;
-}
-
-html p, html a, html li, html span, html input,
-html .content-text, html .content-tags .chip,
-html .hover-cover {
-  font-family: "Lato", sans-serif;
-}
-
-html .product .banner {
-  font-family: "Oswald", sans-serif;
-}
-
-html .details .price {
-  font-family: "Oswald", sans-serif;
-}
-
-html .infos .price {
-  font-family: "Oswald", sans-serif;
 }
 /*# sourceMappingURL=fonts.css.map */

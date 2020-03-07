@@ -14,7 +14,7 @@ pre {
   border: 1px solid #888;
 }
 
-.ecommerce-bar ul, .ecommerce-bar.for-mobile ul {
+.ecommerce-header .ecommerce-bar ul, .ecommerce-header .ecommerce-bar.for-mobile ul {
   overflow: hidden;
   margin: 0;
 }
@@ -22,6 +22,10 @@ pre {
 nav .brand-logo {
   text-transform: uppercase;
   font-size: 20px;
+}
+
+nav.white * {
+  color: black;
 }
 
 .ecommerce-header .sales-info-bar {
@@ -60,7 +64,7 @@ nav .brand-logo {
   line-height: 1.75;
 }
 
-.ecommerce-bar {
+.ecommerce-header .ecommerce-bar {
   background-color: #484848;
   z-index: -999;
   min-height: 46px;
@@ -68,58 +72,58 @@ nav .brand-logo {
   font-size: 14px;
 }
 
-.ecommerce-bar.transparent-on-scroll {
+.ecommerce-header .ecommerce-bar.transparent-on-scroll {
   position: fixed;
   z-index: 99;
   width: 100%;
 }
 
-.ecommerce-bar ul li {
+.ecommerce-header .ecommerce-bar ul li {
   float: left;
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
 }
 
-.ecommerce-bar ul li:hover {
+.ecommerce-header .ecommerce-bar ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.ecommerce-bar ul li.best-offers {
+.ecommerce-header .ecommerce-bar ul li.best-offers {
   background-color: #E53935;
 }
 
-.ecommerce-bar ul li.best-offers:hover {
+.ecommerce-header .ecommerce-bar ul li.best-offers:hover {
   background-color: rgba(229, 57, 53, 0.5);
 }
 
-.ecommerce-bar ul li a {
+.ecommerce-header .ecommerce-bar ul li a {
   display: block;
   color: white;
   padding: 18px;
 }
 
-.ecommerce-bar.for-mobile ul li {
+.ecommerce-header .ecommerce-bar.for-mobile ul li {
   float: right;
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
 }
 
-.ecommerce-bar.for-mobile ul li a {
+.ecommerce-header .ecommerce-bar.for-mobile ul li a {
   display: block;
   color: white;
   padding: 10px;
 }
 
-.ecommerce-bar.for-mobile ul li i.material-icons {
+.ecommerce-header .ecommerce-bar.for-mobile ul li i.material-icons {
   line-height: 1;
 }
 
-.ecommerce-bar.for-filters {
+.ecommerce-header .ecommerce-bar.for-filters {
   color: white;
   text-transform: uppercase;
 }
 
-.ecommerce-bar.for-filters .container {
+.ecommerce-header .ecommerce-bar.for-filters .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,7 +136,7 @@ nav .brand-logo {
   text-align: center;
 }
 
-.ecommerce-bar.for-filters .container .filter {
+.ecommerce-header .ecommerce-bar.for-filters .container .filter {
   position: relative;
   padding: .25rem;
   height: 46px;
@@ -141,7 +145,7 @@ nav .brand-logo {
   line-height: 38px;
 }
 
-.ecommerce-bar.for-filters .container .filter i {
+.ecommerce-header .ecommerce-bar.for-filters .container .filter i {
   position: absolute;
   color: inherit;
   line-height: inherit;

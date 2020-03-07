@@ -136,11 +136,12 @@
                 </div>
                 
                 <!-- Prouct quantity -->
-                <p class="product-count center">2 351 produits trouvées</p>
+                <div>
+                    <quantitycount v-bind:products="listproducts" />
+                </div>
 
                 <!-- Products -->
                 <cards v-bind:products="listproducts" />
-                </div>
             </div>
         </main>
 

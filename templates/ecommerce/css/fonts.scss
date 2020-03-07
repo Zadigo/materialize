@@ -1,35 +1,72 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
 
 
 $headers_font: "Oswald", sans-serif;
 $content_font: "Lato", sans-serif;
 
+%highlight_oswald {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+%highlight_oswald_button {
+    @extend %highlight_oswald;
+    font-size: 15px;
+}
+
+%highlight_oswald_select {
+    @extend %highlight_oswald;
+    font-size: 18px;
+}
+
+%box_margin {
+    margin: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+}
+
+@mixin section_title($size) {
+    @extend %highlight_oswald;
+    text-align: center;
+    margin: 2.75rem 0 2.75rem 0;
+    text-transform: uppercase;
+    font-size: $size;
+}
+
+%links {
+    color: inherit;
+}
+
 html {
-    font: {
-        family: $content_font;
+    font-family: $headers_font;
+    color: #2b2b2b;
+
+    p, a, li, span, input {
+        font-family: $content_font;
     }
 
-    p, a, li, span, input,
-    .content-text, .content-tags .chip,
-    .hover-cover {
-        font: {
-            family: $content_font
-        }
-    }
+    // p, a, li, span, input,
+    // .content-text, .content-tags .chip,
+    // .hover-cover {
+    //     font: {
+    //         family: $content_font
+    //     }
+    // }
 
-    .product .banner {
-        font-family: $headers_font;
-    }
+    // .product .banner {
+    //     font-family: $headers_font;
+    // }
 
-    .details {
-        .price {
-            font-family: $headers_font;
-        }
-    }
+    // .details {
+    //     .price {
+    //         font-family: $headers_font;
+    //     }
+    // }
 
-    .infos .price {
-        font-family: $headers_font;
-    }
+    // .infos .price {
+    //     font-family: $headers_font;
+    // }
 }

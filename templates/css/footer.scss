@@ -43,6 +43,51 @@ $box_padding: 2rem;
         }
     }
 
+    &.with-payment-section {
+        padding: {
+            top: 0;
+        }
+
+        .social-media {
+            a {
+                @extend %links;
+            }
+        }
+
+        .payment-type-section {
+            width: 100%;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-top: 1px solid #eee;
+
+            div {
+                &:not(:last-child) {
+                    padding-right: 2rem;
+                }
+
+                &.horizontal-separator {
+                    border-right: 1px solid black;
+                }
+            }
+    
+            i {
+                margin-left: 1rem;
+                font: {
+                    size: 26px;
+                }
+            }
+    
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+
     .footer-copyright {
         margin-top: 40px;
         

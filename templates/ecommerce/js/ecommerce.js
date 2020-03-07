@@ -1,3 +1,15 @@
+var quantitycount = {
+    props: ["products"],
+    template: "\
+    <p class='product-count center'>{{ countproducts }} produits trouvées</p>\
+    ",
+    computed: {
+        countproducts() {
+            return this.$props.products.length
+        }
+    }
+}
+
 var filterbar = {
     template: "\
         <div class='wrapper'>\
@@ -25,27 +37,27 @@ var cards = {
     props: ["products"],
     template:"\
         <div class='grid' id='products'>\
-                <div v-for='product in products' :key='product.id' class='product'>\
-                    <a href='product.html'>\
-                        <div class='image'>\
-                            <img src='../images/image3.jpg' alt='image3'>\
-                            <div v-show='product.exclusive' class='banner'>Exclusive</div>\
+            <div v-for='product in products' :key='product.id' class='product'>\
+                <a href='product.html'>\
+                    <div class='image'>\
+                        <img src='../images/image3.jpg' alt='image3'>\
+                        <div v-show='product.exclusive' class='banner'>Exclusive</div>\
+                    </div>\
+                    <div class='details'>\
+                        <div class='title'>{{ product.name }}</div>\
+                        <div class='price-details'>\
+                            <div class='price'>{{ product.price }}€</div>\
                         </div>\
-                        <div class='details'>\
-                            <div class='title'>{{ product.name }}</div>\
-                            <div class='price-details'>\
-                                <div class='price'>{{ product.price }}€</div>\
-                            </div>\
-                        </div>\
-                    </a>\
-                </div>\
+                    </div>\
+                </a>\
+            </div>\
         </div>\
     "
 }
 
 var app = new Vue({
     el: "#app",
-    components: {cards, filterbar},
+    components: {cards, filterbar, quantitycount},
     data() {
         return {
             products: [
@@ -67,18 +79,20 @@ var app = new Vue({
         },
         oderprices() {
             var self = this
+            var copiedproducts = [...self.$data.products]
+
             if (self.$data.productfilters.priceorder === "initial") {
                 return self.$data.products
             }
             
             if (self.$data.productfilters.priceorder === "croissant") {
-                return self.$data.products.sort((a, b) => {
+                return copiedproducts.sort((a, b) => {
                     return a.price - b.price
                 })
             }
 
             if (self.$data.productfilters.priceorder === "decroissant") {
-                return self.$data.products.sort((a, b) => {
+                return copiedproducts.sort((a, b) => {
                     return b.price - a.price
                 })
             }

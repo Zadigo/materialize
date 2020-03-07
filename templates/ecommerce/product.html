@@ -13,19 +13,53 @@
         <link rel="stylesheet" href="../css/footer.css">
     </head>
     <body>
-        <!-- Navbar -->
-        <div class="navbar-fixed">
-            <nav class="white">
+        <header class="ecommerce-header">
+            <!-- NAVBAR -->
+            <div class="navbar-fixed">
+                <nav class="white">
+                    <div class="container">
+                        <a href="hero.html" class="brand-logo">Shop</a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right" id="ecommerce-mobile">
+                            <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
+                            <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- ECOMMERCE BAR -->
+            <div class="ecommerce-bar hide-on-med-and-down">
                 <div class="container">
-                    <a href="hero.html" class="brand-logo">Shop</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right" id="ecommerce-mobile">
-                        <li id="#drawer2"><a><i class="material-icons">search</i></a></li>
-                        <li><a href="./cart.html"><i class="material-icons">shopping_cart</i></a></li>
+                    <ul>
+                        <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                        <li><a href="./shop.html">Collections</a></li>
+                        <li><a href="./products.html">Sacs</a></li>
+                        <li><a href="./products.html">Bracelets</a></li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+
+            <!-- SALES INFO BAR -->
+            <div class="sales-info-bar hide-on-med-and-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">local_shipping</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
         <!-- Drawers -->
         <div class="ecommerce-bar-drawer" id="drawer1">
@@ -99,17 +133,6 @@
             </div>
         </div> -->
 
-        <!-- Ecommerce bar -->
-        <div class="ecommerce-bar">
-            <div class="container">
-                <ul>
-                    <li class="best-offers"><a href="./products.html">Promotions</a></li>
-                    <li><a href="./products.html">Sacs</a></li>
-                    <li><a href="./products.html">Bracelets</a></li>
-                </ul>
-            </div>
-        </div>
-
         <main>
             <div class="enhanced-ecommerce" data-for="modal1" style="position: absolute;cursor: pointer;">
                 <i class="material-icons">information</i>
@@ -137,8 +160,6 @@
 
                         <div class="image">
                             <img src="../../assets/images/image4.jpg" alt="image4">
-                            <!-- <img src="https://ae01.alicdn.com/kf/H663be83368b54dd49e23228668b21fd7G/ACELURE-New-Casual-Plaid-Shoulder-Bag-Fashion-Stitching-Wild-Messenger-Brand-Female-Totes-Crossbody-Bags-Women.jpg_640x640.jpg" alt="image4"> -->
-                            <!-- <img src="https://www.sudexpress.com/media/catalog/product/cache/1/image/575x805/9df78eab33525d08d6e5fb8d27136e95/h/1/h19_19435_gris-6.jpg" alt="image4"> -->
                         </div>
                     </div>
 
@@ -150,6 +171,28 @@
                             <div class="price">54.95€</div>
                             <div class="discounted-price">54€</div>
                         </div>
+                        <!-- <div class="delivery-and-return">
+                            <a  class="modal-trigger" href="#modal1">Retours et livraisons gratuit**</a>
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h4>Livraison</h4>
+                                    <table>
+                                        <thead>
+                                            <th>Type</th>
+                                            <th>Quand ?</th>
+                                            <th>Combien ?</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><b>Standard</b></td>
+                                                <td>Livraison prévue avant ou pour le {{ |date:"d F Y" }}</td>
+                                                <td>Gratuit</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                              </div>
+                        </div> -->
                         <p>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                             Dignissimos labore vero sed, beatae, perferendis fuga 

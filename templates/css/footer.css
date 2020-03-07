@@ -1,4 +1,4 @@
-.minimalist-footer .links a, .enhanced-minimalist-footer .with-social a, .enhanced-minimalist-footer .links a {
+.page-footer.with-payment-section .social-media a, .minimalist-footer .links a, .enhanced-minimalist-footer .with-social a, .enhanced-minimalist-footer .links a {
   color: inherit;
 }
 
@@ -35,6 +35,42 @@
 .page-footer #contact p i {
   font-size: 20px;
   margin-right: 15px;
+}
+
+.page-footer.with-payment-section {
+  padding-top: 0;
+}
+
+.page-footer.with-payment-section .payment-type-section {
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.page-footer.with-payment-section .payment-type-section div:not(:last-child) {
+  padding-right: 2rem;
+}
+
+.page-footer.with-payment-section .payment-type-section div.horizontal-separator {
+  border-right: 1px solid black;
+}
+
+.page-footer.with-payment-section .payment-type-section i {
+  margin-left: 1rem;
+  font-size: 26px;
+}
+
+.page-footer.with-payment-section .payment-type-section p {
+  margin: 0;
 }
 
 .page-footer .footer-copyright {
