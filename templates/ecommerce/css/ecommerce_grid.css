@@ -140,7 +140,7 @@ pre {
 
 .ecommerce .grid#products .product .image .banner, .section.latest-products .grid#products .product .image .banner {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   padding: 1rem;
   text-transform: uppercase;
   text-align: center;
