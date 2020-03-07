@@ -46,6 +46,17 @@ var databaseproducts = [
     },
 ]
 
+var productquantity = {
+    props: ["products"],
+    template: "<span v-text='quantity'></span>",
+    computed: {
+        quantity() {
+            var n = this.$props.products.length
+            return n + " produits trouvées"
+        }
+    }
+}
+
 var filterbar = {
     template: "\
         <div class='wrapper'>\
@@ -112,7 +123,7 @@ var cards = {
 
 var app = new Vue({
     el: "#app",
-    components: {cards, filterbar},
+    components: {filterbar, cards, productquantity},
     data() {
         return {
             products: databaseproducts,
