@@ -24,6 +24,9 @@ var scoreproposition = {
             this.$data.scored = true
         },
         activestars: function(n) {
+            // Shows the selected star and
+            // all stars before it in a
+            // specified color
             if (n <= this.$data.selected) {
                 return "blue-text"
             }
@@ -35,7 +38,7 @@ var actionbuttons = {
     template: "\
     <div class='card-panel center'>\
         <button v-if='!accepted' @click='accepted=true' :disabled='refused' class='btn indigo lighten-1 waves-effect waves-light'><i class='material-icons left'>check</i>Accept</button>\
-        <button v-else v-show='!hasmeeting' class='btn indigo lighten-1 waves-effect waves-light'><i class='material-icons left'>calendar_today</i>Prendre rendez-vous</button>\
+        <button v-else v-show='!hasmeeting' @click='openmodal' class='btn indigo lighten-1 waves-effect waves-light'><i class='material-icons left'>calendar_today</i>Prendre rendez-vous</button>\
         \
         <button v-show='hasmeeting' class='btn indigo lighten-1 waves-effect waves-light'><i class='material-icons left'>calendar_today</i>Bilan rendez-vous</button>\
         \
@@ -52,12 +55,20 @@ var actionbuttons = {
         }
     },
     mounted() {
-        // this.$data.accepted = true
-        // this.$data.hasmeeting = true
+        
+    },
+    methods: {
+        openmodal: function() {
+            var elem = $(".meeting")
+            var instance = M.Modal.getInstance(elem)
+            instance.open()
+        }
     }
 }
 
-var dashboardetails = new Vue({
-    el: "#vue_details",
+var profiletemplate = new Vue({
+    // Root component for the profile
+    // section of the dashboard
+    el: "#vue_profile",
     components: {actionbuttons, scoreproposition}
 })

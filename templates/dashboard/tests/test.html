@@ -3,19 +3,92 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test Design</title>
+        <title>Tests</title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="./test.css">
+        <link rel="stylesheet" href="test.css">
     </head>
     <body>
+        <!-- SIDEBAR -->
+        <div class="side">
+            <div class="bar with-borders">
+                <ul>
+                    <li class="header"><p>Dashboard</p></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../base.html">Base</a></li>
+                    <li><a href="../products2.html">Products</a></li>
+                    <li><a href="../products3.html">Products - Cards</a></li>
+                    <li><a href="../details2.html">Profile</a></li>
+                    <li><a href="../create.html">Create</a></li>
+                </ul>
+                <!-- <div class="bar-footer">
+                    Test
+                </div> -->
+            </div>
+        </div>
+
         <main>
-            <div class="dashboard">
+            <div class="dashboard" id="vue_dashboard">
                 <div class="wrapper">
-                    
+                    <!-- TOPNAV -->
+                    <div class="topnav">
+                        <div class="nav">
+                            <div class="trigger-for-sidebar"><i class="material-icons">menu</i></li></div>
+                            <ul>
+                                <li><a href="../account.html"><i class="material-icons">person</i></li></a></li>
+                                <li><a href="../settings.html"><i class="material-icons">settings</i></li></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                        
+                    <!-- MAIN -->
+                    <div class="main">
+                        <!-- ACTIONBAR -->
+                        <div class="row">
+                            <div class="col s12 m12 l12 correct-padding">
+                                <div class="btn-group right">
+                                    <a href="./create.html" class="btn-large waves-effect waves-light">Add</a>
+                                    <deletebutton @deleteitems='applydelete' v-bind:selectedproducts="selectedproducts" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONTENT -->
+                        <div class="card-panel special">
+                            <div class="header">Products</div>
+                            <div class="content">
+                                <vuetable @selectitem="doselect" @selectall="getall" @deletesingleitem="applydeletesingle" v-bind:products="products" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
+
+            <!-- JQuery -->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+            <!-- Vue JS -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+            <!-- Materialize scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    // Sidenav
+                    $('.sidenav').sidenav();
+                    // Scrollspy
+                    $('.scrollspy').scrollSpy();
+                    // Select
+                    $('select').formSelect();
+                    // Modals
+                    $('.modal').modal();
+                });
+            </script>
+    
+            <script src="../js/dashboard.js"></script>
+            <script src="./test.js"></script>
     </body>
 </html>
