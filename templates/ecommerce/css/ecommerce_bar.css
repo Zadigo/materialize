@@ -26,11 +26,6 @@ pre {
   margin: 0;
 }
 
-nav .brand-logo {
-  text-transform: uppercase;
-  font-size: 20px;
-}
-
 .ecommerce-header .sales-info-bar {
   background-color: #b0bcc2;
   color: white;
