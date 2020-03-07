@@ -1,3 +1,6 @@
+/*
+ * CSS file for styling all the banners
+ */
 pre {
   display: block;
   padding: 9.5px;
@@ -12,6 +15,10 @@ pre {
   border-radius: 4px;
   padding: 2px;
   border: 1px solid #888;
+}
+
+.promotion-banner a {
+  color: inherit;
 }
 
 .ecommerce-bar ul, .ecommerce-bar.for-mobile ul {
@@ -262,5 +269,37 @@ nav .brand-logo {
   padding: 0;
   font-weight: 500;
   padding: 0 0 1rem 0;
+}
+
+.promotion-banner {
+  position: relative;
+  top: 0;
+  height: auto;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 2rem;
+  background-color: #E53935;
+}
+
+.promotion-banner.smaller {
+  padding: .75rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.promotion-banner a .big-title {
+  margin-bottom: .35rem;
+}
+
+.promotion-banner a .presentation {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.promotion-banner a .legal {
+  font-size: .75rem;
+  padding: .25rem;
+  font-weight: 400;
 }
 /*# sourceMappingURL=ecommerce_bar.css.map */

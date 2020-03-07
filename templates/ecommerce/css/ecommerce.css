@@ -1,0 +1,14 @@
+/*
+ * This is the general CSS file for the overall
+ * implementation of certain styles related to
+ * fonts, navigation... or simply just for tweaking
+ * certain elements of Materialize
+ */
+nav.white * {
+  color: black;
+}
+
+.page-footer, .minimalist-footer {
+  margin-top: 4rem;
+}
+/*# sourceMappingURL=ecommerce.css.map */

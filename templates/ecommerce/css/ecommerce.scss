@@ -1,0 +1,16 @@
+/*
+ * This is the general CSS file for the overall
+ * implementation of certain styles related to
+ * fonts, navigation... or simply just for tweaking
+ * certain elements of Materialize
+ */
+
+nav.white {
+    * {
+        color: rgba($color: #000000, $alpha: 1.0);
+    }
+}
+
+.page-footer, .minimalist-footer {
+    margin-top: 4rem;
+}

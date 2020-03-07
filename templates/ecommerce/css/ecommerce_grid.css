@@ -1,3 +1,7 @@
+/*
+ * Styling of the specific ecommerce components:
+ * products and product page, cart
+ */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
@@ -45,7 +49,12 @@ pre {
   width: 90%;
 }
 
-.ecommerce .grid#products .product a, .section.latest-products .grid#products .product a, .ecommerce .grid#product .more a, .section.latest-products .grid#product .more a, .promotion-banner a {
+.ecommerce .grid#products .product .image img, .section.latest-products .grid#products .product .image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-link, .ecommerce .grid#products .product a, .section.latest-products .grid#products .product a, .ecommerce .grid#product .more a, .section.latest-products .grid#product .more a {
   color: inherit;
 }
 
@@ -70,11 +79,12 @@ pre {
   background-color: white;
 }
 
-.card-link {
-  color: inherit;
+.ecommerce .grid#products .product .image img, .section.latest-products .grid#products .product .image img {
+  width: 100%;
+  height: auto;
 }
 
-.ecommerce .grid#products .product a, .section.latest-products .grid#products .product a, .ecommerce .grid#product .more a, .section.latest-products .grid#product .more a, .promotion-banner a {
+.card-link, .ecommerce .grid#products .product a, .section.latest-products .grid#products .product a, .ecommerce .grid#product .more a, .section.latest-products .grid#product .more a {
   color: inherit;
 }
 
@@ -112,8 +122,6 @@ pre {
 }
 
 .ecommerce .grid#products .product .image img, .section.latest-products .grid#products .product .image img {
-  width: 100%;
-  height: auto;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
@@ -183,10 +191,6 @@ pre {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
-}
-
-nav.white * {
-  color: black;
 }
 
 .ecommerce p.section-title, .section.latest-products p.section-title {
@@ -570,42 +574,6 @@ nav.white * {
         grid-template-columns: repeat(4, minmax(200px, 1fr));
     grid-gap: 15px;
   }
-}
-
-.promotion-banner {
-  position: relative;
-  top: 0;
-  height: auto;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  padding: 2rem;
-  background-color: #E53935;
-}
-
-.promotion-banner.smaller {
-  padding: .75rem;
-  font-size: 1rem;
-  color: white;
-}
-
-.promotion-banner a .big-title {
-  margin-bottom: .35rem;
-}
-
-.promotion-banner a .presentation {
-  font-style: italic;
-  text-transform: uppercase;
-}
-
-.promotion-banner a .legal {
-  font-size: .75rem;
-  padding: .25rem;
-  font-weight: 400;
-}
-
-.page-footer, .minimalist-footer {
-  margin-top: 4rem;
 }
 
 .section#cart .cart_product {

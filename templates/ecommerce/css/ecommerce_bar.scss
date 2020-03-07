@@ -1,3 +1,7 @@
+/*
+ * CSS file for styling all the banners
+ */
+
 @import "../css/variables.scss";
 
 %ul_for_bar {
@@ -256,3 +260,40 @@ nav .brand-logo {
         }
     }        
 }        
+
+// Promotion banner
+.promotion-banner {
+    position: relative;
+    top: 0;
+    height: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 2rem;
+    background-color: $highlight_color;
+
+    &.smaller {
+        padding: .75rem;
+        font-size: 1rem;
+        color: white;
+    }
+    
+    a {
+        @extend %links;
+        
+        .big-title {
+            margin-bottom: .35rem;
+        }
+        
+        .presentation {
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .legal {
+            font-size: .75rem;
+            padding: .25rem;
+            font-weight: 400;
+        }
+    }
+}
