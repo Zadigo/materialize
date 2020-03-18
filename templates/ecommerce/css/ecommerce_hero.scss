@@ -63,6 +63,33 @@
     }
 }
 
+div.hero, section.hero {
+    height: min-content;
+
+    // @media only screen and (min-width: 301px) {
+    //     & {
+    //         height: 40vh;
+    //     }
+    // }
+    
+    // @media only screen and (min-width: 768px) {
+    //     & {
+    //         height: 45vh;
+    //     }
+    // }
+    
+    // @media only screen and (min-width: 993px) {
+    //     & {
+    //         height: 65vh;
+    //     }
+    // }
+
+    img {
+        width: 100%;
+    }
+}
+
+
 div.ecommerce-benefits, section.ecommerce-benefits  {
     .presentation-grid {
         display: grid;
@@ -90,7 +117,18 @@ div.ecommerce-benefits, section.ecommerce-benefits  {
     
         .wrapper {
             width: 100%;
-            height: auto;
+
+            @media only screen and (min-width: 301px) {
+                height: 120px;
+            }
+
+            @media only screen and (min-width: 993px) {
+                height: 440px;
+            }
+                
+            img {
+                width: 100%;
+            }
         }
     }
 }

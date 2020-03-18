@@ -170,6 +170,20 @@
         padding-top: 1rem;
     }
 
+    .filters-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+        select {
+            width: 100px;
+        }
+
+        select:not(:first-child) {
+            margin-left: 3rem;
+        }
+    }
+
     .grid#product {
         display: grid;
         grid-column-gap: 10px;

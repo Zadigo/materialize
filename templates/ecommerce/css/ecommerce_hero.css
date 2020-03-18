@@ -70,6 +70,16 @@ div.ecommerce-benefits .presentation-grid .presentation .position-center.call-to
   top: calc(100% - 70%);
 }
 
+div.hero, section.hero {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+div.hero img, section.hero img {
+  width: 100%;
+}
+
 div.ecommerce-benefits .presentation-grid, section.ecommerce-benefits .presentation-grid {
   display: -ms-grid;
   display: grid;
@@ -87,6 +97,21 @@ div.ecommerce-benefits .banner, section.ecommerce-benefits .banner {
 
 div.ecommerce-benefits .banner .wrapper, section.ecommerce-benefits .banner .wrapper {
   width: 100%;
-  height: auto;
+}
+
+@media only screen and (min-width: 301px) {
+  div.ecommerce-benefits .banner .wrapper, section.ecommerce-benefits .banner .wrapper {
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  div.ecommerce-benefits .banner .wrapper, section.ecommerce-benefits .banner .wrapper {
+    height: 440px;
+  }
+}
+
+div.ecommerce-benefits .banner .wrapper img, section.ecommerce-benefits .banner .wrapper img {
+  width: 100%;
 }
 /*# sourceMappingURL=ecommerce_hero.css.map */

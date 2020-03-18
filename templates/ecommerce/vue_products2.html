@@ -57,7 +57,7 @@
             </div>
 
             <!-- Ecommerce bar -->
-            <div class="ecommerce-bar">
+            <div class="ecommerce-bar hide-on-med-and-down">
                 <div class="container">
                     <ul>
                         <li class="best-offers"><a href="./products.html">Promotions</a></li>
@@ -127,7 +127,7 @@
                 </a>
             </div>
 
-            <!-- SALES INFO BAR -->
+            <!-- POLICY BANNER -->
             <div class="sales-info-bar hide-on-med-and-down">
                 <div class="container">
                     <div class="row">
@@ -151,14 +151,20 @@
         <!-- Main -->
         <main>
             <div class="ecommerce" id="app">
-                <div class='ecommerce filterbar'>
-                    <filterbar @filterprice="applyfilter" />
+                <div class="row hide-on-med-and-down">
+                    <div class="col s4 m6 l6">
+                        <filterbar @filterprice="applyfilter" @filtercolors="applyfilter" />
+                    </div>
                 </div>
                 
                 <!-- Product quantity -->
-                <p class="product-count center">
-                    <productquantity v-bind:products="listproducts" />
-                </p>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <p class="product-count center">
+                            <productquantity v-bind:products="listproducts" />
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Products -->
                 <cards v-bind:products="listproducts" />

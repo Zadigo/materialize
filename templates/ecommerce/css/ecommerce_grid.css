@@ -214,6 +214,27 @@ pre {
   }
 }
 
+.ecommerce .filters-wrapper, .section.latest-products .filters-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.ecommerce .filters-wrapper select, .section.latest-products .filters-wrapper select {
+  width: 100px;
+}
+
+.ecommerce .filters-wrapper select:not(:first-child), .section.latest-products .filters-wrapper select:not(:first-child) {
+  margin-left: 3rem;
+}
+
 .ecommerce .grid#product, .section.latest-products .grid#product {
   display: -ms-grid;
   display: grid;
