@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VueJS</title>
+
+        <!-- <link rel="stylesheet" href="../css/mat.css"> -->
+        <link rel="stylesheet" href="./test.css">
+
+        <script>
+            window.dataLayer = window.dataLayer || []
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h4>Testing</h4>
+
+            <div id="app">
+                <div class="filters">
+                    <div>
+                        <searchcomponent v-bind:items="items" @runsearch="dosearch" />
+                    </div>
+                    <div>
+                        <sortcomponent @runsort="dosort" />
+                    </div>
+
+                    <div>
+                        <checkboxcomponent v-bind:items="items" />
+                    </div>
+                    <div>
+                        <rangecomponent v-bind:items="items" />
+                    </div>
+                    <div>
+                        <searchcheckboxcomponent v-bind:items="items" />
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <cards v-bind:items="searcheditems" />
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!-- LODASH -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+    <!-- VUEJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="./sorting.js"></script>
+</html>

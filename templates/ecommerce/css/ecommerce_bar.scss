@@ -28,10 +28,6 @@
     }
 }
 
-%drawer_collection_link {
-
-}
-
 .ecommerce-header {
     .sales-info-bar {
         background-color: rgba($color: #b0bcc2, $alpha: 1.0);
@@ -288,6 +284,70 @@
             font-size: .75rem;
             padding: .25rem;
             font-weight: 400;
+        }
+    }
+}
+
+
+
+
+// Recomposition
+%simple_banner {
+    position: relative;
+    top: 0;
+    height: 50px;
+}
+
+%banner {
+    @extend %simple_banner;
+    height: auto;
+    text-align: center;
+    font: {
+        size: 32px;
+        weight: 700;
+    }
+    padding: 2rem;
+    background: {
+        color: $highlight_color;
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+}
+
+.top-banner {
+    @extend %banner;
+
+    &.border-top {
+        border-top: 1px solid white;
+    }
+
+    &.special-offer {
+        padding: 0;
+
+        &.boxed-text {            
+            .wrapper {
+                display: flex;
+                margin: 0 auto;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: .7rem;
+                    background: white;
+                    color: black;
+                    margin-top: .5rem;
+                    width: max-content;
+                    text-transform: uppercase;
+                    font: {
+                        size: 25px;
+                        weight: 700;
+                    }
+                }
+            }
         }
     }
 }

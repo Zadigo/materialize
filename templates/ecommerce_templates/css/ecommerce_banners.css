@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
+.ecommerce-header .top-banner.promotional a {
+  color: white;
+  cursor: pointer;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+.ecommerce-header .top-banner {
+  position: relative;
+  top: 0;
+  height: 50px;
+  color: white;
+  background-color: #42a5f5;
+}
+
+.ecommerce-bar ul, .ecommerce-bar.for-mobile ul {
+  overflow: hidden;
+  margin: 0;
+}
+
+.ecommerce-header .top-banner.sales-policies p {
+  font-weight: 600;
+}
+
+.ecommerce-header .top-banner.sales-policies .container {
+  max-height: 100%;
+}
+
+.ecommerce-header .top-banner.sales-policies .container .row {
+  margin-bottom: 0;
+}
+
+.ecommerce-header .top-banner.sales-policies .container .row .col {
+  max-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ecommerce-header .top-banner.sales-policies .container .row .col i {
+  font-size: 2rem;
+  margin-right: .5rem;
+  vertical-align: middle;
+  line-height: 1.75;
+}
+
+.ecommerce-header .top-banner.promotional {
+  position: relative;
+  top: 0;
+  height: auto;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 2rem;
+  background-color: #00897b;
+}
+
+.ecommerce-header .top-banner.promotional.smaller {
+  padding: .75rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.ecommerce-header .top-banner.promotional a .big-title {
+  margin-bottom: .35rem;
+}
+
+.ecommerce-header .top-banner.promotional a .presentation {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.ecommerce-header .top-banner.promotional a .legal {
+  font-size: .75rem;
+  padding: .25rem;
+  font-weight: 400;
+}
+
+.ecommerce-bar {
+  background-color: #484848;
+  z-index: -999;
+  min-height: 46px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.ecommerce-bar.transparent-on-scroll {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
+.ecommerce-bar ul li {
+  float: left;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.ecommerce-bar ul li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ecommerce-bar ul li.best-offers {
+  background-color: #c62828;
+}
+
+.ecommerce-bar ul li.best-offers:hover {
+  background-color: rgba(198, 40, 40, 0.5);
+}
+
+.ecommerce-bar ul li a {
+  display: block;
+  color: white;
+  padding: 18px;
+}
+
+.ecommerce-bar.for-mobile ul li {
+  float: right;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.ecommerce-bar.for-mobile ul li a {
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.ecommerce-bar.for-mobile ul li i.material-icons {
+  line-height: 1;
+}
+
+.ecommerce-bar.for-filters {
+  color: white;
+  text-transform: uppercase;
+}
+
+.ecommerce-bar.for-filters .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+.ecommerce-bar.for-filters .container .filter {
+  position: relative;
+  padding: .25rem;
+  height: 46px;
+  width: 100px;
+  vertical-align: middle;
+  line-height: 38px;
+}
+
+.ecommerce-bar.for-filters .container .filter i {
+  position: absolute;
+  color: inherit;
+  line-height: inherit;
+  padding-left: .35rem;
+}
+/*# sourceMappingURL=ecommerce_banners.css.map */

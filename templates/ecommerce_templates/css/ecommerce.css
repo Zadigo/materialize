@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600,700&display=swap");
+.page-footer a, .minimalist-footer a {
+  color: white;
+  cursor: pointer;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+.drop-enter-active {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.drop-enter {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+}
+
+.drop-enter-to {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
+
+.drop-leave-to {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.drop-leave {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
+
+.drop-leave-to {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+}
+
+.fixed-ecommerce-nav {
+  position: relative;
+  z-index: 997;
+}
+
+.fixed-ecommerce-nav .search-bar {
+  position: absolute;
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+}
+
+@media only screen and (min-width: 301px) {
+  .fixed-ecommerce-nav .search-bar {
+    top: 100px;
+    height: 200px;
+    opacity: .8;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .fixed-ecommerce-nav .search-bar {
+    top: 80px;
+    height: 80px;
+    opacity: 1;
+  }
+}
+
+.fixed-ecommerce-nav .search-bar .wrapper {
+  position: relative;
+  text-align: center;
+  height: 100%;
+}
+
+.fixed-ecommerce-nav .search-bar .wrapper i {
+  position: absolute;
+  width: 50px;
+  top: 50px;
+}
+
+.fixed-ecommerce-nav .search-bar .wrapper input {
+  padding: .85rem;
+  max-width: 70%;
+}
+
+@media only screen and (min-width: 301px) {
+  .fixed-ecommerce-nav .search-bar .wrapper input {
+    width: 100%;
+    opacity: 1;
+    margin: 3rem auto;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .fixed-ecommerce-nav .search-bar .wrapper input {
+    width: 50%;
+    opacity: 1;
+    margin: 0;
+  }
+}
+
+.fixed-ecommerce-nav .dropdown {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  width: 100%;
+  color: black;
+  background-color: white;
+  height: 300px;
+  padding: 2rem;
+  z-index: 9999;
+}
+
+.fixed-ecommerce-nav .dropdown .section {
+  grid-auto-columns: 100px;
+  padding: 1rem;
+}
+
+.fixed-ecommerce-nav .dropdown .section ul {
+  margin: 0;
+}
+
+.fixed-ecommerce-nav .dropdown .section ul li {
+  padding-top: .45rem;
+  padding-bottom: .45rem;
+}
+
+.ecommerce-header .fixed-ecommerce-nav a {
+  color: black;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav {
+  position: relative;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav .nav-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav .nav-wrapper .brand-logo {
+  display: block;
+  line-height: 100px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 20px;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav .nav-wrapper ul {
+  margin: 0;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav .nav-wrapper ul li {
+  display: inline-block;
+}
+
+.ecommerce-header .fixed-ecommerce-nav .ecommerce-nav .nav-wrapper ul li a {
+  display: block;
+  padding: 0 20px;
+  line-height: 100px;
+}
+
+.page-footer, .minimalist-footer {
+  margin-top: 4rem;
+}
+
+.page-footer h5, .minimalist-footer h5 {
+  margin-bottom: 2rem;
+}
+
+.page-footer.with-policies, .minimalist-footer.with-policies {
+  padding-top: 0;
+}
+
+.page-footer.with-policies .policies, .minimalist-footer.with-policies .policies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  color: black;
+  height: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #9e9e9e;
+  background-color: white;
+}
+
+.page-footer.with-policies .policies div.payments, .minimalist-footer.with-policies .policies div.payments {
+  color: #9e9e9e;
+}
+
+.page-footer.with-policies .policies div i, .minimalist-footer.with-policies .policies div i {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.page-footer.with-policies .policies div:first-child, .minimalist-footer.with-policies .policies div:first-child {
+  margin-right: 1rem;
+}
+
+.page-footer.with-policies .policies div:last-child, .minimalist-footer.with-policies .policies div:last-child {
+  margin-left: 1rem;
+}
+
+.page-footer .footer-copyright, .minimalist-footer .footer-copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (min-width: 301px) {
+  .page-footer .footer-copyright, .minimalist-footer .footer-copyright {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .page-footer .footer-copyright, .minimalist-footer .footer-copyright {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1rem;
+  }
+}
+
+.page-footer .footer-copyright p, .minimalist-footer .footer-copyright p {
+  margin: 0;
+}
+
+.page-footer .footer-copyright *, .minimalist-footer .footer-copyright * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=ecommerce.css.map */

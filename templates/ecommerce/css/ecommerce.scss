@@ -5,20 +5,6 @@
  * certain elements of Materialize
  */
 
-@mixin set_nav_height($nav_height) {
-    @media only screen and (min-width: 601px) {
-        &, & .nav-wrapper i, 
-        & a.sidenav-trigger, & a.sidenav-trigger i {
-            height: $nav_height;
-            line-height: $nav_height;
-        }
-    
-        .navbar-fixed {
-            height: $nav_height;
-        }
-    }
-}
-
 nav {
     .brand-logo {
         text-transform: uppercase;
@@ -30,8 +16,128 @@ nav {
             color: rgba($color: #000000, $alpha: 1.0);
         }
     }
+}
 
-    // @include set_nav_height(82px);
+.fixed-ecommerce-nav {
+    position: relative;
+    z-index: 997;
+    .ecommerce-nav {
+    }
+
+    .search-bar {
+        position: absolute;
+        padding: 1rem;
+        top: 100px;
+        height: 80px;
+        background-color: white;
+        width: 100%;
+
+        .wrapper {
+            width: 100%;
+            text-align: center;
+            height: 100%;
+
+            input {
+                width: 50%;
+                padding: .85rem;
+                max-width: 70%;
+            }
+        }
+    }
+
+    .dropdown {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        color: black;
+        background-color: white;
+        height: 300px;
+        padding: 2rem;
+        border-top: 4px solid red;
+
+        .section {
+            grid-auto-columns: 100px;
+            // background-color: red;
+            padding: 1rem;
+
+            ul {
+                margin: 0;
+
+                li {
+                    padding-top: .45rem;
+                    padding-bottom: .45rem;
+                }
+            }
+        }
+    }
+}
+
+.ecommerce-nav {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: .60rem;
+    line-height: 100px;
+
+    .nav-wrapper {
+        display: flex;
+        height: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        vertical-align: middle;
+
+        .brand-logo {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+            color: black;
+            height: 100%;
+        }
+
+        .sidenav-trigger {
+            height: 100%;
+            line-height: 100px;
+        }
+
+        ul {
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            height: 100%;
+            // font-size: 16px;
+
+            li {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+
+                a {
+                    display: block;
+                    height: 100%;
+                    padding: 1rem;
+                    color: black;
+                    padding: 0 15px;
+                    cursor: pointer;
+                    transition: all .4s ease;
+                    font-size: 15px;
+
+                    &:hover {
+                        color: blue;
+                        // border-bottom: 4px solid blue;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .page-footer, .minimalist-footer {

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Product</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce.css">
+        <link rel="stylesheet" href="./css/ecommerce_banners.css">
+        <link rel="stylesheet" href="./css/ecommerce_grids.css">
+    </head>
+
+    <body>
+        <header class="ecommerce-header">
+            <!-- NAVBAR -->
+            <div class="fixed-ecommerce-nav" id="vue_navbar">
+                <div class="ecommerce-nav">
+                    <div class="nav-wrapper">
+                        <!-- <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+                        <a href="#!" class="brand-logo">Shop</a>
+                        <ul class="hide-on-med-and-down">
+                            <li>
+                                <trigger1 @triggerdropdown="initiatedropdown" />
+                            </li>
+                            <li>
+                                <trigger2 @triggerdropdown="initiatedropdown" />
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div>
+                        <searchbar v-bind:searchstate="searchstate" />
+                    </div>
+        
+                    <div>
+                        <dropdownbar v-bind:dropdownstate="dropdownstate" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- BANNERS -->
+            <div class="top-banner sales-policies hide-on-med-and-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">flight</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMOTION BANNER -->
+            <!-- <div class="top-banner promotional hide-on-med-and-down">
+                <a href="./product.html">
+                    <div class=".wrapper">
+                        <div class="big-title">
+                            <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                        </div>
+                        <div class="presentation">
+                            Jusqu'à -15% sur tous les sacs
+                        </div>
+                        <div class="legal">
+                            Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </header>
+
+        <main>
+            <div class="ecommerce">
+                <div class="grid" id="product">
+                    <!-- Breadcrumb -->
+                    <div class="breadcrumbs">
+                        <a href="./products.html" class="breadcrumb">Accueil</a>
+                        <a href="#!" class="breadcrumb">Collections</a>
+                        <a class="breadcrumb">Jupe en cuir de fauve</a>
+                    </div>
+                    
+                    <div id="app">
+                        <div>
+                            <!-- SIDEIMAGES -->
+                            <sideimages @returnmainimage="setmainimage" />
+                        </div>
+                        
+                        <div>
+                            <!-- MAINIMAGE -->
+                            <previewimage v-bind:mainimage="mainimage" />
+                        </div>
+                    </div>
+
+                    <!-- INFORMATION -->
+                    <div class="information" id="product_actions">
+                        <h4>Bracelet en diamant pure</h4>
+
+                        <div class="infos">
+                            <div class="price">54.95€</div>
+                            <div class="discounted-price">54€</div>
+                        </div>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            Dignissimos labore vero sed, beatae, perferendis fuga 
+                            perspiciatis sunt soluta quo temporibus adipisci minus 
+                            rem id voluptas doloribus saepe! Totam, enim eius?
+                        </p>
+                        <div class="other-details">
+                            <div class="color"><span>Couleur :</span> Noir</span></div>
+                            <div class="size"><span>Taille :</span> Unique</div>
+
+                            <selectdetails @sendselection='setselection' />
+                        </div>
+                        <div id="cart_button">
+                            <cartbutton v-bind:currentselection='currentselection' />
+                        </div>
+
+                        <div class="policies">
+                            <div class="policy">
+                                <i class="material-icons">airplanemode_active</i>
+                                <div>Free delivery</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">local_shipping</i>
+                                <div>Retours 30 jours</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">star_border</i>
+                                <div>Garantie</div>
+                            </div>
+                            <div class="policy">
+                                <i class="material-icons">lock</i>
+                                <div>100% secure checkout</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILS -->
+                    <div class="details">
+                        <div class="detail">
+                            <p>Information article</p>
+                            <p>
+                                <ul class="browser-default">
+                                    <li>Description du produit</li>
+                                    <li>Description du produit</li>
+                                    <li>Description du produit</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="detail">
+                            <p>Code produit</p>
+                            <div class="sku">CAR-TAR-SKU</div>
+                        </div>
+                        <div class="detail">
+                            <p>Tailles et coupes</p>
+                        </div>
+                    </div>
+
+                    <!-- MORE -->
+                    <div class="more">
+                        <h4>Vous allez aussi aimer</h4>
+                        <div class="images">
+                            <div class="image">
+
+                                <div class="enhanced-ecommerce" data-for="modal3" style="position: absolute;cursor: pointer;">
+                                    <i class="material-icons">information</i>
+                                </div>
+                                
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Jupe en cuir</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <a href="./product.html">
+                                    <img src="../../assets/images/image4.jpg" alt="image4">
+                                    <div class="details">
+                                        <div class="price-details">
+                                            <div class="title">Jupe en velours</div>
+                                            <div class="price">54€</div>
+                                        </div>
+                                    </div>                                
+                                </a>
+                            </div>
+                            <div class="image">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Sac de vuitton</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="../../assets/images/image4.jpg" alt="image4">
+                                <div class="details">
+                                    <div class="title">Tote bag divaga</div>
+                                    <div class="price">54€</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+        
+        <!-- VUE JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- OTHERS -->
+        <script src="./js/nav.js"></script>
+        <script src="./js/product.js"></script>
+    </body>
+</html>

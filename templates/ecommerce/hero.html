@@ -5,19 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Accueil</title>
+        <title>Ecommerce Template</title>
 
         <link rel="stylesheet" href="../css/mat.css">
         <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="./css/ecommerce.css">
         <link rel="stylesheet" href="../hero/css/hero.css">
         <link rel="stylesheet" href="../ecommerce/css/ecommerce_hero.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="./css/ecommerce_bar.css">
+
+        <style>
+            .drop-enter-active {
+                transition: all .3s ease-out;
+            }
+            .drop-enter {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            .drop-enter-to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .drop-leave-active {
+                transition: all .3s ease-out;
+            }
+            .drop-leave {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            .drop-leave-to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        </style>
     </head>
     <body>
         <header class="ecommerce-header">
             <!-- Nav -->
-            <div class="navbar-fixed">
+            <!-- <div class="navbar-fixed">
                 <nav class="white">
                     <div class="nav-wrapper">
                         <div class="container">
@@ -30,6 +56,46 @@
                         </div>
                     </div>
                 </nav>
+            </div> -->
+
+            <div class="fixed-ecommerce-nav" id="vue_nav">
+                <div class="ecommerce-nav">
+                    <div class="nav-wrapper">
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <a href="#!" class="brand-logo">Shop</a>
+                        <ul>
+                            <li>
+                                <trigger1 @triggerdropdown="initiatedropdown" />
+                            </li>
+                            <li>
+                                <!-- <a href="#!"> -->
+                                    <!-- <i class="material-icons">person</i> -->
+                                    <!-- Account -->
+                                <!-- </a> -->
+                                <trigger2 @triggerdropdown="initiatedropdown" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <searchbar v-bind:searchstate="searchstate" />
+                </div>
+
+                <div>
+                    <dropdownbar v-bind:dropdownstate="dropdownstate" />
+                </div>
+                <!-- <div class="dropdown">
+                    <div class="section">
+                        <ul>
+                            <li>Chaussures</li>
+                            <li>Robes</li>
+                            <li>Vêtements</li>
+                        </ul>
+                    </div>
+                    <div class="section">W</div>
+                    <div class="section">C</div>
+                </div> -->
             </div>
 
             <!-- SALES INFO BAR -->
@@ -51,6 +117,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Promotion banner -->
+            <!-- <div class="promotion-banner">
+                <a href="./products.html">
+                    <div class="promotion-wrapper">
+                        <div class="big-title">
+                            <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                        </div>
+                        <div class="presentation">
+                            Jusqu'à -15% sur tous les sacs
+                        </div>
+                        <div class="legal">
+                            Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+
+            <!-- <div class="top-banner border-top special-offer boxed-text">
+                <a href="#!" class="wrapper">
+                    <div>Jusqu'à 50% de réduction sur les</div>
+                    <div>chouchous de dressing</div>
+                </a>
+            </div> -->
 
             <!-- Ecommerce bar -->
             <!-- <div class="ecommerce-bar">
@@ -258,6 +348,9 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
         <script src="../js/ecommerce.js"></script>
+        <script src="./js/nav.js"></script>
     </body>
 </html>

@@ -1,0 +1,77 @@
+.container {
+	max-width: 1280px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.cards, .cards > div {
+	transition: all .3s ease-out;
+	display: grid;
+	/* grid-template-columns: repeat(3, 1fr); */
+	grid-auto-rows: 100px;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+}
+
+@media screen and (min-width: 360px) {
+	.cards, .cards > div {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.cards, .cards > div {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 993px) {
+	.cards, .cards > div {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	.cards, .cards > div {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (min-width: 1690px) {
+	.cards, .cards > div {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.cards .card, .cards > div .card {
+	position: relative;
+	background-color: #1e88e5;
+	width: auto;
+	height: auto;
+	border-radius: 1px;
+	cursor: pointer;
+	transition: all .2s ease-in;
+	padding: 1rem;
+	text-align: center;
+	color: white;
+}
+
+.cards .card:hover {
+	z-index: 1;
+	transform: scale(1.1, 1.1);
+	background-color: #1565c0;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)
+}
+
+
+.card_item-enter-active {
+	transition: all .5s ease;
+}
+
+.card_item-enter {
+	transform: translateX(-5px);
+}
+
+.card_item-enter-to {
+	transform: translateX(0px);
+}

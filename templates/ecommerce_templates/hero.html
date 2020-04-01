@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Home</title>
+
+        <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="./css/ecommerce.css">
+        <link rel="stylesheet" href="./css/ecommerce_banners.css">
+        <link rel="stylesheet" href="./css/ecommerce_hero.css">
+
+        <style>
+            .drop-enter-active {
+                transition: all .3s ease-in;
+            }
+            .drop-enter {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            .drop-enter-to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .drop-leave-active {
+                transition: all .3s ease-in;
+            }
+            .drop-leave {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            .drop-leave-to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="ecommerce-header">
+            <!-- NAVBAR -->
+            <div class="fixed-ecommerce-nav" id="vue_navbar">
+                <div class="ecommerce-nav">
+                    <div class="nav-wrapper">
+                        <!-- <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+                        <a href="#!" class="brand-logo">Shop</a>
+                        <ul class="hide-on-med-and-down">
+                            <li>
+                                <trigger1 @triggerdropdown="initiatedropdown" />
+                            </li>
+                            <li>
+                                <trigger2 @triggerdropdown="initiatedropdown" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <searchbar v-bind:searchstate="searchstate" />
+                </div>
+                <div>
+                    <dropdownbar v-bind:dropdownstate="dropdownstate" />
+                </div>
+            </div>
+
+            <!-- ECOMMERCE BAR -->
+            <div class="ecommerce-bar" id="vue_bar">
+                <div class="container">
+                    <ul>
+                        <li class="best-offers"><a href="./products1.html">Promotions</a></li>
+                        <li><a href="./products1.html">Sacs</a></li>
+                        <li><a href="./products2.html">Bracelets</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BANNERS -->
+            <div class="top-banner sales-policies hide-on-med-and-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">flight</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMOTION BANNER -->
+            <!-- <div class="top-banner promotional hide-on-med-and-down">
+                <a href="./product.html">
+                    <div class=".wrapper">
+                        <div class="big-title">
+                            <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                        </div>
+                        <div class="presentation">
+                            Jusqu'à -15% sur tous les sacs
+                        </div>
+                        <div class="legal">
+                            Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <a href="./products1.html">
+                <div class="hero">
+                    <img src="./assets/images/hero3.jpg" alt="image">
+                </div>
+            </a>
+
+            <!-- HERO BANNERS -->
+            <div class="ecommerce-benefits">
+                <div class="presentation-grid">
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image15.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Nouveautés</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                    <div class="presentation">
+                        <div class="image-background" style="background-image: url('../images/image13.jpg');"></div>
+                        <div class="call-to-action">
+                            <div class="text">Promotions</div>
+                            <a href="./products.html" class="btn white z-depth-0 black-text">Achetez</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner">
+                    <div class="wrapper">
+                        <a href="#!" id="link_summer_offers">
+                            <img src="./assets/images/banner6.jpg" alt="banner6">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="page-footer grey darken-4 with-policies">
+            <div class="policies">
+                <div class="payments">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+                <div class="social">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="./customer_service.html" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+        
+
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+        
+        <!-- VUE JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- OTHERS -->
+        <script src="./js/nav.js"></script>
+    </body>
+</html>

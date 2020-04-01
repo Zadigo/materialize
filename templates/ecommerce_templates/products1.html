@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Products</title>
+    </head>
+
+    <body>
+        <header class="ecommerce-header">
+            <!-- NAVBAR -->
+            <div class="fixed-ecommerce-nav" id="vue_navbar">
+                <div class="ecommerce-nav">
+                    <div class="nav-wrapper">
+                        <!-- <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+                        <a href="#!" class="brand-logo">Shop</a>
+                        <ul class="hide-on-med-and-down">
+                            <li>
+                                <trigger1 @triggerdropdown="initiatedropdown" />
+                            </li>
+                            <li>
+                                <trigger2 @triggerdropdown="initiatedropdown" />
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div>
+                        <searchbar v-bind:searchstate="searchstate" />
+                    </div>
+        
+                    <div>
+                        <dropdownbar v-bind:dropdownstate="dropdownstate" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- ECOMMERCE BAR -->
+            <div class="ecommerce-bar">
+                <div class="container">
+                    <ul>
+                        <li class="best-offers"><a href="./products.html">Promotions</a></li>
+                        <li><a href="./products.html">Sacs</a></li>
+                        <li><a href="./products.html">Bracelets</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BANNERS -->
+            <div class="top-banner sales-policies hide-on-med-and-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">flight</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMOTION BANNER -->
+            <!-- <div class="top-banner promotional hide-on-med-and-down">
+                <a href="./product.html">
+                    <div class=".wrapper">
+                        <div class="big-title">
+                            <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                        </div>
+                        <div class="presentation">
+                            Jusqu'à -15% sur tous les sacs
+                        </div>
+                        <div class="legal">
+                            Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </header>
+
+        <main>
+            
+        </main>
+
+
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+        
+        <!-- VUE JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- OTHERS -->
+    </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Product</title>
+
+        <link rel="stylesheet" href="../../css/mat.css">
+        <link rel="stylesheet" href="../css/ecommerce.css">
+        <link rel="stylesheet" href="../css/ecommerce_banners.css">
+        <link rel="stylesheet" href="./css/test_product.css">
+
+        <!-- <script>var dataLayer = [] || []</script> -->
+    </head>
+
+    <body>
+        <header class="ecommerce-header">
+            <!-- NAVBAR -->
+            <div class="fixed-ecommerce-nav" id="vue_navbar">
+                <div class="ecommerce-nav">
+                    <div class="nav-wrapper">
+                        <!-- <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+                        <a href="#!" class="brand-logo">Shop</a>
+                        <ul>
+                            <li>
+                                <trigger1 @triggerdropdown="initiatedropdown" />
+                            </li>
+                            <li>
+                                <trigger2 @triggerdropdown="initiatedropdown" />
+                            </li>
+                        </ul>
+                    </div>
+        
+                </div>
+
+                <div>
+                    <searchbar @triggerdropdown="initiatedropdown" v-bind:searchstate="searchstate" />
+                </div>
+    
+                <div>
+                    <dropdownbar v-bind:dropdownstate="dropdownstate" />
+                </div>
+            </div>
+
+            <!-- ECOMMERCE BAR -->
+            <div class="ecommerce-bar hide-on-med-and-down" id="vue_bar">
+                <div class="container">
+                    <ul>
+                        <li class="best-offers"><a href="./products1.html">Promotions</a></li>
+                        <li><a href="./products1.html">Sacs</a></li>
+                        <li><a href="./products2.html">Bracelets</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BANNERS -->
+            <div class="top-banner green lighten-1 sales-policies hide-on-med-and-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">flight</i>
+                            <p>Livraison gratuite</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">payment</i>
+                            <p>Paiements sécurisés</p>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <i class="material-icons">star</i>
+                            <p>Garantie 30 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMOTION BANNER -->
+            <!-- <div class="top-banner promotional hide-on-med-and-down">
+                <a href="./product.html">
+                    <div class=".wrapper">
+                        <div class="big-title">
+                            <img src="https://content.asos-media.com/-/media/homepages/unisex/homepages/outlet/app/2019-banners/desktop-mob/black_outlet_logo_desktop-v2.png" alt="image1">
+                        </div>
+                        <div class="presentation">
+                            Jusqu'à -15% sur tous les sacs
+                        </div>
+                        <div class="legal">
+                            Pour une durée limitée sur une sélection d’articles seulement. Prix déjà démarqués sur le site.
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </header>
+
+        <main>
+            <div class="ecommerce">
+                <div class="grid" id="product">
+                    <!-- IF DESKTOP -->
+                    <!-- BREADCRUMBS -->
+                    <div class="breadcrumbs hide-on-med-and-down">
+                        <a href="./products.html" class="breadcrumb">Accueil</a>
+                        <a href="#!" class="breadcrumb">Collections</a>
+                        <a class="breadcrumb">Jupe en cuir de fauve</a>
+                    </div>
+
+                    <!-- SIDE IMAGES -->
+                    <div class="side-images">
+                        <!-- FOR DESKTOP -->
+                        <sideimages v-bind:images="images" />
+                        <!-- FOR MOBILE -->
+                        <!-- <mobilesideimages v-bind:images="images" /> -->
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <div class="button"></div>
+                        <div class="button"></div>
+                        <div class="button"></div>
+                    </div>
+
+                    <!-- IF DESKTOP -->
+                    <!-- MAIN IMAGE -->
+                    <div class="main-image hide-on-med-and-down">
+                        <mainimage v-bind:image="selectedimage" v-bind:stockstate="product.outofstock" />
+                    </div>
+
+                    <!-- INFORMATION -->
+                    <div class="information">
+                        <h4>Bracelet en diamant pure</h4>
+
+                        <div class="infos">
+                            <div class="price highlight">24.95€</div>
+                            <div class="discounted-price">54€</div>
+                        </div>
+
+                        <div class="delivery-and-return">
+                            <a href="#modal1" id="delivery-and-return" class="modal-trigger">
+                                Retours et livraisons gratuit**
+                            </a>
+                            <div id="modal1" class="modal" tabindex="0">
+                                <div class="modal-content">
+                                    <h4>Livraison</h4>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Quand ?</th>
+                                                <th>Combien ?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><b>Standard</b></td>
+                                                <td>Livraison prévue avant ou pour le 21 April 2020</td>
+                                                <td>Gratuit</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OTHER DETAILS -->
+                        <div class="other-details">
+                            <div class="color"><span>Couleur :</span> Noir</span></div>
+                            <div class="size"><span>Taille :</span> Unique</div>
+                        </div>
+
+                        <div class="add-to-cart">
+                            <addtocart v-bind:product="product" />
+                        </div>
+                    </div>
+
+                    <!-- DETAILS -->
+                    <div class="details">
+                        Référence: AWEFEZE
+                        Matière: Cuir ou similicuir 100%
+                        Dimension: 45cm x 45cm x 67cm
+                    </div>
+
+                    <!-- MORE -->
+                    <div class="more">
+                        <h4>Vous allez aussi aimer</h4>
+                        <div class="images">
+                            <div class="image">
+                                <a href="./product.html">
+                                    <div>
+                                        <img src="../assets/images/image1.jpg" alt="image4">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">Jupe en cuir</div>
+                                        <div class="price">54€</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a href="./product.html">
+                                    <div>
+                                        <img src="../assets/images/image2.jpg" alt="image4">
+                                    </div>
+                                    <div class="details">
+                                        <div class="price-details">
+                                            <div class="title">Jupe en velours</div>
+                                            <div class="price">54€</div>
+                                        </div>
+                                    </div>                                
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a href="./product.html">
+                                    <div>
+                                        <img src="../assets/images/image3.jpg" alt="image4">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">Sac de vuitton</div>
+                                        <div class="price">54€</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="image">
+                                <a href="./product.html">
+                                    <div>
+                                        <img src="../assets/images/image1.jpg" alt="image4">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">Tote bag divaga</div>
+                                        <div class="price">54€</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="page-footer grey darken-4 with-policies">
+            <div class="policies">
+                <div class="payments">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+                <div class="social">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <h5>Aide et information</h5>
+                        <p><a href="./customer_service.html" target="_blank">Assistance</a></p>
+                        <p><a href="" target="_blank">Suivi commande</a></li></p>
+                        <p><a href="" target="_blank">Livraison retour</a></li></p>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                        <h5>A propos de Nawoka</h5>
+                        <p><a href="" target="_blank">A propos de Nawoka</a></p>
+                        <p><a href="" target="_blank">Nawoka recrute</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p> 2019 @ Entreprise</p>
+                <a href="{% url 'cgv' %}">Conditions générales</a>
+                <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
+            </div>
+        </footer>
+        
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+        
+        <!-- VUE JS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- OTHERS -->
+        <script src="../js/nav.js"></script>
+        <script src="./js/product.js"></script>
+    </body>
+</html>

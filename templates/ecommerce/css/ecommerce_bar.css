@@ -297,4 +297,60 @@ pre {
   padding: .25rem;
   font-weight: 400;
 }
+
+.top-banner {
+  position: relative;
+  top: 0;
+  height: 50px;
+}
+
+.top-banner {
+  height: auto;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 2rem;
+  background-color: #E53935;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top-banner.border-top {
+  border-top: 1px solid white;
+}
+
+.top-banner.special-offer {
+  padding: 0;
+}
+
+.top-banner.special-offer.boxed-text .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+.top-banner.special-offer.boxed-text .wrapper div {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .7rem;
+  background: white;
+  color: black;
+  margin-top: .5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 700;
+}
 /*# sourceMappingURL=ecommerce_bar.css.map */
