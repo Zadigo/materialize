@@ -277,7 +277,8 @@ var messages = {
 var dashboard = new Vue({
     el: "#vue_dashboard",
     components: {vuetable, deletebutton, createform, 
-                    updateform, messages, vuecards, imageupload},
+                    updateform, messages, vuecards, imageupload,
+                        switchessettings},
     data() {
         return {
             products: [],
