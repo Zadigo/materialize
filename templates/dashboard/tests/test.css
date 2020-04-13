@@ -288,4 +288,8 @@ html {
 .dashboard .wrapper .card-panel.special .content {
   padding: 24px;
 }
+
+.form-interface.img-form img {
+  cursor: pointer;
+}
 /*# sourceMappingURL=test.css.map */

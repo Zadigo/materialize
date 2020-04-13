@@ -10,6 +10,7 @@
         <title>Hero n°1</title>
 
         <link rel="stylesheet" href="../css/mat.css">
+        <link rel="stylesheet" href="../css/extended_materialize.css">
         <link rel="stylesheet" href="../css/fonts.css">
         <link rel="stylesheet" href="./css/hero.css">
         <link rel="stylesheet" href="../css/footer.css">
@@ -31,19 +32,23 @@
 
     <body>
         <div id="app">
-            <!-- Nav -->
+            <!-- NAV -->
             <div class="navbar-fixed">
                 <nav class="red darken-3">
                     <div class="container">
                         <a href="{% url 'home' %}" class="brand-logo just-name">
                             <!-- <img src="{% static 'logo.png' %}" alt="JohnPM"> -->
-                            JohnPM
+                            johnpm
                         </a>
                         
-                        <ul class="right">
+                        <ul class="right hide-on-med-and-down">
                             <li><a href="./hero1.html">Hero 1</a></li>
                             <li><a href="./hero2.html">Hero 2</a></li>
                             <li><a href="./hero3.html">Hero 3</a></li>
+                            <li><a href="./hero4.html">Hero 4</a></li>
+                            <li><a href="./hero5.html">Hero 5</a></li>
+                            <li><a href="./hero6.html">Hero 6</a></li>
+                            <li><a href="./hero7.html">Hero 7</a></li>
                             
                             <!-- <sliderlink @showslider="applyValue" v-bind:show='show' /> -->
                         </ul>
@@ -54,8 +59,9 @@
             <!-- <slider v-bind:show="show" /> -->
         </div>
 
-        <!-- Hero -->
+        <!-- HERO -->
         <div class="hero red darken-1">
+        <!-- <div class="hero red darken-1" style="background-image: url('../assets/image17.jpg');"> -->
             <div class="hero-wrapper">
                 <div class="call-to-action">
                     <div class="lead">Materialize for startups</div>
@@ -254,7 +260,7 @@
             </section>
         </section>
 
-        <!-- Footer -->
+        <!-- FOOTER -->
         <footer class="page-footer red darken-3">
             <div class="container">
                 <div class="row">

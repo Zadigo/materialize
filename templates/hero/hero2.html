@@ -23,6 +23,10 @@
                         <li><a href="./hero1.html">Hero 1</a></li>
                         <li><a href="./hero2.html">Hero 2</a></li>
                         <li><a href="./hero3.html">Hero 3</a></li>
+                        <li><a href="./hero4.html">Hero 4</a></li>
+                        <li><a href="./hero5.html">Hero 5</a></li>
+                        <li><a href="./hero6.html">Hero 6</a></li>
+                        <li><a href="./hero7.html">Hero 7</a></li>
                     </ul>
                 </div>
             </nav>
@@ -34,11 +38,14 @@
                 <div class="call-to-action">
                     <div class="lead">Materialize for startups</div>
                     <div class="lead-subtitle">Templates for prototyping</div>
-
-                    <div class="with-input">
-                        <input type="text" name="search" id="search" class="browser-default">
+                    
+                    <!-- NORMAL -->
+                    <div class="with-input hide">
+                        <input type="search" name="search" id="search" class="browser-default">
                         <a href="#!" class="btn-large blue darken-1">Call to action</a>
                     </div>
+                    <!-- VUE -->
+                    <div id="vue_cta"></div>
                 </div>
             </div>
         </div>
@@ -135,5 +142,13 @@
                 <a href="{% url 'confidentialite' %}">Confidentialité et cookies</a>
             </div>
         </footer>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        <script src="./js/contact_input.js"></script>
     </body>
 </html>

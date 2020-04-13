@@ -1,7 +1,7 @@
 @import "../css/variables.scss";
 @import "../../css/colors.scss";
 
-div.blog {
+div.blog {    
     &-header {
         background-color: $header_color;
         padding: 24px;

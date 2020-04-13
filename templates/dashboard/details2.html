@@ -37,41 +37,42 @@
                                 <li class="header"><p>Dashboard</p></li>
                                 <li><a href="./index.html">Home</a></li>
                                 <li><a href="./base.html">Base</a></li>
+                                <li><a href="./details.html">Details</a></li>
                                 <li><a href="./details2.html">Profile</a></li>
                                 <li><a href="./products2.html">Products</a></li>
+                                <li><a href="./products3.html">Products - cards</a></li>
                                 <li><a href="./create.html">Create</a></li>
                             </ul>
                             <div class="bar-footer">
                                 Test
                             </div>
                         </div>
-
                     </div>
-
+                    
                     <!-- TOPNAV -->
                     <div class="topnav">
                         <div class="nav">
                             <ul>
-                                <li class="menu"><i class="material-icons">menu</i></li>
-                                <li><a href="./settings.html">Account</a></li>
+                                <li class="menu" id="trigger-for-sidebar"><i class="material-icons">menu</i></li>
+                                <li><a href="../settings.html">Account</a></li>
                                 <li><a href="./settings.html">Settings</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- MAIN -->
-                    <div class="main" id="vue_details">
-
-                        <!-- CONTENT -->
+                    <div class="main" id="profile_details">
                         <div class="row">
                             <!-- PROFILE -->
                             <div class="col s12 m4 l4">
                                 <!-- BADGES -->
-                                <!-- <div class="card-panel badges">
+                                <div class="card-panel badges hide">
                                     <i class="material-icons star tooltipped" data-position="bottom" data-tooltip="Certified">star</i>
                                     <i class="material-icons star tooltipped" data-position="bottom" data-tooltip="Certified">check</i>
                                     <i class="material-icons star tooltipped" data-position="bottom" data-tooltip="Certified">stars</i>
-                                </div> -->
+                                </div>
+
+                                <!-- INFORMATION -->
                                 <div class="card-panel avatar">
                                     <img src="https://www.w3schools.com/bootstrap4/img_avatar4.png" alt="avatar">
                                     <div class="details">
@@ -107,29 +108,16 @@
                                 </div>
                             </div>
 
-                            <!-- SKILLS -->
                             <div class="col s12 m8 l8 correct-padding">
-                                <!-- <div class="card-panel skills">
-                                    <p class="title">Compétences</p>
-                                    <p>
-                                        <div class="chip">English</div>
-                                        <div class="chip">Spanish</div>
-                                        <div class="chip">7-15</div>
-                                    </p>
-                                </div> -->
+                                <!-- SCORE -->
                                 <div class="col s12 m6 l6">
                                     <div class="card-panel">
                                         <div class="title">Score proposition</div>
-                                        <!-- <div class="stars">
-                                            <i class="material-icons">star</i>
-                                            <i class="material-icons">star</i>
-                                            <i class="material-icons">star</i>
-                                            <i class="material-icons">star</i>
-                                            <i class="material-icons">star</i>
-                                        </div> -->
                                         <scoreproposition />
                                     </div>
                                 </div>
+
+                                <!-- SKILLS -->
                                 <div class="col s12 m6 l6">
                                     <div class="card-panel skills">
                                         <p class="title">Compétences</p>
@@ -142,22 +130,22 @@
                                 </div>
                             </div>
 
-                            <!-- CV -->
-                            <!-- <div class="col s12 m8 l8">
+                            <!-- PDF -->
+                            <div class="col s12 m8 l8 hide">
                                 <div class="card-panel pdf-viewer">
                                     <object data="http://htbiblio.yolasite.com/resources/Fashion%20Marketing.pdf" type="application/pdf">
                                         <iframe src="https://docs.google.com/viewer?url=http://htbiblio.yolasite.com/resources/Fashion%20Marketing.pdf&embedded=true" frameborder="0" height="800px" width="100%"></iframe>
                                     </object>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!-- MESSAGING -->
-                            <!-- <div class="col s12 m8 l8">
+                            <div class="col s12 m8 l8 hide">
                                 <div class="card-panel tell-us-something">
                                     <p class="title">Envoyer un message</p>
-                                    <textarea name="tell-us-something" id="tell-us-something" cols="30" rows="30" placeholder="Your message here"></textarea>
+                                    <sendmessage />
                                 </div>
-                            </div> -->
+                            </div>
 
                             <!-- ACTION BUTTONS -->
                             <div class="col s12 m8 l8">
@@ -169,29 +157,32 @@
             </div>
         </main>
 
-            <!-- Vue JS -->
-            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- VUEJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-            <!-- JQuery -->
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
-            <!-- Materialize scripts -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    // Sidenav
-                    $('.sidenav').sidenav();
-                    // Scrollspy
-                    $('.scrollspy').scrollSpy();
-                    // Select
-                    $('select').formSelect();
-                    // Modals
-                    $('.modal').modal();
-                    // Tooltip
-                    $('.tooltipped').tooltip();
-                });
-            </script>
-    
-            <script src="./js/details.js"></script>
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- MATERIALIZE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+                // Tooltip
+                $('.tooltipped').tooltip();
+            });
+        </script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+        <script src="./js/details.js"></script>
     </body>
 </html>

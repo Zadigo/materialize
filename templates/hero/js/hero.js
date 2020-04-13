@@ -1,11 +1,10 @@
 var inputemail = {
     template: "\
     <div class='with-input'>\
-        <input v-if='!registered' type='email' name='email' id='email' placeholder='Email' class='browser-default' required>\
-        <transition name='inputfade'>\
-            <p v-if='registered' class='white black-text register_confirmation'>Merci de votre inscription!</p>\
-        </transition>\
-        <a v-if='!registered' @click='registeruser' class='btn-large red darken-1'>S'inscrire</a>\
+        <input v-model='email' v-if='!registered' type='email' name='email' \
+             id='email' placeholder='Email' class='browser-default' required>\
+        <p v-if='registered' class='white black-text register_confirmation'>Merci de votre inscription!</p>\
+        <a v-else @click='registeruser' class='btn-large red darken-1'>S'inscrire</a>\
     </div>\
     ",
     data() {
@@ -17,8 +16,13 @@ var inputemail = {
     methods: {
         registeruser: function() {
             this.$data.registered = !this.$data.registered
-            // if (this.$data.email) {
-            // }
+            $.ajax({
+                type: "GET",
+                url: "https://example.com",
+                data: {},
+                dataType: "json",
+                success: function (response) {}
+            });
         }
     }
 }

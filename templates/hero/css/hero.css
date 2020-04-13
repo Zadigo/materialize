@@ -1,157 +1,144 @@
-div.benefits.contain, section.benefits.contain {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+html {
+  font-family: "Lato";
+}
+
+div.hero .hero-wrapper, .section.hero .hero-wrapper {
   margin: 0 auto;
   max-width: 1280px;
   width: 90%;
 }
 
-div.hero .hero-wrapper, section.hero .hero-wrapper {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
-}
-
-div.hero .hero-wrapper .call-to-action, section.hero .hero-wrapper .call-to-action {
+div.hero.one-pager .call-to-action, .section.hero.one-pager .call-to-action, div.hero .hero-wrapper .call-to-action, .section.hero .hero-wrapper .call-to-action {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  padding-top: 12.5%;
 }
 
-div.hero .hero-wrapper .call-to-action div.lead, section.hero .hero-wrapper .call-to-action div.lead, div.hero .hero-wrapper .call-to-action div.lead-stronger, section.hero .hero-wrapper .call-to-action div.lead-stronger {
-  display: block;
-  font-size: 4rem;
-  font-weight: 400;
-  margin-bottom: 1.250rem;
+@media only screen and (min-width: 320px) {
+  div.hero.one-pager .call-to-action, .section.hero.one-pager .call-to-action, div.hero .hero-wrapper .call-to-action, .section.hero .hero-wrapper .call-to-action {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: left;
+  }
 }
 
-div.benefits .separator, section.benefits .separator, div.benefits .separator-with-image, section.benefits .separator-with-image {
-  position: relative;
-  padding: 65px 0 65px 0;
-  margin-bottom: 0;
-  background-color: #eee;
+@media screen and (min-width: 768px) {
+  div.hero.one-pager .call-to-action, .section.hero.one-pager .call-to-action, div.hero .hero-wrapper .call-to-action, .section.hero .hero-wrapper .call-to-action {
+    padding-top: 62.5px;
+    padding-bottom: 62.5px;
+    text-align: center;
+  }
 }
 
-div.hero, section.hero {
+@media only screen and (min-width: 320px) {
+  div.hero .hero-wrapper .call-to-action div.lead, .section.hero .hero-wrapper .call-to-action div.lead, div.hero .hero-wrapper .call-to-action div.lead-stronger, .section.hero .hero-wrapper .call-to-action div.lead-stronger {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  div.hero .hero-wrapper .call-to-action div.lead, .section.hero .hero-wrapper .call-to-action div.lead, div.hero .hero-wrapper .call-to-action div.lead-stronger, .section.hero .hero-wrapper .call-to-action div.lead-stronger {
+    font-size: 4rem;
+  }
+}
+
+div.hero, .section.hero {
   position: relative;
   overflow: hidden;
+  background-color: #1565c0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  color: white;
+  height: auto;
 }
 
-@media only screen and (min-width: 301px) {
-  div.hero.responsivity, section.hero.responsivity {
-    background-position-y: -50px;
+@media only screen and (min-width: 320px) {
+  div.hero.one-pager, .section.hero.one-pager {
+    height: auto;
   }
 }
 
-@media only screen and (min-width: 993px) {
-  div.hero.responsivity, section.hero.responsivity {
-    background-position-y: -250px;
-  }
-}
-
-@media only screen and (min-width: 301px) {
-  div.hero, section.hero {
-    height: 50vh;
-    text-align: center;
-    color: white;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  div.hero, section.hero {
+@media only screen and (min-width: 768px) {
+  div.hero.one-pager, .section.hero.one-pager {
     height: 100vh;
-    text-align: center;
-    color: white;
   }
 }
 
-@media only screen and (min-width: 300px) {
-  div.hero .hero-wrapper .call-to-action, section.hero .hero-wrapper .call-to-action {
+@media only screen and (min-width: 320px) {
+  div.hero.one-pager .call-to-action, .section.hero.one-pager .call-to-action {
+    padding-top: 50px;
+    padding-bottom: 50px;
     text-align: left;
-    padding-top: 25%;
   }
 }
 
-@media only screen and (min-width: 601px) {
-  div.hero .hero-wrapper .call-to-action, section.hero .hero-wrapper .call-to-action {
+@media screen and (min-width: 768px) {
+  div.hero.one-pager .call-to-action, .section.hero.one-pager .call-to-action {
+    padding-top: 200px;
+    padding-bottom: 200px;
     text-align: center;
-    padding-top: 12.5%;
   }
 }
 
-@media only screen and (min-width: 300px) {
-  div.hero .hero-wrapper .call-to-action div.lead, section.hero .hero-wrapper .call-to-action div.lead {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  div.hero .hero-wrapper .call-to-action div.lead, section.hero .hero-wrapper .call-to-action div.lead {
-    font-size: 4rem;
-  }
-}
-
-div.hero .hero-wrapper .call-to-action div.lead.upper, section.hero .hero-wrapper .call-to-action div.lead.upper {
+div.hero .hero-wrapper .call-to-action div.lead.upper, .section.hero .hero-wrapper .call-to-action div.lead.upper {
   text-transform: uppercase;
 }
 
-div.hero .hero-wrapper .call-to-action div.lead-stronger, section.hero .hero-wrapper .call-to-action div.lead-stronger {
+div.hero .hero-wrapper .call-to-action div.lead-stronger, .section.hero .hero-wrapper .call-to-action div.lead-stronger {
   font-weight: 600;
 }
 
-@media only screen and (min-width: 300px) {
-  div.hero .hero-wrapper .call-to-action div.lead-stronger, section.hero .hero-wrapper .call-to-action div.lead-stronger {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  div.hero .hero-wrapper .call-to-action div.lead-stronger, section.hero .hero-wrapper .call-to-action div.lead-stronger {
-    font-size: 4rem;
-  }
-}
-
-div.hero .hero-wrapper .call-to-action div.lead-stronger.upper, section.hero .hero-wrapper .call-to-action div.lead-stronger.upper {
+div.hero .hero-wrapper .call-to-action div.lead-stronger.upper, .section.hero .hero-wrapper .call-to-action div.lead-stronger.upper {
   text-transform: uppercase;
 }
 
-div.hero .hero-wrapper .call-to-action div.lead-subtitle, section.hero .hero-wrapper .call-to-action div.lead-subtitle {
+div.hero .hero-wrapper .call-to-action div.lead-subtitle, .section.hero .hero-wrapper .call-to-action div.lead-subtitle {
   font-size: 2rem;
   font-weight: 300;
   margin-top: 0.5rem;
   margin-bottom: 2.75rem;
 }
 
-@media only screen and (min-width: 300px) {
-  div.hero .hero-wrapper .call-to-action div.lead-subtitle, section.hero .hero-wrapper .call-to-action div.lead-subtitle {
-    font-size: 1.305rem;
+@media only screen and (min-width: 320px) {
+  div.hero .hero-wrapper .call-to-action div.lead-subtitle, .section.hero .hero-wrapper .call-to-action div.lead-subtitle {
+    font-size: 1.3rem;
   }
 }
 
-@media only screen and (min-width: 601px) {
-  div.hero .hero-wrapper .call-to-action div.lead-subtitle, section.hero .hero-wrapper .call-to-action div.lead-subtitle {
+@media only screen and (min-width: 768px) {
+  div.hero .hero-wrapper .call-to-action div.lead-subtitle, .section.hero .hero-wrapper .call-to-action div.lead-subtitle {
     font-size: 2rem;
   }
 }
 
-div.hero .hero-wrapper .call-to-action div.lead-button, section.hero .hero-wrapper .call-to-action div.lead-button {
-  display: block;
-  text-align: center;
-  margin-top: 10px;
+div.hero .hero-wrapper .call-to-action .btn-large.border-round, .section.hero .hero-wrapper .call-to-action .btn-large.border-round {
+  border-radius: 54px;
 }
 
-div.hero .hero-wrapper .with-input, section.hero .hero-wrapper .with-input {
+div.hero .hero-wrapper .call-to-action .with-input, .section.hero .hero-wrapper .call-to-action .with-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: .85rem;
 }
 
+@media only screen and (min-width: 320px) {
+  div.hero .hero-wrapper .call-to-action .with-input, .section.hero .hero-wrapper .call-to-action .with-input {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+}
+
 @media only screen and (min-width: 993px) {
-  div.hero .hero-wrapper .with-input, section.hero .hero-wrapper .with-input {
+  div.hero .hero-wrapper .call-to-action .with-input, .section.hero .hero-wrapper .call-to-action .with-input {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -162,11 +149,11 @@ div.hero .hero-wrapper .with-input, section.hero .hero-wrapper .with-input {
   }
 }
 
-div.hero .hero-wrapper .with-input .btn, div.hero .hero-wrapper .with-input .btn-large, section.hero .hero-wrapper .with-input .btn, section.hero .hero-wrapper .with-input .btn-large {
+div.hero .hero-wrapper .call-to-action .with-input .btn, div.hero .hero-wrapper .call-to-action .with-input .btn-large, .section.hero .hero-wrapper .call-to-action .with-input .btn, .section.hero .hero-wrapper .call-to-action .with-input .btn-large {
   margin: 0;
 }
 
-div.hero .hero-wrapper .with-input input, section.hero .hero-wrapper .with-input input {
+div.hero .hero-wrapper .call-to-action .with-input input, .section.hero .hero-wrapper .call-to-action .with-input input {
   height: 53px;
   width: 30%;
   border: none;
@@ -175,20 +162,55 @@ div.hero .hero-wrapper .with-input input, section.hero .hero-wrapper .with-input
   margin-right: .75rem;
 }
 
-div.hero .background-img-wrapper, section.hero .background-img-wrapper {
+@media only screen and (min-width: 320px) {
+  div.hero .hero-wrapper .call-to-action .with-input input, .section.hero .hero-wrapper .call-to-action .with-input input {
+    width: 100%;
+    margin-bottom: .85rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  div.hero .hero-wrapper .call-to-action .with-input input, .section.hero .hero-wrapper .call-to-action .with-input input {
+    width: 400px;
+  }
+}
+
+div.hero .hero-wrapper .call-to-action .with-input input:focus, .section.hero .hero-wrapper .call-to-action .with-input input:focus {
+  outline: none;
+}
+
+div.hero .hero-wrapper .call-to-action .with-input .message, .section.hero .hero-wrapper .call-to-action .with-input .message {
+  height: 54px;
+  width: 80%;
+  text-align: center;
+  color: white;
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+div.hero .hero-wrapper .call-to-action .with-input .message.success, .section.hero .hero-wrapper .call-to-action .with-input .message.success {
+  background-color: #80cbc4;
+}
+
+div.hero .hero-wrapper .call-to-action .with-input .message.error, .section.hero .hero-wrapper .call-to-action .with-input .message.error {
+  background-color: #ef5350;
+}
+
+div.hero .background-img-wrapper, .section.hero .background-img-wrapper {
   position: absolute;
-  height: 100vh;
-  min-width: 100%;
-  z-index: -9999;
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  z-index: -9999;
+  min-width: 100%;
 }
 
-div.hero .hero-icons-bar, section.hero .hero-icons-bar {
-  position: absolute;
+div.hero .hero-icons-bar, .section.hero .hero-icons-bar {
+  position: -webkit-sticky;
+  position: sticky;
   background-color: white;
   padding: 1.5rem;
   bottom: 0;
@@ -197,136 +219,143 @@ div.hero .hero-icons-bar, section.hero .hero-icons-bar {
   border-bottom: 1px solid #eee;
 }
 
-div.hero .hero-icons-bar .icons .icon:not(:last-child), section.hero .hero-icons-bar .icons .icon:not(:last-child) {
-  margin-right: 2rem;
+div.hero .hero-icons-bar .icons, .section.hero .hero-icons-bar .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-div.benefits, section.benefits {
-  width: 100%;
-}
-
-@media only screen and (min-width: 301px) {
-  div.benefits.contain, section.benefits.contain {
-    width: 85%;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  div.benefits.contain, section.benefits.contain {
-    width: 75%;
-  }
-}
-
-div.benefits .benefit, section.benefits .benefit {
-  padding: 65px 0 65px 0;
+.contact-box {
+  position: fixed;
+  right: 23px;
+  bottom: 100px;
   margin-bottom: 0;
+  z-index: 997;
+  height: auto;
+  width: 450px;
+  border-radius: 2px;
+  background-color: white;
+  overflow-y: auto;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-div.benefits .benefit:first-child, section.benefits .benefit:first-child {
-  padding-top: 0;
+.contact-box .message {
+  color: white;
+  height: auto;
+  width: auto;
+  padding: .75rem;
+  border-radius: 2px;
 }
 
-div.benefits .benefit .row, section.benefits .benefit .row {
-  margin-top: 20px;
+.contact-box .message.success {
+  background-color: #80cbc4;
 }
 
-div.benefits .benefit h1, section.benefits .benefit h1 {
-  font-size: 2.28rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
+.contact-box .message.error {
+  background-color: #ef5350;
 }
 
-div.benefits .benefit h1 > span.lighten, section.benefits .benefit h1 > span.lighten {
-  font-weight: 400;
+.contact-box .header {
+  height: auto;
+  padding: 1rem;
+  background-color: #1565c0;
+  color: white;
+  font-size: 1.5rem;
 }
 
-div.benefits .benefit h2, section.benefits .benefit h2 {
-  font-size: 2.28rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
+.contact-box .header p {
+  margin: 0;
 }
 
-div.benefits .benefit h2 > span.lighten, section.benefits .benefit h2 > span.lighten {
-  font-weight: 400;
+.contact-box .wrapper {
+  height: 380px;
+  padding: 1rem;
 }
 
-div.benefits .benefit h3, section.benefits .benefit h3 {
-  font-size: 2.28rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
+.contact_box_transition-enter-active, .contact_box_transition-leave-active {
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
-div.benefits .benefit h3 > span.lighten, section.benefits .benefit h3 > span.lighten {
-  font-weight: 400;
+.contact_box_transition-enter, .contact_box_transition-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(0.9, 0.9) translateY(50px);
+          transform: scale(0.9, 0.9) translateY(50px);
 }
 
-div.benefits .benefit h4, section.benefits .benefit h4 {
-  font-size: 2.28rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
+.contact_box_transition-enter-to, .contact_box_transition-leave {
+  opacity: 1;
+  -webkit-transform: scale(1, 1) translateY(0px);
+          transform: scale(1, 1) translateY(0px);
 }
 
-div.benefits .benefit h4 > span.lighten, section.benefits .benefit h4 > span.lighten {
-  font-weight: 400;
+.float_icon-enter-active, .float_icon-leave-active {
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
 }
 
-@media only screen and (min-width: 300px) {
-  div.benefits .benefit, section.benefits .benefit {
-    padding-top: 0;
-  }
+.float_icon-enter, .float_icon-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
 }
 
-@media only screen and (min-width: 601px) {
-  div.benefits .benefit, section.benefits .benefit {
-    padding-top: 65px;
-  }
+.float_icon-enter-to, .float_icon-leave {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
-div.benefits .separator .row, section.benefits .separator .row {
-  margin-top: 0;
+.fields-enter-active {
+  -webkit-transition: all 5s ease;
+  transition: all 5s ease;
 }
 
-@media only screen and (min-width: 300px) {
-  div.benefits .separator, section.benefits .separator {
-    padding-top: 0px;
-  }
+.fields-enter {
+  opacity: 0;
 }
 
-@media only screen and (min-width: 601px) {
-  div.benefits .separator, section.benefits .separator {
-    padding-top: 65px;
-  }
+.fields-enter-to {
+  opacity: 1;
 }
 
-div.benefits .call-to-action, section.benefits .call-to-action {
-  text-align: center;
+.message_cta-enter-active, .message_cta-leave {
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }
 
-div.benefits .benefits .team, section.benefits .benefits .team {
-  text-align: center;
+.message_cta-enter, .message_cta.-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
 }
 
-div.benefits .team, section.benefits .team {
-  text-align: center;
+.message_cta-enter-to, .message_cta-leave {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
-div.benefits .team .teammate-avatar, section.benefits .team .teammate-avatar {
-  vertical-align: middle;
-  width: 175px;
-  height: 175px;
-  border-radius: 50%;
+.input_message_cta-leave-active {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
-div.benefits .team .teammate-name, section.benefits .team .teammate-name {
-  font-weight: 600;
-  margin-top: 2.5rem;
+.input_message_cta-leave {
+  opacity: 1;
 }
 
-div.benefits .team .social, section.benefits .team .social {
-  margin-top: 2rem;
-}
-
-div.benefits .team .fab, section.benefits .team .fab {
-  font-size: 1.33333em;
+.input_message_cta-leave-to {
+  opacity: 0;
 }
 /*# sourceMappingURL=hero.css.map */

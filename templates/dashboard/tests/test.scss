@@ -330,3 +330,11 @@ html {
         }
     }
 }
+
+.form-interface {
+    &.img-form {
+        img {
+            cursor: pointer;
+        }
+    }
+}

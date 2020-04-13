@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
 $blue: #1565c0;
-$padding_top: 12.5%;
-$font_weight: 600;
-$lead_font_weight: 600;
+$message_success: #80cbc4;
+$message_failed: #ef5350;
+
+html {
+    font-family: "Lato";
+}
 
 @mixin hero_grid_calculator($multiple) {
     // Calculates the top padding
@@ -9,30 +14,9 @@ $lead_font_weight: 600;
     // Increments by 12.5%
     $base_grid: 100;
     $section: $base_grid / 8;
-    padding-top: $section * $multiple;
-}
-
-@mixin grid_template_columns($n, $fr) {
-    grid-template-columns: repeat($n, $fr);
-}
-
-// %hero {
-//     background-color: $blue;
-//     height: 100vh !important;
-//     text-align: center;
-//     color: white;
-// }
-
-@mixin hero($height) {
-    height: $height;
-    text-align: center;
-    color: white;
-}
-
-%container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
+    $calculated_padding: ($section * $multiple) + px;
+    padding-top: $calculated_padding;
+    padding-bottom: $calculated_padding;
 }
 
 %hero-wrapper {
@@ -45,52 +29,68 @@ $lead_font_weight: 600;
     margin: {
         left: auto;
         right: auto;
-        bottom: 20px;
     }
-    padding-top: $padding_top;
+
+    @media only screen and (min-width: 320px) {
+        @include hero_grid_calculator(4);
+        text-align: left;
+    }
+
+    @media screen and (min-width: 768px) {
+        @include hero_grid_calculator(5);
+        text-align: center;
+    }
 }
 
 %lead {
-    display: block;
-    font: {
-        size: 4rem;
-        weight: 400;
+    @media only screen and (min-width: 320px) {
+        font: {
+            size: 2rem;
+            weight: 400;
+        }
     }
-    margin-bottom: 1.250rem;
+    @media screen and (min-width: 993px) {
+        font-size: 4rem;
+    }
 }
 
-%separator {
-    position: relative;
-    padding: 65px 0 65px 0;
-    margin-bottom: 0;
-    background-color: #eee;
-}
-
-div, section {
+div, .section {
     &.hero {
         position: relative;
         overflow: hidden;
+        background-color: $blue;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
+        color: white;
+        height: auto;
 
-        &.responsivity {
-            @media only screen and (min-width: 301px) {
-                background-position-y: -50px;
+        &.one-pager {
+            @media only screen and (min-width: 320px) {
+                height: auto;
             }
+
+            @media only screen and (min-width: 768px) {
+                height: 100vh;
+            }
+
+            .call-to-action {
+                @extend %call-to-action;
+
+                @media only screen and (min-width: 320px) {
+                    @include hero_grid_calculator(4);
+                    text-align: left;
+                }
             
-            @media only screen and (min-width: 993px) {
-                background-position-y: -250px;
+                @media screen and (min-width: 768px) {
+                    padding: {
+                        top: 200px;
+                        bottom: 200px;
+                    };
+                    text-align: center;
+                }
             }
-        }
-        
-        @media only screen and (min-width: 301px) {
-            @include hero(50vh);
-        }
-        
-        @media only screen and (min-width: 993px) {
-            @include hero(100vh);
         }
 
         .hero-wrapper {
@@ -99,16 +99,7 @@ div, section {
             .call-to-action {
                 @extend %call-to-action;
 
-                @media only screen and (min-width: 300px) {
-                    text-align: left;
-                    padding-top: 25%;
-                }
-
-                @media only screen and (min-width: 601px) {
-                    text-align: center;
-                    padding-top: 12.5%;
-                }
-
+                // LEAD
                 @each $tag in lead, lead-stronger {
                     div.#{$tag} {
                         @extend %lead;
@@ -117,24 +108,18 @@ div, section {
                             font-weight: 600;
                         }
 
-                        @media only screen and (min-width: 300px) {
-                            font-size: 2rem;
-                        }
-
-                        @media only screen and (min-width: 601px) {
-                            font-size: 4rem;
-                        }
-
                         &.upper {
                             text-transform: uppercase;
                         }
                     }
                 }
 
+                // LEAD SUBTITLE
                 div.lead-subtitle {
                     font: {
                         size: 2rem;
-                        weight: $font_weight / 2;
+                        // weight: $font_weight / 2;
+                        weight: 300;
                     }
 
                     margin: {
@@ -142,62 +127,84 @@ div, section {
                         bottom: 2.75rem;
                     }
 
-                    @media only screen and (min-width: 300px) {
-                        font-size: 1.305rem;
+                    @media only screen and (min-width: 320px) {
+                        font-size: 1.3rem;
                     }
 
-                    @media only screen and (min-width: 601px) {
+                    @media only screen and (min-width: 768px) {
                         font-size: 2rem;
                     }
                 }
 
-                div.lead-button {
-                    display: block;
-                    text-align: center;
-                    margin-top: 10px;
-                }
-            }
-
-            .with-input {
-                display: flex;
-                
-                // @media only screen and (min-width: 301px) {
-                //     flex-direction: column;
-                //     // justify-content: left;
-                // }
-                
-                @media only screen and (min-width: 993px) {
-                    flex-direction: row;
-                    justify-content: center;
-                }
-                
-                margin: {
-                    top: .85rem;
+                .btn-large {
+                    &.border-round {
+                        border-radius: 54px;
+                    }
                 }
 
-                .btn, .btn-large {
-                    margin: 0;
-                }
-
-                input {
-                    // @media only screen and (min-width: 301px) {
-                    //     width: 90%;
-                    //     margin: {
-                    //         bottom: .85rem;
-                    //     }
-                    // }
+                .with-input {
+                    display: flex;
                     
-                    // @media only screen and (min-width: 993px) {
-                    //     width: max($numbers: 400px);
-                    // }
-
-                    height: 53px;
-                    width: 30%;
-                    border: none;
-                    border-radius: 2px;
-                    padding: .35rem;
+                    @media only screen and (min-width: 320px) {
+                        flex-direction: column;
+                        justify-content: left;
+                    }
+                    
+                    @media only screen and (min-width: 993px) {
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+                    
                     margin: {
-                        right: .75rem;
+                        top: .85rem;
+                    }
+    
+                    .btn, .btn-large {
+                        margin: 0;
+                    }
+    
+                    input {
+                        @media only screen and (min-width: 320px) {
+                            width: 100%;
+                            margin: {
+                                bottom: .85rem;
+                            }
+                        }
+                        
+                        @media only screen and (min-width: 993px) {
+                            width: max($numbers: 400px);
+                        }
+    
+                        height: 53px;
+                        width: 30%;
+                        border: none;
+                        border-radius: 2px;
+                        padding: .35rem;
+                        margin: {
+                            right: .75rem;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    .message {
+                        height: 54px;
+                        width: 80%;
+                        text-align: center;
+                        color: white;
+                        background-color: white;
+                        border-radius: 2px;
+                        cursor: pointer;
+
+                        &.success {
+                            background-color: $message_success;
+                        }
+
+                        &.error {
+                            background-color: $message_failed;
+                        }
                     }
                 }
             }
@@ -208,17 +215,17 @@ div, section {
             // image -; great for including filters like blur...
             // background-image: url(hero1.jpg);
             position: absolute;
-            height: 100vh;
-            min-width: 100%;
-            z-index: -9999;
-            filter: blur(1px);
+            // height: 100vh;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            filter: blur(1px);
+            z-index: -9999;
+            min-width: 100%;
         }
 
         .hero-icons-bar {
-            position: absolute;
+            position: sticky;
             background-color: white;
             padding: 1.5rem;
             bottom: 0;
@@ -228,146 +235,533 @@ div, section {
                 bottom: 1px solid #eee;
             }
 
-            .icons .icon:not(:last-child) {
-                margin-right: 2rem;
-            }
-        }
-    }
-
-    // BENEFITS
-    &.benefits {
-        width: 100%;
-
-        &.contain {
-            @extend %container;
-
-            @media only screen and (min-width: 301px) {
-                width: 85%;
-            }
-
-            @media only screen and (min-width: 993px) {
-                width: 75%;
-            }
-        }
-
-        .benefit {
-            padding: 65px 0 65px 0;
-            margin-bottom: 0;
-
-            &:first-child {
-                padding-top: 0;
-            }
-
-            .row {
-                margin-top: 20px;
-            }
-
-            @for $title from 1 to 5 {
-                h#{$title} {
-                    font: {
-                        size: 2.28rem;
-                        weight: 700;
-                    }
-
-                    margin-bottom: 2rem;
-
-                    > span.lighten {
-                        font-weight: 400;
-                    }
-                }
-            }
-
-            @media only screen and (min-width: 300px) {
-                padding-top: 0;
-            }
-
-            @media only screen and (min-width: 601px) {
-                padding-top: 65px;
-            }
-        }
-
-        .separator {
-            // padding: 65px 0 65px 0;
-            // background-color: #eeeeee;
-            @extend %separator;
-
-            .row {
-                margin-top: 0;
-            }
-            
-            @media only screen and (min-width: 300px) {
-                padding-top: 0px;
-            }
-
-            @media only screen and (min-width: 601px) {
-                padding-top: 65px;
-            }                
-        }
-        
-        .separator-with-image {
-            @extend %separator;
-
-            // overflow:hidden;
-            // height:375px;
-            // width:100%;
-            // background-color:grey;
-            // text-align: center;
-            // color: white;
-
-            // .seperator-content {
-            //     z-index: 999;
-            //     position: absolute;
-            //     width: inherit;
-                
-            //     a {
-            //         color: white;
-            //     }
-            // }
-
-            // .seperator-img {
-            //     position:relative;
-            //     top:0;
-            //     right:0;
-            //     left:0;
-            //     background: {
-            //         image: url('./images/fashion_1.jpeg');
-            //         position: center;
-            //     }
-            //     height: 100%;
-            //     width: auto;
-            // }
-        }
-
-        .call-to-action {
-            text-align: center;
-        }
-
-        .benefits .team {
-            text-align: center;
-          }
-          
-        .team {
-            text-align: center;
-
-            .teammate-avatar {
-                vertical-align: middle;
-                width: 175px;
-                height: 175px;
-                border-radius: 50%;
-            }
-          
-            .teammate-name {
-                font-weight: 600;
-                margin-top: 2.5rem;
-            }
-          
-            .social {
-                margin-top: 2rem;
-            }
-          
-            .fab {
-                font-size: 1.33333em;
+            .icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
             }
         }
     }
 }
+
+.contact-box {
+    position: fixed;
+    right: 23px;
+    bottom: 100px;
+    margin-bottom: 0;
+    z-index: 997;
+    height: auto;
+    width: 450px;
+    border-radius: 2px;
+    background-color: white;
+    overflow-y: auto;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    
+    .message {
+        color: white;
+        height: auto;
+        width: auto;
+        padding: .75rem;
+        border-radius: 2px;
+
+        &.success {
+            background-color: $message_success;
+        }
+
+        &.error {
+            background-color: $message_failed
+        }
+    }
+
+    .header {
+        height: auto;
+        padding: 1rem;
+        background-color: $blue;
+        color: white;
+        font-size: 1.5rem;
+
+        p {
+            margin: 0;
+        }
+    }
+    
+    .wrapper {
+        height: 380px;
+        padding: 1rem;
+    }
+}
+
+.contact_box_transition {
+    &-enter-active,
+    &-leave-active {
+        transition: all .3s ease-out;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+        transform: scale(.9, .9) translateY(50px);
+    }
+    
+    &-enter-to,
+    &-leave {
+        opacity: 1;
+        transform: scale(1, 1) translateY(0px);
+    }
+}
+
+.float_icon {
+    &-enter-active,
+    &-leave-active {
+        transition: all .5s ease-out;
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    
+    &-enter-to,
+    &-leave {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+.fields {
+    &-enter-active {
+        transition: all 5s ease;
+    }
+
+    &-enter {
+        opacity: 0;
+    }
+    
+    &-enter-to {
+        opacity: 1;
+    }
+}
+
+.message_cta {
+    &-enter-active,
+    &-leave {
+        transition: all .2s ease-out;
+    }
+
+    &-enter,
+    &.-leave-to {
+        opacity: 0;
+        transform: scale(.8, .8);
+    }
+    
+    &-enter-to,
+    &-leave {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+.input_message_cta {
+    &-leave-active {
+        transition: all .2s ease;
+    }
+
+    &-leave {
+        opacity: 1;
+    }
+    
+    &-leave-to {
+        opacity: 0;
+    }
+}
+
+// $blue: #1565c0;
+// $padding_top: 12.5%;
+// $font_weight: 600;
+// $lead_font_weight: 600;
+
+// @mixin hero_grid_calculator($multiple) {
+//     // Calculates the top padding
+//     // for the lead titles.
+//     // Increments by 12.5%
+//     $base_grid: 100;
+//     $section: $base_grid / 8;
+//     $calculated_padding: $section * $multiple;
+//     padding-top: $calculated_padding;
+//     padding-bottom: $calculated_padding;
+// }
+
+// @mixin grid_template_columns($n, $fr) {
+//     grid-template-columns: repeat($n, $fr);
+// }
+
+// // %hero {
+// //     background-color: $blue;
+// //     height: 100vh !important;
+// //     text-align: center;
+// //     color: white;
+// // }
+
+// @mixin hero($height) {
+//     height: $height;
+//     text-align: center;
+//     color: white;
+// }
+
+// %container {
+//     margin: 0 auto;
+//     max-width: 1280px;
+//     width: 90%;
+// }
+
+// %hero-wrapper {
+//     margin: 0 auto;
+//     max-width: 1280px;
+//     width: 90%;
+// }
+
+// %call-to-action {
+//     margin: {
+//         left: auto;
+//         right: auto;
+//         bottom: 80px;
+//     }
+//     padding: {
+//         top: $padding_top;
+//     }
+// }
+
+// %lead {
+//     display: block;
+//     font-weight: 400;
+//     @media only screen and (min-width: 320px) {
+//         font: {
+//             size: 2rem;
+//         }
+//         margin-bottom: 1rem;
+//     }
+//     @media screen and (min-width: 360px) {
+//         font: {
+//             size: 2rem;
+//         }
+//         margin-bottom: 1rem;
+//     }
+//     @media screen and (min-width: 600px) {
+//         font: {
+//             size: 4rem;
+//         }
+//         margin-bottom: 1.5rem;
+//     }
+//     @media screen and (min-width: 768px) {
+//         font: {
+//             size: 4rem;
+//         }
+
+//     }
+//     @media screen and (min-width: 993px) {
+//         font: {
+//             size: 4rem;
+//         }
+//     }
+//     @media screen and (min-width: 1201px) {
+//         font: {
+//             size: 4rem;
+//         }
+//     }
+//     @media screen and (min-width: 1690px) {
+//         font: {
+//             size: 4rem;
+//         }
+//     }
+// }
+
+// %separator {
+//     position: relative;
+//     padding: 65px 0 65px 0;
+//     margin-bottom: 0;
+//     background-color: #eee;
+// }
+
+// div, section {
+//     &.hero {
+//         position: relative;
+//         overflow: hidden;
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//         width: 100%;
+//         color: white;
+//         height: auto;
+
+//         .hero-wrapper {
+//             @extend %hero-wrapper;
+
+//             .call-to-action {
+//                 @extend %call-to-action;
+
+//                 // @media only screen and (min-width: 300px) {
+//                 //     text-align: left;
+//                 //     padding-top: 25%;
+//                 // }
+
+//                 // @media only screen and (min-width: 601px) {
+//                 //     text-align: center;
+//                 //     padding-top: 12.5%;
+//                 // }
+
+//                 @each $tag in lead, lead-stronger {
+//                     div.#{$tag} {
+//                         @extend %lead;
+
+//                         @if $tag == "lead-stronger" {
+//                             font-weight: 600;
+//                         }
+
+//                         &.upper {
+//                             text-transform: uppercase;
+//                         }
+//                     }
+//                 }
+
+//                 div.lead-subtitle {
+//                     font: {
+//                         size: 2rem;
+//                         weight: $font_weight / 2;
+//                     }
+
+//                     margin: {
+//                         top: 0.5rem;
+//                         bottom: 2.75rem;
+//                     }
+
+//                     @media only screen and (min-width: 300px) {
+//                         font-size: 1.305rem;
+//                     }
+
+//                     @media only screen and (min-width: 601px) {
+//                         font-size: 2rem;
+//                     }
+//                 }
+
+//                 div.lead-button {
+//                     display: block;
+//                     text-align: center;
+//                     margin-top: 10px;
+//                 }
+//             }
+
+//             .with-input {
+//                 display: flex;
+                
+//                 // @media only screen and (min-width: 301px) {
+//                 //     flex-direction: column;
+//                 //     // justify-content: left;
+//                 // }
+                
+//                 @media only screen and (min-width: 993px) {
+//                     flex-direction: row;
+//                     justify-content: center;
+//                 }
+                
+//                 margin: {
+//                     top: .85rem;
+//                 }
+
+//                 .btn, .btn-large {
+//                     margin: 0;
+//                 }
+
+//                 input {
+//                     // @media only screen and (min-width: 301px) {
+//                     //     width: 90%;
+//                     //     margin: {
+//                     //         bottom: .85rem;
+//                     //     }
+//                     // }
+                    
+//                     // @media only screen and (min-width: 993px) {
+//                     //     width: max($numbers: 400px);
+//                     // }
+
+//                     height: 53px;
+//                     width: 30%;
+//                     border: none;
+//                     border-radius: 2px;
+//                     padding: .35rem;
+//                     margin: {
+//                         right: .75rem;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .background-img-wrapper {
+//             // A special wrapper for utilizing a background
+//             // image -; great for including filters like blur...
+//             // background-image: url(hero1.jpg);
+//             position: absolute;
+//             height: 100vh;
+//             min-width: 100%;
+//             z-index: -9999;
+//             filter: blur(1px);
+//             background-position: center;
+//             background-size: cover;
+//             background-repeat: no-repeat;
+//         }
+
+//         .hero-icons-bar {
+//             position: absolute;
+//             background-color: white;
+//             padding: 1.5rem;
+//             bottom: 0;
+//             width: 100%;
+//             border: {
+//                 top: 1px solid #eee;
+//                 bottom: 1px solid #eee;
+//             }
+
+//             .icons .icon:not(:last-child) {
+//                 margin-right: 2rem;
+//             }
+//         }
+//     }
+
+//     // BENEFITS
+//     &.benefits {
+//         width: 100%;
+
+//         &.contain {
+//             @extend %container;
+
+//             @media only screen and (min-width: 301px) {
+//                 width: 85%;
+//             }
+
+//             @media only screen and (min-width: 993px) {
+//                 width: 75%;
+//             }
+//         }
+
+//         .benefit {
+//             padding: 65px 0 65px 0;
+//             margin-bottom: 0;
+
+//             &:first-child {
+//                 padding-top: 0;
+//             }
+
+//             .row {
+//                 margin-top: 20px;
+//             }
+
+//             @for $title from 1 to 5 {
+//                 h#{$title} {
+//                     font: {
+//                         size: 2.28rem;
+//                         weight: 700;
+//                     }
+
+//                     margin-bottom: 2rem;
+
+//                     > span.lighten {
+//                         font-weight: 400;
+//                     }
+//                 }
+//             }
+
+//             @media only screen and (min-width: 300px) {
+//                 padding-top: 0;
+//             }
+
+//             @media only screen and (min-width: 601px) {
+//                 padding-top: 65px;
+//             }
+//         }
+
+//         .separator {
+//             // padding: 65px 0 65px 0;
+//             // background-color: #eeeeee;
+//             @extend %separator;
+
+//             .row {
+//                 margin-top: 0;
+//             }
+            
+//             @media only screen and (min-width: 300px) {
+//                 padding-top: 0px;
+//             }
+
+//             @media only screen and (min-width: 601px) {
+//                 padding-top: 65px;
+//             }                
+//         }
+        
+//         .separator-with-image {
+//             @extend %separator;
+
+//             // overflow:hidden;
+//             // height:375px;
+//             // width:100%;
+//             // background-color:grey;
+//             // text-align: center;
+//             // color: white;
+
+//             // .seperator-content {
+//             //     z-index: 999;
+//             //     position: absolute;
+//             //     width: inherit;
+                
+//             //     a {
+//             //         color: white;
+//             //     }
+//             // }
+
+//             // .seperator-img {
+//             //     position:relative;
+//             //     top:0;
+//             //     right:0;
+//             //     left:0;
+//             //     background: {
+//             //         image: url('./images/fashion_1.jpeg');
+//             //         position: center;
+//             //     }
+//             //     height: 100%;
+//             //     width: auto;
+//             // }
+//         }
+
+//         .call-to-action {
+//             text-align: center;
+//         }
+
+//         .benefits .team {
+//             text-align: center;
+//           }
+          
+//         .team {
+//             text-align: center;
+
+//             .teammate-avatar {
+//                 vertical-align: middle;
+//                 width: 175px;
+//                 height: 175px;
+//                 border-radius: 50%;
+//             }
+          
+//             .teammate-name {
+//                 font-weight: 600;
+//                 margin-top: 2.5rem;
+//             }
+          
+//             .social {
+//                 margin-top: 2rem;
+//             }
+          
+//             .fab {
+//                 font-size: 1.33333em;
+//             }
+//         }
+//     }
+// }
