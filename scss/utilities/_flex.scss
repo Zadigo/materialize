@@ -1,0 +1,17 @@
+// @each $breakpoint in map-keys($map: $grid-breakpoints) {
+//     @include media-breakpoint-up($breakpoint) {
+//         .flex-row            { flex-direction: row !important; }
+//     }; 
+// }
+
+.display-flex {
+    display: flex;
+}
+
+.flex-direction-row { flex-direction: row !important; }
+.flex-direction-column { flex-direction: column !important; }
+.flex-row-reverse    { flex-direction: row-reverse !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+
+.justify-content-around {  justify-content: space-around; }
+.justify-content-between {  justify-content: space-between; }

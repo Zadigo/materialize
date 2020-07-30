@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Page</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../css/materialize.css">
+        <link rel="stylesheet" href="../scss/extended_materialize.css">
+        <link rel="stylesheet" href="../css/transitions.css">
+    </head>
+
+    <body id="ecommerce-template">
+        <!-- NAVBAR -->
+        <nav class="blue">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>                    
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="../ecommerce/products.html">Products</a></li>
+                        <li><a href="../ecommerce/cart.html">Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SIDENAV -->
+        <ul id="slide-out" class="sidenav">
+            <li><a href="../ecommerce/products.html">Products</a></li>
+            <li><a href="../ecommerce/cart.html">Cart</a></li>
+        </ul>
+
+        <main>
+            <div id="vue_hero">
+                <transition name="hero">
+                    <component @changehero="switchitem" :is="selected" :cursor="cursor" class="current-hero" />
+                </transition>
+            </div>
+        </main>
+
+        <div class="footer">
+
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".sidenav").sidenav();
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script>
+        Vue.component("button-component", {
+            props: ["name", "extraclass"],
+            template: `
+            <button @click="doswitch" class="btn-large" :class="extraclass">
+                Switch
+            </button>
+            `,
+            methods: {
+                doswitch: function () {
+                    this.$emit("doswitch")
+                }
+            }
+        })
+
+        var mixin = {
+            methods: {
+                changehero: function () {
+                    this.$emit("changehero")
+                }
+            }
+        }
+
+        Vue.component("hero-one-component", {
+            props: [ "cursor" ],
+            name: "Hero1",
+            mixins: [ mixin ],
+            template: `
+            <div class="hero with-background-image hero-half-height" style="position: absolute; top: 0; left: 0;">
+                <div class="background-image" style="background-image: url('https://images.unsplash.com/photo-1489667897015-bf7a9e45c284?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80');"></div>
+                <div class="wrapper">
+                    <div class="call-to-action">
+                        <div class="lead">This is a great day</div>
+                        <div class="lead-subtitle">What do you want to eat?</div>
+                        <div class="action-button">
+                            <button-component @doswitch="changehero"></button-component>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        })
+
+        Vue.component("hero-two-component", {
+            props: ["cursor"],
+            name: "Hero2",
+            mixins: [ mixin ],
+            template: `
+            <div class="hero" style="position: absolute; top: 0; left: 0;">
+                <div class="wrapper">
+                    <div class="call-to-action">
+                        <div class="lead">Hum you should not be here</div>
+                        <div class="lead-subtitle">What do you want to eat?</div>
+                        <div class="action-button">
+                            <button-component @doswitch="changehero" :extraclass="'red'"></button-component>
+                        </div>
+                    </div>
+                </div>
+                <img src="../img/hero1.jpg" alt="hero">
+            </div>
+            `
+        })
+
+        Vue.component("hero-component", {
+            props: ["selected"],
+            methods: {
+                changehero: function () {
+                    this.$emit("switchhero")
+                }
+            }
+        })
+
+        var hero = new Vue({
+            el: "#vue_hero",
+            data() {
+                return {
+                    heroes: ["hero-one-component", "hero-two-component"],
+                    cursor: 0
+                }
+            },
+            computed: {
+                selected() {
+                    return this.$data.heroes[this.$data.cursor]
+                }
+            },
+            methods: {
+                switchitem: function () {
+                    var cursor = this.$data.cursor
+                    cursor = this.$data.cursor + 1
+                    cursor = cursor >= this.$data.heroes.length ? 0 : cursor
+                    this.$data.cursor = cursor
+                }
+            }
+        })
+    </script>
+</html>

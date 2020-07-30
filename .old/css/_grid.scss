@@ -1,0 +1,101 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+// TODO - SIMPLIFY
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+}
+
+.section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+// . ROWS
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    // TODO: THIS OFFSETS THE COLUMN
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+// . COLUMNS
+
+@function grid_calculator($index) {
+    @return unquote(100 / (12 / $index) + "%");
+}
+
+@mixin column_calculator($index) {
+    $calculation: grid_calculator($index);
+    flex: 0 0 $calculation;
+    max-width: $calculation;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 1px;
+
+    @for $index from 1 to 13 {
+        &-#{$index} {
+            @include column_calculator($index);
+        }
+    }
+}
+
+@each $name in first, last {
+    @if $name == "first" {
+      .order-#{$name} {
+        -ms-flex-order: -1;
+        order: -1;
+      }
+    } @else {
+      .order-#{$name} {
+        -ms-flex-order: 13;
+        order: 13;
+      }
+    }
+}
+  
+@for $i from 0 to 13 {
+    .order-#{$i} {
+      -ms-flex-order: $i;
+      order: $i;
+    }
+}
+  
+@for $i from 0 to 13 {
+      .offset-#{$i} {
+        margin-left: grid_calculator($i);
+    }
+}

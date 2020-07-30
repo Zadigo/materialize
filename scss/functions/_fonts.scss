@@ -1,0 +1,23 @@
+
+// Returns a prefix for font incrementation
+// e.g. 2x, 3x...
+
+@function font-increment-prefix($increment, $increments) {
+    @each $key in map-keys($map: $increments) {
+        @if $key == $increment {
+            @return $key + "x";
+        } @else {
+            @return "";
+        }
+    }
+}
+
+@function font-decrement-prefix($decrement, $increments) {
+    @each $key in map-keys($map: $increments) {
+        @if $key == $decrement {
+            @return $key + "d";
+        } @else {
+            @return "";
+        }
+    }
+}

@@ -1,0 +1,64 @@
+div.hero {
+    position: relative;
+    height: $hero-default-height;
+    width: $hero-default-width;
+    color: $hero-default-color;
+    overflow: hidden;
+
+    &.hero-half-height {
+        height: $hero-half-height;
+    }
+
+    .wrapper {
+        position: absolute;
+        top: 0;
+        margin: 0 auto;
+        max-width: 1280px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include size(100%, auto);
+    }
+
+    &.with-background-image {
+        overflow: hidden;
+        background-color: $hero-default-background;
+
+        .background-image {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+    }
+}
+
+.call-to-action {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: left;
+
+    .lead {
+        font-size: $hero-lead-font-size;
+        font-weight: $hero-lead-weight;
+
+        &-subtitle {
+            font-size: $hero-lead-subtitle-font-size;
+            font-weight: $hero-lead-subtitle-font-weight;
+        }
+
+    }
+}

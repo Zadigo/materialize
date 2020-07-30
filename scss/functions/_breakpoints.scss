@@ -1,0 +1,22 @@
+
+// Returns the minimum breakpoint from the breakpoints list
+// e.g. 576
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+// Creates the media query from the minimum breakpoint
+// e.g.
+// @media (min-content: 576px) { ... }
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $minimum_breakpoint: breakpoint-min($name, $breakpoints);
+    @if $minimum_breakpoint {
+        @media (min-width: $minimum_breakpoint) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

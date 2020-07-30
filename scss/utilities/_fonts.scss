@@ -1,0 +1,23 @@
+// Weight and italics
+
+.font-weight-light  { font-weight: $font-weight-light !important; }
+.font-weight-normal { font-weight: $font-weight-normal !important; }
+.font-weight-bold   { font-weight: $font-weight-bold !important; }
+.font-italic        { font-style: italic !important; }
+
+
+// Size
+
+@each $increment, $size in $font-increments {
+    $prefix:  font-increment-prefix($increment, $font-increments);
+    .font-size-#{$prefix} {
+        font-size: $size;
+    }
+}
+
+@each $decrement, $size in $font-decrements {
+    $prefix:  font-decrement-prefix($decrement, $font-decrements);
+    .font-size-#{$prefix} {
+        font-size: $size;
+    }
+}

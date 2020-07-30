@@ -1,0 +1,27 @@
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    text-align: left;
+    background-color: $white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include element-fix(0.5rem);
+}
+
+p {
+    @include element-fix(1rem);
+}
+
+ol,
+ul,
+dl {
+    @include element-fix(1rem);
+}
+
+input {
+    @include element-fix(0);
+    margin-bottom: 0;
+    height: 32.4px;
+}

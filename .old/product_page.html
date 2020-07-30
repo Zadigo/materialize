@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+
+        
+        <!-- Google stylesheets -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./css/materialize.css">
+    </head>
+    <body>
+        <main>
+            <nav class="blue lighten-3"></nav>
+
+            <div class="container">
+                <div class="section">
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <img src="https://ae01.alicdn.com/kf/H90ceedfa819a4d99929918b3538237e5F/Camisole-d-bardeur-hauts-femmes-dessin-anim-souris-imprimer-hauts-t-shirt-femme-d-contract-Harajuku.jpg" alt="image" class="responsive-img">
+                        </div>
+                        <div class="col s12 padding-5">
+                            <h3 style="margin: 0px;">Product name</h3>
+                            <p class="bolder">54€</p>
+
+                            <h5 class="text-bold-1 margin-top-2">Description</h5>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                Earum illo odit fuga animi ipsam a soluta, doloremque numquam ex 
+                                laudantium voluptas dicta distinctio dolore odio quis facere 
+                                aliquam veniam! Modi.
+                            </p>
+                            
+                            <div class="input-field">
+                                <select name="color" id="color" class="browser-default">
+                                    <option value="XS" selected>XS</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <select name="color" id="color" class="browser-default margin-top-1">
+                                    <option value="Blue" selected>Blue</option>
+                                </select>
+                            </div>
+
+                            <form class="display-flex as-row margin-top-3">
+                                <!-- <input type="number" class="form-input margin-0"> -->
+
+                                <button type="submit" class="btn-large primary waves-effect waves-light browser-default margin-left-0">Ajouter au panier</button>
+
+                                <button class="btn primary margin-0 waves-effect waves-light">
+                                    <i class="fas fa-heart ml-1 text-white"></i>
+                                </button>
+                            </form>
+
+                            <ul class="list-inline padding-3 grey lighten-4 center">
+                                <li class="list-item">
+                                    <i class="fa fa-truck fa-2x"></i>
+                                    <br>Livraison rapide
+                                </li>
+                                <li class="list-item">
+                                    <i class="fa fa-credit-card fa-2x"></i>
+                                    <br>Paiements sécurisés
+                                </li>
+                                <li class="list-item">
+                                    <i class="fa fa-star fa-2x"></i>
+                                    <br>Garantie 14 jours
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="http://google.com">Google</a>
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <!-- Materialize scripts -->
+
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+        <!-- VUEJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </body>
+</html>

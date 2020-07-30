@@ -1,0 +1,13 @@
+@each $size in $btn-sizes {
+    @if $size == none {
+        .btn {
+            font-weight: $btn-font-weight;
+            transition: $btn-transition;
+        }
+    } @else {
+        .btn-#{$size} {
+            font-weight: $btn-font-weight;
+            transition: $btn-transition;
+        }    
+    }
+}

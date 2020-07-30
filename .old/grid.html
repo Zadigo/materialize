@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+
+        
+        <!-- Google stylesheets -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="./css/materialize.css">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 margin-right-1">
+                        <div class="card">
+                            <div class="card-header">Kendall Jenner</div>                            
+                            <div class="card-content">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Nam perferendis voluptas at dolorum et maxime vel cum, 
+                                laboriosam repudiandae, molestiae, placeat labore 
+                                aperiam numquam doloremque dignissimos sequi eaque minus? 
+                                Voluptatibus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 margin-right-2">
+                        <div class="card">
+                            <div class="card-header">Kendall Jenner</div>
+                            <div class="card-content">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Nam perferendis voluptas at dolorum et maxime vel cum, 
+                                laboriosam repudiandae, molestiae, placeat labore 
+                                aperiam numquam doloremque dignissimos sequi eaque minus? 
+                                Voluptatibus.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 margin-right-3">
+                        <div class="card">
+                            <div class="card-header">Kendall Jenner</div>
+                            <div class="card-content">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Nam perferendis voluptas at dolorum et maxime vel cum, 
+                                laboriosam repudiandae, molestiae, placeat labore 
+                                aperiam numquam doloremque dignissimos sequi eaque minus? 
+                                Voluptatibus.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="row margin-top-3">
+                    <table class="table with-borders increase-inner-padding">
+                        <thead>
+                            <th>Name</th>
+                            <th>Surname</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kendall</td>
+                                <td>Jenner</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <!-- Minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <!-- Materialize scripts -->
+
+        <script>
+            $(document).ready(function(){
+                // Sidenav
+                $('.sidenav').sidenav();
+                // Scrollspy
+                $('.scrollspy').scrollSpy();
+                // Select
+                $('select').formSelect();
+                // Modals
+                $('.modal').modal();
+            });
+        </script>
+
+        <!-- LODASH -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+        <!-- VUEJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </body>
+</html>

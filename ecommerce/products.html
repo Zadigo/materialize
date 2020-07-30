@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products Page</title>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../css/materialize.css">
+        <!-- <link rel="stylesheet" href="../css/materialize.css"> -->
+        <link rel="stylesheet" href="../scss/extended_materialize.css">
+        <link rel="stylesheet" href="../css/transitions.css">
+    </head>
+
+    <body id="ecommerce-template">
+        <!-- NAVBAR -->
+        <nav class="blue">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="../ecommerce/product.html">Product</a></li>
+                        <li><a href="../ecommerce/cart.html">Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SIDENAV -->
+        <ul id="slide-out" class="sidenav">
+            <li><a href="../ecommerce/product.html">Products</a></li>
+            <li><a href="../ecommerce/cart.html">Cart</a></li>
+        </ul>
+
+        <main>
+            <div class="container">
+                <section class="section" id="products">
+                    <div class="row" id="vue_cards">
+                        <div class="col s12 m3">
+                            <div class="card-panel">
+                                <filter-component v-bind:radios="radios" @filtercards="dofilter" inline-template>
+                                    <div class="form-group">
+                                        <p v-for="item in radios" :key="item">
+                                            <label>
+                                                <input @change="filtercards(item)" type="radio" name="group1" :checked="isall(item)" />
+                                                <span>{{ item }}</span>
+                                            </label>
+                                        </p>
+                                    </div>
+                                </filter-component>
+
+                                <hr>
+
+                                <a href="" class="btn-primary">
+                                    Press
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Create a class in order to set the col height for vue js animations and 
+                        avoid the screen flickering during these -->
+                        <div class="col s12 m9" style="height: 100vh;">
+                        <card-component @shufflecards="doshuffle" v-bind:products="bycolor" inline-template>
+                            <transition-group :class="'row'" tag="div" name="card" type="opacity">
+                                <div class="col s4 m4 l4" v-for="product in products" :key="product.id">
+                                    <a @click="shufflecards">
+                                        <div class="card z-depth-0">
+                                            <div class="card-img">
+                                                <img :src="product.image" alt="image1" class="responsive-img">
+                                                <span v-if="product.favorite" class="badge position-absolute margin-top-3  white-text" style="background-color: blue;top: 0; left: 0;">Favorite</span>
+                                            </div>
+                                            <div class="card-body padding-0">
+                                                <p class="font-weight-normal margin-0">Product name</p>
+                                                <p>{{ product.price }}€</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </transition-group>
+                        </card-component>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <div class="footer">
+
+        </div>
+    </body>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Materialize -->
+    <script src="../js/materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".sidenav").sidenav();
+        });
+    </script>
+    <script src="../js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js"></script>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("filter-component", {
+            props: [ "radios" ],
+            name: "FilterRadios",
+            methods: {
+                filtercards: function (value) {
+                    this.$emit("filtercards", value)
+                },
+                isall: function (name) {
+                    if (name === "all") {
+                        return true
+                    }
+                }
+            }
+        })
+
+        Vue.component("card-component", {
+            props: [ "products" ],
+            name: "Card",
+            methods: {
+                shufflecards: function () {
+                    this.$emit("shufflecards", _.shuffle(this.$props.products))
+                }
+            }
+        })
+
+        var products = new Vue({
+            el: "#vue_cards",
+            name: "Products",
+            data() {
+                return {
+                    products: [
+                        {id: 1, image: "../img/img1.jpg", color: "black", favorite: false, price: 45},
+                        {id: 2, image: "../img/img3.jpg", color: "red", favorite: true, price: 65},
+                        {id: 3, image: "../img/img2.jpg", color: "blue", favorite: false, price: 15},
+                        {id: 4, image: "../img/img1.jpg", color: "black", favorite: false, price: 55},
+                        {id: 5, image: "../img/img2.jpg", color: "red", favorite: true, price: 76},
+                        {id: 6, image: "../img/img3.jpg", color: "black", favorite: false, price: 15},
+                        // {id: 4, image: "../img/img1.jpg"}
+                    ],
+                    currentfilter: "all",
+                    radios: []
+                }
+            },
+            beforeMount() {
+                var radios = []
+                radios.push("all")
+                _.forEach(this.$data.products, (product) => {
+                    radios.push(product.color)
+                })
+                this.$data.radios = _.uniq(radios)
+            },
+            computed: {
+                bycolor() {
+                    var products = _.filter(this.list, (product) => {
+                        return product.color === this.$data.currentfilter
+                    })
+                    return products.length > 0 ? products : this.list
+                },
+                list() {
+                    return this.$data.products
+                }
+            },
+            methods: {
+                doshuffle: function (cards) {
+                    this.$data.products = cards
+                },
+                dofilter: function (name) {
+                    this.$data.currentfilter = name
+                }
+            }
+        })
+    </script>
+</html>

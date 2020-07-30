@@ -1,0 +1,285 @@
+/*
+ * These are global set of fucntionalities
+ * for all the templates. They will inherit
+ * directly from these.
+ *
+*/
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+// 2. BOX SHADOWS
+
+.box-shadow-0 {
+    box-shadow: none !important;
+}
+
+.box-shadow-1 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.box-shadow-1-half {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.box-shadow-2 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-3 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-4 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-5 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+// 3.
+
+@each $key, $value in $displays {
+    .display {
+        &-#{$value} {
+            display: $value !important;
+        }
+    }
+}
+
+@each $type in $display_types {
+    @each $key, $value in $displays {
+        .display {
+            &-#{$value}-for-#{$type} {
+                display: $value !important;
+            }
+        }        
+    }
+}
+
+// hr {
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+//     border: 0;
+//     border-top: 1px solid rgba(0, 0, 0, 0.1);
+// }
+  
+// small,
+//   .small {
+//     font-size: 80%;
+//     font-weight: 400;
+// }
+  
+// mark,
+// .mark {
+//     padding: 0.2em;
+//     background-color: #fcf8e3;
+// }
+
+// 4. LISTS
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+  
+.list-inline-item {
+    display: inline-block;
+}
+  
+.list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+// 5. IMAGES
+
+%responsive_item {
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-img {
+    // max-width: 100%;
+    // height: auto;
+    @extend %responsive_item;
+
+    &.as-thumbnail {
+        padding: 0.25rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.responsive-video {
+    @extend %responsive_item;
+}
+
+.figure {
+    display: inline-block;
+}
+  
+.figure-img {
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+  
+.figure-caption {
+    font-size: 90%;
+    color: #6c757d;
+}
+
+// 6. STYLING
+
+.background {
+    &-white {
+        background-color: #fff !important;
+    }
+
+    &-transparent {
+        background-color: transparent !important;
+    }
+}
+
+@each $side in all, top, right, bottom, left {
+    @if $side == "all" {
+        .border {
+            border-top: 1px solid #dee2e6 !important;
+        }
+    } @else {
+        .border-#{$side} {
+            border-top: 1px solid #dee2e6 !important;
+        }
+    }
+}
+
+@each $side in all, top, right, bottom, left {
+    @if $side == "all" {
+        .border-none {
+            border: 0 !important;
+        }
+    } @else {
+        .border-#{$side}-none {
+            border: 0 !important;
+        }
+    }
+}
+
+// MOVE TO VARIABLES
+$color_types: (
+    "primary": "", 
+    "secondary": "", 
+    "success": "", 
+    "info": "", 
+    "warning": "", 
+    "danger": "", 
+    "light": "", 
+    "dark": "", 
+    "white": ""
+);
+
+@each $key, $value in $color_types {
+    .border-#{$key} {
+        border-color: $value !important;
+    }
+}
+
+@each $key, $value in $color_types {
+    .text-#{$key} {
+        color: $value !important;
+    }
+}
+
+
+// MOVE TO VARIABLES
+$displays: (
+    "none", "inline", "inline-block", "block", "table", "table-row", "table-cell", "flex", "inline-flex"
+);
+
+@each $display in $displays {
+    .display-#{$display} {
+        display: $display !important;
+    }
+}
+
+@each $position in start, end, center, between, around {
+    .justify-content-#{$position} {
+        @if $position == "start" or $position == "end" {
+            justify-content: flex-$position !important;
+        } @else if $position == "between" or $position == "around" {
+            justify-content: space-$position !important;
+        } @else {
+            justify-content: $position !important;
+        }
+    }
+}
+
+// FIX
+$margin: 0.25rem;
+@for $i from 1 to 6 {
+    $margin: $margin + 1;
+    .margin-#{$i} {
+        margin: $margin !important;
+    }
+
+    .margin-top-#{$i} {
+        margin-top: $margin !important;
+    }
+
+    .margin-bottom-#{$i} {
+        margin-bottom: $margin !important;
+    }
+    
+    .margin-right-#{$i} {
+        margin-right: $margin !important;
+    }
+    
+    .margin-left-#{$i} {
+        margin-left: $margin !important;
+    }
+
+    .padding-#{$i} {
+        padding: $margin !important;
+    }
+
+    .padding-top-#{$i} {
+        padding-top: $margin !important;
+    }
+
+    .padding-bottom-#{$i} {
+        padding-bottom: $margin !important;
+    }
+    
+    .padding-right-#{$i} {
+        padding-right: $margin !important;
+    }
+    
+    .padding-left-#{$i} {
+        padding-left: $margin !important;
+    }
+}
+
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+  
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+  
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+  

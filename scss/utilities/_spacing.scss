@@ -1,0 +1,25 @@
+@each $property in (margin, padding) {
+    @each $spacer, $size in $spacers {
+        // e.g. padding-0, margin-0
+        .#{$property}-#{$spacer} {
+            #{$property}: $size !important;
+        }
+
+        // e.g. .padding-top-0
+        .#{$property}-top-#{$spacer} {
+            #{$property}-top: $size !important;
+        }
+
+        .#{$property}-right-#{$spacer} {
+            #{$property}-right: $size !important;
+        }
+
+        .#{$property}-bottom-#{$spacer} {
+            #{$property}-bottom: $size !important;
+        }
+
+        .#{$property}-left-#{$spacer} {
+            #{$property}-left: $size !important;
+        }
+    }
+}

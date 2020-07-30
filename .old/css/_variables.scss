@@ -1,0 +1,93 @@
+// ==========================================================================
+// Materialize variables
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Colors
+//  2. Badges
+//  3. Buttons
+//  4. Cards
+//  5. Carousel
+//  6. Collapsible
+//  7. Chips
+//  8. Date + Time Picker
+//  9. Dropdown
+//  10. Fonts
+//  11. Forms
+//  12. Global
+//  13. Grid
+//  14. Navigation Bar
+//  15. Side Navigation
+//  16. Photo Slider
+//  17. Spinners | Loaders
+//  18. Tabs
+//  19. Tables
+//  20. Toasts
+//  21. Typography
+//  22. Footer
+//  23. Flow Text
+//  24. Collections
+//  25. Progress Bar
+
+
+$displays: (
+    "None": "none",
+    "Inline": "inline",
+    "InlineBlock": "inline-block",
+    "Block": "block",
+    "Table": "table",
+    "TableRow": "table-row",
+    "TableCell": "table-cell",
+    "Flex": "flex",
+    "InlineFlex": "inline-flex"
+);
+
+$display_types: ("xs", "m", "l");
+
+$widths: (
+    576: 540px,
+    768: 720px,
+    99: 960px,
+    1200: 1140px
+);
+
+
+
+
+
+// 3. BUTTONS
+
+$button-border: none !default;
+// $button-background-focus: lighten($secondary-color, 4%) !default;
+$button-font-size: 1rem !default;
+$button-icon-font-size: 1.3rem !default;
+// $button-height: 36px !default;
+$button-height: 0.375rem 0.75rem !default;
+$button-padding: 0 2rem !default;
+$button-radius: 2px !default;
+$button-font-weight: 400 !default;
+$button-line-height: 1.5;
+
+$button-large-height: $button-height * 1.5 !default;
+$button-large-icon-font-size: 1.6rem !default;
+
+// 4. CARDS
+
+$card-padding: 24px !default;
+$card-bg-color: #fff !default;
+$card-link-color: color("orange", "accent-2") !default;
+$card-link-color-light: lighten($card-link-color, 20%) !default;
+
+
+
+// 12. Screen sizes
+
+$extra-small-screen: 576px !default;
+$small-screen: 768px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+// 13. GRID
+
+$number_of_columns: 12 !default;

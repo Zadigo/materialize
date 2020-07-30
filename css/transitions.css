@@ -1,0 +1,89 @@
+.card-enter-active,
+.card-leave-active {
+    transition: all .6s ease;
+    -webkit-backface-visibility: hidden;
+
+}
+
+.card-enter {
+    opacity: 0;
+}
+
+.card-enter-to {
+    opacity: 1;
+}
+
+.card-leave {
+    opacity: 1;
+}
+
+.card-leave-to {
+    opacity: 0;
+    animation: fade .4s;
+}
+
+.card-move {
+    transition: all .4s ease-out;
+}
+
+@keyframes fade {
+    0% {
+        transform: scale(.9, .9);
+    }
+    
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.hero-enter-active {
+    transition: all .6s ease;
+}
+
+.hero-enter {
+    opacity: 0;
+}
+
+.hero-enter-to {
+    animation: slide .9s;
+    opacity: 1;
+}
+
+.hero-leave-active {
+    transition: all .3s ease;
+}
+
+.hero-leave {
+    opacity: 1;
+}
+
+.hero-leave-to {
+    opacity: 0;
+    /* animation: slide-out .4s; */
+}
+
+.hero-move {
+    transition: all .3s ease;
+
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    70% {
+        transform: scale(.95, .95);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(300px);
+    }
+}
